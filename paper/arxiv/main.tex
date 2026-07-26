@@ -22,6 +22,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -34,9 +35,8 @@
 
 \title{Entity--Memory Bipartite Graphs for\\Long-Conversation Dialog Retrieval on LoCoMo}
 \author{
-  Anonymous Authors\\
-  \texttt{anonymous@example.com}
-  % Replace with real author block before camera-ready / named arXiv upload.
+  Anonymous Authors
+  % Fill real names/affiliations for a named arXiv upload.
 }
 \date{}
 
@@ -45,7 +45,7 @@
 
 \begin{abstract}
 Long multi-session conversations require retrieval that is both semantically flexible and entity-grounded.
-We study a conversation-only \textbf{Entity--Memory (EM)} bipartite graph for LoCoMo open-domain QA.
+We study a conversation-only \textbf{Entity--Memory (EM)} bipartite graph for LoCoMo \textbf{long-term conversational QA}.
 Each dialog turn is a Memory node; LLM-extracted entities are Entity nodes linked by Mentions; consecutive turns are linked by dialog-order sequence edges.
 At query time we soft-match question entities to graph entities with BM25, optionally expand $\pm 1$ neighbors along the dialog sequence, score the gated Memory pool with dense embeddings, and fuse the two signals as $0.30\cdot E + 0.70\cdot S$.
 
@@ -104,6 +104,35 @@ We intentionally omit industrial LLM-as-judge protocols from the main tables; th
 
 \section{Method}
 \label{sec:method}
+
+Figure~\ref{fig:overview} summarizes the pipeline: conversation-only graph construction, query-time entity soft-match with optional sequence expansion, dense scoring on the candidate pool, fusion ranking, and short-answer generation.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=0.95cm},
+  arr/.style={->, thick, >=stealth}
+]
+  \node[box, fill=blue!8, text width=2.15cm] (conv) {Conversation\\dialogs+captions};
+  \node[box, fill=blue!8, text width=2.25cm, right=0.35cm of conv] (graph) {EM graph\\Mem/Ent+Seq};
+  \node[box, fill=orange!12, text width=2.05cm, right=0.35cm of graph] (q) {Question $q$\\keys $Q$};
+  \node[box, fill=orange!12, text width=2.25cm, right=0.35cm of q] (gate) {BM25 match\\seeds ($\pm1$)};
+  \node[box, fill=green!10, text width=2.2cm, below=0.7cm of gate] (dense) {Dense $S$\\on pool $\mathcal{P}$};
+  \node[box, fill=green!10, text width=2.2cm, left=0.35cm of dense] (fuse) {Fusion\\$0.3E{+}0.7S$};
+  \node[box, fill=gray!12, text width=2.0cm, left=0.35cm of fuse] (ans) {gpt-3.5\\short answer};
+  \draw[arr] (conv) -- (graph);
+  \draw[arr] (graph) -- (q);
+  \draw[arr] (q) -- (gate);
+  \draw[arr] (gate) -- (dense);
+  \draw[arr] (dense) -- (fuse);
+  \draw[arr] (fuse) -- (ans);
+  \draw[arr, dashed] (graph.south) |- (dense.west);
+\end{tikzpicture}
+\caption{Overview of Entity--Memory Dialog retrieval (System~B).
+Solid arrows: query-time path; dashed arrow: Memory embeddings come from the conversation graph.}
+\label{fig:overview}
+\end{figure}
 
 \subsection{Conversation-only inputs}
 \label{sec:inputs}
@@ -234,6 +263,48 @@ Algorithm~\ref{alg:b} summarizes System~B.
 \end{algorithmic}
 \end{algorithm}
 
+\subsection{Illustrative retrieval walk-through}
+\label{sec:case}
+
+Figure~\ref{fig:case} sketches a typical query-time path (schematic; not a cherry-picked benchmark win).
+Suppose the question is \emph{``When did Caroline attend the support group?''}.
+Extract-v4 yields keys such as \texttt{caroline} (Who) and \texttt{support group} (What).
+BM25 soft-match links these keys to Entity nodes that Mentions-connect to dialog Memories near the relevant session (seed turns).
+Sequence expansion then adds the immediate previous/next turns at half entity weight, which often carry dates or clarifications adjacent to the entity mention.
+Dense scoring re-ranks the resulting pool with the question embedding; fusion ($0.30/0.70$) prefers turns that are both entity-linked and semantically aligned.
+The top-25 dialogs are concatenated for the short reader.
+In contrast, System~A scores \emph{all} turns by embedding alone and never forms an entity-conditioned pool.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  m/.style={draw, rounded corners=1pt, fill=blue!8, align=center, inner sep=3pt, text width=1.55cm},
+  e/.style={draw, circle, fill=orange!20, inner sep=1pt, minimum size=0.85cm, align=center},
+  q/.style={draw, rounded corners=1pt, fill=gray!15, align=left, inner sep=4pt, text width=7.6cm}
+]
+  \node[q] (qq) at (0,2.6) {Q: \emph{When did Caroline attend the support group?}\\
+  keys $Q=\{\texttt{caroline},\texttt{support group}\}$};
+  \node[e] (e1) at (-2.2,1.2) {caroline};
+  \node[e] (e2) at (-0.2,1.2) {support\\group};
+  \node[m] (m1) at (-3.2,-0.3) {D14\\prev};
+  \node[m] (m2) at (-1.2,-0.3) {D15\\seed};
+  \node[m] (m3) at (0.8,-0.3) {D16\\next};
+  \node[m] (m4) at (2.8,-0.3) {other\\turns};
+  \draw[->,thick] (qq.south) -- ++(0,-0.25) -| (e1);
+  \draw[->,thick] (qq.south) -- ++(0,-0.25) -| (e2);
+  \draw[->] (e1) -- (m2);
+  \draw[->] (e2) -- (m2);
+  \draw[<->,dashed] (m1) -- (m2);
+  \draw[<->,dashed] (m2) -- (m3);
+  \node[anchor=west,align=left] at (3.7,-0.3) {pool $\mathcal{P}$\\then $0.3E{+}0.7S$\\$\rightarrow$ top-$k$};
+  \draw[->,thick] (m3.east) -- (3.6,-0.3);
+\end{tikzpicture}
+\caption{Schematic retrieval case: question keys soft-match to entities, Mentions select seed Memories, $\pm 1$ sequence edges expand the pool, and fusion ranks dialogs for the reader.
+Gray ``other turns'' remain outside the gated pool unless entity match fails and the system falls back to full-corpus dense retrieval.}
+\label{fig:case}
+\end{figure}
+
 \subsection{Answer generation}
 \label{sec:answer}
 
@@ -352,9 +423,9 @@ Uses Memories from the EM graph but forces empty question keys, so ranking is fu
 \subsection{Main comparison}
 
 Table~\ref{tab:main} reports overall metrics.
-System~B improves both token-F1@25 and recall\_acc@25 over A
+Under the matched stack, System~B improves both primary metrics over A
 ($\Delta$F1~$=+1.49$, $\Delta$recall@$25$~$=+4.01$).
-We use the joint gate $\mathrm{F1}(B)>\mathrm{F1}(A)$ and $\mathrm{recall@25}(B)\ge\mathrm{recall@25}(A)$ as the publish criterion for a method claim under the matched stack; this run satisfies it.
+We treat joint improvement on token-F1@25 and recall\_acc@25 as evidence that the retrieval structure helps, rather than trading one metric for the other.
 
 \begin{table}[t]
 \centering
@@ -377,9 +448,9 @@ B\_noseq & 46.20 & 51.05 & 80.77 & 85.95 & 60.70 & 70.62 & 86.72 \\
 \subsection{Category breakdown}
 
 Table~\ref{tab:cat} reports $k{=}25$ by category for A and B.
-Overall gains are driven especially by single-hop (F1 $60.69\rightarrow 63.22$; recall $87.22\rightarrow 90.61$) and adversarial recall ($71.75\rightarrow 81.73$), with open-domain also improving.
+Overall gains are driven especially by single-hop (F1 $60.69\rightarrow 63.22$; recall $87.22\rightarrow 90.61$) and adversarial recall ($71.75\rightarrow 81.73$); the LoCoMo \emph{open-domain} category (dataset category~3) also improves.
 Multi-hop F1 is nearly flat while multi-hop recall\_acc slightly decreases; temporal F1 dips slightly while temporal recall rises.
-These mixed per-category movements motivate the joint overall gate rather than claiming uniform gains on every category.
+These mixed per-category movements caution against claiming uniform gains on every category; we therefore emphasize overall F1 and overall recall together.
 
 \begin{table}[t]
 \centering
@@ -423,11 +494,14 @@ Storing entities on disk does nothing if unused in scoring; B's gain over A is n
 Disabling $\pm 1$ expansion yields F1 46.20 and recall\_acc@25 80.77\% ($\Delta$ vs.\ B: $-0.28$ F1, $-1.77$ recall).
 Neighbors help when gold evidence is adjacent to an entity-matched turn, but most of the lift vs.\ A already appears from gated fusion without sequence.
 
-\paragraph{Causal reading.}
-If the gain were only packaging of Memory text, B\_embed would beat A substantially---it does not.
-If the gain were entities without semantics, B\_entity would approach B---it does not.
-If the gain were mostly sequence edges, B\_noseq would collapse toward A---it remains clearly above A.
-The data support \textbf{entity-conditioned candidate formation + dense ranking with $0.30/0.70$ fusion}, with sequence as a secondary term.
+\paragraph{Interpretation of ablations.}
+These controls are best read as \textbf{hypothesis filters}, not as a strict causal identification of every mechanism.
+They \emph{disfavor} several simple accounts of the A$\rightarrow$B gap:
+(i)~if the gain were only packaging of Memory text, B\_embed would beat A substantially---it does not;
+(ii)~if entities alone sufficed without dense semantics, B\_entity would approach B---it does not;
+(iii)~if sequence edges explained most of the lift, B\_noseq would collapse toward A---it remains clearly above A.
+A remaining account consistent with the pattern is \textbf{entity-conditioned candidate formation combined with dense ranking under $0.30/0.70$ fusion}, with sequence as a secondary term.
+We do not claim that this is the unique causal pathway, nor that every category benefits for the same reason.
 Figure~\ref{fig:ablation} visualizes token-F1@25 across variants.
 
 \begin{figure}[t]
@@ -498,7 +572,7 @@ We do \textbf{not} treat $(B-\text{paper Dialog})$ as a controlled ablation of E
 \label{sec:conclusion}
 
 Under a fixed stack---\texttt{gpt-3.5-turbo} extract-v4, \texttt{text-embedding-3-small}, and \texttt{gpt-3.5-turbo} LoCoMo short answering---Entity--Memory fusion retrieval with weights $0.30/0.70$ and $\pm 1$ sequence expansion improves both token-F1@25 and evidence recall\_acc@25 over plain Dialog embedding RAG on LoCoMo-10.
-Ablations locate the gain in the combination of entity-conditioned candidates and dense ranking, not in entity scores alone, not in the mere presence of an EM graph file, and only partly in sequence edges.
+Ablations \emph{exclude} several alternative explanations (dense packaging alone; entity scores alone; sequence-dominant gains) and are consistent with entity-conditioned candidates plus dense fusion, while stopping short of a unique causal claim.
 Comparisons to LoCoMo Table~3 must keep the DRAGON-vs-TES caveat explicit.
 
 \section*{Ethics Statement}
@@ -527,12 +601,11 @@ Commands: \texttt{build-graphs}, \texttt{A}, \texttt{B}, \texttt{ablation}, \tex
 When question entity keys are empty, retrieval reduces to:
 $\mathrm{score}(m)=S(m)$ over all Memories, returning top-$k$ dialog IDs.
 
-\section{Allowed vs.\ disallowed claims}
+\section{Scope of the main claim}
 \label{app:claims}
-\paragraph{Allowed.}
-``Under \texttt{gpt-3.5-turbo} + \texttt{text-embedding-3-small}, Entity--Memory $0.3/0.7$ fusion with sequence expansion improves LoCoMo-10 Dialog RAG token-F1@25 from 44.99 to 46.48 and recall\_acc@25 from 78.53\% to 82.54\% versus plain Dialog embedding RAG.''
-
-\paragraph{Disallowed without caveat.}
-Treating gaps vs.\ LoCoMo paper Observation/Dialog as matched-retriever wins; mixing unrelated LLM-judge scores into the main LoCoMo table; citing a different embedding lineage's F1 as this stack's headline.
+The intended main claim is restricted to the matched stack:
+under \texttt{gpt-3.5-turbo} + \texttt{text-embedding-3-small}, Entity--Memory $0.3/0.7$ fusion with sequence expansion improves LoCoMo-10 Dialog RAG token-F1@25 from 44.99 to 46.48 and recall\_acc@25 from 78.53\% to 82.54\% versus plain Dialog embedding RAG.
+Gaps relative to LoCoMo paper Dialog/Observation rows are \emph{not} interpreted as matched-retriever wins (DRAGON vs.\ TES).
+LLM-as-judge scores from other protocols are outside the main tables of this paper.
 
 \end{document}
