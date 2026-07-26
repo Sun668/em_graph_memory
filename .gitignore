@@ -1,0 +1,33 @@
+# secrets
+env.sh
+env_*.sh
+!.env.example
+!env.example.sh
+.env
+*.pem
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# local caches (do not overwrite committed gpt35_tes artifacts accidentally)
+em_graph/cache/
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# TeX build
+paper/arxiv/*.aux
+paper/arxiv/*.bbl
+paper/arxiv/*.blg
+paper/arxiv/*.log
+paper/arxiv/*.out
+paper/arxiv/*.pdf
+paper/arxiv/*.synctex.gz

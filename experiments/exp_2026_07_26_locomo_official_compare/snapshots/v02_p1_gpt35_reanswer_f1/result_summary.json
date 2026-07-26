@@ -1,0 +1,64 @@
+{
+  "phase": "P1",
+  "answer_model": "gpt-3.5-turbo",
+  "summary": {
+    "n": 1986,
+    "token_f1": 0.4618,
+    "token_f1_pct": 46.18,
+    "n_ex_cat5": 1539,
+    "token_f1_ex_cat5": 0.5119,
+    "token_f1_ex_cat5_pct": 51.19,
+    "by_category": {
+      "2": {
+        "n": 321,
+        "token_f1": 0.4283,
+        "token_f1_pct": 42.83,
+        "name": "Temporal"
+      },
+      "3": {
+        "n": 96,
+        "token_f1": 0.1958,
+        "token_f1_pct": 19.58,
+        "name": "Open-domain"
+      },
+      "1": {
+        "n": 282,
+        "token_f1": 0.3832,
+        "token_f1_pct": 38.32,
+        "name": "Multi-hop"
+      },
+      "4": {
+        "n": 840,
+        "token_f1": 0.6232,
+        "token_f1_pct": 62.32,
+        "name": "Single-hop"
+      },
+      "5": {
+        "n": 447,
+        "token_f1": 0.2893,
+        "token_f1_pct": 28.93,
+        "name": "Adversarial"
+      }
+    },
+    "decision": {
+      "paper_dialog_f1_25": 41.0,
+      "paper_obs_best_f1": 43.3,
+      "rule": ">=43 full writeup; 41-43 parity; <41 stop large compare"
+    },
+    "gate": "full_writeup"
+  },
+  "vs_paper": {
+    "dialog_f1_25": 41.0,
+    "observation_best_f1": 43.3,
+    "delta_vs_dialog_pp": 5.18,
+    "delta_vs_obs_best_pp": 2.88
+  },
+  "deepseek_same_evidence_f1_pct": 43.73,
+  "graph_constraint_audit": {
+    "graph_inputs": "conversation-only extract-v4; evidence frozen from prior graph retrieval",
+    "qa_excluded_from_graph": true,
+    "answer_uses_graph_retrieval": true,
+    "f1_reader_aligned_to_paper": true,
+    "prompts_improve_answer_over_graph_evidence_only": true
+  }
+}

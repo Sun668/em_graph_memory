@@ -1,0 +1,124 @@
+{
+  "gate": "stop_p3_main_spend",
+  "dialog_p1_f1_pct": 46.18,
+  "results": [
+    {
+      "variant": "obs_oracle",
+      "top_k": 5,
+      "summary": {
+        "n": 1974,
+        "token_f1_pct": 31.43,
+        "token_f1_ex_cat5_pct": 38.24,
+        "by_category": {
+          "2": {
+            "n": 321,
+            "token_f1_pct": 12.45,
+            "name": "Temporal"
+          },
+          "3": {
+            "n": 96,
+            "token_f1_pct": 19.36,
+            "name": "Open-domain"
+          },
+          "1": {
+            "n": 282,
+            "token_f1_pct": 36.7,
+            "name": "Multi-hop"
+          },
+          "4": {
+            "n": 829,
+            "token_f1_pct": 50.93,
+            "name": "Single-hop"
+          },
+          "5": {
+            "n": 446,
+            "token_f1_pct": 8.11,
+            "name": "Adversarial"
+          }
+        },
+        "vs_dialog_p1_pp": -14.75,
+        "beats_dialog_p1": false,
+        "diag_source_dia_hit_rate": 0.6054
+      }
+    },
+    {
+      "variant": "obs_oracle",
+      "top_k": 25,
+      "summary": {
+        "n": 1974,
+        "token_f1_pct": 32.69,
+        "token_f1_ex_cat5_pct": 38.99,
+        "by_category": {
+          "2": {
+            "n": 321,
+            "token_f1_pct": 11.53,
+            "name": "Temporal"
+          },
+          "3": {
+            "n": 96,
+            "token_f1_pct": 18.86,
+            "name": "Open-domain"
+          },
+          "1": {
+            "n": 282,
+            "token_f1_pct": 40.62,
+            "name": "Multi-hop"
+          },
+          "4": {
+            "n": 829,
+            "token_f1_pct": 51.4,
+            "name": "Single-hop"
+          },
+          "5": {
+            "n": 446,
+            "token_f1_pct": 11.08,
+            "name": "Adversarial"
+          }
+        },
+        "vs_dialog_p1_pp": -13.49,
+        "beats_dialog_p1": false,
+        "diag_source_dia_hit_rate": 0.7224
+      }
+    },
+    {
+      "variant": "summary_oracle",
+      "top_k": 10,
+      "summary": {
+        "n": 1974,
+        "token_f1_pct": 30.21,
+        "token_f1_ex_cat5_pct": 34.03,
+        "by_category": {
+          "2": {
+            "n": 321,
+            "token_f1_pct": 35.52,
+            "name": "Temporal"
+          },
+          "3": {
+            "n": 96,
+            "token_f1_pct": 19.23,
+            "name": "Open-domain"
+          },
+          "1": {
+            "n": 282,
+            "token_f1_pct": 32.13,
+            "name": "Multi-hop"
+          },
+          "4": {
+            "n": 829,
+            "token_f1_pct": 35.8,
+            "name": "Single-hop"
+          },
+          "5": {
+            "n": 446,
+            "token_f1_pct": 17.13,
+            "name": "Adversarial"
+          }
+        },
+        "vs_dialog_p1_pp": -15.97,
+        "beats_dialog_p1": false
+      }
+    }
+  ],
+  "oracle_dataset_fields": true,
+  "not_a_system_claim": true
+}

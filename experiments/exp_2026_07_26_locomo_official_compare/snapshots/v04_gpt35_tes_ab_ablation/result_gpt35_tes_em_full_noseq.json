@@ -1,0 +1,185 @@
+{
+  "stack_tag": "gpt35_tes",
+  "variant": "B_noseq",
+  "label": "em_full_noseq",
+  "config": {
+    "label": "em_full_noseq",
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "expand_sequence": false,
+    "force_full_pool": false,
+    "need_entities": true
+  },
+  "embedding_model": "text-embedding-3-small",
+  "answer_model": "gpt-3.5-turbo",
+  "extract_model": "gpt-3.5-turbo",
+  "entity_extract_version": "v4",
+  "summary": {
+    "n": 1986,
+    "by_k": {
+      "5": {
+        "overall": {
+          "n": 1986,
+          "recall_acc": 0.607,
+          "hit_rate": 0.6631
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.7593,
+          "hit_rate": 0.7975,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 96,
+          "recall_acc": 0.3623,
+          "hit_rate": 0.4583,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.3008,
+          "hit_rate": 0.5709,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.6916,
+          "hit_rate": 0.7039,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.5841,
+          "hit_rate": 0.5919,
+          "name": "Adversarial"
+        }
+      },
+      "10": {
+        "overall": {
+          "n": 1986,
+          "recall_acc": 0.7062,
+          "hit_rate": 0.7649
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.8263,
+          "hit_rate": 0.8598,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 96,
+          "recall_acc": 0.4556,
+          "hit_rate": 0.5729,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.4265,
+          "hit_rate": 0.7163,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.7881,
+          "hit_rate": 0.799,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.6962,
+          "hit_rate": 0.704,
+          "name": "Adversarial"
+        }
+      },
+      "25": {
+        "overall": {
+          "n": 1986,
+          "recall_acc": 0.8077,
+          "hit_rate": 0.8595,
+          "token_f1_pct": 46.2
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.8988,
+          "hit_rate": 0.9252,
+          "token_f1_pct": 42.58,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 96,
+          "recall_acc": 0.5555,
+          "hit_rate": 0.6771,
+          "token_f1_pct": 19.92,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.6102,
+          "hit_rate": 0.8617,
+          "token_f1_pct": 38.25,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.8789,
+          "hit_rate": 0.8882,
+          "token_f1_pct": 62.13,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.787,
+          "hit_rate": 0.796,
+          "token_f1_pct": 29.47,
+          "name": "Adversarial"
+        }
+      },
+      "50": {
+        "overall": {
+          "n": 1986,
+          "recall_acc": 0.8672,
+          "hit_rate": 0.9084
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.9304,
+          "hit_rate": 0.9502,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 96,
+          "recall_acc": 0.6005,
+          "hit_rate": 0.7292,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.7456,
+          "hit_rate": 0.9362,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.9372,
+          "hit_rate": 0.9429,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.824,
+          "hit_rate": 0.8341,
+          "name": "Adversarial"
+        }
+      }
+    },
+    "f1_25_overall_pct": 46.2,
+    "f1_25_ex_cat5_pct": 51.05
+  },
+  "n_rows": 1986,
+  "checkpoint": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/all10_gpt35_tes_em_full_noseq_answers.checkpoint.json",
+  "graph_constraint_audit": {
+    "graph_inputs": "conversation-only extract-v4 EM graphs (gpt-3.5)",
+    "qa_excluded_from_graph": true,
+    "answer_uses_graph_retrieval": true
+  }
+}

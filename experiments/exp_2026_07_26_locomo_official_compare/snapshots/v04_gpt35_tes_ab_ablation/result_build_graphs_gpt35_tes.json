@@ -1,0 +1,162 @@
+[
+  {
+    "sample_id": "conv-30",
+    "status": "built",
+    "stats": {
+      "memory_count": 369,
+      "entity_count": 784,
+      "edge_count": 2151,
+      "memory_edge_count": 736,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-30_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-26",
+    "status": "built",
+    "stats": {
+      "memory_count": 419,
+      "entity_count": 1120,
+      "edge_count": 2765,
+      "memory_edge_count": 836,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-26_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-41",
+    "status": "built",
+    "stats": {
+      "memory_count": 663,
+      "entity_count": 1487,
+      "edge_count": 4204,
+      "memory_edge_count": 1324,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-41_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-42",
+    "status": "built",
+    "stats": {
+      "memory_count": 629,
+      "entity_count": 1255,
+      "edge_count": 3335,
+      "memory_edge_count": 1256,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-42_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-43",
+    "status": "built",
+    "stats": {
+      "memory_count": 680,
+      "entity_count": 1534,
+      "edge_count": 4038,
+      "memory_edge_count": 1358,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-43_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-44",
+    "status": "built",
+    "stats": {
+      "memory_count": 675,
+      "entity_count": 1281,
+      "edge_count": 3786,
+      "memory_edge_count": 1348,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-44_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-48",
+    "status": "built",
+    "stats": {
+      "memory_count": 681,
+      "entity_count": 1446,
+      "edge_count": 3786,
+      "memory_edge_count": 1360,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-48_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-47",
+    "status": "built",
+    "stats": {
+      "memory_count": 689,
+      "entity_count": 1521,
+      "edge_count": 3944,
+      "memory_edge_count": 1376,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-47_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-49",
+    "status": "built",
+    "stats": {
+      "memory_count": 509,
+      "entity_count": 1079,
+      "edge_count": 2750,
+      "memory_edge_count": 1016,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-49_em_graph_extract_v4_gpt35_tes.json"
+  },
+  {
+    "sample_id": "conv-50",
+    "status": "built",
+    "stats": {
+      "memory_count": 568,
+      "entity_count": 1241,
+      "edge_count": 3643,
+      "memory_edge_count": 1134,
+      "mentions_bipartite": true,
+      "partial": false,
+      "entity_extract_version": "v4",
+      "extract_model": "gpt-3.5-turbo",
+      "stack_tag": "gpt35_tes"
+    },
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/conv-50_em_graph_extract_v4_gpt35_tes.json"
+  }
+]

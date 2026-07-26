@@ -1,0 +1,131 @@
+{
+  "phase": "P0",
+  "compare_vs_paper_dialog": [
+    {
+      "k": 5,
+      "ours_recall_acc": 0.6108,
+      "ours_hit_rate": 0.6705,
+      "paper_dialog_R": 56.7,
+      "paper_dialog_F1": 38.8,
+      "delta_R_vs_paper_dialog": 4.38,
+      "frozen_top25_trunc_recall_acc": 0.6086,
+      "frozen_top25_trunc_hit_rate": 0.669
+    },
+    {
+      "k": 10,
+      "ours_recall_acc": 0.7213,
+      "ours_hit_rate": 0.7825,
+      "paper_dialog_R": 66.2,
+      "paper_dialog_F1": 39.7,
+      "delta_R_vs_paper_dialog": 5.93,
+      "frozen_top25_trunc_recall_acc": 0.7193,
+      "frozen_top25_trunc_hit_rate": 0.78
+    },
+    {
+      "k": 25,
+      "ours_recall_acc": 0.8214,
+      "ours_hit_rate": 0.8794,
+      "paper_dialog_R": 76.7,
+      "paper_dialog_F1": 41.0,
+      "delta_R_vs_paper_dialog": 5.44,
+      "frozen_top25_trunc_recall_acc": 0.8206,
+      "frozen_top25_trunc_hit_rate": 0.8784,
+      "ours_F1_deepseek_top25": 43.73
+    },
+    {
+      "k": 50,
+      "ours_recall_acc": 0.8817,
+      "ours_hit_rate": 0.9273,
+      "paper_dialog_R": 82.7,
+      "paper_dialog_F1": 40.5,
+      "delta_R_vs_paper_dialog": 5.47
+    }
+  ],
+  "f1_top25_deepseek": {
+    "overall_pct": 43.73,
+    "by_category": {
+      "2": {
+        "n": 321,
+        "recall_acc": 0.9019,
+        "hit_rate": 0.9221,
+        "hit": 296,
+        "token_f1": 0.5089,
+        "token_f1_pct": 50.89,
+        "f1_n": 321,
+        "name": "Temporal"
+      },
+      "3": {
+        "n": 92,
+        "recall_acc": 0.5113,
+        "hit_rate": 0.6196,
+        "hit": 57,
+        "token_f1": 0.2455,
+        "token_f1_pct": 24.55,
+        "f1_n": 92,
+        "name": "Open-domain"
+      },
+      "1": {
+        "n": 282,
+        "recall_acc": 0.5903,
+        "hit_rate": 0.883,
+        "hit": 249,
+        "token_f1": 0.4014,
+        "token_f1_pct": 40.14,
+        "f1_n": 282,
+        "name": "Multi-hop"
+      },
+      "4": {
+        "n": 840,
+        "recall_acc": 0.9024,
+        "hit_rate": 0.9143,
+        "hit": 768,
+        "token_f1": 0.6416,
+        "token_f1_pct": 64.16,
+        "f1_n": 840,
+        "name": "Single-hop"
+      },
+      "5": {
+        "n": 447,
+        "recall_acc": 0.8177,
+        "hit_rate": 0.83,
+        "hit": 371,
+        "token_f1": 0.064,
+        "token_f1_pct": 6.4,
+        "f1_n": 447,
+        "name": "Adversarial"
+      }
+    }
+  },
+  "rereanked_top50_overall": {
+    "5": {
+      "n": 1982,
+      "recall_acc": 0.6108,
+      "hit_rate": 0.6705,
+      "hit": 1329
+    },
+    "10": {
+      "n": 1982,
+      "recall_acc": 0.7213,
+      "hit_rate": 0.7825,
+      "hit": 1551
+    },
+    "25": {
+      "n": 1982,
+      "recall_acc": 0.8214,
+      "hit_rate": 0.8794,
+      "hit": 1743
+    },
+    "50": {
+      "n": 1982,
+      "recall_acc": 0.8817,
+      "hit_rate": 0.9273,
+      "hit": 1838
+    }
+  },
+  "graph_constraint_audit": {
+    "graph_inputs": "conversation dialogs/captions/speakers/session anchors only (extract-v4 EM graphs)",
+    "qa_excluded_from_graph": true,
+    "answer_uses_graph_retrieval": true,
+    "f1_reader_aligned_to_paper": false
+  }
+}

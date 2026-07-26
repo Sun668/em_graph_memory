@@ -1,0 +1,480 @@
+{
+  "experiment": "exp_2026_07_26_locomo_official_compare",
+  "phase": "P0",
+  "metric": "locomo_table3_style_dialog_family",
+  "package": "em_graph",
+  "retrieval_unit": "dialog_turn",
+  "reader_for_f1": "deepseek-v4-flash (existing answers; not paper gpt-3.5)",
+  "paper_anchors": {
+    "dialog": {
+      "5": {
+        "f1": 38.8,
+        "r": 56.7
+      },
+      "10": {
+        "f1": 39.7,
+        "r": 66.2
+      },
+      "25": {
+        "f1": 41.0,
+        "r": 76.7
+      },
+      "50": {
+        "f1": 40.5,
+        "r": 82.7
+      }
+    },
+    "observation_best_f1": {
+      "k": 5,
+      "f1": 43.3,
+      "note": "Observation-RAG best F1 in Table 3"
+    },
+    "summary_r10": {
+      "k": 10,
+      "f1": 32.0,
+      "r": 84.7
+    },
+    "human_f1": 87.9,
+    "gpt4_turbo_longctx_f1": 51.6
+  },
+  "frozen_top25_answer_run": {
+    "source": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/all10_locomo_rag_extract_v4_top25_predictions.json",
+    "note": "Truncated frozen top-25 context_ids from deepseek answer run; F1 only at k=25",
+    "by_k": {
+      "5": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.6086,
+          "hit_rate": 0.669,
+          "hit": 1326
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.7562,
+          "hit_rate": 0.7819,
+          "hit": 251,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.3071,
+          "hit_rate": 0.3913,
+          "hit": 36,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.3165,
+          "hit_rate": 0.6206,
+          "hit": 175,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 840,
+          "recall_acc": 0.7006,
+          "hit_rate": 0.7167,
+          "hit": 602,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 447,
+          "recall_acc": 0.5761,
+          "hit_rate": 0.5861,
+          "hit": 262,
+          "name": "Adversarial"
+        }
+      },
+      "10": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.7193,
+          "hit_rate": 0.78,
+          "hit": 1546
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.838,
+          "hit_rate": 0.866,
+          "hit": 278,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.3711,
+          "hit_rate": 0.4783,
+          "hit": 44,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.4381,
+          "hit_rate": 0.7376,
+          "hit": 208,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 840,
+          "recall_acc": 0.8167,
+          "hit_rate": 0.831,
+          "hit": 698,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 447,
+          "recall_acc": 0.7002,
+          "hit_rate": 0.7114,
+          "hit": 318,
+          "name": "Adversarial"
+        }
+      },
+      "25": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.8206,
+          "hit_rate": 0.8784,
+          "hit": 1741,
+          "token_f1": 0.4373,
+          "token_f1_pct": 43.73,
+          "f1_n": 1982
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.9019,
+          "hit_rate": 0.9221,
+          "hit": 296,
+          "token_f1": 0.5089,
+          "token_f1_pct": 50.89,
+          "f1_n": 321,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.5113,
+          "hit_rate": 0.6196,
+          "hit": 57,
+          "token_f1": 0.2455,
+          "token_f1_pct": 24.55,
+          "f1_n": 92,
+          "name": "Open-domain"
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.5903,
+          "hit_rate": 0.883,
+          "hit": 249,
+          "token_f1": 0.4014,
+          "token_f1_pct": 40.14,
+          "f1_n": 282,
+          "name": "Multi-hop"
+        },
+        "4": {
+          "n": 840,
+          "recall_acc": 0.9024,
+          "hit_rate": 0.9143,
+          "hit": 768,
+          "token_f1": 0.6416,
+          "token_f1_pct": 64.16,
+          "f1_n": 840,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 447,
+          "recall_acc": 0.8177,
+          "hit_rate": 0.83,
+          "hit": 371,
+          "token_f1": 0.064,
+          "token_f1_pct": 6.4,
+          "f1_n": 447,
+          "name": "Adversarial"
+        }
+      }
+    }
+  },
+  "rereanked_top50": {
+    "embedding_model": "doubao-embedding-vision",
+    "fusion": "0.3/0.7",
+    "entity_extract_version": "v4",
+    "n_scored": 1982,
+    "by_k": {
+      "5": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.6108,
+          "hit_rate": 0.6705,
+          "hit": 1329
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.3159,
+          "hit_rate": 0.617,
+          "hit": 174,
+          "name": "Multi-hop"
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.7593,
+          "hit_rate": 0.785,
+          "hit": 252,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.3125,
+          "hit_rate": 0.3913,
+          "hit": 36,
+          "name": "Open-domain"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.7033,
+          "hit_rate": 0.7194,
+          "hit": 605,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.5774,
+          "hit_rate": 0.5874,
+          "hit": 262,
+          "name": "Adversarial"
+        }
+      },
+      "10": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.7213,
+          "hit_rate": 0.7825,
+          "hit": 1551
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.4328,
+          "hit_rate": 0.734,
+          "hit": 207,
+          "name": "Multi-hop"
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.8349,
+          "hit_rate": 0.8629,
+          "hit": 277,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.3765,
+          "hit_rate": 0.4891,
+          "hit": 45,
+          "name": "Open-domain"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.8228,
+          "hit_rate": 0.8371,
+          "hit": 704,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.7018,
+          "hit_rate": 0.713,
+          "hit": 318,
+          "name": "Adversarial"
+        }
+      },
+      "25": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.8214,
+          "hit_rate": 0.8794,
+          "hit": 1743
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.5882,
+          "hit_rate": 0.883,
+          "hit": 249,
+          "name": "Multi-hop"
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.9019,
+          "hit_rate": 0.9221,
+          "hit": 296,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.5113,
+          "hit_rate": 0.6196,
+          "hit": 57,
+          "name": "Open-domain"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.9013,
+          "hit_rate": 0.9132,
+          "hit": 768,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.824,
+          "hit_rate": 0.8363,
+          "hit": 373,
+          "name": "Adversarial"
+        }
+      },
+      "50": {
+        "overall": {
+          "n": 1982,
+          "recall_acc": 0.8817,
+          "hit_rate": 0.9273,
+          "hit": 1838
+        },
+        "1": {
+          "n": 282,
+          "recall_acc": 0.7099,
+          "hit_rate": 0.9362,
+          "hit": 264,
+          "name": "Multi-hop"
+        },
+        "2": {
+          "n": 321,
+          "recall_acc": 0.9398,
+          "hit_rate": 0.9564,
+          "hit": 307,
+          "name": "Temporal"
+        },
+        "3": {
+          "n": 92,
+          "recall_acc": 0.5874,
+          "hit_rate": 0.6957,
+          "hit": 64,
+          "name": "Open-domain"
+        },
+        "4": {
+          "n": 841,
+          "recall_acc": 0.9437,
+          "hit_rate": 0.9536,
+          "hit": 802,
+          "name": "Single-hop"
+        },
+        "5": {
+          "n": 446,
+          "recall_acc": 0.8924,
+          "hit_rate": 0.8991,
+          "hit": 401,
+          "name": "Adversarial"
+        }
+      }
+    }
+  },
+  "compare_vs_paper_dialog": [
+    {
+      "k": 5,
+      "ours_recall_acc": 0.6108,
+      "ours_hit_rate": 0.6705,
+      "paper_dialog_R": 56.7,
+      "paper_dialog_F1": 38.8,
+      "delta_R_vs_paper_dialog": 4.38,
+      "frozen_top25_trunc_recall_acc": 0.6086,
+      "frozen_top25_trunc_hit_rate": 0.669
+    },
+    {
+      "k": 10,
+      "ours_recall_acc": 0.7213,
+      "ours_hit_rate": 0.7825,
+      "paper_dialog_R": 66.2,
+      "paper_dialog_F1": 39.7,
+      "delta_R_vs_paper_dialog": 5.93,
+      "frozen_top25_trunc_recall_acc": 0.7193,
+      "frozen_top25_trunc_hit_rate": 0.78
+    },
+    {
+      "k": 25,
+      "ours_recall_acc": 0.8214,
+      "ours_hit_rate": 0.8794,
+      "paper_dialog_R": 76.7,
+      "paper_dialog_F1": 41.0,
+      "delta_R_vs_paper_dialog": 5.44,
+      "frozen_top25_trunc_recall_acc": 0.8206,
+      "frozen_top25_trunc_hit_rate": 0.8784,
+      "ours_F1_deepseek_top25": 43.73
+    },
+    {
+      "k": 50,
+      "ours_recall_acc": 0.8817,
+      "ours_hit_rate": 0.9273,
+      "paper_dialog_R": 82.7,
+      "paper_dialog_F1": 40.5,
+      "delta_R_vs_paper_dialog": 5.47
+    }
+  ],
+  "f1_top25_deepseek": {
+    "overall_pct": 43.73,
+    "by_category": {
+      "2": {
+        "n": 321,
+        "recall_acc": 0.9019,
+        "hit_rate": 0.9221,
+        "hit": 296,
+        "token_f1": 0.5089,
+        "token_f1_pct": 50.89,
+        "f1_n": 321,
+        "name": "Temporal"
+      },
+      "3": {
+        "n": 92,
+        "recall_acc": 0.5113,
+        "hit_rate": 0.6196,
+        "hit": 57,
+        "token_f1": 0.2455,
+        "token_f1_pct": 24.55,
+        "f1_n": 92,
+        "name": "Open-domain"
+      },
+      "1": {
+        "n": 282,
+        "recall_acc": 0.5903,
+        "hit_rate": 0.883,
+        "hit": 249,
+        "token_f1": 0.4014,
+        "token_f1_pct": 40.14,
+        "f1_n": 282,
+        "name": "Multi-hop"
+      },
+      "4": {
+        "n": 840,
+        "recall_acc": 0.9024,
+        "hit_rate": 0.9143,
+        "hit": 768,
+        "token_f1": 0.6416,
+        "token_f1_pct": 64.16,
+        "f1_n": 840,
+        "name": "Single-hop"
+      },
+      "5": {
+        "n": 447,
+        "recall_acc": 0.8177,
+        "hit_rate": 0.83,
+        "hit": 371,
+        "token_f1": 0.064,
+        "token_f1_pct": 6.4,
+        "f1_n": 447,
+        "name": "Adversarial"
+      }
+    }
+  },
+  "outputs": {
+    "result": "/Users/sun/Documents/git/graph_memory/experiments/exp_2026_07_26_locomo_official_compare/result_p0_multik_recall_sheet.json",
+    "ranking50": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/all10_em_v4_e03s07_retrieved50.json",
+    "sheet_md": "/Users/sun/Documents/git/graph_memory/experiments/exp_2026_07_26_locomo_official_compare/TABLE3_COMPARE_P0.md"
+  },
+  "graph_constraint_audit": {
+    "graph_inputs": "conversation dialogs/captions/speakers/session anchors only (extract-v4 EM graphs)",
+    "qa_excluded_from_graph": true,
+    "answer_uses_graph_retrieval": true,
+    "f1_reader_aligned_to_paper": false
+  }
+}

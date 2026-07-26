@@ -1,0 +1,150 @@
+{
+  "experiment": "exp_2026_07_26_locomo_official_compare",
+  "phase": "P3_step1_oracle",
+  "oracle_dataset_fields": true,
+  "not_a_system_claim": true,
+  "embedding_model": "text-embedding-3-small",
+  "answer_model": "gpt-3.5-turbo",
+  "dialog_p1_f1_pct": 46.18,
+  "paper_anchors": {
+    "obs_best_f1": 43.3,
+    "summary_f1_k10": 32.0,
+    "dialog_f1_k25": 41.0
+  },
+  "results": [
+    {
+      "variant": "obs_oracle",
+      "top_k": 5,
+      "oracle_dataset_fields": true,
+      "not_a_system_claim": true,
+      "summary": {
+        "n": 1974,
+        "token_f1_pct": 31.43,
+        "token_f1_ex_cat5_pct": 38.24,
+        "by_category": {
+          "2": {
+            "n": 321,
+            "token_f1_pct": 12.45,
+            "name": "Temporal"
+          },
+          "3": {
+            "n": 96,
+            "token_f1_pct": 19.36,
+            "name": "Open-domain"
+          },
+          "1": {
+            "n": 282,
+            "token_f1_pct": 36.7,
+            "name": "Multi-hop"
+          },
+          "4": {
+            "n": 829,
+            "token_f1_pct": 50.93,
+            "name": "Single-hop"
+          },
+          "5": {
+            "n": 446,
+            "token_f1_pct": 8.11,
+            "name": "Adversarial"
+          }
+        },
+        "vs_dialog_p1_pp": -14.75,
+        "beats_dialog_p1": false,
+        "diag_source_dia_hit_rate": 0.6054
+      },
+      "n_answers": 1974,
+      "checkpoint": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/all10_p3_obs_oracle_k5_gpt35.checkpoint.json"
+    },
+    {
+      "variant": "obs_oracle",
+      "top_k": 25,
+      "oracle_dataset_fields": true,
+      "not_a_system_claim": true,
+      "summary": {
+        "n": 1974,
+        "token_f1_pct": 32.69,
+        "token_f1_ex_cat5_pct": 38.99,
+        "by_category": {
+          "2": {
+            "n": 321,
+            "token_f1_pct": 11.53,
+            "name": "Temporal"
+          },
+          "3": {
+            "n": 96,
+            "token_f1_pct": 18.86,
+            "name": "Open-domain"
+          },
+          "1": {
+            "n": 282,
+            "token_f1_pct": 40.62,
+            "name": "Multi-hop"
+          },
+          "4": {
+            "n": 829,
+            "token_f1_pct": 51.4,
+            "name": "Single-hop"
+          },
+          "5": {
+            "n": 446,
+            "token_f1_pct": 11.08,
+            "name": "Adversarial"
+          }
+        },
+        "vs_dialog_p1_pp": -13.49,
+        "beats_dialog_p1": false,
+        "diag_source_dia_hit_rate": 0.7224
+      },
+      "n_answers": 1974,
+      "checkpoint": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/all10_p3_obs_oracle_k25_gpt35.checkpoint.json"
+    },
+    {
+      "variant": "summary_oracle",
+      "top_k": 10,
+      "oracle_dataset_fields": true,
+      "not_a_system_claim": true,
+      "summary": {
+        "n": 1974,
+        "token_f1_pct": 30.21,
+        "token_f1_ex_cat5_pct": 34.03,
+        "by_category": {
+          "2": {
+            "n": 321,
+            "token_f1_pct": 35.52,
+            "name": "Temporal"
+          },
+          "3": {
+            "n": 96,
+            "token_f1_pct": 19.23,
+            "name": "Open-domain"
+          },
+          "1": {
+            "n": 282,
+            "token_f1_pct": 32.13,
+            "name": "Multi-hop"
+          },
+          "4": {
+            "n": 829,
+            "token_f1_pct": 35.8,
+            "name": "Single-hop"
+          },
+          "5": {
+            "n": 446,
+            "token_f1_pct": 17.13,
+            "name": "Adversarial"
+          }
+        },
+        "vs_dialog_p1_pp": -15.97,
+        "beats_dialog_p1": false
+      },
+      "n_answers": 1974,
+      "checkpoint": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/all10_p3_summary_oracle_k10_gpt35.checkpoint.json"
+    }
+  ],
+  "gate": "stop_p3_main_spend",
+  "graph_constraint_audit": {
+    "note": "Oracle uses dataset observation/session_summary fields from LoCoMo generation pipeline; not conversation-only self-built memory. Diagnostic only.",
+    "qa_excluded_from_index_construction": true,
+    "answer_uses_retrieved_oracle_units_only": true
+  }
+}
