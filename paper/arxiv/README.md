@@ -37,4 +37,4 @@ make clean
 
 - **Category:** cs.CL (primary); optionally cs.IR
 - **Title:** Entity–Memory Bipartite Graphs for Long-Conversation Dialog Retrieval on LoCoMo
-- **Comments:** 9 pages incl. appendix; code/experiment bundle in companion repository
+- **Comments:** 9 pages; code at https://github.com/Sun668/em_graph_memory

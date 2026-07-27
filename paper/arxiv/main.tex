@@ -7,13 +7,21 @@
 \usepackage{times}
 \usepackage{latexsym}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{microtype}
+\emergencystretch=1.5em
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{natbib}
-\usepackage{hyperref}
-\usepackage{url}
+\usepackage{xurl}
+\usepackage{placeins}
+\usepackage{float}
 \usepackage{enumitem}
 \usepackage{array}
 \usepackage{tabularx}
@@ -25,12 +33,17 @@
 \usetikzlibrary{positioning,arrows.meta}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
 \hypersetup{
   colorlinks=true,
   linkcolor=blue!50!black,
   citecolor=blue!50!black,
-  urlcolor=blue!50!black
+  urlcolor=blue!50!black,
+  pdftitle={Entity-Memory Bipartite Graphs for Long-Conversation Dialog Retrieval on LoCoMo},
+  pdfauthor={Anonymous Authors},
+  pdfsubject={LoCoMo Dialog RAG; Entity-Memory retrieval},
+  pdfkeywords={LoCoMo, conversational memory, RAG, knowledge graph}
 }
 
 \title{Entity--Memory Bipartite Graphs for\\Long-Conversation Dialog Retrieval on LoCoMo}
@@ -44,13 +57,14 @@
 \maketitle
 
 \begin{abstract}
-Long multi-session conversations require retrieval that is both semantically flexible and entity-grounded.
+Long multi-session conversations need retrieval that is semantically flexible and grounded in entities.
 We study a conversation-only \textbf{Entity--Memory (EM)} bipartite graph for LoCoMo \textbf{long-term conversational QA}.
 Each dialog turn is a Memory node; LLM-extracted entities are Entity nodes linked by Mentions; consecutive turns are linked by dialog-order sequence edges.
 At query time we soft-match question entities to graph entities with BM25, optionally expand $\pm 1$ neighbors along the dialog sequence, score the gated Memory pool with dense embeddings, and fuse the two signals as $0.30\cdot E + 0.70\cdot S$.
 
-To isolate the contribution of this retrieval structure, we rebuild the pipeline under a \textbf{matched stack}: entity extraction and answering with \texttt{gpt-3.5-turbo}, embeddings with \texttt{text-embedding-3-small}, and the LoCoMo short-answer protocol (token-F1 and evidence recall).
-On LoCoMo-10 (10 conversations, 1986 QA items), EM fusion retrieval (System~B) reaches \textbf{46.48} token-F1@25 and \textbf{82.54\%} recall\_acc@25, improving over a plain full-corpus Dialog embedding RAG baseline (System~A: 44.99 F1, 78.53\% recall) by \textbf{+1.49} F1 points and \textbf{+4.01} recall points.
+To isolate the contribution of this retrieval structure, we rebuild the pipeline under a \textbf{matched stack}: entity extraction and answering with GPT-3.5 Turbo, embeddings with text-embedding-3-small, and a LoCoMo-style short-answer protocol (token-F1 and evidence recall).
+These scores are from \emph{our} reimplementation under that stack---not numbers copied from the LoCoMo paper tables.
+On LoCoMo-10 (10 conversations, 1986 QA items), EM fusion retrieval (System~B) reaches 46.48 token-F1@25 and 82.54\% recall\_acc@25, improving over a plain full-corpus Dialog embedding RAG baseline (System~A: 44.99 F1, 78.53\% recall) by +1.49 F1 points and +4.01 recall points \emph{overall}.
 Ablations show that entity-only ranking is insufficient (40.78 F1), embedding-only on the same Memory corpus nearly matches A (44.83 F1), and disabling sequence expansion yields a small drop (46.20 F1 / 80.77\% recall).
 We cite LoCoMo Table~3 Dialog/Observation numbers only as external anchors, because the original paper uses a different retriever (DRAGON).
 \end{abstract}
@@ -110,17 +124,17 @@ Figure~\ref{fig:overview} summarizes the pipeline: conversation-only graph const
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[
-  font=\footnotesize,
-  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=0.95cm},
+  font=\small,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=1.0cm},
   arr/.style={->, thick, >=stealth}
 ]
-  \node[box, fill=blue!8, text width=2.15cm] (conv) {Conversation\\dialogs+captions};
-  \node[box, fill=blue!8, text width=2.25cm, right=0.35cm of conv] (graph) {EM graph\\Mem/Ent+Seq};
-  \node[box, fill=orange!12, text width=2.05cm, right=0.35cm of graph] (q) {Question $q$\\keys $Q$};
-  \node[box, fill=orange!12, text width=2.25cm, right=0.35cm of q] (gate) {BM25 match\\seeds ($\pm1$)};
-  \node[box, fill=green!10, text width=2.2cm, below=0.7cm of gate] (dense) {Dense $S$\\on pool $\mathcal{P}$};
-  \node[box, fill=green!10, text width=2.2cm, left=0.35cm of dense] (fuse) {Fusion\\$0.3E{+}0.7S$};
-  \node[box, fill=gray!12, text width=2.0cm, left=0.35cm of fuse] (ans) {gpt-3.5\\short answer};
+  \node[box, fill=blue!8, text width=2.2cm] (conv) {Conversation\\dialogs / captions};
+  \node[box, fill=blue!8, text width=2.3cm, right=0.32cm of conv] (graph) {EM graph\\Mem/Ent+Seq};
+  \node[box, fill=orange!12, text width=2.1cm, right=0.32cm of graph] (q) {Question $q$\\keys $Q$};
+  \node[box, fill=orange!12, text width=2.3cm, right=0.32cm of q] (gate) {BM25 match\\seeds ($\pm1$)};
+  \node[box, fill=green!10, text width=2.25cm, below=0.7cm of gate] (dense) {Dense $S$\\on pool $\mathcal{P}$};
+  \node[box, fill=green!10, text width=2.25cm, left=0.32cm of dense] (fuse) {Fusion\\$0.3E{+}0.7S$};
+  \node[box, fill=gray!12, text width=2.05cm, left=0.32cm of fuse] (ans) {GPT-3.5\\short answer};
   \draw[arr] (conv) -- (graph);
   \draw[arr] (graph) -- (q);
   \draw[arr] (q) -- (gate);
@@ -163,7 +177,8 @@ QA question/answer/evidence/category & \textbf{no} & Evaluation / query time onl
 \subsection{Preprocessing}
 \label{sec:prep}
 
-Each dialog text is normalized with \texttt{replace\_pronouns(text, speaker, previous\_speaker, dialog\_time)}:
+Each dialog text is normalized with a pronoun/time rewriter
+(\texttt{replace\_pronouns}):
 first-person pronouns map to the current speaker; second-person pronouns map to the previous speaker when available; relative time expressions may resolve against the session date string.
 Each Memory stores both raw \texttt{text} and \texttt{text\_normalized}.
 Entity extraction runs on the normalized dialog string (and caption text when included by the builder).
@@ -172,11 +187,11 @@ Entity extraction runs on the normalized dialog string (and caption text when in
 \label{sec:schema}
 
 \paragraph{Memory node $m$.}
-One per dialog turn, with identity \texttt{memory:\{dia\_id\}}, plus session index, \texttt{date\_time}, speaker, raw/normalized text, and optional caption.
+One per dialog turn, identified by dialog ID (stored as a \texttt{memory:}~prefixed node id), plus session index, timestamp, speaker, raw/normalized text, and optional caption.
 
 \paragraph{Entity node $e$.}
 LLM-extracted concept with type in
-$\{\texttt{Who},\texttt{What},\texttt{When},\texttt{Where},\texttt{Why},\texttt{How},\texttt{How much}\}$,
+\{\textrm{Who}, \textrm{What}, \textrm{When}, \textrm{Where}, \textrm{Why}, \textrm{How}, \textrm{How much}\},
 canonicalized by a string key normalizer.
 
 \paragraph{Edges.}
@@ -187,18 +202,17 @@ Mentions are bipartite Entity--Memory; sequence edges are Memory--Memory.
 \subsection{Entity extraction (v4)}
 \label{sec:extract}
 
-We use extract version \texttt{v4} with \texttt{gpt-3.5-turbo}.
-The fixed prompt (scaffold length 2430 characters) asks for high-signal short noun phrases, encourages subject--predicate--object coverage when present, forbids interrogatives/function words and generic auxiliaries, and requests a JSON array of \texttt{\{"value","type"\}}.
-Extraction chat uses temperature $0.3$ and a 2500-token budget (non-\texttt{gpt-5} models), with up to three parse retries.
+We use extract version v4 with GPT-3.5 Turbo.
+The fixed prompt (scaffold length 2430 characters) asks for high-signal short noun phrases, encourages subject--predicate--object coverage when present, forbids interrogatives/function words and generic auxiliaries, and requests a JSON array of objects with \texttt{value} and \texttt{type} fields.
+Extraction chat uses temperature $0.3$ and a 2500-token budget, with up to three parse retries.
 The same extractor produces question entity keys $Q$ at query time (cached per sample; not stored in the conversation graph).
-The builder also attaches the speaker as an entity when \texttt{add\_speaker\_as\_entity=True} (package default).
+The builder also attaches the speaker as an entity when the package default \texttt{add\_speaker\_as\_entity} is enabled.
 
 \subsection{Dense Memory index}
 \label{sec:embed}
 
-The embedding string for Memory $m$ is the concatenation of
-\texttt{text\_normalized}, \texttt{text}, \texttt{speaker}, \texttt{blip\_caption}, and \texttt{query}.
-We embed with \texttt{text-embedding-3-small} and score by cosine similarity against the question embedding (non-positive similarities clipped at 0 in the score map).
+The embedding string for Memory $m$ concatenates normalized text, raw text, speaker, caption, and query fields.
+We embed with text-embedding-3-small and score by cosine similarity against the question embedding (non-positive similarities clipped at 0 in the score map).
 In the evaluation runner, shared cross-model text caches are disabled to avoid mixing embedding dimensionalities; per-sample \texttt{.npz} caches are used.
 
 \subsection{Entity BM25 soft-match}
@@ -243,7 +257,7 @@ Algorithm~\ref{alg:b} summarizes System~B.
 \label{alg:b}
 \begin{algorithmic}[1]
 \Require graph $G$, question $q$, cutoff $k$
-\State $Q \gets \mathrm{ExtractEntityKeys}(q)$ \Comment{\texttt{gpt-3.5-turbo}, v4}
+\State $Q \gets \mathrm{ExtractEntityKeys}(q)$ \Comment{GPT-3.5 Turbo, v4}
 \If{$Q \neq \emptyset$}
   \State $M \gets \mathrm{BM25SoftMatch}(G,Q;\ \mathrm{min\_rel}{=}0.5,\ \mathrm{top}{=}20)$
   \State $E \gets \mathrm{PropagateMentions}(G,M)$ \Comment{Who dampen $0.25$}
@@ -266,14 +280,10 @@ Algorithm~\ref{alg:b} summarizes System~B.
 \subsection{Illustrative retrieval walk-through}
 \label{sec:case}
 
-Figure~\ref{fig:case} sketches a typical query-time path (schematic; not a cherry-picked benchmark win).
-Suppose the question is \emph{``When did Caroline attend the support group?''}.
-Extract-v4 yields keys such as \texttt{caroline} (Who) and \texttt{support group} (What).
-BM25 soft-match links these keys to Entity nodes that Mentions-connect to dialog Memories near the relevant session (seed turns).
-Sequence expansion then adds the immediate previous/next turns at half entity weight, which often carry dates or clarifications adjacent to the entity mention.
-Dense scoring re-ranks the resulting pool with the question embedding; fusion ($0.30/0.70$) prefers turns that are both entity-linked and semantically aligned.
-The top-25 dialogs are concatenated for the short reader.
-In contrast, System~A scores \emph{all} turns by embedding alone and never forms an entity-conditioned pool.
+Figure~\ref{fig:case} sketches a typical query-time path (schematic).
+For \emph{``When did Caroline attend the support group?''}, extract-v4 yields keys such as \texttt{caroline} and \texttt{support group}.
+BM25 soft-match links them to Mentions-connected Memories; $\pm 1$ expansion adds neighbors; fusion ($0.30/0.70$) re-ranks the pool for the short reader.
+System~A instead scores all turns by embedding alone.
 
 \begin{figure}[t]
 \centering
@@ -313,7 +323,7 @@ Top-25 retrieved dialogs form the context as
 \small\texttt{\{date\_time\}: \{speaker\} said, "\{text\}"[ and shared \{caption\}]}
 \end{center}
 in retrieval order.
-The reader is \texttt{gpt-3.5-turbo} with temperature $0$ and default 512 completion tokens (retry with larger budgets on empty outputs).
+The reader is GPT-3.5 Turbo with temperature $0$ and default 512 completion tokens (retry with larger budgets on empty outputs).
 
 \paragraph{Default prompt (category $\neq 5$).}
 \textit{Based on the above context, write an answer in the form of a short phrase for the following question. Answer with exact words from the context whenever possible.}\\
@@ -341,6 +351,7 @@ Hit@$k$ is $1$ iff $E\cap R_k\neq\emptyset$.
 
 Category IDs: 1 multi-hop, 2 temporal, 3 open-domain, 4 single-hop, 5 adversarial.
 Overall includes category~5 unless labeled ex-cat5.
+\FloatBarrier
 
 \section{Experimental Setup}
 \label{sec:setup}
@@ -348,23 +359,23 @@ Overall includes category~5 unless labeled ex-cat5.
 \subsection{Dataset and environment}
 
 We evaluate all QA items with non-empty questions in \texttt{locomo10.json}: \textbf{1986} items over 10 conversations
-(\texttt{conv-26,30,41,42,43,44,47,48,49,50}).
+(\texttt{conv-26}, \texttt{30}, \texttt{41}, \texttt{42}, \texttt{43}, \texttt{44}, \texttt{47}, \texttt{48}, \texttt{49}, \texttt{50}).
 
 Matched stack:
 \begin{itemize}[leftmargin=*,itemsep=1pt]
-  \item Extract / answer: \texttt{gpt-3.5-turbo}
-  \item Embeddings: \texttt{text-embedding-3-small}
+  \item Extract / answer: GPT-3.5 Turbo
+  \item Embeddings: text-embedding-3-small
   \item Fusion (B): $w_E{=}0.30$, $w_S{=}0.70$, sequence on
   \item Answer cutoff: top-25; recall sheet also uses $k\in\{5,10,25,50\}$
   \item Parallel answer workers: 8; embedding wait $0.05$s between batches in our runner
 \end{itemize}
 
-Graph statistics under gpt-3.5 extract-v4 are in Table~\ref{tab:graphs}.
+Graph statistics under GPT-3.5 extract-v4 are in Table~\ref{tab:graphs}.
 
-\begin{table}[t]
+\begin{table}[H]
 \centering
 \small
-\caption{EM graph sizes after gpt-3.5 extract-v4 (matched stack).}
+\caption{EM graph sizes after GPT-3.5 extract-v4 (matched stack).}
 \label{tab:graphs}
 \begin{tabular}{lrrrr}
 \toprule
@@ -412,20 +423,22 @@ $^\ddagger$Question entity keys forced empty so retrieval cannot use Mentions.}
 
 \paragraph{System A.}
 Builds a Memory-only graph from the same conversation fields (no LLM entity extract at build time) and ranks all Memories by embedding cosine.
-This is the fair plain Dialog dense RAG baseline under \texttt{text-embedding-3-small}.
+This is the fair plain Dialog dense RAG baseline under text-embedding-3-small.
 
-\paragraph{System B\_embed.}
+\paragraph{System B-embed.}
 Uses Memories from the EM graph but forces empty question keys, so ranking is full-corpus cosine---a dense-only control on the same Memory units as B.
+If question entity keys are empty for System~B as well, retrieval likewise falls back to full-corpus dense scoring.
 
 \section{Results}
 \label{sec:results}
 
 \subsection{Main comparison}
 
-Table~\ref{tab:main} reports overall metrics.
-Under the matched stack, System~B improves both primary metrics over A
+Table~\ref{tab:main} reports overall metrics from our matched-stack reimplementation
+(again: not LoCoMo paper Table~3 scores).
+System~B improves both primary \emph{overall} metrics over A
 ($\Delta$F1~$=+1.49$, $\Delta$recall@$25$~$=+4.01$).
-We treat joint improvement on token-F1@25 and recall\_acc@25 as evidence that the retrieval structure helps, rather than trading one metric for the other.
+Joint overall improvement indicates the retrieval structure helps without a global F1--recall tradeoff, while per-category movements can still differ (Table~\ref{tab:cat}).
 
 \begin{table}[t]
 \centering
@@ -481,16 +494,16 @@ Sys. & Category & $n$ & F1 & R@25 & Hit@25 \\
 \subsection{Ablation analysis}
 \label{sec:ablation}
 
-\paragraph{Entity-only (B\_entity).}
-Removing dense scores collapses overall F1 to 40.78 and recall\_acc@25 to 65.99\%.
+\paragraph{Entity-only (B-entity).}
+Removing dense scores collapses overall F1 to 40.78 and recall@25 to 65.99\%.
 Entity soft-match can surface Mentions-linked turns, but without dense ranking it cannot order candidates by question paraphrase similarity.
 Entities are a candidate/feature channel, not a complete ranker.
 
-\paragraph{Embed-only (B\_embed).}
+\paragraph{Embed-only (B-embed).}
 Forcing an empty entity key set yields full-corpus cosine on EM Memories: F1 44.83, recall\_acc@25 78.53\%, essentially matching A.
 Storing entities on disk does nothing if unused in scoring; B's gain over A is not explained by ``using an EM file format.''
 
-\paragraph{No sequence (B\_noseq).}
+\paragraph{No sequence (B-noseq).}
 Disabling $\pm 1$ expansion yields F1 46.20 and recall\_acc@25 80.77\% ($\Delta$ vs.\ B: $-0.28$ F1, $-1.77$ recall).
 Neighbors help when gold evidence is adjacent to an entity-matched turn, but most of the lift vs.\ A already appears from gated fusion without sequence.
 
@@ -571,41 +584,23 @@ We do \textbf{not} treat $(B-\text{paper Dialog})$ as a controlled ablation of E
 \section{Conclusion}
 \label{sec:conclusion}
 
-Under a fixed stack---\texttt{gpt-3.5-turbo} extract-v4, \texttt{text-embedding-3-small}, and \texttt{gpt-3.5-turbo} LoCoMo short answering---Entity--Memory fusion retrieval with weights $0.30/0.70$ and $\pm 1$ sequence expansion improves both token-F1@25 and evidence recall\_acc@25 over plain Dialog embedding RAG on LoCoMo-10.
-Ablations \emph{exclude} several alternative explanations (dense packaging alone; entity scores alone; sequence-dominant gains) and are consistent with entity-conditioned candidates plus dense fusion, while stopping short of a unique causal claim.
+Under our matched stack (GPT-3.5 Turbo extract-v4, text-embedding-3-small, GPT-3.5 Turbo short answering), Entity--Memory fusion with weights $0.30/0.70$ and $\pm 1$ sequence expansion improves \emph{overall} token-F1@25 and recall\_acc@25 over plain Dialog embedding RAG on LoCoMo-10.
+These are reimplementation scores under that stack, not LoCoMo paper Table~3 entries.
+Ablations exclude several alternative explanations (dense packaging alone; entity scores alone; sequence-dominant gains) and are consistent with entity-conditioned candidates plus dense fusion, without claiming a unique causal pathway.
 Comparisons to LoCoMo Table~3 must keep the DRAGON-vs-TES caveat explicit.
 
-\section*{Ethics Statement}
-We evaluate on the public LoCoMo benchmark.
-Graph construction uses only conversation content released with the dataset; QA labels are used solely for evaluation.
-API-based LLM calls process conversation text and questions; practitioners should follow the data license and provider policies.
-
-\section*{Reproducibility}
-Code, LoCoMo-10 data, prebuilt \texttt{gpt35\_tes} graphs/embeddings, and metric
-files are released at
-\url{https://github.com/Sun668/em_graph_memory}.
-The A/B/ablation runner is
-\texttt{experiments/exp\_2026\_07\_26\_locomo\_official\_compare/run\_publish\_stack.py}
-(snapshot \texttt{v04\_gpt35\_tes\_ab\_ablation}).
-Environment: \texttt{OPENAI\_MODEL=gpt-3.5-turbo},
-\texttt{EM\_GRAPH\_EMBED\_MODEL=text-embedding-3-small}.
-Commands: \texttt{build-graphs}, \texttt{A}, \texttt{B}, \texttt{ablation}, \texttt{summarize}.
+\section*{Ethics and reproducibility}
+\begin{sloppypar}
+We evaluate on public LoCoMo; graphs use conversation content only, and QA labels are evaluation-only.
+Code, data, and prebuilt artifacts:
+\url{https://github.com/Sun668/em_graph_memory}
+(runner \path{experiments/exp_2026_07_26_locomo_official_compare/run_publish_stack.py},
+snapshot \texttt{v04}).
+Use GPT-3.5 Turbo + text-embedding-3-small, then \texttt{build-graphs}/\texttt{A}/\texttt{B}/\texttt{ablation}/\texttt{summarize}.
+The main claim is restricted to this matched stack.
+\end{sloppypar}
 
 \bibliographystyle{plainnat}
-% If plainnat is unavailable on a minimal TeX live, switch to \bibliographystyle{plain}
 \bibliography{references}
-
-\appendix
-\section{Ungated dense retrieval (A / B\_embed)}
-\label{app:ungated}
-When question entity keys are empty, retrieval reduces to:
-$\mathrm{score}(m)=S(m)$ over all Memories, returning top-$k$ dialog IDs.
-
-\section{Scope of the main claim}
-\label{app:claims}
-The intended main claim is restricted to the matched stack:
-under \texttt{gpt-3.5-turbo} + \texttt{text-embedding-3-small}, Entity--Memory $0.3/0.7$ fusion with sequence expansion improves LoCoMo-10 Dialog RAG token-F1@25 from 44.99 to 46.48 and recall\_acc@25 from 78.53\% to 82.54\% versus plain Dialog embedding RAG.
-Gaps relative to LoCoMo paper Dialog/Observation rows are \emph{not} interpreted as matched-retriever wins (DRAGON vs.\ TES).
-LLM-as-judge scores from other protocols are outside the main tables of this paper.
 
 \end{document}
