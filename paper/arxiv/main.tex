@@ -280,10 +280,14 @@ Algorithm~\ref{alg:b} summarizes System~B.
 \subsection{Illustrative retrieval walk-through}
 \label{sec:case}
 
-Figure~\ref{fig:case} sketches a typical query-time path (schematic).
-For \emph{``When did Caroline attend the support group?''}, extract-v4 yields keys such as \texttt{caroline} and \texttt{support group}.
-BM25 soft-match links them to Mentions-connected Memories; $\pm 1$ expansion adds neighbors; fusion ($0.30/0.70$) re-ranks the pool for the short reader.
-System~A instead scores all turns by embedding alone.
+Figure~\ref{fig:case} sketches a typical query-time path (schematic; not a cherry-picked benchmark win).
+Suppose the question is \emph{``When did Caroline attend the support group?''}.
+Extract-v4 yields keys such as \texttt{caroline} (Who) and \texttt{support group} (What).
+BM25 soft-match links these keys to Entity nodes that Mentions-connect to dialog Memories near the relevant session (seed turns).
+Sequence expansion then adds the immediate previous/next turns at half entity weight, which often carry dates or clarifications adjacent to the entity mention.
+Dense scoring re-ranks the resulting pool with the question embedding; fusion ($0.30/0.70$) prefers turns that are both entity-linked and semantically aligned.
+The top-25 dialogs are concatenated for the short reader.
+In contrast, System~A scores \emph{all} turns by embedding alone and never forms an entity-conditioned pool.
 
 \begin{figure}[t]
 \centering
@@ -589,18 +593,38 @@ These are reimplementation scores under that stack, not LoCoMo paper Table~3 ent
 Ablations exclude several alternative explanations (dense packaging alone; entity scores alone; sequence-dominant gains) and are consistent with entity-conditioned candidates plus dense fusion, without claiming a unique causal pathway.
 Comparisons to LoCoMo Table~3 must keep the DRAGON-vs-TES caveat explicit.
 
-\section*{Ethics and reproducibility}
+\section*{Ethics Statement}
+We evaluate on the public LoCoMo benchmark.
+Graph construction uses only conversation content released with the dataset; QA labels are used solely for evaluation.
+API-based LLM calls process conversation text and questions; practitioners should follow the data license and provider policies.
+
+\section*{Reproducibility}
 \begin{sloppypar}
-We evaluate on public LoCoMo; graphs use conversation content only, and QA labels are evaluation-only.
-Code, data, and prebuilt artifacts:
-\url{https://github.com/Sun668/em_graph_memory}
-(runner \path{experiments/exp_2026_07_26_locomo_official_compare/run_publish_stack.py},
-snapshot \texttt{v04}).
-Use GPT-3.5 Turbo + text-embedding-3-small, then \texttt{build-graphs}/\texttt{A}/\texttt{B}/\texttt{ablation}/\texttt{summarize}.
-The main claim is restricted to this matched stack.
+Code, LoCoMo-10 data, prebuilt graphs/embeddings, and metric files are released at
+\url{https://github.com/Sun668/em_graph_memory}.
+The A/B/ablation runner is
+\path{experiments/exp_2026_07_26_locomo_official_compare/run_publish_stack.py}
+(snapshot \texttt{v04\_gpt35\_tes\_ab\_ablation}).
+Set \texttt{OPENAI\_MODEL} to GPT-3.5 Turbo and \texttt{EM\_GRAPH\_EMBED\_MODEL} to text-embedding-3-small, then run
+\texttt{build-graphs}, \texttt{A}, \texttt{B}, \texttt{ablation}, and \texttt{summarize}.
+The main claim is restricted to this matched stack; gaps vs.\ LoCoMo paper Dialog/Observation rows are not matched-retriever wins.
 \end{sloppypar}
 
 \bibliographystyle{plainnat}
 \bibliography{references}
+
+\appendix
+\section{Ungated dense retrieval (A / B-embed)}
+\label{app:ungated}
+When question entity keys are empty, retrieval reduces to
+$\mathrm{score}(m)=S(m)$ over all Memories, returning top-$k$ dialog IDs.
+This is the path used by System~A and System~B-embed (forced empty keys), and the fallback for System~B when soft-match yields no entity scores.
+
+\section{Scope of the main claim}
+\label{app:claims}
+The intended main claim is restricted to the matched stack:
+under GPT-3.5 Turbo + text-embedding-3-small, Entity--Memory $0.3/0.7$ fusion with sequence expansion improves LoCoMo-10 Dialog RAG token-F1@25 from 44.99 to 46.48 and recall\_acc@25 from 78.53\% to 82.54\% versus plain Dialog embedding RAG in \emph{our} reimplementation.
+Gaps relative to LoCoMo paper Dialog/Observation rows are \emph{not} interpreted as matched-retriever wins (DRAGON vs.\ TES).
+LLM-as-judge scores from other protocols are outside the main tables of this paper.
 
 \end{document}
