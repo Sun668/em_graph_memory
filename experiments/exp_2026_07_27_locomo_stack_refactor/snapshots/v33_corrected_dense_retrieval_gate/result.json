@@ -1,0 +1,19 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v33_corrected_dense_retrieval_gate",
+  "result_type": "retrieval_only_dense_control",
+  "metric_bearing": false,
+  "source_commit": "f8757e1",
+  "qa_checked": 1986,
+  "ordered_context_mismatches": 0,
+  "memory_index_paths_equal": 10,
+  "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+  "query_lookups": 3972,
+  "query_hits": 3972,
+  "query_misses": 0,
+  "live_query_embedding_requests": 0,
+  "answer_generation_calls": 0,
+  "graph_constraint": "pass",
+  "publication_gate": "continue",
+  "paper_ready": false
+}

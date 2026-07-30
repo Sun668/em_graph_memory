@@ -1,0 +1,280 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "formal_all10_M3_B_raw_text_top25_4965acd_qfrozen_run01",
+  "execution": {
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+    "run_class": "formal",
+    "scope": "all10",
+    "samples": [],
+    "variant": "B_raw_text",
+    "top_k": 25,
+    "data_file": "data/locomo10.json",
+    "cache_dir": "outputs/em_graph",
+    "output_root": "outputs/locomo_formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_M3_B_raw_text_top25_4965acd_qfrozen_run01",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "models": {
+      "extraction": "gpt-3.5-turbo",
+      "embedding": "text-embedding-3-small",
+      "answer": "gpt-3.5-turbo"
+    },
+    "retrieval_overrides": {}
+  },
+  "hypothesis": {
+    "causal_question": "Does deterministic relative-time annotation improve the complete Entity-Memory graph method under the frozen LoCoMo Reader and evaluator?",
+    "control": "Validated complete B at top_k=25 with time annotations enabled.",
+    "matched_dense_control": "Validated A_raw_text at top_k=25 with time annotations disabled.",
+    "treatment": "B_raw_text changes only use_time_annotations from true to false relative to B, rebuilding the dependent Entity-Memory graph while reusing the exact A_raw_text Memory indexes.",
+    "expected_direction": "Removing time annotations is expected to weakly reduce temporal evidence recall. Preserve a null, mixed, or unfavorable result; run input-family inference only after B_raw_text completes."
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "order": "All 10 conversations and all 1,986 QA rows in immutable dataset order; 446 Category-5 rows; no category filter."
+  },
+  "sampling": {
+    "population": "LoCoMo-10 bundled formal dataset",
+    "sample_unit": "QA row nested in conversation",
+    "scope": "all10",
+    "conversation_ids": [
+      "conv-26",
+      "conv-30",
+      "conv-41",
+      "conv-42",
+      "conv-43",
+      "conv-44",
+      "conv-47",
+      "conv-48",
+      "conv-49",
+      "conv-50"
+    ],
+    "qa_count": 1986,
+    "category5_count": 446,
+    "random_subsampling": false
+  },
+  "preprocessing": {
+    "conversation_inputs": [
+      "session date_time anchors",
+      "dialog ids",
+      "speakers",
+      "raw dialog text",
+      "official blip_caption"
+    ],
+    "dialog_text": "Raw utterance text without deterministic relative-time annotations.",
+    "normalization_protocol": "evidence_time_annotations_v1 implementation with auto_time_words=false.",
+    "changed_memory_count_vs_time_annotated_profile": 352,
+    "total_memory_count": 5882,
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": false,
+      "add_speaker_as_entity": true
+    },
+    "forbidden_construction_inputs": [
+      "QA questions",
+      "QA answers",
+      "QA evidence annotations",
+      "QA category labels",
+      "judge outputs",
+      "previous predictions",
+      "question-driven ledgers"
+    ]
+  },
+  "models": {
+    "extraction": {
+      "requested": "gpt-3.5-turbo",
+      "effective_use": "conversation-only Entity extraction for the B_raw_text graph; unchanged raw-text/cache keys may reuse exact prior extraction entries",
+      "provider_version": "unknown"
+    },
+    "embedding": {
+      "requested": "text-embedding-3-small",
+      "role": "context for exact A_raw_text/B_raw_text shared Memory indexes and immutable context-role question vectors",
+      "dimension": 1536,
+      "provider_version": "unknown"
+    },
+    "answer": {
+      "requested": "gpt-3.5-turbo",
+      "provider_version": "unknown"
+    },
+    "judge": {
+      "status": "not-applicable",
+      "reason": "Formal LoCoMo uses frozen official F1 and recall_acc, not an LLM-as-Judge."
+    }
+  },
+  "prompts": {
+    "entity_extraction_scaffold_chars": 2410,
+    "non_data_prompt_limit_chars": 5000,
+    "entity_extraction_unit": "one normalized conversation Memory text at a time, including official caption when present",
+    "entity_schema": "schema-constrained Entity keys normalized, merged, deduplicated, filtered, then linked to conversation Memories",
+    "answer_prompt": "Frozen vendored LoCoMo QA prompt through the existing QARecall boundary.",
+    "answer_message_role": "system",
+    "prompt_changes": false
+  },
+  "training": {
+    "status": "not-applicable",
+    "reason": "The active LoCoMo stack is inference-only."
+  },
+  "retrieval": {
+    "query": "The complete current QA question, with cached question-Entity extraction physically separate from graph construction.",
+    "variant": "B_raw_text",
+    "rag_mode": "dialog",
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "expand_sequence": true,
+    "force_full_pool": false,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "score_version": "signed_cosine_gated_dense_fill_topk_v2",
+    "tie_breaking": "Committed stable gated, fused, sequence-expanded, dense-fill ordering.",
+    "fallback": "Dense semantic fill returns the exact available top-k budget even when signed similarities are negative."
+  },
+  "generation": {
+    "model": "gpt-3.5-turbo",
+    "message_role": "system",
+    "temperature": 0,
+    "max_completion_tokens": 32,
+    "batch_size": 1,
+    "retry_behavior": "Frozen common client behavior at committed source.",
+    "category5_option_order": "Unchanged unseeded upstream random.random() behavior.",
+    "resume": false,
+    "overwrite": false
+  },
+  "evaluation": {
+    "package": "Frozen code/locomo_eval at upstream commit 3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376.",
+    "primary_metrics": [
+      "Official LoCoMo overall/category F1",
+      "Official evidence recall_acc at top_k=25"
+    ],
+    "secondary_diagnostics": [
+      "Local Categories 1-4 subset F1",
+      "Local Categories 1-4 subset recall_acc"
+    ],
+    "per_row_serialization": "Official three-decimal F1 and recall_acc fields.",
+    "aggregation": "Frozen official category-aware aggregation over 1,986 QA rows.",
+    "planned_comparisons": [
+      "B_raw_text minus validated complete B for the within-method time-annotation ablation.",
+      "B_raw_text minus validated A_raw_text to test whether the B-over-A retrieval gain survives matched raw text.",
+      "Raw-text input-family paired-QA and conversation-cluster inference with 10,000 resamples and seed 20260727, generated only after this condition validates."
+    ]
+  },
+  "randomness": {
+    "sampling_seed": {
+      "status": "not-applicable",
+      "reason": "No sampling; immutable all-10 order is used."
+    },
+    "retrieval": "Deterministic for fixed graphs, vectors, caches, and source.",
+    "answer_generation": "temperature=0, but provider/backend nondeterminism remains possible.",
+    "category5": "Frozen upstream option order uses unseeded random.random(); no local seed override is permitted.",
+    "future_inference_seed": 20260727,
+    "future_bootstrap_resamples": 10000
+  },
+  "caches": {
+    "artifact_root": "outputs/em_graph",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "query_coverage": "1,986 ordered QA rows / 1,974 unique questions; read-only; zero misses and zero live requests required.",
+    "graph_identity": "Entity-Memory, caption enabled, time annotations disabled, speaker Entity enabled, conversation hash, extractor model/version, graph schema.",
+    "memory_index_identity": "Exactly the A_raw_text raw Memory search text, caption enabled, text-embedding-3-small, conversation hash, index schema.",
+    "memory_index_reuse": "Require all 10 validated A_raw_text index identities to be reused read-only; graph count is expected to increase from 50 to 60 and index count to remain 30.",
+    "conversation_entity_cache": "May reuse only exact full-text/model/protocol keys; 352 of 5,882 Memory texts differ from the time-annotated profile and may require new extraction.",
+    "question_entity_cache": "Physically separate QA-derived cache keyed by sample, QA index, complete question digest, extraction model, and protocol namespace; retrieval-time only.",
+    "invalidation": "Disabling time annotations invalidates B graph identity, contexts, answers, and treatment metrics. It does not invalidate complete B, A_raw_text, the shared Memory indexes, or the frozen question artifact.",
+    "deletion_policy": "Delete no existing graph, index, extraction, question, result, or query artifact. Fail closed on an identity mismatch."
+  },
+  "environment": {
+    "source_base_commit": "4965acd1637d0a15ebe249c0795f6585b3e967a2",
+    "source_base_tree": "04945c516117b74b6a650c328cd344f927737bc8",
+    "python": ".venv/bin/python",
+    "shell": "/bin/zsh",
+    "env_file": "env_gpt.sh",
+    "proxy": "http_proxy and https_proxy unset",
+    "python_pycache_prefix": "/private/tmp/graph_memory_pycache",
+    "timezone": "Asia/Shanghai"
+  },
+  "resources": {
+    "graph_extract_workers": 6,
+    "max_workers": 8,
+    "embedding_wait_seconds": 0.05,
+    "formal_answer_concurrency": 1,
+    "output_storage_limit_bytes": 100000000,
+    "condition_wall_time_limit_seconds": 7200
+  },
+  "cost_limits": {
+    "graph_build": {
+      "new_entity_extraction_requests_max": 400,
+      "new_entity_extraction_input_tokens_max": 500000,
+      "new_entity_extraction_output_tokens_max": 200000,
+      "new_memory_embedding_requests_max": 0,
+      "rationale": "Only 352 Memory texts differ; exact unchanged cache keys should reuse prior extraction and all Memory indexes must reuse A_raw_text."
+    },
+    "formal_condition": {
+      "answer_requests_max": 1986,
+      "answer_input_tokens_max": 3500000,
+      "answer_output_tokens_max": 63552,
+      "live_query_embedding_requests_max": 0
+    },
+    "monetary_limit": {
+      "status": "unknown",
+      "reason": "Current provider pricing is not recorded; request/token ceilings are binding."
+    }
+  },
+  "gates": {
+    "validity": [
+      "Clean committed worktree and frozen evaluator.",
+      "All 16 vendored hashes pass.",
+      "Exact dataset and query-artifact SHA-256 match.",
+      "Condition directory is absent at start and used by one resolved condition.",
+      "B_raw_text graph build uses conversation fields only and completes all 10 graphs.",
+      "The 10 A_raw_text Memory indexes reload under exact B_raw_text identity; no new Memory embedding request is allowed.",
+      "Old graph/index/cache artifacts remain present; expected counts are graph 60 and index 30 after construction.",
+      "Both project and generic preflight gates pass.",
+      "In-run and independent validators pass 10 conversations, 1,986 QA, and 446 Category-5 rows.",
+      "Exactly 25 unique valid context ids per QA where available.",
+      "Query cache records zero misses and zero live query-embedding requests.",
+      "Mandatory conversation-only graph and graph-recall audits pass.",
+      "Prompt scaffold remains within 5,000 characters.",
+      "Frozen parameter snapshot SHA matches runtime handoff."
+    ],
+    "performance": "No early performance stop; preserve unfavorable, null, or mixed results and complete the predeclared raw-text family analysis.",
+    "stop_conditions": [
+      "Any validity gate failure.",
+      "Any hidden resume, output reuse, cache conflict, query miss, or live query embedding request.",
+      "Any Memory index build request instead of exact A_raw_text index reuse.",
+      "Any forbidden graph-construction input or frozen evaluator drift.",
+      "Any request/token/resource ceiling exceeded.",
+      "Ten consecutive external-model connection failures; freeze evidence before a new run id."
+    ],
+    "snapshot": "Freeze completed, partial, failed, or aborted evidence in v50_b_raw_text_all10 before any affected source change.",
+    "close": "Update README, conclusion, next_steps, PLAN, and TODO; commit and push scoped evidence before B_no_speaker."
+  },
+  "unknowns": [
+    "Actual provider-resolved version identifiers for gpt-3.5-turbo and text-embedding-3-small are not exposed.",
+    "Exact monetary price and host hardware identity are unavailable.",
+    "Exact new extraction request count is unknown until build; the frozen ceiling is 400."
+  ],
+  "created_at": "2026-07-28T22:48:01+08:00",
+  "source": {
+    "base_commit": "4965acd1637d0a15ebe249c0795f6585b3e967a2",
+    "base_tree": "04945c516117b74b6a650c328cd344f927737bc8",
+    "worktree_clean_before_freeze": true
+  },
+  "binding": {
+    "command_sha256": "acdf738d6c1b7dc5e8dd67ec06c282680a676e6f274c7e6d0c1a3099ce8944b3",
+    "canonical_argv": [
+      "RESEARCH_RUN_CLASS=formal",
+      "RESEARCH_PARAMETER_SNAPSHOT=experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v50_b_raw_text_all10/parameters.json",
+      "RESEARCH_CONDITION_DIR=outputs/locomo_formal/formal_all10_M3_B_raw_text_top25_4965acd_qfrozen_run01",
+      "/bin/zsh",
+      "-lc",
+      "source ./env_gpt.sh; unset http_proxy https_proxy; export EM_GRAPH_EMBED_WAIT=0.05; export EM_GRAPH_MAX_WORKERS=8; export PYTHONPYCACHEPREFIX=/private/tmp/graph_memory_pycache; .venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py --run-id formal_all10_M3_B_raw_text_top25_4965acd_qfrozen_run01 --scope all10 --variant B_raw_text --top-k 25 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --query-artifact outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz --cache-dir outputs/em_graph --output-root outputs/locomo_formal"
+    ],
+    "run_class": "formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_M3_B_raw_text_top25_4965acd_qfrozen_run01"
+  }
+}

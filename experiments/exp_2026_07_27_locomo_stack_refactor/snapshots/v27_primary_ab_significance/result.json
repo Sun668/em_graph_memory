@@ -1,0 +1,109 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v27_primary_ab_significance",
+  "result_type": "primary_paired_and_cluster_significance",
+  "metric_bearing": true,
+  "decision_date": "2026-07-28",
+  "analysis_source_commit": "453c591cfe9bb779d7f26af45a00a1546dec1c48",
+  "analysis_source_tree": "4ce53b5ef13ace48178cf117870871b153903256",
+  "analysis_source_sha256": "f69c2c72aea62dc2364aae05ccd8e58a9eded9d823c81c1787e698c988765a24",
+  "full_report": {
+    "path": "outputs/locomo_analysis/m1_b_vs_a_significance_10000_seed20260727.json",
+    "sha256": "5fff462148f24199607a5333e83d72485f6d5671be9cbb2e533bd70cb51f597c",
+    "report_fingerprint": "c72bde37f2743d3241fcc30654a835bc6a04739d0f2e0c1543e6ea6dd33cf5d3"
+  },
+  "conditions": {
+    "a": {
+      "run_id": "formal_all10_M1_A_top25_3e3a33b_run01",
+      "source_commit": "3e3a33b49c39468dd14b1cead161e1df413332d5",
+      "condition_fingerprint": "8dbb51faaeb893e6aa7d411e39985a75e707fe2767d5ee04e461b1cff06813a0",
+      "prediction_sha256": "c777b8aca86783f6af1fcbea3bd35e2b438e02a9fdda44daef718f212762b431",
+      "stats_sha256": "8ceb5f6667e2c0498a7f40a79a46a88af5382a4735f5758039abd1d8f9b3ccb1",
+      "validation": "pass"
+    },
+    "b": {
+      "run_id": "formal_all10_M1_B_top25_484ccf0_run01",
+      "source_commit": "484ccf0395346cbc7eab0c09f82e91e039a005a8",
+      "condition_fingerprint": "32fc90680292460a1bc8f88e38cebfc96e2e2fda68ef162f1f11572515791ac2",
+      "prediction_sha256": "f0fbfa2aff13647eafe34b0604f97e9547ea1dcb90bf06b831d7dc18bb93a04c",
+      "stats_sha256": "312a6d09bd1f5bf2ceef1cfa4e2c77b87a67f030b6067bdc54678fe37c193854",
+      "validation": "pass"
+    }
+  },
+  "analysis": {
+    "qa_count": 1986,
+    "conversation_count": 10,
+    "seed": 20260727,
+    "resamples": 10000,
+    "difference_direction": "B_minus_A",
+    "recall_contribution_policy": "serialized per-row recall when evidence is non-empty; otherwise 0; denominator includes all QA",
+    "recall_matches_official_stats": true,
+    "overall_f1": {
+      "a_percent": 42.26419939577039,
+      "b_percent": 42.677240684793555,
+      "difference_points": 0.4130412890231623,
+      "paired_qa_ci95_points": [-0.6823955186304129, 1.4990256797583078],
+      "paired_qa_p": 0.45235476452354767,
+      "conversation_cluster_ci95_points": [-0.35190072822639767, 1.2114296190098777],
+      "conversation_cluster_p": 0.3007699230076992,
+      "significant_at_0_05": false
+    },
+    "overall_recall_at_25": {
+      "a_percent": 79.74682779456193,
+      "b_percent": 84.34154078549849,
+      "difference_points": 4.594712990936556,
+      "paired_qa_ci95_points": [3.5241163141993964, 5.701217270896274],
+      "paired_qa_p": 0.00019998000199980003,
+      "conversation_cluster_ci95_points": [3.259268383129223, 5.951391378175028],
+      "conversation_cluster_p": 0.00019998000199980003,
+      "significant_at_0_05": true
+    },
+    "categories_1_4_local": {
+      "qa_count": 1540,
+      "f1_difference_points": 1.246948051948052,
+      "f1_paired_ci95_points": [0.05520941558441572, 2.4542532467532463],
+      "f1_paired_p": 0.038396160383961604,
+      "f1_cluster_ci95_points": [0.5391213028347619, 2.0350548353372352],
+      "f1_cluster_p": 0.00019998000199980003,
+      "recall_difference_points": 2.0617532467532466,
+      "status": "local non-official diagnostic"
+    },
+    "category_5": {
+      "qa_count": 446,
+      "f1_difference_points": -2.466367713004484,
+      "f1_paired_ci95_points": [-4.932735426008968, 0.0],
+      "f1_paired_p": 0.06379362063793621,
+      "f1_cluster_ci95_points": [-4.485644067690887, -0.7560724673281154],
+      "f1_cluster_p": 0.005599440055994401,
+      "recall_difference_points": 13.340807174887892,
+      "recall_paired_p": 0.00019998000199980003,
+      "recall_cluster_p": 0.00019998000199980003
+    },
+    "per_conversation_direction": {
+      "recall_positive": 10,
+      "recall_negative": 0,
+      "f1_positive": 6,
+      "f1_negative": 4
+    }
+  },
+  "graph_constraint": "pass",
+  "frozen_locomo_eval_changed": false,
+  "prompt_budget": {
+    "a_scaffold_chars": 0,
+    "b_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "status": "pass"
+  },
+  "external_model_calls": 0,
+  "regression_tests": {
+    "passed": 62,
+    "failed": 0,
+    "vendor_manifest_files": 16,
+    "status": "pass"
+  },
+  "interpretation": "significant recall improvement; no significant overall F1 improvement",
+  "early_stop": false,
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "structural ablations beginning with B_embed and its exact ordered-context dense-control gate"
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v30_query_embedding_artifact_build",
+  "result_type": "immutable_query_embedding_artifact_build",
+  "metric_bearing": false,
+  "decision_date": "2026-07-28",
+  "source_commit": "ae12238",
+  "clean_start": {
+    "deleted_exact_cache": "outputs/em_graph/text_embeddings/text-embedding-3-small.npz",
+    "deleted_cache_sha256": "98767be5304a9acdf16295ceb4b3b73c52cc2c0eedba4e728fe780372a077cd9",
+    "artifact_path_preexisting": false,
+    "report_path_preexisting": false
+  },
+  "artifact": {
+    "path": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "size_bytes": 10212440,
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "embedding_model": "text-embedding-3-small",
+    "role": "context",
+    "normalization": "l2_float32_v1",
+    "qa_count": 1986,
+    "unique_question_count": 1974,
+    "vector_dimension": 1536,
+    "ordered_qa_sha256": "21b786753c8e890953c06a6f4738d059504730637b0885a3d47dc4c8ccd5be92",
+    "norm_min": 0.9999998838280574,
+    "norm_max": 1.000000118037477,
+    "finite": true,
+    "independent_validation": "pass"
+  },
+  "build_report": {
+    "path": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1_report.json",
+    "sha256": "dee4b5695c1c9f1f13d220867235195e471a72473ecf03d02d5b1ecf968d3224",
+    "embedding_requests": 198,
+    "embedding_input_tokens": 23936,
+    "old_cache_hits": 0,
+    "status": "pass"
+  },
+  "graph_constraint": "pass",
+  "frozen_locomo_eval_changed": false,
+  "prompt_change": false,
+  "answer_generation_calls": 0,
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "run retrieval-only all-10 A/B_embed with the same artifact and require 1986/1986 exact ordered context equality"
+}

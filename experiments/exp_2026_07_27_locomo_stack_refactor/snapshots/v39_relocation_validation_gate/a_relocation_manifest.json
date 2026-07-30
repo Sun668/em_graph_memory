@@ -1,0 +1,39 @@
+{
+  "schema": "locomo_formal_relocation_v1",
+  "reason": "repository_root_changed",
+  "run_id": "formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+  "condition_fingerprint": "efd263c3904669977c43dc154197bb942576378d7c2036fb26731d0d5f11739b",
+  "original_output_directory": "/Users/smsun/Documents/github/graph_memory/outputs/locomo_formal/formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+  "relocated_condition_directory": "/Users/sun/Documents/git/graph_memory/outputs/locomo_formal/formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+  "source_snapshot_result": "../v34_corrected_m1_a_all10/result.json",
+  "source_snapshot_result_sha256": "5e114d1eb5ca40600ec7bdea8be26e5c5d7b203446ba3da5005e12810b858a56",
+  "immutable_artifacts": {
+    "run_config": {
+      "path": "run_config.json",
+      "sha256": "1057173e4ceb72311d6690bac455ff3fc6abd7b3595bcfcc4dfdf0285498343c"
+    },
+    "prediction": {
+      "path": "predictions.json",
+      "sha256": "0c843b7f921ceea50c07bc6bb14751446f2066909c807df528ee66ff1aa9579c"
+    },
+    "stats": {
+      "path": "stats.json",
+      "sha256": "203f30b12406a9c033308757987003c4ef98ad3588cf1f3aadce1127d361663c"
+    },
+    "audit": {
+      "path": "audit.json",
+      "sha256": "7a8b81693e5bdc75bbb084cf1557275b5d339e05529951b6f1a52b59430704a9"
+    },
+    "query_cache_usage": {
+      "path": "query_cache_usage.json",
+      "sha256": "d94d1765f07ca06326b5949a3108bf456635210307cfec770b6ff3f717d10d74"
+    }
+  },
+  "external_artifacts": {
+    "query_embedding_artifact": {
+      "original_path": "/Users/smsun/Documents/github/graph_memory/outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+      "relocated_path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+      "sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f"
+    }
+  }
+}

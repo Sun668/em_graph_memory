@@ -1,0 +1,62 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "pass",
+  "snapshot": "v66_fusion_family_significance",
+  "result_type": "fusion_family_holm_significance",
+  "metric_bearing": true,
+  "paper_eligible": true,
+  "tooling_commit": "2908616",
+  "report": {
+    "path": "outputs/locomo_analysis/fusion_family_2908616_seed20260727.json",
+    "sha256": "ce003823092844d077206b80cb2cdd816108805b7d0916a9bb20d2fb3f1bdd3c",
+    "fingerprint": "04df5e0d79f5f495b99f2ed6abbd6e2fc7ae736d57e6726c617e704a798b6fcb",
+    "reproduction": "byte-identical"
+  },
+  "family": {
+    "hypotheses": [
+      "fusion_0_10_0_90_vs_primary",
+      "fusion_0_50_0_50_vs_primary"
+    ],
+    "seed": 20260727,
+    "resamples_per_estimator": 10000,
+    "correction": "Holm step-down separately by metric and estimator"
+  },
+  "identity": {
+    "formal_conditions_validated": 3,
+    "cache_records": 10,
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "only_fusion_weights_differ": true
+  },
+  "comparisons": {
+    "fusion_0_10_0_90_vs_primary": {
+      "f1_difference": -0.003639476334340383,
+      "f1_holm_paired": 0.9591040895910409,
+      "f1_holm_cluster": 0.6911308869113089,
+      "recall_difference": -0.023061933534743204,
+      "recall_holm_paired": 0.00039996000399960006,
+      "recall_holm_cluster": 0.00039996000399960006,
+      "recall_reject_both_estimators": true
+    },
+    "fusion_0_50_0_50_vs_primary": {
+      "f1_difference": -0.003239677744209465,
+      "f1_holm_paired": 0.9591040895910409,
+      "f1_holm_cluster": 0.6911308869113089,
+      "recall_difference": -0.001562437059415911,
+      "recall_holm_paired": 0.7017298270172982,
+      "recall_holm_cluster": 0.8233176682331766,
+      "any_reject": false
+    }
+  },
+  "checks": {
+    "focused_tests": "20/20",
+    "full_tests": "80/80",
+    "vendor_hashes": "16/16",
+    "metric_recalculation": false,
+    "frozen_evaluator_changed": false,
+    "cache_or_result_mutation": false
+  },
+  "claim": "Strongly reducing Entity weight to 0.10 significantly lowers evidence recall after Holm correction; neither new weight changes overall F1, and 0.50/0.50 does not significantly change overall recall.",
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v66, then execute the preregistered sequence-scale sensitivity family"
+}

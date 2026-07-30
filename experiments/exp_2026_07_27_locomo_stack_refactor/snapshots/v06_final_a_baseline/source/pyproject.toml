@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "standalone-graph-memory"
+version = "0.2.0"
+description = "Official LoCoMo evaluation with standalone EM-graph retrieval"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.23",
+  "nltk>=3.8",
+  "openai>=1.0",
+  "regex>=2023.0",
+  "tqdm>=4.0",
+]
+
+[project.optional-dependencies]
+quality = [
+  "spacy>=3.6",
+  "nltk>=3.8",
+  "sentence-transformers>=2.2",
+]
+experiments = [
+  "nltk>=3.8",
+  "rank-bm25>=0.2",
+  "regex>=2023.0",
+  "torch>=2.0",
+  "tqdm>=4.0",
+]
+
+[project.scripts]
+graph-memory = "graph_memory.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["common*", "em_graph*", "graph_memory*", "locomo_eval*"]
+
+[tool.setuptools.package-data]
+locomo_eval = ["vendor/**/*"]

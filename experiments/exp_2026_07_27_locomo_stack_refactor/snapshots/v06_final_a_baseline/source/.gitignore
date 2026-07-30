@@ -1,0 +1,30 @@
+__pycache__/
+*.pyc
+.pycache_compile/
+.DS_Store
+.venv/
+env*.sh
+/cache/
+graph_memory/cache/
+outputs/
+archived_outputs/
+
+# External Memora benchmark checkout used for local P1 runs.
+data/Memora/
+
+# Local thesis/document drafts.
+*.docx
+
+# Legacy generated experiment outputs. Keep committed experiment summaries
+# tracked, but do not surface old untracked diagnostic result dumps.
+experiments/exp_2026_06_07_all_dataset_high_density_graph_verifier/result_*.json
+experiments/exp_2026_06_10_generic_graph_verifier/result_*.json
+experiments/exp_2026_06_22_descriptive_entity_precision_gate/result_*.json
+experiments/exp_2026_06_22_descriptive_entity_verifier/result_*.json
+experiments/exp_2026_06_22_shared_place_validator/result_*.json
+experiments/exp_2026_06_22_trace_error_diagnostics/result_*.json
+experiments/exp_2026_06_24_evo_emo_dual_confidence_selector/result_*.json
+
+# Bulky raw EvoEmo generated outputs captured near snapshots. Keep compact
+# result/eval/audit JSON files tracked instead.
+experiments/exp_*/snapshots/*/results/evo_emo_*.json

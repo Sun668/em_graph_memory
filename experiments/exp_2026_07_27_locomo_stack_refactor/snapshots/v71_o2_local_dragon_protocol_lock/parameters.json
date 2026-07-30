@@ -1,0 +1,52 @@
+{
+  "schema": "locomo_o2_local_dragon_protocol_lock_v1",
+  "snapshot": "v71_o2_local_dragon_protocol_lock",
+  "base_source_commit": "6ad8976",
+  "condition": {
+    "run_id": "formal_all10_O2_B_dragon_raw_minmax_top25_pending",
+    "scope": "all10",
+    "dataset": "data/locomo10.json",
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "sample_count": 10,
+    "qa_count": 1986,
+    "variant": "B",
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "extract_model": "gpt-3.5-turbo",
+    "embedding_model": "dragon",
+    "query_encoder": "facebook/dragon-plus-query-encoder",
+    "context_encoder": "facebook/dragon-plus-context-encoder",
+    "embedding_normalization": "none_float32_v1",
+    "similarity": "raw_dot_product",
+    "semantic_score_normalization": "query_local_minmax_v1",
+    "equal_score_policy": "all_zero",
+    "answer_model": "gpt-3.5-turbo",
+    "comparison_scope": "local_dragon_stack_diagnostic",
+    "official_comparison_eligible": false
+  },
+  "artifact_policy": {
+    "existing_graph_count": 70,
+    "existing_memory_index_count": 30,
+    "old_artifacts_may_be_deleted": false,
+    "old_artifacts_may_be_overwritten": false,
+    "old_artifacts_may_be_rebuilt": false,
+    "expected_new_graph_count": 0,
+    "maximum_expected_new_memory_index_count": 10,
+    "query_artifact": "new_absent_path_raw_dragon_role_query",
+    "formal_output": "new_absent_condition_directory"
+  },
+  "claim_policy": {
+    "official_o1_reproduced": false,
+    "official_table_controlled_comparison_allowed": false,
+    "o2_is_diagnostic_only": true,
+    "post_result_tuning_allowed": false
+  },
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false
+}

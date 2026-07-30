@@ -1,0 +1,52 @@
+{
+  "experiment": "exp_2026_07_27_locomo_stack_refactor",
+  "result_type": "source_refactor_validation",
+  "metric_bearing": false,
+  "official_upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "em_graph_version": "0.4.0",
+  "validation": {
+    "refactor_tests_passed": 14,
+    "normalization_datetime_tests_passed": 17,
+    "syntax_check": "pass",
+    "active_duplicate_locomo_metric_functions": 0,
+    "dependency_boundary": "pass",
+    "prompt_scaffold_chars": 2410,
+    "prompt_budget_limit_chars": 5000
+  },
+  "full_dataset_construction_audit": {
+    "samples": 10,
+    "dialogs": 5882,
+    "dialog_sessions": 272,
+    "datetime_keys": 288,
+    "directed_memory_sequence_edges": 11744,
+    "a_memory_only_nodes": 5882,
+    "a_memory_only_entity_nodes": 0,
+    "a_and_b_share_embedding_identity": true,
+    "extraction_input_matches_normalized_text_plus_optional_blip_caption": true,
+    "query_serialized_to_memory_node": false,
+    "img_url_serialized_to_memory_node": false
+  },
+  "mandatory_graph_constraint": {
+    "status": "pass",
+    "graph_inputs": [
+      "session date_time",
+      "dialog id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "excluded": [
+      "query",
+      "img_url",
+      "QA questions",
+      "QA answers",
+      "QA evidence",
+      "QA categories",
+      "judge outputs",
+      "previous predictions",
+      "question-driven ledgers"
+    ],
+    "answer_recall": "graph retrieval through EMGraphRecall"
+  },
+  "qa_metric_result": null
+}

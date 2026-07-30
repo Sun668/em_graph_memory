@@ -1,0 +1,24 @@
+{
+  "schema": "research-experiment-progress-v1",
+  "status": "frozen_progress",
+  "snapshot_id": "v94_v93_graph_index_progress_question_authorization",
+  "created_at": "2026-07-30T08:01:07+08:00",
+  "parent_run": "v93_primary_b_staged_cold_warm_cost",
+  "parameter_snapshot": "../v93_primary_b_staged_cold_warm_cost/parameters.json",
+  "parameter_snapshot_sha256": "530eefcea86d5374f3898a1bc744186d46a60d959abdd53fa6517c6b914a8581",
+  "source_commit": "ccb9c6ab30c8a6b720d5c7ec1546f8bc25ee870e",
+  "checkpoint": {
+    "path": "outputs/locomo_cost/primary_b_v93_checkpoint.json",
+    "sha256": "6df60009ff93d16a6c2d63fa1d290684fddec4127814880f04c97033f5e43081",
+    "bytes": 31300
+  },
+  "cache": {
+    "path": "outputs/locomo_cost/primary_b_v93_cache",
+    "file_count": 21,
+    "bytes": 54033630,
+    "tree_manifest_sha256": "d121ed0b7a23d1c4067ad94f5b5b02b1578b11b1cdb8de143553fc715b94556a",
+    "hash_method": "Sort regular files by POSIX relative path; append relative_path, NUL, byte_count, NUL, file_sha256, newline to SHA-256."
+  },
+  "continuation_allowed": true,
+  "continuation_condition": "Explicit user authorization to send QA question text to the configured external model solely for retrieval-time question Entity extraction."
+}

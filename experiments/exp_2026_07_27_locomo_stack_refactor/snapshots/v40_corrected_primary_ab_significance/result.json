@@ -1,0 +1,170 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v40_corrected_primary_ab_significance",
+  "result_type": "formal_corrected_primary_ab_significance",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "analysis_source_commit": "01988bef65315f9ac5d583c863d702d5b274f61a",
+  "analysis_source_tree": "8c41ccb3c22dc358cf009c14d6a49bdd13f0be82",
+  "analysis_source_sha256": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "qa_count": 1986,
+  "category5_count": 446,
+  "seed": 20260727,
+  "resamples": 10000,
+  "conditions": {
+    "a": {
+      "run_id": "formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+      "source_commit": "76fcf5b68998622012371a704c703c3004414224",
+      "condition_fingerprint": "efd263c3904669977c43dc154197bb942576378d7c2036fb26731d0d5f11739b",
+      "prediction_sha256": "0c843b7f921ceea50c07bc6bb14751446f2066909c807df528ee66ff1aa9579c",
+      "stats_sha256": "203f30b12406a9c033308757987003c4ef98ad3588cf1f3aadce1127d361663c",
+      "relocation_manifest_sha256": "9c65b3de51b9e80131570196ce499db8459099323acef181d5ccd3417c5b2672",
+      "source_snapshot_result_sha256": "5e114d1eb5ca40600ec7bdea8be26e5c5d7b203446ba3da5005e12810b858a56",
+      "validation": "pass"
+    },
+    "b": {
+      "run_id": "formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+      "source_commit": "41a78125d640d5ebb127d1cb817843b4eef35a8b",
+      "condition_fingerprint": "9cb8c2991f51ab6085a68914fdaae42f4ad67d8cdf274bdd8dc359ba1a3c2782",
+      "prediction_sha256": "9dcde0e2f993b1a0199a7e17ccb66a4b307e7355ba7b60aff139ade792c75069",
+      "stats_sha256": "6a7ae63b72db737353b1c5a2f9ae5171090324ec3efa05ffb3022c2571d8b3de",
+      "relocation_manifest_sha256": null,
+      "validation": "pass"
+    }
+  },
+  "source_parity": {
+    "compared_commits": [
+      "76fcf5b68998622012371a704c703c3004414224",
+      "41a78125d640d5ebb127d1cb817843b4eef35a8b"
+    ],
+    "scoped_paths": [
+      "code/em_graph",
+      "code/locomo_eval",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/run.py",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/significance_report.py",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/validate_formal_result.py"
+    ],
+    "diff": "empty",
+    "behavior_source_parity": "pass"
+  },
+  "overall": {
+    "f1": {
+      "a": 0.4206812688821752,
+      "b": 0.4256797583081571,
+      "difference": 0.004998489425981873,
+      "paired_qa_ci95": [
+        -0.005744536757301109,
+        0.015514274924471296
+      ],
+      "paired_qa_p": 0.36196380361963804,
+      "cluster_ci95": [
+        -0.0017733701003778482,
+        0.01271109581051973
+      ],
+      "cluster_p": 0.17118288171182883,
+      "significant": false
+    },
+    "recall_at_25": {
+      "a": 0.7974682779456193,
+      "b": 0.8448423967774421,
+      "difference": 0.04737411883182276,
+      "paired_qa_ci95": [
+        0.03650392749244714,
+        0.05842503776435046
+      ],
+      "paired_qa_p": 0.00019998000199980003,
+      "cluster_ci95": [
+        0.03528610503282276,
+        0.06012371431583468
+      ],
+      "cluster_p": 0.00019998000199980003,
+      "significant": true
+    }
+  },
+  "categories_1_to_4_local": {
+    "qa_count": 1540,
+    "f1": {
+      "a": 0.5126448051948053,
+      "b": 0.5197402597402597,
+      "difference": 0.007095454545454545,
+      "paired_qa_ci95": [
+        -0.004533198051948052,
+        0.01875079545454545
+      ],
+      "paired_qa_p": 0.22797720227977203,
+      "cluster_ci95": [
+        -0.0011664832017816054,
+        0.015872981948278155
+      ],
+      "cluster_p": 0.096990300969903,
+      "significant": false
+    },
+    "recall_at_25": {
+      "a": 0.8280987012987012,
+      "b": 0.8502318181818181,
+      "difference": 0.02213311688311688,
+      "paired_qa_ci95": [
+        0.012388879870129871,
+        0.031966298701298704
+      ],
+      "paired_qa_p": 0.00019998000199980003,
+      "cluster_ci95": [
+        0.013107444849748134,
+        0.030733567100560764
+      ],
+      "cluster_p": 0.00019998000199980003,
+      "significant": true
+    },
+    "status": "local non-official diagnostic"
+  },
+  "category_differences": {
+    "1": {"qa": 282, "f1": 0.01767375886524823, "recall_at_25": 0.019333333333333334},
+    "2": {"qa": 321, "f1": -0.004398753894080998, "recall_at_25": -0.0005202492211838007},
+    "3": {"qa": 96, "f1": -0.009302083333333334, "recall_at_25": 0.06909375000000001},
+    "4": {"qa": 841, "f1": 0.009807372175980973, "recall_at_25": 0.02635790725326992},
+    "5": {"qa": 446, "f1": -0.002242152466367713, "recall_at_25": 0.13452914798206278}
+  },
+  "per_conversation_differences": {
+    "conv-26": {"qa": 199, "f1": 0.029311557788944724, "recall_at_25": 0.06448743718592966},
+    "conv-30": {"qa": 105, "f1": -0.00008571428571428474, "recall_at_25": 0.09682857142857143},
+    "conv-41": {"qa": 193, "f1": -0.004678756476683941, "recall_at_25": 0.020295336787564768},
+    "conv-42": {"qa": 260, "f1": 0.008853846153846155, "recall_at_25": 0.0703},
+    "conv-43": {"qa": 242, "f1": 0.0008057851239669415, "recall_at_25": 0.01928512396694215},
+    "conv-44": {"qa": 158, "f1": 0.008879746835443039, "recall_at_25": 0.060651898734177215},
+    "conv-47": {"qa": 190, "f1": -0.011694736842105261, "recall_at_25": 0.04123157894736842},
+    "conv-48": {"qa": 239, "f1": 0.0005146443514644361, "recall_at_25": 0.037799163179916315},
+    "conv-49": {"qa": 196, "f1": 0.020760204081632653, "recall_at_25": 0.04177551020408163},
+    "conv-50": {"qa": 204, "f1": -0.0042352941176470585, "recall_at_25": 0.04698039215686274}
+  },
+  "reproducibility": {
+    "report_path": "outputs/locomo_analysis/corrected_m1_ab_01988be_seed20260727_10000.json",
+    "report_sha256": "00f9c345131032141a18066ea2f756603cdfe1110e0ea6fe158f8cd498aa05ee",
+    "report_fingerprint": "f64861bd70a6e6321cf2bcabb9028173f4d70de94ef18b1ade3aff518ed97db4",
+    "independent_rerun_sha256": "00f9c345131032141a18066ea2f756603cdfe1110e0ea6fe158f8cd498aa05ee",
+    "byte_identical_rerun": true
+  },
+  "metric_logic": {
+    "source": "immutable official per-row serialized F1 and recall values",
+    "metric_recalculation": false,
+    "empty_evidence_policy": "recall contribution zero while retaining all rows in the denominator",
+    "empty_evidence_rows_per_condition": 4,
+    "official_stats_parity": "pass",
+    "judge": null
+  },
+  "compliance": {
+    "mandatory_graph_constraint": "pass",
+    "prompt_budget_a": "0/5000 pass",
+    "prompt_budget_b": "2410/5000 pass",
+    "frozen_evaluator_changed": false,
+    "experiment_tests_passed": 75,
+    "vendor_hashes_passed": 16,
+    "frozen_evaluator_worktree": "clean",
+    "external_model_calls_for_analysis": 0
+  },
+  "claim": "statistically significant Recall@25 improvement; no statistically significant overall F1 improvement",
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v40, then run B_gate, B_gate_seq, B_entity, and B_noseq in the predeclared order"
+}

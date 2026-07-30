@@ -1,0 +1,92 @@
+{
+  "schema": "locomo_snapshot_result_v1",
+  "snapshot": "v67_b_sequence_scale025_all10",
+  "result_type": "formal_all10_sequence_scale_sensitivity",
+  "status": "pass",
+  "paper_metric_eligible": true,
+  "graph_claim_eligible": true,
+  "run_id": "formal_all10_M6_B_seq025_top25_73848da_qfrozen_run01",
+  "source_commit": "73deddcb7341e344698f4e2d80f86d75666d9879",
+  "source_tree": "5111cc2e9bddac86f4126defc3d2dc3a250c369c",
+  "parameter_sha256": "5e76502e2729b28f2291078692212e0bcf82287acd280e6fafce7857ed239363",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "counts": {"conversations": 10, "qa": 1986, "category5": 446},
+  "retrieval": {
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "sequence_secondary_scale": 0.25
+  },
+  "metrics": {
+    "official_f1": 0.4251500503524672,
+    "official_recall_acc": 0.8410216515609265,
+    "local_categories_1_4_f1": 0.5210051948051948,
+    "local_categories_1_4_recall_acc": 0.8492006493506493
+  },
+  "comparison_vs_primary_b": {
+    "f1_difference": -0.0005297079556898293,
+    "f1_paired_qa_ci95": [-0.008422482376636455, 0.007340949144008056],
+    "f1_conversation_cluster_ci95": [-0.007099924200942659, 0.005919697353315473],
+    "recall_difference": -0.0038207452165156092,
+    "recall_paired_qa_ci95": [-0.008662374118831823, 0.000986442598187311],
+    "recall_conversation_cluster_ci95": [-0.009318856514568444, 0.0014838069121229892],
+    "multiplicity_status": "raw comparison; preregistered sequence-family Holm report pending",
+    "interpretation": "No supported overall F1 or evidence-recall change relative to primary B."
+  },
+  "graph": {
+    "memory_nodes": 5882,
+    "entity_nodes": 12808,
+    "entity_memory_edges": 36227,
+    "memory_sequence_edges": 11744,
+    "mandatory_graph_constraint": "pass",
+    "construction_inputs": "conversation session anchors, dialog ids, speakers, normalized/time-annotated dialog text, and official captions only",
+    "qa_derived_construction_inputs": 0
+  },
+  "cache_audit": {
+    "old_artifacts_deleted": 0,
+    "old_artifacts_overwritten": 0,
+    "graph_files_before": 70,
+    "graph_files_after": 70,
+    "memory_indexes_before": 30,
+    "memory_indexes_after": 30,
+    "new_graph_builds": 0,
+    "new_entity_extraction_requests": 0,
+    "new_memory_embedding_requests": 0,
+    "new_query_entity_requests": 0,
+    "query_hits": 1997,
+    "query_misses": 0,
+    "live_query_embedding_requests": 0
+  },
+  "cost": {
+    "retrieval_wall_seconds": 25.520378846998646,
+    "answer_wall_seconds": 2004.9116180130013,
+    "answer_requests": 1986,
+    "answer_input_tokens": 2748009,
+    "answer_input_tokens_max": 3500000,
+    "answer_output_tokens": 16242,
+    "monetary_cost": "unknown"
+  },
+  "validation": {
+    "in_run": "pass",
+    "independent": "pass",
+    "tests": "80/80",
+    "vendor_hashes": "16/16",
+    "frozen_evaluator_diff": "clean",
+    "resource_gate": "pass",
+    "prompt_budget": "2410/5000",
+    "significance_reproduction": "byte-identical"
+  },
+  "artifact_hashes": {
+    "prediction": "5b314987bc0bfb44e49b8dabf9e3dd473228bf47a12d44061f2084a23dd43649",
+    "stats": "190cd51cd30a188512c340beb07765e288372f7bb0589ce9d7311782ae49d6c6",
+    "audit": "fe69c23ce36ab514435944f537c64f050c44ca545b901d5225a4b0ca0246deb9",
+    "query_usage": "c3b2800bc11c157de809415f6d8f64c4727229f5e478f8f1e0b4e1a97ebcfc13",
+    "in_run_validation": "9d74cc1e2a27dcd9aba859538cfe8927f3ec86c4e2fdb5ada0c4cfeb323fa559",
+    "independent_validation": "c9aaf97f7406610970d6009d00fde8d343b5c443b9cc735f1bfb24580ef2a4e6",
+    "significance_report": "cfc1ab6c05ac72a10747d67bd179ef4142dc19845fc70231951a0a5fb501f37b"
+  },
+  "claim": "At top-k 25, reducing sequence-neighbor scale from 0.50 to 0.25 produces no statistically supported overall F1 or evidence-recall change before family correction.",
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v67, then freeze and run the preregistered sequence scale 1.0 condition"
+}

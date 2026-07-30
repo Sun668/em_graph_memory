@@ -1,0 +1,55 @@
+{
+  "schema": "research-claim-evidence-v1",
+  "claim_level": "robust",
+  "claim": "On the ten-conversation LoCoMo evaluation set, complete conversation-built Entity-Memory retrieval improves official evidence recall over a matched dense Memory control across preregistered top-k values 5, 10, 25, and 50, while no overall final-answer F1 advantage is established.",
+  "result_status": "valid",
+  "validation_status": "pass",
+  "snapshot_complete": true,
+  "statistical_evidence": "pass",
+  "isolating_controls": "pass",
+  "robustness": "pass",
+  "generalization": "fail",
+  "official_comparability": "fail",
+  "cost_reported": true,
+  "project_final_gate": "pass_for_journal_neutral_drafting",
+  "scope": {
+    "dataset": "data/locomo10.json",
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "conversations": 10,
+    "qa": 1986,
+    "cutoffs": [
+      5,
+      10,
+      25,
+      50
+    ],
+    "estimators": [
+      "paired-QA bootstrap",
+      "whole-conversation cluster bootstrap"
+    ],
+    "resamples": 10000,
+    "seed": 20260727
+  },
+  "evidence": [
+    "snapshots/v40_corrected_primary_ab_significance/result.json",
+    "snapshots/v55_b_top5_all10/result.json",
+    "snapshots/v57_b_top10_all10/result.json",
+    "snapshots/v60_b_top50_all10/result.json",
+    "snapshots/v46_component_family_significance/result.json",
+    "snapshots/v52_input_family_significance/result.json",
+    "snapshots/v53_b_no_speaker_all10/result.json",
+    "snapshots/v66_fusion_family_significance/result.json",
+    "snapshots/v70_sequence_family_significance/result.json",
+    "snapshots/v97_v93_complete_cold_warm_cost/result.json"
+  ],
+  "limitations": [
+    "The evidence covers one ten-conversation LoCoMo dataset and does not establish cross-dataset generalization.",
+    "Overall final-answer F1 differences between complete B and matched A are not statistically supported.",
+    "The official DRAGON reproduction gate failed; the local DRAGON condition is diagnostic only.",
+    "Monetary cost is not reported because provider pricing was not frozen.",
+    "The answer provider did not return a separately recorded actual-model identity in the formal snapshots; the requested model was gpt-3.5-turbo.",
+    "Category 5 retains the frozen upstream unseeded option-order behavior.",
+    "Cold/warm latency was measured on one machine and one provider endpoint."
+  ],
+  "decision": "proceed_to_journal_neutral_manuscript"
+}

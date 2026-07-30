@@ -1,0 +1,217 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "v90_primary_b_staged_cold_warm_cost",
+  "created_at": "2026-07-29T23:52:25+08:00",
+  "source": {
+    "commit": "08aaaa7",
+    "tree": "a674ef576779e60af3d8220c3796c3075f835910",
+    "dirty": false,
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py",
+    "runner_sha256": "435f95b8feebad1a7a41bbf597c7792b8790fa36f7e6d015764b21b6e7f45e91",
+    "reporter_sha256": "16e382e92e35a892340085f82a8652a636b478a17132211bbd862298e870ff60",
+    "telemetry_sha256": "efc96cdba362771556b82072a2632e01a8549203be1f593832381ce0b55b40a6",
+    "common_llm_sha256": "9437b44cfac362e72b11b98936b909386b713cc8f888d132529198d48ea0e959",
+    "embedding_index_sha256": "2b88180e89f130b3f564537a4ca0aa11144ed04ea0bb5d43cad2ec0eb42bb2d6"
+  },
+  "hypothesis": {
+    "primary": "For the complete primary B@25 pipeline, a fresh graph/cache root incurs conversation Entity extraction, Memory embedding, question Entity extraction, and retrieval cost; an immediate warm replay incurs zero new provider requests before the reused cache-independent answer stage.",
+    "control": "Cold and warm use identical all-10 data, graph profile, retrieval parameters, read-only query vectors, and matched formal query-lookup behavior.",
+    "measurement_repair": "v89 permits legitimate repeated read-only query-vector lookups inside semantic fill and binds the matched formal B@25 query usage at exactly 1,997 hits per state.",
+    "metric_bearing": false,
+    "paper_evidence_type": "publication cost and latency evidence"
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "scope": "all10",
+    "conversations": 10,
+    "dialog_bearing_sessions": 272,
+    "memory_nodes": 5882,
+    "qa": 1986,
+    "unique_questions": 1974,
+    "order": "file order; no sample or category filter; no random seed"
+  },
+  "operation_plan": {
+    "total": 128,
+    "per_state": {
+      "graphs": 10,
+      "memory_indexes": 10,
+      "retrieval_batches": 44,
+      "retrieval_qa": 1986
+    },
+    "retrieval_batch_size": 50,
+    "states": [
+      "cold",
+      "warm"
+    ],
+    "conversation_order": [
+      "conv-26",
+      "conv-30",
+      "conv-41",
+      "conv-42",
+      "conv-43",
+      "conv-44",
+      "conv-47",
+      "conv-48",
+      "conv-49",
+      "conv-50"
+    ]
+  },
+  "graph": {
+    "variant": "B",
+    "memory_only": false,
+    "use_caption": true,
+    "use_time_annotations": true,
+    "add_speaker_as_entity": true,
+    "inputs": [
+      "session date_time",
+      "dia_id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "excluded": [
+      "QA question",
+      "QA answer",
+      "QA evidence",
+      "QA category",
+      "judge output",
+      "previous prediction",
+      "question-driven ledger"
+    ],
+    "extract_model": "gpt-3.5-turbo",
+    "extract_role": "user",
+    "extract_temperature": 0.3,
+    "extract_max_tokens": 2500,
+    "extract_scaffold_chars": 2410,
+    "prompt_limit_chars": 5000,
+    "normalization": "extract-v4 normalization, case-insensitive Entity deduplication, append-only supported relative-time annotations"
+  },
+  "retrieval": {
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "semantic_score_normalization": "none",
+    "signed_semantic_scores": true,
+    "expand_sequence": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "fallback": "preserve gated results, then semantic full-pool fill to exact top-k",
+    "tie_breaking": "descending fused score, then dialog id"
+  },
+  "models": {
+    "conversation_entity": "gpt-3.5-turbo",
+    "question_entity": "gpt-3.5-turbo",
+    "memory_embedding": "text-embedding-3-small",
+    "query_embedding": "read-only text-embedding-3-small artifact",
+    "answer": "gpt-3.5-turbo from reused matched formal telemetry; no new answer calls",
+    "judge": "not applicable"
+  },
+  "formal_inputs": {
+    "query_artifact": {
+      "path": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+      "sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+      "schema": "query_embedding_artifact_v1",
+      "model": "text-embedding-3-small",
+      "role": "context",
+      "normalization": "l2_float32_v1",
+      "qa_count": 1986,
+      "unique_question_count": 1974,
+      "dimension": 1536
+    },
+    "query_usage": {
+      "path": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/query_cache_usage.json",
+      "sha256": "c3b2800bc11c157de809415f6d8f64c4727229f5e478f8f1e0b4e1a97ebcfc13",
+      "schema": "query_embedding_usage_v1",
+      "qa_count": 1986,
+      "required_lookup_count": 1986,
+      "lookup_count_per_state": 1997,
+      "cache_hits_per_state": 1997,
+      "cache_misses_per_state": 0,
+      "live_requests_per_state": 0
+    },
+    "warm_answer_events": {
+      "path": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json",
+      "sha256": "7ea432e10901997a39c51b0711c17e436d6a718bcd53a51991d82885b2c628b4",
+      "answer_requests": 1986,
+      "input_tokens": 2744099,
+      "output_tokens": 16269,
+      "temperature": 0,
+      "max_tokens": 32,
+      "batch_size": 1,
+      "message_role": "system"
+    }
+  },
+  "caches": {
+    "checkpoint": "outputs/locomo_cost/primary_b_v90_checkpoint.json",
+    "root": "outputs/locomo_cost/primary_b_v90_cache",
+    "events": "outputs/locomo_cost/primary_b_v90_events.json",
+    "report": "outputs/locomo_cost/primary_b_v90_report.json",
+    "all_absent_at_freeze": true,
+    "memory_text_cache": false,
+    "strict_query_artifact": true,
+    "warm_reuses_only_v90_cold_cache": true,
+    "interruption_rule": "Any persisted in_progress invalidates v90 and requires a new run id.",
+    "quarantined_read_only": [
+      "outputs/locomo_cost/primary_b_v77_cache",
+      "outputs/locomo_cost/primary_b_v79_cache",
+      "outputs/locomo_cost/primary_b_v83_cache",
+      "outputs/locomo_cost/primary_b_v86_cache",
+      "outputs/locomo_cost/primary_b_v86_checkpoint.json"
+    ]
+  },
+  "environment": {
+    "timezone": "Asia/Shanghai",
+    "EM_GRAPH_MAX_WORKERS": 8,
+    "effective_graph_extract_workers": 6,
+    "EM_GRAPH_EMBED_WAIT_seconds": 0.05,
+    "PYTHONPYCACHEPREFIX": "/private/tmp/graph_memory_pycache",
+    "http_proxy_https_proxy": "unset for paid steps",
+    "source_must_be_clean": true,
+    "external_authorization": "AGENTS.md authorization for conversation-derived prompts"
+  },
+  "limits": {
+    "wall_seconds_max_total": 21600,
+    "single_transaction_target_seconds_max": 600,
+    "cache_bytes_max": 300000000,
+    "cold_conversation_entity_requests_max": 5882,
+    "cold_question_entity_requests_max": 1974,
+    "cold_memory_embedding_requests_max": 600,
+    "cold_chat_input_tokens_max": 10000000,
+    "cold_chat_output_tokens_max": 5000000,
+    "cold_embedding_input_tokens_max": 1000000,
+    "warm_new_provider_requests_max": 0,
+    "monetary_limit": "unknown provider price; exact provider usage is measured"
+  },
+  "gates": {
+    "preflight": [
+      "clean committed source at 08aaaa7",
+      "104/104 current experiment tests",
+      "16/16 frozen evaluator hashes",
+      "dataset, query artifact, formal query usage, and warm answer SHA exact",
+      "all four v90 targets absent",
+      "one live chat call with provider tokens",
+      "one live embedding call with observer/native parity"
+    ],
+    "runtime": [
+      "128 unique operations; no persisted in_progress",
+      "positive cold Entity, Memory embedding, and question Entity provider usage",
+      "10 graphs, 10 indexes, 1986 ordered and 1974 raw question-cache entries",
+      "each retrieval batch has hits >= QA, zero miss, zero live query embedding",
+      "cold and warm each total exactly 1997 query hits",
+      "warm Entity, embedding, and question Entity requests are all zero"
+    ],
+    "postrun": [
+      "strict cost report validation",
+      "independent byte-identical report reproduction",
+      "old/quarantined SHA identities unchanged",
+      "graph constraint and prompt budget pass",
+      "complete result snapshot, commit, and push"
+    ]
+  }
+}

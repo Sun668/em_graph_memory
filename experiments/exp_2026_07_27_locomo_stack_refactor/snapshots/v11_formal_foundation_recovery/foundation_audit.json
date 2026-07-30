@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "snapshot_type": "source_recovery",
+  "base_commit": "cad7bca7103c1ea9189e94725c8798a47711b35c",
+  "base_tree": "2cc898579921ce51b87a675e5f1d66f38604e1c0",
+  "worktree_clean_before_snapshot": true,
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74"
+  },
+  "locomo_eval": {
+    "uncommitted_changes": false,
+    "vendor_manifest": "code/locomo_eval/vendor/MANIFEST.sha256",
+    "vendor_manifest_sha256": "e65f16906ca342a6a81f626742a0461846a2477d2c0191352cfd47dd3d46035f",
+    "checked_vendor_files": 16,
+    "failed_vendor_files": 0,
+    "upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376"
+  },
+  "mandatory_graph_constraint": {
+    "applicable": false,
+    "reason": "source-only recovery snapshot; no graph or metric result"
+  },
+  "prompt_budget": {
+    "entity_extraction_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "pass": true,
+    "new_prompt_components": 0
+  },
+  "formal_output_isolation": {
+    "applicable": false,
+    "reason": "no metric-bearing condition executed"
+  },
+  "external_model_calls": 0,
+  "metric_claim": false
+}

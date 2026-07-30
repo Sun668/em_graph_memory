@@ -1,0 +1,99 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v28_m2_embed_dense_control_failure",
+  "result_type": "structural_ablation_control_failure",
+  "metric_bearing": true,
+  "accepted_ablation": false,
+  "decision_date": "2026-07-28",
+  "source_commit": "ceebbd5d64b06585cd837391cf5301ac9d3fc156",
+  "source_tree": "56f46efe1f7aebe2663b9e74fe1e66db28026289",
+  "condition": {
+    "run_id": "formal_all10_M2_embed_top25_ceebbd5_run01",
+    "variant": "B_embed",
+    "condition_fingerprint": "2c1f6b0ef302faabd7ecb84ce8a9f89afbb2a0e1f83d15ce129e8eba38081a5d",
+    "scope": "all10",
+    "top_k": 25,
+    "qa_count": 1986,
+    "category5_count": 446,
+    "prediction_sha256": "f3325dcb9359f47ef21d414eee2d0dbd27a5994ae6d2b0ba93b09acc7ba0d3e9",
+    "stats_sha256": "ff8056ae10a2285759023bf224b4a3d87b822213116c7f53df4c097f17bc6c60",
+    "audit_sha256": "31494a71d62e85da512811a4bf78934143c0f78d8a2a3c4b9331427c139ce871",
+    "validation_sha256": "c56c16cf5d480bc72d3a75bc999947d210c37282e301396406e79964805ab0bb",
+    "run_config_sha256": "b24cac97cbfe78a0a4582827b38aed1770740e8d64c1b59db9efd47d578c9877",
+    "cost_events_sha256": "4c7b9b3847ffb33ec27d9850de87a84563baacb62327c7c5820d1549334bc6d3",
+    "formal_validation": "pass"
+  },
+  "parameters": {
+    "extract_model": "gpt-3.5-turbo",
+    "embedding_model": "text-embedding-3-small",
+    "answer_model": "gpt-3.5-turbo",
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "force_full_pool": true,
+    "expand_sequence": false,
+    "sequence_secondary_scale": 0.5,
+    "answer_temperature": 0,
+    "answer_max_tokens": 32,
+    "answer_batch_size": 1
+  },
+  "diagnostic_metrics": {
+    "overall_f1_percent": 41.58766364551861,
+    "overall_recall_at_25_percent": 79.74682779456192,
+    "categories_1_4_f1_percent": 50.96954545454543,
+    "categories_1_4_recall_at_25_percent": 82.80987012987013
+  },
+  "dense_control": {
+    "gate": "per-QA ordered context ids exact equality",
+    "status": "fail",
+    "paired_rows": 1986,
+    "mismatched_rows": 61,
+    "same_set_different_order_rows": 51,
+    "different_set_rows": 10,
+    "per_conversation_mismatches": {
+      "conv-26": 0,
+      "conv-30": 2,
+      "conv-41": 11,
+      "conv-42": 6,
+      "conv-43": 10,
+      "conv-44": 6,
+      "conv-47": 8,
+      "conv-48": 8,
+      "conv-49": 10,
+      "conv-50": 0
+    },
+    "first_mismatch": {
+      "sample_id": "conv-30",
+      "qa_index": 10,
+      "reason": "order mismatch"
+    }
+  },
+  "root_cause": {
+    "kind": "stale whole-file text embedding cache lost update",
+    "independent_cache_instances": 10,
+    "instance_lock_scope": "per object only",
+    "dataset_question_lookups": 1986,
+    "current_cache_question_hits": 838,
+    "current_cache_question_misses": 1148,
+    "current_cache_total_vectors": 6707,
+    "current_query_vectors_matching_b_embed_order": 838,
+    "memory_embedding_indexes_equal_to_a": true,
+    "query_cache_hash_bound_in_run_config": false,
+    "query_embedding_requests_measured_by_cost_telemetry": false
+  },
+  "graph_constraint": "pass",
+  "frozen_locomo_eval_changed": false,
+  "prompt_budget": {
+    "scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "status": "pass"
+  },
+  "regression_tests": {
+    "passed": 62,
+    "failed": 0,
+    "vendor_manifest_files": 16,
+    "status": "pass"
+  },
+  "publication_gate": "stop_for_control_repair",
+  "paper_ready": false,
+  "next_action": "fix and bind the complete query embedding cache, then rerun matched A, B_embed, B, and primary significance before dependent ablations"
+}

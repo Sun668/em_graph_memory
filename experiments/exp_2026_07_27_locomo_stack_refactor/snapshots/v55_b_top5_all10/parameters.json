@@ -1,0 +1,261 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "formal_all10_M4_B_top5_dff9df4_qfrozen_run01",
+  "execution": {
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+    "run_class": "formal",
+    "scope": "all10",
+    "samples": [],
+    "variant": "B",
+    "top_k": 5,
+    "data_file": "data/locomo10.json",
+    "cache_dir": "outputs/em_graph",
+    "output_root": "outputs/locomo_formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_M4_B_top5_dff9df4_qfrozen_run01",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "models": {
+      "extraction": "gpt-3.5-turbo",
+      "embedding": "text-embedding-3-small",
+      "answer": "gpt-3.5-turbo"
+    },
+    "retrieval_overrides": {}
+  },
+  "hypothesis": {
+    "causal_question": "Does complete Entity-Memory B retain a retrieval advantage over pure-Memory A when both use the preregistered top_k=5 context budget?",
+    "control": "Validated v54 A@5 using the exact same Memory text/index and immutable question-vector artifact.",
+    "treatment": "B@5 adds the complete conversation-extracted Entity graph, 0.30/0.70 Entity/semantic fusion, and sequence expansion while keeping top_k=5.",
+    "primary_cutoff": "Top_k=25 remains primary; top_k=5 is robustness evidence and will not replace it.",
+    "expected_direction": "B may retain more evidence at the smaller context budget; preserve favorable, null, or unfavorable results."
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "order": "All 10 conversations and all 1,986 QA rows in immutable order; 446 Category-5 rows; no category filter."
+  },
+  "sampling": {
+    "population": "LoCoMo-10 bundled formal dataset",
+    "sample_unit": "QA row nested in conversation",
+    "conversation_ids": [
+      "conv-26",
+      "conv-30",
+      "conv-41",
+      "conv-42",
+      "conv-43",
+      "conv-44",
+      "conv-47",
+      "conv-48",
+      "conv-49",
+      "conv-50"
+    ],
+    "qa_count": 1986,
+    "category5_count": 446,
+    "random_subsampling": false
+  },
+  "preprocessing": {
+    "conversation_inputs": [
+      "session date_time anchors",
+      "dialog ids",
+      "speakers",
+      "time-annotated dialog text",
+      "official blip_caption"
+    ],
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    },
+    "forbidden_construction_inputs": [
+      "QA questions",
+      "QA answers",
+      "QA evidence annotations",
+      "QA category labels",
+      "judge outputs",
+      "previous predictions",
+      "question-driven ledgers"
+    ]
+  },
+  "models": {
+    "extraction": {
+      "requested": "gpt-3.5-turbo",
+      "effective_use": "conversation-only Entity extraction already materialized in the exact complete-B graphs; no extraction request is permitted",
+      "provider_version": "unknown"
+    },
+    "embedding": {
+      "requested": "text-embedding-3-small",
+      "role": "context for the exact complete-B/A Memory indexes and immutable question vectors",
+      "dimension": 1536,
+      "provider_version": "unknown"
+    },
+    "answer": {
+      "requested": "gpt-3.5-turbo",
+      "provider_version": "unknown"
+    },
+    "judge": {
+      "status": "not-applicable",
+      "reason": "Formal LoCoMo uses frozen official F1 and recall_acc."
+    }
+  },
+  "prompts": {
+    "entity_extraction_scaffold_chars": 2410,
+    "non_data_prompt_limit_chars": 5000,
+    "entity_extraction_unit": "one normalized conversation Memory text at a time, including caption; already cached in the exact complete-B graph",
+    "entity_schema": "normalized, merged, deduplicated, filtered Entity keys linked to Memories, including deterministic speaker Entity incidence",
+    "answer_prompt": "Frozen vendored LoCoMo QA prompt through QARecall.",
+    "answer_message_role": "system",
+    "prompt_changes": false
+  },
+  "training": {
+    "status": "not-applicable",
+    "reason": "The active LoCoMo stack is inference-only."
+  },
+  "retrieval": {
+    "query": "Complete QA question plus physically separate cached question Entities; immutable query embedding artifact is read-only.",
+    "variant": "B",
+    "rag_mode": "dialog",
+    "top_k": 5,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "expand_sequence": true,
+    "force_full_pool": false,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "score_version": "signed_cosine_gated_dense_fill_topk_v2",
+    "tie_breaking": "Committed stable gated, fused, sequence-expanded, dense-fill ordering.",
+    "fallback": "Dense semantic fill returns exactly min(5, available Memories)."
+  },
+  "generation": {
+    "model": "gpt-3.5-turbo",
+    "message_role": "system",
+    "temperature": 0,
+    "max_completion_tokens": 32,
+    "batch_size": 1,
+    "retry_behavior": "Frozen common client behavior at committed source.",
+    "category5_option_order": "Unchanged unseeded upstream random.random() behavior.",
+    "resume": false,
+    "overwrite": false
+  },
+  "evaluation": {
+    "package": "Frozen code/locomo_eval at upstream commit 3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376.",
+    "primary_metrics": [
+      "Official LoCoMo overall/category F1",
+      "Official evidence recall_acc at top_k=5"
+    ],
+    "secondary_diagnostics": [
+      "Local Categories 1-4 subset F1",
+      "Local Categories 1-4 subset recall_acc"
+    ],
+    "per_row_serialization": "Official three-decimal F1 and recall_acc fields.",
+    "aggregation": "Frozen official category-aware aggregation over 1,986 QA rows.",
+    "planned_comparisons": [
+      "B@5 minus validated v54 A@5 using paired-QA and conversation-cluster inference with 10,000 resamples and seed 20260727.",
+      "B@5 versus corrected B@25 as a within-method descriptive cutoff sensitivity result.",
+      "The complete robustness claim remains pending A/B at top_k=5, 10, 25, and 50; no cutoff will be selected after observing results."
+    ]
+  },
+  "randomness": {
+    "sampling_seed": "not-applicable",
+    "retrieval": "Deterministic for fixed artifacts and source.",
+    "answer_generation": "temperature=0; provider/backend nondeterminism remains possible.",
+    "category5": "Frozen upstream option order uses unseeded random.random().",
+    "future_inference_seed": 20260727,
+    "future_bootstrap_resamples": 10000,
+    "multiplicity": "Top-k is a preregistered robustness family; top_k=25 remains primary and other cutoffs are sensitivity evidence."
+  },
+  "caches": {
+    "artifact_root": "outputs/em_graph",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "query_coverage": "1,986 ordered QA rows / 1,974 unique questions; read-only; zero misses/live requests required.",
+    "graph_identity": "Exact complete-B Entity-Memory graph: caption, time annotation, and speaker Entity enabled; conversation hash and extractor identity unchanged.",
+    "memory_index_identity": "Exact complete-B/A canonical Memory search text and text-embedding-3-small index schema.",
+    "question_entity_identity": "Exact existing question-Entity cache protocol and question hashes; zero external query-Entity requests required.",
+    "reuse_requirement": "All ten complete-B graphs, all ten canonical Memory indexes, and all question/query artifacts must already exist and be reused read-only; no graph build, extraction, or Memory embedding request is allowed.",
+    "expected_counts": "Graph files remain 70; Memory indexes remain 30.",
+    "invalidation": "Changing top_k invalidates only retrieved context truncation, answers, metrics, and cutoff-specific statistics; it does not invalidate any graph, index, extraction, question, or query artifact.",
+    "deletion_policy": "Delete no existing graph, index, extraction, question, result, or query artifact; fail closed on mismatch."
+  },
+  "environment": {
+    "source_base_commit": "dff9df40dfd55ccbcb1a4ed687e297448d384771",
+    "source_base_tree": "28a561b8d09cab112f23ef024fad90d759b6357a",
+    "python": ".venv/bin/python",
+    "shell": "/bin/zsh",
+    "env_file": "env_gpt.sh",
+    "proxy": "http_proxy and https_proxy unset",
+    "python_pycache_prefix": "/private/tmp/graph_memory_pycache",
+    "timezone": "Asia/Shanghai"
+  },
+  "resources": {
+    "max_workers": 8,
+    "embedding_wait_seconds": 0.05,
+    "formal_answer_concurrency": 1,
+    "output_storage_limit_bytes": 100000000,
+    "condition_wall_time_limit_seconds": 7200
+  },
+  "cost_limits": {
+    "graph_build": {
+      "new_entity_extraction_requests_max": 0,
+      "new_memory_embedding_requests_max": 0,
+      "rationale": "No construction is required: top_k changes retrieval output length only and must reuse complete-B artifacts."
+    },
+    "formal_condition": {
+      "answer_requests_max": 1986,
+      "answer_input_tokens_max": 3500000,
+      "answer_output_tokens_max": 63552,
+      "live_query_embedding_requests_max": 0,
+      "query_entity_requests_max": 0
+    },
+    "monetary_limit": {
+      "status": "unknown",
+      "reason": "Provider price is not recorded; request/token ceilings bind."
+    }
+  },
+  "gates": {
+    "validity": [
+      "Clean committed worktree and frozen evaluator; all 16 vendor hashes pass.",
+      "Exact dataset and query-artifact SHA-256 match.",
+      "Condition directory absent at start; no resume or overwrite.",
+      "All ten complete-B Entity-Memory graphs and canonical Memory indexes resolve to pre-existing identities.",
+      "Zero graph construction, external extraction, Memory embedding, and query-Entity requests; exact artifacts reused read-only.",
+      "Old artifacts remain; graph count stays 70 and index count stays 30.",
+      "Both validators pass 10 conversations, 1,986 QA, and 446 Category-5 rows.",
+      "Zero query misses/live embeddings; graph constraint and prompt budget pass."
+    ],
+    "performance": "No early performance stop; preserve null or unfavorable B@5 results and complete the preregistered matched comparison.",
+    "stop_conditions": [
+      "Any validity gate failure, hidden resume, cache conflict, query miss, live embedding request, forbidden graph input, evaluator drift, or resource ceiling.",
+      "Any graph build, external Entity extraction, query-Entity extraction, or Memory index build request.",
+      "Ten consecutive Reader connection failures."
+    ],
+    "snapshot": "Freeze completed, partial, failed, or aborted evidence in v55 before affected source changes.",
+    "close": "Validate, compare against v54 A@5, update documents, and commit/push v55 before freezing A@10."
+  },
+  "unknowns": [
+    "Actual provider-resolved model version identifiers are not exposed.",
+    "Exact monetary price and host hardware identity are unavailable."
+  ],
+  "created_at": "2026-07-29T01:40:00+08:00",
+  "source": {
+    "base_commit": "dff9df40dfd55ccbcb1a4ed687e297448d384771",
+    "base_tree": "28a561b8d09cab112f23ef024fad90d759b6357a",
+    "worktree_clean_before_freeze": true
+  },
+  "binding": {
+    "command_sha256": "47fdfcaaa9f587557f157a1dfe4b89c532fc23a8f9162051070c0013aac65ce1",
+    "canonical_argv": [
+      "RESEARCH_RUN_CLASS=formal",
+      "RESEARCH_PARAMETER_SNAPSHOT=experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v55_b_top5_all10/parameters.json",
+      "RESEARCH_CONDITION_DIR=outputs/locomo_formal/formal_all10_M4_B_top5_dff9df4_qfrozen_run01",
+      "/bin/zsh",
+      "-lc",
+      "source ./env_gpt.sh; unset http_proxy https_proxy; export EM_GRAPH_EMBED_WAIT=0.05; export EM_GRAPH_MAX_WORKERS=8; export PYTHONPYCACHEPREFIX=/private/tmp/graph_memory_pycache; .venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py --run-id formal_all10_M4_B_top5_dff9df4_qfrozen_run01 --scope all10 --variant B --top-k 5 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --query-artifact outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz --cache-dir outputs/em_graph --output-root outputs/locomo_formal"
+    ],
+    "run_class": "formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_M4_B_top5_dff9df4_qfrozen_run01"
+  }
+}

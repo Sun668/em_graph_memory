@@ -1,0 +1,48 @@
+{
+  "schema": "research-manuscript-literature-build-result-v1",
+  "status": "pass",
+  "literature": {
+    "zotero_collection_key": "TNDVXSZ8",
+    "collection_readback": "20/20",
+    "primary_or_official_sources_verified": 20,
+    "bibliography_entries": 20,
+    "unique_citations": 20,
+    "missing_citations": 0,
+    "unused_bibliography_entries": 0
+  },
+  "pdf": {
+    "path": "outputs/paper/entity_memory_graph_retrieval_arxiv.pdf",
+    "sha256": "9c18b71dbac47aa8f56ca21a1e6008937836c6448e71d68ab6472a0129bacae6",
+    "bytes": 205059,
+    "pages": 8,
+    "paper_size_points": [612, 792],
+    "pdf_version": "1.7"
+  },
+  "validation": {
+    "latex_build": "pass",
+    "final_log_warnings": 0,
+    "undefined_citations": 0,
+    "undefined_references": 0,
+    "overfull_boxes": 0,
+    "text_extraction": "pass",
+    "visual_pages_inspected": [1, 2, 3, 4, 5, 6, 7, 8],
+    "clipping_or_overlap": false,
+    "tables_readable": true,
+    "figure_readable": true,
+    "bibliography_resolved": true,
+    "claim_evidence_audit": "pass"
+  },
+  "manuscript": {
+    "technical_paper_ready": true,
+    "arxiv_pdf_ready": true,
+    "identified_submission_ready": false,
+    "remaining_user_metadata": [
+      "author names",
+      "affiliations",
+      "author contact information",
+      "acknowledgments",
+      "funding and contribution statements"
+    ]
+  },
+  "decision": "deliver_verified_literature_pdf"
+}

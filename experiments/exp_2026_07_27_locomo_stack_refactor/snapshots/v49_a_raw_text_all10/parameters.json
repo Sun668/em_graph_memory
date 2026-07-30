@@ -1,0 +1,266 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "formal_all10_M3_A_raw_text_top25_57a5f28_qfrozen_run01",
+  "execution": {
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+    "run_class": "formal",
+    "scope": "all10",
+    "samples": [],
+    "variant": "A_raw_text",
+    "top_k": 25,
+    "data_file": "data/locomo10.json",
+    "cache_dir": "outputs/em_graph",
+    "output_root": "outputs/locomo_formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_M3_A_raw_text_top25_57a5f28_qfrozen_run01",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "models": {
+      "extraction": "gpt-3.5-turbo",
+      "embedding": "text-embedding-3-small",
+      "answer": "gpt-3.5-turbo"
+    },
+    "retrieval_overrides": {}
+  },
+  "hypothesis": {
+    "causal_question": "Does deterministic relative-time annotation in Memory text improve the pure dense Memory baseline under the frozen LoCoMo Reader and evaluator?",
+    "control": "Validated corrected A at top_k=25 with time annotations enabled.",
+    "treatment": "A_raw_text changes only use_time_annotations from true to false and rebuilds the dependent Memory graph and embedding indexes.",
+    "expected_direction": "Removing time annotations is expected to weakly reduce temporal retrieval and final F1, but the comparison remains descriptive until paired and conversation-cluster inference is run."
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "order": "All 10 conversations and all 1,986 QA rows in immutable dataset order; 446 Category-5 rows; no category filter."
+  },
+  "sampling": {
+    "population": "LoCoMo-10 bundled formal dataset",
+    "sample_unit": "QA row nested in conversation",
+    "scope": "all10",
+    "conversation_ids": [
+      "conv-26",
+      "conv-30",
+      "conv-41",
+      "conv-42",
+      "conv-43",
+      "conv-44",
+      "conv-47",
+      "conv-48",
+      "conv-49",
+      "conv-50"
+    ],
+    "qa_count": 1986,
+    "category5_count": 446,
+    "random_subsampling": false
+  },
+  "preprocessing": {
+    "conversation_inputs": [
+      "session date_time anchors",
+      "dialog ids",
+      "speakers",
+      "raw dialog text",
+      "official blip_caption"
+    ],
+    "dialog_text": "Raw utterance text without deterministic relative-time annotations.",
+    "normalization_protocol": "evidence_time_annotations_v1 implementation with auto_time_words=false.",
+    "graph_profile": {
+      "memory_only": true,
+      "use_caption": true,
+      "use_time_annotations": false,
+      "add_speaker_as_entity": true
+    },
+    "forbidden_construction_inputs": [
+      "QA questions",
+      "QA answers",
+      "QA evidence annotations",
+      "QA category labels",
+      "judge outputs",
+      "previous predictions",
+      "question-driven ledgers"
+    ]
+  },
+  "models": {
+    "extraction": {
+      "requested": "gpt-3.5-turbo",
+      "effective_use": "not used because A_raw_text is memory-only",
+      "provider_version": "unknown; not applicable to graph extraction in this condition"
+    },
+    "embedding": {
+      "requested": "text-embedding-3-small",
+      "role": "context for Memory indexes and immutable context-role question vectors",
+      "dimension": 1536,
+      "provider_version": "unknown"
+    },
+    "answer": {
+      "requested": "gpt-3.5-turbo",
+      "provider_version": "unknown"
+    },
+    "judge": {
+      "status": "not-applicable",
+      "reason": "Formal LoCoMo uses the frozen official F1 and recall_acc evaluator, not an LLM-as-Judge."
+    }
+  },
+  "prompts": {
+    "entity_extraction_scaffold_chars": 0,
+    "non_data_prompt_limit_chars": 5000,
+    "answer_prompt": "Frozen vendored LoCoMo QA prompt through the existing QARecall boundary.",
+    "answer_message_role": "system",
+    "prompt_changes": false
+  },
+  "training": {
+    "status": "not-applicable",
+    "reason": "The active LoCoMo stack is inference-only."
+  },
+  "retrieval": {
+    "query": "The complete current QA question.",
+    "variant": "A_raw_text",
+    "rag_mode": "dialog",
+    "top_k": 25,
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "expand_sequence": false,
+    "force_full_pool": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "score_version": "signed_cosine_gated_dense_fill_topk_v2",
+    "tie_breaking": "Committed stable full-pool signed-cosine ordering.",
+    "fallback": "Return exact top-k from the available Memory pool even when similarities are negative."
+  },
+  "generation": {
+    "model": "gpt-3.5-turbo",
+    "message_role": "system",
+    "temperature": 0,
+    "max_completion_tokens": 32,
+    "batch_size": 1,
+    "retry_behavior": "Frozen common client behavior at committed source.",
+    "category5_option_order": "Unchanged unseeded upstream random.random() behavior.",
+    "resume": false,
+    "overwrite": false
+  },
+  "evaluation": {
+    "package": "Frozen code/locomo_eval at upstream commit 3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376.",
+    "primary_metrics": [
+      "Official LoCoMo overall/category F1",
+      "Official evidence recall_acc at top_k=25"
+    ],
+    "secondary_diagnostics": [
+      "Local Categories 1-4 subset F1",
+      "Local Categories 1-4 subset recall_acc"
+    ],
+    "per_row_serialization": "Official three-decimal F1 and recall_acc fields.",
+    "aggregation": "Frozen official category-aware aggregation over 1,986 QA rows.",
+    "planned_comparison": "A_raw_text minus validated corrected A; paired-QA and conversation-cluster inference will be added only through the predeclared input-family report."
+  },
+  "randomness": {
+    "sampling_seed": {
+      "status": "not-applicable",
+      "reason": "No sampling; immutable all-10 order is used."
+    },
+    "retrieval": "Deterministic for fixed vectors and source.",
+    "answer_generation": "temperature=0, but provider/backend nondeterminism remains possible.",
+    "category5": "Frozen upstream option order uses unseeded random.random(); no local seed override is permitted.",
+    "future_inference_seed": 20260727,
+    "future_bootstrap_resamples": 10000
+  },
+  "caches": {
+    "artifact_root": "outputs/em_graph",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "query_coverage": "1,986 ordered QA rows / 1,974 unique questions; read-only; zero misses and zero live requests required.",
+    "graph_identity": "Memory-only, caption enabled, time annotations disabled, conversation hash, graph schema.",
+    "memory_index_identity": "Raw Memory search text, caption enabled, text-embedding-3-small, conversation hash, index schema.",
+    "question_entity_cache": {
+      "status": "not-applicable",
+      "reason": "A_raw_text forces the full Memory pool and performs no question-Entity extraction."
+    },
+    "invalidation": "Disabling time annotations invalidates A graph and Memory embedding identities, retrieved contexts, answers, and metrics; it does not invalidate the frozen question-vector artifact or the existing A result."
+  },
+  "environment": {
+    "source_base_commit": "57a5f286ddb2e12caf54615557f04fd68916f43b",
+    "python": ".venv/bin/python",
+    "shell": "/bin/zsh",
+    "env_file": "env_gpt.sh",
+    "proxy": "http_proxy and https_proxy unset",
+    "python_pycache_prefix": "/private/tmp/graph_memory_pycache",
+    "dependencies": "Committed project environment; exact versions captured by repository state and runtime artifacts where available.",
+    "timezone": "Asia/Shanghai"
+  },
+  "resources": {
+    "max_workers": 8,
+    "embedding_wait_seconds": 0.05,
+    "hardware": "local host; exact CPU/RAM unknown",
+    "formal_answer_concurrency": 1,
+    "output_storage_limit_bytes": 100000000,
+    "condition_wall_time_limit_seconds": 7200
+  },
+  "cost_limits": {
+    "graph_build": {
+      "embedding_requests_max": 700,
+      "embedding_input_tokens_max": 500000,
+      "entity_extraction_requests_max": 0
+    },
+    "formal_condition": {
+      "answer_requests_max": 1986,
+      "answer_input_tokens_max": 3500000,
+      "answer_output_tokens_max": 63552,
+      "live_query_embedding_requests_max": 0
+    },
+    "monetary_limit": {
+      "status": "unknown",
+      "reason": "The configured provider's current per-token price is not present in repository artifacts; token/request ceilings are the binding spend control."
+    }
+  },
+  "gates": {
+    "validity": [
+      "Clean committed worktree and frozen evaluator.",
+      "All 16 vendored hashes pass.",
+      "Exact dataset and query-artifact SHA-256 match.",
+      "A_raw_text graph/index caches exist under their own identity.",
+      "Condition directory is absent at start and used by exactly one resolved condition.",
+      "Both project and generic preflight gates pass.",
+      "In-run and independent formal validators pass 10 conversations, 1,986 QA, and 446 Category-5 rows.",
+      "Exactly 25 unique valid context ids per QA where available.",
+      "Query cache records zero misses and zero live query-embedding requests.",
+      "Mandatory conversation-only graph and graph-recall audits pass.",
+      "Prompt scaffold remains within 5,000 characters.",
+      "Frozen parameter snapshot SHA matches runtime handoff."
+    ],
+    "performance": "No early performance stop for this preregistered input ablation; preserve unfavorable or null outcomes. Interpret the raw-text effect descriptively until the paired input-family analysis is completed.",
+    "stop_conditions": [
+      "Any validity gate failure.",
+      "Any hidden resume, output reuse, cache conflict, query miss, or live query embedding request.",
+      "Any forbidden graph-construction input or frozen evaluator drift.",
+      "Cost or resource ceiling exceeded.",
+      "Ten consecutive Reader connection failures; freeze the failed state before retrying from a new run id and absent directory."
+    ],
+    "snapshot": "Freeze completed, partial, failed, or aborted evidence in v49_a_raw_text_all10 before any affected source change.",
+    "close": "Update README, conclusion, next_steps, PLAN, and TODO; commit and push scoped evidence before starting B_raw_text."
+  },
+  "unknowns": [
+    "Actual provider-resolved version identifiers for gpt-3.5-turbo and text-embedding-3-small are not exposed.",
+    "Exact monetary price is unavailable; request/token ceilings govern spend.",
+    "Exact host hardware identity is not currently recorded."
+  ],
+  "created_at": "2026-07-28T21:25:02.877857+08:00",
+  "source": {
+    "base_commit": "57a5f286ddb2e12caf54615557f04fd68916f43b",
+    "base_tree": "e2bdc63bfca3542dcc034513084adeded09baeb4",
+    "worktree_clean_before_freeze": true
+  },
+  "binding": {
+    "command_sha256": "2edd9c30d014be5512b4e85fd0868721fa217fe3ddf6596028b6e00976577e07",
+    "canonical_argv": [
+      "RESEARCH_RUN_CLASS=formal",
+      "RESEARCH_PARAMETER_SNAPSHOT=experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v49_a_raw_text_all10/parameters.json",
+      "RESEARCH_CONDITION_DIR=outputs/locomo_formal/formal_all10_M3_A_raw_text_top25_57a5f28_qfrozen_run01",
+      "/bin/zsh",
+      "-lc",
+      "source ./env_gpt.sh; unset http_proxy https_proxy; export EM_GRAPH_EMBED_WAIT=0.05; export EM_GRAPH_MAX_WORKERS=8; export PYTHONPYCACHEPREFIX=/private/tmp/graph_memory_pycache; .venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py --run-id formal_all10_M3_A_raw_text_top25_57a5f28_qfrozen_run01 --scope all10 --variant A_raw_text --top-k 25 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --query-artifact outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz --cache-dir outputs/em_graph --output-root outputs/locomo_formal"
+    ],
+    "run_class": "formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_M3_A_raw_text_top25_57a5f28_qfrozen_run01"
+  }
+}

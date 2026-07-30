@@ -1,0 +1,27 @@
+{
+  "schema": "research-experiment-repair-v1",
+  "status": "validated_source_repair",
+  "snapshot_id": "v92_provider_recovery_measurement_repair",
+  "created_at": "2026-07-30T01:59:32+08:00",
+  "base_commit": "cc4c2091831ebc0638058df381fc68a5c40513d4",
+  "source_files": {
+    "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py": "610d308a6de281f229885d33151fe2f8bf28eb299321ea5085fee9e79df1bd66",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/cost_telemetry.py": "874975be211560243186c7ac22b406020f32662e860667fdffa0a09547562325",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/cost_report.py": "666e03e7871e7e26777558526d1ad5192dcf3ac2365f3397a8a15b78094d1e65",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_cost_probe_staged.py": "7691dd20c44d43f7918310025f8d4c92ed5d417881a789740171012876c65e3d",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_analysis_tools.py": "a270e2fc8b2dd7881b8e5d0c2bd22d9fd98a1810aec655b72aaf5280d45c66e2"
+  },
+  "default_provider_recovery": {
+    "additional_attempts": 6,
+    "initial_wait_seconds": 30.0,
+    "maximum_wait_seconds": 120.0,
+    "backoff": "exponential_capped",
+    "scope": "same QA, same process, same open staged transaction",
+    "eligible_exception": "^Failed after [1-9][0-9]* retries for model=.+$"
+  },
+  "latency_policy": {
+    "reported_retrieval_latency": "successfully completed attempt only",
+    "failed_attempt_wall_seconds": "excluded and disclosed separately",
+    "inter_attempt_wait_seconds": "excluded and disclosed separately"
+  }
+}

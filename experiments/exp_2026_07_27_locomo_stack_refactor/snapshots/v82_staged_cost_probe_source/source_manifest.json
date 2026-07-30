@@ -1,0 +1,9 @@
+{
+  "schema": "source-manifest-v1",
+  "base_commit": "59b60d95f33eea835ceeaa9fe7b537683507490c",
+  "files": [
+    {"path": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py", "sha256": "647697bfe53573f06018a18be38b36f6224e25ac1db77153ad0d5bbe0b92b2cf"},
+    {"path": "experiments/exp_2026_07_27_locomo_stack_refactor/test_cost_probe_staged.py", "sha256": "a9bf38c9d6486b64eec403187c354cafb3821ed4cb1c1c9b1d46ba4a2a48e04e"}
+  ],
+  "recovery": "Apply the committed diff from base_commit and verify both SHA-256 values."
+}

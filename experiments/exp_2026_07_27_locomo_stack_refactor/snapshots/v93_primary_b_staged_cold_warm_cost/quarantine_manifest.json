@@ -1,0 +1,60 @@
+{
+  "schema": "quarantined-artifact-manifest-v1",
+  "created_at": "2026-07-30T02:05:21+08:00",
+  "hash_method": "For each directory, sort regular files by POSIX relative path; for every file append relative_path, NUL, byte_count, NUL, file_sha256, newline to SHA-256.",
+  "cache_roots": {
+    "outputs/locomo_cost/primary_b_v77_cache": {
+      "exists": true,
+      "file_count": 25,
+      "bytes": 85214742,
+      "tree_manifest_sha256": "fcab66545c6e31441858d20ff348a4feb5437c721afdc9959b52e13c578bbe65"
+    },
+    "outputs/locomo_cost/primary_b_v79_cache": {
+      "exists": true,
+      "file_count": 19,
+      "bytes": 59884175,
+      "tree_manifest_sha256": "a26a869d7c914aa253e8a9878c6596c83aca46fd1afdeca0096ab4fd31abc4f7"
+    },
+    "outputs/locomo_cost/primary_b_v83_cache": {
+      "exists": true,
+      "file_count": 22,
+      "bytes": 78184393,
+      "tree_manifest_sha256": "ff03c584c2665b195e287854cc6c2cf359954fdb8b2ad7161bbc5e4f058e76e1"
+    },
+    "outputs/locomo_cost/primary_b_v86_cache": {
+      "exists": true,
+      "file_count": 23,
+      "bytes": 54081483,
+      "tree_manifest_sha256": "4d2726ded8a87590542e81fa53b8c6073d0404634908843e5a7ade1e355922cd"
+    },
+    "outputs/locomo_cost/primary_b_v90_cache": {
+      "exists": true,
+      "file_count": 23,
+      "bytes": 54917676,
+      "tree_manifest_sha256": "3c31fadabaed0b73b50de1f23331eff2e93bf3ee6d748c2c63050b8870965926"
+    }
+  },
+  "checkpoints": {
+    "outputs/locomo_cost/primary_b_v77_checkpoint.json": {
+      "exists": false
+    },
+    "outputs/locomo_cost/primary_b_v79_checkpoint.json": {
+      "exists": false
+    },
+    "outputs/locomo_cost/primary_b_v83_checkpoint.json": {
+      "exists": true,
+      "bytes": 28741,
+      "sha256": "dc59769e2fdd662edad20308216eb5595e39e991a1d3813ce0a7b3478cbfff06"
+    },
+    "outputs/locomo_cost/primary_b_v86_checkpoint.json": {
+      "exists": true,
+      "bytes": 32451,
+      "sha256": "49d6ddc912f4847d399f5c4f94a007f2098f1afacaaec46fe92e8f35a02392ca"
+    },
+    "outputs/locomo_cost/primary_b_v90_checkpoint.json": {
+      "exists": true,
+      "bytes": 104752,
+      "sha256": "9a59e7f3bdd93483e6ffe4ed073dcd16d6a7bdebc813a97c6bcd71ab02d0f2e5"
+    }
+  }
+}

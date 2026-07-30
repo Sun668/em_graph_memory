@@ -1,0 +1,449 @@
+{
+  "schema": "locomo_formal_run_v1",
+  "run_id": "formal_all10_M3_A_no_caption_top25_8fa1820_qfrozen_run01",
+  "condition_kind": "graph_method",
+  "scope": "all10",
+  "sample_ids": [
+    "conv-26",
+    "conv-30",
+    "conv-41",
+    "conv-42",
+    "conv-43",
+    "conv-44",
+    "conv-47",
+    "conv-48",
+    "conv-49",
+    "conv-50"
+  ],
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "source_commit": "8fa182093e3f0a55768a853791b52e0df38ad845",
+  "source_tree": "c640ea39ccaa9b05807573eac2f3f4cab8d97487",
+  "started_at": "2026-07-28T18:29:59.721502+08:00",
+  "command": "/Users/sun/Documents/git/graph_memory/.venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py --run-id formal_all10_M3_A_no_caption_top25_8fa1820_qfrozen_run01 --scope all10 --variant A_no_caption --top-k 25 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --query-artifact outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz --cache-dir outputs/em_graph --output-root outputs/locomo_formal",
+  "output_directory": "/Users/sun/Documents/git/graph_memory/outputs/locomo_formal/formal_all10_M3_A_no_caption_top25_8fa1820_qfrozen_run01",
+  "start_state": {
+    "output_directory_empty": true,
+    "existing_entries": [],
+    "prediction_file_existed": false,
+    "directory_existed": false
+  },
+  "resume": false,
+  "overwrite": false,
+  "models": {
+    "extraction": null,
+    "embedding": "text-embedding-3-small",
+    "answer": "gpt-3.5-turbo",
+    "query_encoder": null,
+    "context_encoder": null
+  },
+  "retrieval": {
+    "variant": "A_no_caption",
+    "rag_mode": "dialog",
+    "top_k": 25,
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "expand_sequence": false,
+    "force_full_pool": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true
+  },
+  "graph_profile": {
+    "memory_only": true,
+    "use_caption": false,
+    "use_time_annotations": true,
+    "add_speaker_as_entity": true
+  },
+  "answer_protocol": {
+    "message_role": "system",
+    "temperature": 0,
+    "max_tokens": 32,
+    "batch_size": 1,
+    "category5_option_order": "unchanged unseeded upstream random.random()"
+  },
+  "cache_identity": {
+    "artifact_root": "/Users/sun/Documents/git/graph_memory/outputs/em_graph",
+    "records": [
+      {
+        "sample_id": "conv-26",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-26_3e5e3453b262489f3a91f03b666e568135ec03253ffb74b0c87ce19e6ad8e1e3.json",
+          "sha256": "181d07a6afe4c62019dda74db38dd47137116c1493f18bcdf54a2e56a1e045af",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-26",
+            "conversation_sha256": "f73accc42e0a00ff8549bd73919dc24a6a802d6ceea65148f4f47c128903c81b",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-26_42c61a9f043592831ec0ac83a82d2d5dca187b58b064d4749f86e86d6e5071a8.npz",
+          "sha256": "67e3a0627ebe26b4a5418ec900faafe9838d7f6fd9e5043297ac2d946c00a993",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-26",
+            "conversation_sha256": "f73accc42e0a00ff8549bd73919dc24a6a802d6ceea65148f4f47c128903c81b",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-30",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-30_d9e831a3b372d121b70782e68317bcd821064c6ad626456e98e4c8b898100390.json",
+          "sha256": "31b53b6501a2b96d6c26ef89dfafcc5c95f25520f04ed284922d1b0f96e27a1e",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-30",
+            "conversation_sha256": "0998af7e21212460edd0867c14c711961c81790f897d93ad923c105d7d2a980c",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-30_84338b2627930e75945260bcc1fe5f4e46a4787897aa82a7794b902b66785937.npz",
+          "sha256": "a67341d10dfa3ec3d0ba76257845169076de1a4ccbdc5c714a855762ba31d707",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-30",
+            "conversation_sha256": "0998af7e21212460edd0867c14c711961c81790f897d93ad923c105d7d2a980c",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-41",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-41_4ec7451b8075a9ec7f7510c51312ab4524dfdb5c31c3a8415fddf3c0fe9d9059.json",
+          "sha256": "a14ffd34fac91b7f15472def14cdeb6ebafa3728c104f300bcae88cba7c69d13",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-41",
+            "conversation_sha256": "afe273c7e4325b2182b5574409378a49f024b80df37e47f8c641fe0dbf3990d7",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-41_69934f9b364d60ca0c37ed071365df827eb982a4b5eb90c0a07d846ee3f27d24.npz",
+          "sha256": "ae5c9cb315fa79ff873e4f929919104193ad365b60060ad2de8054bfecfc1135",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-41",
+            "conversation_sha256": "afe273c7e4325b2182b5574409378a49f024b80df37e47f8c641fe0dbf3990d7",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-42",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-42_f11d5b08d2b72dc5de86efb2692ea321b0c2dab16ca18bbc2de01b87de464f74.json",
+          "sha256": "acdfb2a49b88f189df5c048a600ac33e40b9ed8c1b0a875c7844b0ede651adab",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-42",
+            "conversation_sha256": "d0c54de60029d8746ba5b9e4e3488f2df09a9221d38dcc384f1fc488b16cab17",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-42_361005f968f89fb63503ff87c662275d5e6f00557136f52e69bd0a0d6627ce7e.npz",
+          "sha256": "3718d07bf74397be2d468e9cc3bbb010ecc1f1f5e70ee2a9b15d8d1710598836",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-42",
+            "conversation_sha256": "d0c54de60029d8746ba5b9e4e3488f2df09a9221d38dcc384f1fc488b16cab17",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-43",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-43_20bc80e2365ba330565dd1e4040228b86de7dd358453b9a1c0e6c30721747371.json",
+          "sha256": "3150dd14a3c682be427e59d2227fdcdd6afa79a338e330f826f52a0bbc67251b",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-43",
+            "conversation_sha256": "121e0e779fbce0cab04bef58ea129cea456c1dc84e61bee35d569cd5378d6e5b",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-43_c854eae8559598a5dc760893683b3da6dc0dbbdab0c152cdd96bc7576e2e6286.npz",
+          "sha256": "4419298dc4a72470d58e62faf50e758f21f052f30888a3d0d05955c6628d1110",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-43",
+            "conversation_sha256": "121e0e779fbce0cab04bef58ea129cea456c1dc84e61bee35d569cd5378d6e5b",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-44",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-44_09b65f33d3933b8864da955725fb0a1aaabee915ddb87a2adf13838ebdd026d7.json",
+          "sha256": "2d545c5fd9ad1cdda8715f688f2520af35436903c325f95bcc800efdd337ca4e",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-44",
+            "conversation_sha256": "39b049c8a8ac8e0e2769931e31328ea6309fc98f4c6dfeed8dcbb4f9b6763de5",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-44_96cec08bd8bfc45a6cdb04c6a49a2efda6ab425152da8eb51f435a17e9ee053b.npz",
+          "sha256": "1e2b3aa220fe35b499bf54319e66d9ed770978754b346d3918d9e2e9a51d8499",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-44",
+            "conversation_sha256": "39b049c8a8ac8e0e2769931e31328ea6309fc98f4c6dfeed8dcbb4f9b6763de5",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-47",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-47_a716c3c7ec8fc6d27d8e2ba08c40acd8eb7aa6c59e489a6632b9cf42f13a0c9e.json",
+          "sha256": "2b43f95153007203c3838c076b061c68f17fa3670ade558e74fedd7d7478509a",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-47",
+            "conversation_sha256": "ae12d005102da5722fa515e17427a44acbc8bed05c65f44dd5d233c948ed88f9",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-47_fc319d0f5bd2bea4ee60fbefc96a74bf4c995f26f9174637e373da6c97078040.npz",
+          "sha256": "3829b14fb61083815707d0d5574da29603234e1c2badad8a4d8880041572169f",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-47",
+            "conversation_sha256": "ae12d005102da5722fa515e17427a44acbc8bed05c65f44dd5d233c948ed88f9",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-48",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-48_1a2f493caddf9be8357218ef55d09c28949c9209d351b54f0425147423b6de60.json",
+          "sha256": "007f0f2acbc1c19017ea73332bedc40348efb62716dece2799786bf5fd2923c9",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-48",
+            "conversation_sha256": "47640de6a8de752a6f28114e7d6a2d0571ab9795fda252e748ffb2abfa072a0e",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-48_0db4d53d0f85abfd130d1edf5f2c6694b77cc49dfce477aadbb56ad7d924a393.npz",
+          "sha256": "9a4d31e06487254cb0ebc70377350ead0dff7d4685cb4d052802498280b9983b",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-48",
+            "conversation_sha256": "47640de6a8de752a6f28114e7d6a2d0571ab9795fda252e748ffb2abfa072a0e",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-49",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-49_055a716c5f447e73777d84bdd420448dc60a434d6a2cfe2abc09966198138184.json",
+          "sha256": "b7c8c9981a0ac3e42dfca1a91dca3dc86e5e3e9bb25b5e60f14f5b84dfcc5239",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-49",
+            "conversation_sha256": "4f1d2a3795b782587bc1f10b51fa3213631c92c7a120820c4a5e0172e984592e",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-49_004e39bc71f17b714f3900265a911888a53c8b4453df903a47d4a91ae5bac8a8.npz",
+          "sha256": "feabdbecc6af084304ce93a54f9f7d69091ccdca25ad7660f6e18f69e98f667e",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-49",
+            "conversation_sha256": "4f1d2a3795b782587bc1f10b51fa3213631c92c7a120820c4a5e0172e984592e",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      },
+      {
+        "sample_id": "conv-50",
+        "graph": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/graphs/conv-50_f757ee7285c416da11562b604f428b878e1531b2cbb07eb6a3ae76d2446ebf01.json",
+          "sha256": "dd1672c4d7b4ea676435963fbb900a7f6780fb7b868912680387a39bd0766f86",
+          "identity": {
+            "schema": "em_graph_publish_v1",
+            "graph_kind": "memory_only",
+            "sample_id": "conv-50",
+            "conversation_sha256": "1fd8850c7aa9e2d057c90272ff0bce375e92e62d4747125eea6ad62872663229",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "graph_profile": {
+              "memory_only": true,
+              "use_caption": false,
+              "use_time_annotations": true,
+              "add_speaker_as_entity": true
+            }
+          }
+        },
+        "embedding_index": {
+          "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/embedding_indexes/conv-50_9f6e5a0b135485f6fb8ae3e7e6da76cf80bbdd9c55b2bf696fcae8af166f16eb.npz",
+          "sha256": "dfe7b0365c3433c9b8c3df90faf340224a8b9eb1ac2aa2a082a22da441acea9e",
+          "identity": {
+            "schema": "memory_embedding_index_publish_v1",
+            "sample_id": "conv-50",
+            "conversation_sha256": "1fd8850c7aa9e2d057c90272ff0bce375e92e62d4747125eea6ad62872663229",
+            "dialog_normalization_version": "evidence_time_annotations_v1",
+            "embedding_model": "text-embedding-3-small",
+            "memory_search_text_version": "speaker_normalized_caption_v2_exact",
+            "use_caption": false,
+            "use_time_annotations": true
+          }
+        }
+      }
+    ],
+    "query_embedding_artifact": {
+      "schema": "query_embedding_artifact_v1",
+      "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+      "sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+      "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+      "embedding_model": "text-embedding-3-small",
+      "role": "context",
+      "normalization": "l2_float32_v1",
+      "qa_count": 1986,
+      "unique_question_count": 1974,
+      "vector_dimension": 1536,
+      "ordered_qa_sha256": "21b786753c8e890953c06a6f4738d059504730637b0885a3d47dc4c8ccd5be92"
+    }
+  },
+  "model_key": "gpt-3.5-turbo_dialog_top_25",
+  "prediction_key": "gpt-3.5-turbo_dialog_top_25_prediction",
+  "artifacts": {
+    "prediction": "predictions.json",
+    "stats": "stats.json",
+    "audit": "audit.json",
+    "validation": "validation.json",
+    "progress": "progress.json",
+    "cost_events": "cost_events_warm.json",
+    "query_cache_usage": "query_cache_usage.json"
+  },
+  "source_audit": {
+    "source_commit": "8fa182093e3f0a55768a853791b52e0df38ad845",
+    "source_tree": "c640ea39ccaa9b05807573eac2f3f4cab8d97487",
+    "worktree_clean": true,
+    "locomo_eval_clean": true,
+    "vendor": {
+      "manifest": "code/locomo_eval/vendor/MANIFEST.sha256",
+      "manifest_sha256": "e65f16906ca342a6a81f626742a0461846a2477d2c0191352cfd47dd3d46035f",
+      "checked_files": 16,
+      "failures": [],
+      "upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376"
+    }
+  },
+  "condition_fingerprint": "52d9b57e3c05f01eec7bac846926c8de96018930eb13fe20216b7223be505c11"
+}

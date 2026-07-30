@@ -1,0 +1,42 @@
+{
+  "schema": "research-manuscript-literature-build-v1",
+  "snapshot": "v101_verified_literature_pdf",
+  "date": "2026-07-30",
+  "base_commit": "686effb",
+  "source": {
+    "latex": "paper/arxiv/main.tex",
+    "latex_sha256": "c2789e5e6e3ae03555c6170d0c53c752db13ae6b2191c4c393467b10564b7d67",
+    "bibliography": "paper/arxiv/references.bib",
+    "bibliography_sha256": "88fdf53772744492552d48b86846cbb38ec86d1c0ea494639e65b4ae11cedc9a",
+    "literature_audit": "paper/literature_verification.md",
+    "literature_audit_sha256": "24210003775aec0202e63753bde269df97a9372a491a50e6bec4c17aaa32d400",
+    "evidence_snapshots": [
+      "snapshots/v87_final_publication_claim_audit",
+      "snapshots/v97_v93_complete_cold_warm_cost",
+      "snapshots/v98_post_cost_publication_audit",
+      "snapshots/v100_arxiv_pdf"
+    ]
+  },
+  "zotero": {
+    "collection_name": "Graph Memory Paper - Verified References",
+    "collection_key": "TNDVXSZ8",
+    "new_items_created": 10,
+    "existing_items_linked": 10,
+    "expected_items": 20,
+    "readback_items": 20,
+    "deletions": 0
+  },
+  "build": {
+    "engine": "pdfLaTeX",
+    "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=<temporary-directory> main.tex",
+    "working_directory": "experiments/exp_2026_07_27_locomo_stack_refactor/paper/arxiv",
+    "output": "outputs/paper/entity_memory_graph_retrieval_arxiv.pdf"
+  },
+  "scope": {
+    "experiment_rerun": false,
+    "cache_change": false,
+    "metric_change": false,
+    "claim_boundary_change": false,
+    "author_state": "anonymous placeholder"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "not-started",
+  "classification": "diagnostic-only",
+  "run_id": "v80_primary_b_cold_warm_cost",
+  "python_process_started": false,
+  "provider_requests": 0,
+  "cache_created": false,
+  "event_manifest_created": false,
+  "report_created": false,
+  "exit_status_created": false,
+  "diagnostic_log": {
+    "path": "outputs/locomo_cost/primary_b_v80_launch_attempt01_empty.log",
+    "bytes": 0
+  },
+  "paper_eligible": false,
+  "next_run_id": "v81_primary_b_cold_warm_cost",
+  "required_execution": "launchctl submit with an exact label and self-removal after durable exit-status write"
+}

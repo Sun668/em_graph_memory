@@ -1,0 +1,49 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v29_query_embedding_artifact_gate",
+  "result_type": "source_only_cache_integrity_repair",
+  "metric_bearing": false,
+  "decision_date": "2026-07-28",
+  "base_commit": "0f2a22b72e185e1711527c79004dd21b407e25cb",
+  "base_tree": "93a469b994641c3433ed510df7569c5e0fbf3e1e",
+  "source_sha256": {
+    "code/em_graph/cache/query_embeddings.py": "d37948bb360ee7db678efa01023d8dd27724f6529adc93c2c7aa7bc1f2a85e95",
+    "code/em_graph/cache/text_embeddings.py": "1dd89aa407e0ca57524657c63d6c8a213d660f2082456d2957638ac9d690a643",
+    "code/em_graph/recall/embedding_index.py": "d88b50ffd2b79ceef6a580a503437b0f92b1af9b019fbe8d09f8ca1e67a076ef",
+    "code/em_graph/cache/__init__.py": "5004e33bef6ae938a1e50210a7fcb7015783bb75eac8b3732002f8bd2268d26c",
+    "code/em_graph/__init__.py": "2929c1378cae8ef4866efedc61f3906579f152ea4d60a778fe7c9dff536147b9",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/prepare_query_embeddings.py": "f3676ac6720664acd6b5bc755420a16b473897053ac298861b1513dca95ffcdd",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/run.py": "90edc81da82eca4cb3cf07ba54be39181f9f1ed96713123e08960ed050cf489a",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py": "09084bfaf36b7fbad4c2654770979c67213927d8c7e1ce107a0d2a0027dadba9",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/validate_formal_result.py": "2554c5d519290e8d9574e38d42935cb7599c3751ec1e1bbb6be96be2e5353e77",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/significance_report.py": "83f50168a151ee5d6b51db3360ace6279936f13f881f03cca385555fdd1ef55f",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_refactor.py": "f004b3dd32ad33371137390f5740df2f80ceaa0a9777dd78ac398458efab3d4b",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_formal_graph.py": "7745aa4e714e344a969794be1fa7b76c68cb91fcb93e529bc3975e77df7f650e",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_validate_formal_result.py": "1810fead5a840347ae0adfc8e89d175dfa5b9690608692eb230e51df7aecaebb",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_analysis_tools.py": "a63c50791d367a0f8cecff0674f698b26697f608614e5822cfe0781e4a0df689"
+  },
+  "repair": {
+    "stale_whole_file_lost_update": "fixed by locked reload-and-merge of pending additions",
+    "atomic_write": true,
+    "conflicting_existing_vector": "fail",
+    "query_artifact": "dataset/model/role/ordered-QA/hash bound and read-only",
+    "formal_query_miss": "fail",
+    "formal_live_query_embedding_request": "forbidden",
+    "a_b_embed_same_artifact_sha256": "required",
+    "a_b_embed_ordered_context_exact_equality": "required"
+  },
+  "regression_tests": {
+    "passed": 68,
+    "failed": 0,
+    "vendor_manifest_files": 16,
+    "syntax": "pass",
+    "diff_check": "pass"
+  },
+  "graph_constraint": "pass",
+  "frozen_locomo_eval_changed": false,
+  "prompt_change": false,
+  "external_model_calls": 0,
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false,
+  "next_action": "commit and push source repair, delete exact corrupt text cache, build immutable all-10 query artifact, then rerun corrected A/B_embed and A/B"
+}

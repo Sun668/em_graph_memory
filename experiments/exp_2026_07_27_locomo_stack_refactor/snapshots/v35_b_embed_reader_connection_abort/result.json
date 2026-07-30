@@ -1,0 +1,20 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v35_b_embed_reader_connection_abort",
+  "result_type": "formal_attempt_external_connection_abort",
+  "metric_bearing": false,
+  "source_commit": "6506fc6",
+  "run_id": "formal_all10_M2_B_embed_top25_6506fc6_qfrozen_run01",
+  "variant": "B_embed",
+  "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+  "successful_answer_completions": 0,
+  "answer_connection_failures": 10,
+  "predictions_written": false,
+  "metrics_generated": false,
+  "general_context_cache_absent": true,
+  "mandatory_graph_constraint": "pass",
+  "failure_class": "external_reader_connectivity",
+  "publication_gate": "continue_after_connectivity_preflight",
+  "paper_ready": false,
+  "next_action": "minimal Reader connectivity preflight, then fresh run02"
+}

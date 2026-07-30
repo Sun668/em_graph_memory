@@ -1,0 +1,100 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v19_o1_dragon_top25_runtime_mismatch",
+  "result_type": "formal_all10_official_reference_diagnostic",
+  "source_commit": "9511f94f4568e275977d06825008cbf17c3224dc",
+  "source_tree": "fe5dffb99498bd5df50b76c0ca6e780a290fe57e",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "official_upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "run_id": "formal_all10_O1_dragon_top25_9511f94_run01",
+  "condition_fingerprint": "82e8bfc3d8996db3b7b28f33ad12c9b3b631a29b5e4afe96c4828b2786a5751f",
+  "samples": 10,
+  "qa_count": 1986,
+  "category5_count": 446,
+  "top_k": 25,
+  "formal_validator": "pass",
+  "official_reference_eligible": true,
+  "graph_claim_eligible": false,
+  "official_table": {
+    "overall_f1_percent": 41.0,
+    "recall_at_25_percent": 76.7
+  },
+  "observed": {
+    "overall_f1_percent": 42.2,
+    "recall_at_25_percent": 78.11329305135951,
+    "category_f1_percent": {
+      "single_hop_4": 62.2,
+      "multi_hop_1": 40.5,
+      "temporal_2": 41.9,
+      "open_domain_3": 22.3,
+      "adversarial_5": 10.1
+    },
+    "category_recall_percent": {
+      "single_hop_4": 86.97990487514863,
+      "multi_hop_1": 66.01950354609929,
+      "temporal_2": 84.68380062305295,
+      "open_domain_3": 54.49895833333334,
+      "adversarial_5": 69.39461883408071
+    }
+  },
+  "reproduction_gate": {
+    "f1_absolute_difference_points": 1.2,
+    "f1_tolerance_points": 2.0,
+    "f1_pass": true,
+    "recall_absolute_difference_points": 1.41329305135951,
+    "recall_tolerance_points": 1.0,
+    "recall_pass": false,
+    "recall_excess_points": 0.41329305135951,
+    "o1_accepted": false
+  },
+  "retrieval_audit": {
+    "ordered_upstream_ranking_rows_checked": 1986,
+    "ordered_ranking_mismatches": 0,
+    "exact_unique_top_k": "pass",
+    "normalization": "none",
+    "context_norm_min": 65.04352569580078,
+    "context_norm_max": 66.3606948852539,
+    "cutoff_margin_min": 0.000030517578125,
+    "cutoff_margin_p01": 0.0009017944335937501,
+    "cutoff_margin_median": 0.042633056640625,
+    "cutoff_nonpositive_count": 0
+  },
+  "models": {
+    "query_encoder": "facebook/dragon-plus-query-encoder",
+    "query_revision": "2d3808c087119b953f8494b7638c216c71712cee",
+    "context_encoder": "facebook/dragon-plus-context-encoder",
+    "context_revision": "68074e7406bb0061b0d049b58592acafae00e9d4",
+    "answer_requested": "gpt-3.5-turbo",
+    "answer_actual": null
+  },
+  "official_runtime": {
+    "python": "3.9.18",
+    "torch": "2.0.1",
+    "cuda": "11.7",
+    "transformers": "4.35.0",
+    "tokenizers": "0.14.1",
+    "numpy": "1.26.0"
+  },
+  "observed_runtime": {
+    "python": "3.10.19",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "device": "cpu",
+    "torch": "2.13.0",
+    "transformers": "5.14.1",
+    "tokenizers": "0.22.2",
+    "numpy": "2.2.6"
+  },
+  "artifacts": {
+    "prediction_sha256": "d5d903b4091ac33da4467b3b7f6152a982caff53004a9dee1a5af51125eb1c46",
+    "stats_sha256": "393dd5dafb5ace579874ec1c838c12e246e436166a055fc0d61bbf9ddac8456b",
+    "audit_sha256": "a2997c7b048ea6e90acc62edb94d93c4eea0c33f510ba8fb40b2afd2651c1aaa",
+    "validation_sha256": "ca1ba0c4d8f0012457f8369a9d5d1ece0713fe3e57458d3fb27afafefb402f84",
+    "cache_manifest_sha256": "f5bf20c78c6e58ee9996b4106724f10bf61ec0a51bed604434dc2fbfb932da0f",
+    "retrieval_check_sha256": "b56a554958a8d593b34aba64df66503c7c13d683f8db8eddf360cc9a6372c214"
+  },
+  "mandatory_graph_constraint": "fail: official flat Dialog reference only",
+  "publication_gate": "continue",
+  "next_action_scope": "corrective O1 reproduction only",
+  "paper_ready": false,
+  "m1_blocked": true
+}

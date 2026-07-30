@@ -1,0 +1,47 @@
+{
+  "snapshot": "v14_analysis_and_cost_tools",
+  "result_type": "source_and_validation_milestone",
+  "metric_bearing": false,
+  "significance": {
+    "paired_qa_resamples": 10000,
+    "conversation_cluster_resamples": 10000,
+    "seed": 20260727,
+    "official_metric_recalculation": false,
+    "empty_evidence_recall_contribution": 0,
+    "all_qa_in_denominator": true,
+    "raw_serialized_recall_retained": true,
+    "official_stats_match_required": true
+  },
+  "dense_control": {
+    "conditions": [
+      "A",
+      "B_embed"
+    ],
+    "gate": "exact per-QA ordered context-id equality",
+    "formal_conv26_fixture_qa": 199,
+    "id_mismatch_rejected": true,
+    "order_mismatch_rejected": true
+  },
+  "cost": {
+    "cold_and_warm_required": true,
+    "required_stage_count_per_cache_state": 6,
+    "missing_values_estimated": false,
+    "actual_measurement_complete": false
+  },
+  "tests": {
+    "analysis_and_cost": 12,
+    "official_dragon": 6,
+    "validator": 9,
+    "refactor": 16,
+    "total": 43,
+    "status": "pass"
+  },
+  "frozen_evaluator_changed": false,
+  "vendor_manifest": {
+    "checked": 16,
+    "failed": 0
+  },
+  "external_model_calls": 0,
+  "mandatory_graph_constraint": "not applicable to source-only milestone",
+  "metric_claim": false
+}

@@ -1,0 +1,16 @@
+{
+  "snapshot": "v16_provider_usage_telemetry",
+  "result_type": "source_and_validation_milestone",
+  "metric_bearing": false,
+  "focused_tests": 3,
+  "combined_tests": 49,
+  "default_enabled": false,
+  "records_provider_usage": true,
+  "changes_model_request_or_response": false,
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false,
+  "frozen_evaluator_changed": false,
+  "vendor_hashes_passed": 16,
+  "external_model_calls": 0,
+  "metric_claim": false
+}

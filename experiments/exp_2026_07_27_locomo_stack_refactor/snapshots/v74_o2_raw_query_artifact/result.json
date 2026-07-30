@@ -1,0 +1,43 @@
+{
+  "schema": "locomo_o2_raw_query_artifact_result_v1",
+  "snapshot": "v74_o2_raw_query_artifact",
+  "builder_source_commit": "03a8a6c",
+  "artifact": {
+    "path": "outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz",
+    "report": "outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2_report.json",
+    "sha256": "5a8b96c729d802fbf6c1ef1bb9b568c6f15fc16c1d893b79488442b5183ebf81",
+    "schema": "query_embedding_artifact_v2",
+    "qa_count": 1986,
+    "unique_question_count": 1974,
+    "dimension": 768,
+    "role": "query",
+    "normalization": "none_float32_v1",
+    "ordered_qa_sha256": "21b786753c8e890953c06a6f4738d059504730637b0885a3d47dc4c8ccd5be92"
+  },
+  "runtime": {
+    "python": "3.9.6",
+    "torch": "2.0.1",
+    "transformers": "4.35.0",
+    "tokenizers": "0.14.1",
+    "numpy": "1.26.0",
+    "device": "cpu",
+    "cuda_runtime": "none"
+  },
+  "validation": {
+    "status": "pass",
+    "norm_min": 9.938947929177438,
+    "norm_max": 11.18791605812861,
+    "unit_norm_rows": 0,
+    "o1_crosscheck_unique_questions": 1974,
+    "o1_exact_vector_rows": 0,
+    "o1_max_abs_difference": 1.9073486328125e-06
+  },
+  "embedding_provider_requests": 0,
+  "graph_files": 70,
+  "memory_index_files": 30,
+  "old_cache_deleted": false,
+  "old_cache_overwritten": false,
+  "old_cache_rebuilt": false,
+  "publication_gate": "continue",
+  "paper_ready": false
+}

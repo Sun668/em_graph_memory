@@ -1,0 +1,34 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v20_o1_runtime_identity_gate",
+  "result_type": "source_only_gate",
+  "base_commit": "3c017e78915c80e3e6f5bedaa8e8b935fa1a89f8",
+  "tests": {
+    "full_experiment": {
+      "passed": 61,
+      "failed": 0
+    },
+    "focused": {
+      "passed": 19,
+      "failed": 0
+    },
+    "vendor_manifest_files": {
+      "passed": 16,
+      "failed": 0
+    }
+  },
+  "identity_gates": {
+    "dependency_versions": true,
+    "platform_and_device": true,
+    "huggingface_revisions": true,
+    "reader_request_count": true,
+    "reader_single_actual_model": true,
+    "reader_requested_family": true
+  },
+  "frozen_locomo_eval_changed": false,
+  "metric_bearing": false,
+  "o1_accepted": false,
+  "m1_blocked": true,
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false
+}

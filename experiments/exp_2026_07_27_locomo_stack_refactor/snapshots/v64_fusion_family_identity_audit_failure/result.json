@@ -1,0 +1,29 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "failed_identity_audit",
+  "snapshot": "v64_fusion_family_identity_audit_failure",
+  "metric_bearing": false,
+  "paper_eligible": false,
+  "tooling_commit": "4c5c12a",
+  "diagnostic_report": {
+    "path": "outputs/locomo_analysis/fusion_family_4c5c12a_seed20260727.json",
+    "sha256": "78d98cf1b14a406b8c69b4ae2e6b0b4b5c3daef7c6d69da390146acfa52a63ca",
+    "promotion_status": "forbidden"
+  },
+  "failure": {
+    "field": "scientific_identity_except_fusion_weights.query_embedding_artifact",
+    "observed": null,
+    "cause": "Tool read a nonexistent top-level run_config field instead of cache_identity.query_embedding_artifact.",
+    "underlying_formal_results_invalidated": false,
+    "rerun_formal_conditions_required": false
+  },
+  "cache_audit": {
+    "old_artifacts_deleted": 0,
+    "old_artifacts_overwritten": 0,
+    "graph_files": 70,
+    "memory_indexes": 30
+  },
+  "publication_gate": "repair_tooling",
+  "paper_ready": false,
+  "next_action": "Bind full cache_identity, add mismatch regression coverage, create a new tooling lock, and regenerate the report."
+}

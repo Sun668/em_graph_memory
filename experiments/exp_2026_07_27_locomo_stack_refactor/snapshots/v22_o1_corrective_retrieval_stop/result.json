@@ -1,0 +1,79 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v22_o1_corrective_retrieval_stop",
+  "result_type": "all10_official_reference_retrieval_terminal_gate",
+  "source_commit": "d57027539aaf700ab650978100c19aaaa07195df",
+  "source_tree": "5a7495baeeae01c4719f7cd96efcf802ae1a3cc6",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "official_upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "samples": 10,
+  "qa_count": 1986,
+  "top_k": 25,
+  "retrieval_check": "pass",
+  "exact_unique_top_k_rows": 1986,
+  "runtime": {
+    "python": "3.9.18",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "device": "cpu",
+    "torch": "2.0.1",
+    "torch_cuda": null,
+    "transformers": "4.35.0",
+    "tokenizers": "0.14.1",
+    "numpy": "1.26.0"
+  },
+  "models": {
+    "query_encoder": "facebook/dragon-plus-query-encoder",
+    "query_revision": "2d3808c087119b953f8494b7638c216c71712cee",
+    "context_encoder": "facebook/dragon-plus-context-encoder",
+    "context_revision": "68074e7406bb0061b0d049b58592acafae00e9d4",
+    "answer_requested": null,
+    "answer_actual": null
+  },
+  "observed": {
+    "recall_at_25_percent": 78.11329305135949,
+    "category_recall_percent": {
+      "multi_hop_1": 66.01950354609929,
+      "temporal_2": 84.68380062305295,
+      "open_domain_3": 54.49895833333334,
+      "single_hop_4": 86.97990487514862,
+      "adversarial_5": 69.39461883408072
+    }
+  },
+  "official_table": {
+    "recall_at_25_percent": 76.7
+  },
+  "reproduction_gate": {
+    "recall_absolute_difference_points": 1.4132930513594886,
+    "recall_tolerance_points": 1.0,
+    "recall_pass": false,
+    "o1_accepted": false
+  },
+  "v19_comparison": {
+    "ordered_rows_changed": 9,
+    "top25_set_rows_changed": 0,
+    "rows_compared": 1986
+  },
+  "cache_sha256": {
+    "conv-26": "b81d96724807f85d5afdc2ec122de2034ab77d24beda4bc3622cea275c6d598a",
+    "conv-30": "9dcace53d3572015d146fbdfcbaf50f14febc28f7a1582d2dd89ad0f7991160a",
+    "conv-41": "4f550a58b44d0abc6d9f730251bd3d681802d40f42ac9ecee4cedb0088ed2b99",
+    "conv-42": "198e69769dd6385a46073934df25d335a631f0fd0412d8cedf30a4193a19c430",
+    "conv-43": "f030efaca1b98ba654b29f030ec068f76ac0e68c0707a949174647723c89257c",
+    "conv-44": "47037c705ec173393122ce4836a2e1e988be3916b8a39ee59e0f445df029a2cf",
+    "conv-47": "758255fe9320fc55adf4960cd3cfa4f097ed6a8ea84cae121a331eff5463b4a1",
+    "conv-48": "0dc0ff3280dc7e2523d52c75d8049da505d63720c3df52d9f8a7f62b3370abeb",
+    "conv-49": "4bb3c2c367428dca15a36592ec339bd259550ccd830065b2ddb919e5a0f98ca7",
+    "conv-50": "25d51c1176930cfc30a7fd19d90825e6c3a2c4d01f6730a8d2bb85b72deaa824"
+  },
+  "artifacts": {
+    "cache_manifest_sha256": "f3e843b4c8d55b9bfb62c0a4a20fca74095e66dd810f69fee816ddb2b322d202",
+    "retrieval_check_sha256": "4a2c4e33b192e3fda6bf04c4e1abd8bd8461f8c6d776936b1ab5bf69ab3a95c2"
+  },
+  "external_model_calls": 0,
+  "formal_reader_run_started": false,
+  "mandatory_graph_constraint": "fail: official flat Dialog reference only",
+  "terminal_condition": 2,
+  "publication_gate": "stop",
+  "m1_blocked": true,
+  "paper_ready": false
+}

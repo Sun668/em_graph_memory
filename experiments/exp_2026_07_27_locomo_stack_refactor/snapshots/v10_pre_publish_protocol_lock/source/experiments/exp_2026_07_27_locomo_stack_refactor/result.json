@@ -1,0 +1,131 @@
+{
+  "experiment": "exp_2026_07_27_locomo_stack_refactor",
+  "result_type": "source_refactor_validation_and_conv26_metric",
+  "metric_bearing": true,
+  "official_upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "em_graph_version": "0.5.0",
+  "validation": {
+    "source_root": "code",
+    "source_packages": [
+      "common",
+      "em_graph",
+      "locomo_eval"
+    ],
+    "code_is_python_package": false,
+    "refactor_tests_passed": 15,
+    "normalization_datetime_tests_passed": 17,
+    "syntax_check": "pass",
+    "wheel_build": "pass",
+    "wheel_version": "0.3.0",
+    "wheel_sha256": "9b42b1e33346515aa81ed35993fbaad289170f8dfc1bd3c4b014de9980aa1fc9",
+    "wheel_contains_official_vendor": true,
+    "legacy_em_graph_root_modules": 0,
+    "active_duplicate_locomo_metric_functions": 0,
+    "dependency_boundary": "pass",
+    "prompt_scaffold_chars": 2410,
+    "prompt_budget_limit_chars": 5000
+  },
+  "full_dataset_construction_audit": {
+    "samples": 10,
+    "dialogs": 5882,
+    "dialog_sessions": 272,
+    "datetime_keys": 288,
+    "directed_memory_sequence_edges": 11744,
+    "a_memory_only_nodes": 5882,
+    "a_memory_only_entity_nodes": 0,
+    "a_and_b_share_embedding_identity": true,
+    "extraction_input_matches_normalized_text_plus_optional_blip_caption": true,
+    "query_serialized_to_memory_node": false,
+    "img_url_serialized_to_memory_node": false
+  },
+  "mandatory_graph_constraint": {
+    "status": "pass",
+    "graph_inputs": [
+      "session date_time",
+      "dialog id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "excluded": [
+      "query",
+      "img_url",
+      "QA questions",
+      "QA answers",
+      "QA evidence",
+      "QA categories",
+      "judge outputs",
+      "previous predictions",
+      "question-driven ledgers"
+    ],
+    "answer_recall": "graph retrieval through EMGraphRecall"
+  },
+  "qa_metric_result": {
+    "scope": "conv-26",
+    "qa_count": 199,
+    "variant": "B",
+    "source_commit": "23e3a4b941d328d948ffa3981be786c1a60eb315",
+    "models": {
+      "conversation_entity_extraction": "gpt-3.5-turbo",
+      "question_entity_extraction": "gpt-3.5-turbo",
+      "answer_generation": "gpt-3.5-turbo",
+      "embedding": "text-embedding-3-small"
+    },
+    "retrieval": {
+      "entity_weight": 0.3,
+      "semantic_weight": 0.7,
+      "entity_degree_discount": "1/log1p(degree)",
+      "who_only_dampen": 0.25,
+      "sequence_neighbors": "parsed-date_time +/-1 at 0.5 entity score",
+      "semantic_similarity": "signed cosine",
+      "candidate_pool": "Entity-gated; full Memory pool when the gate is empty"
+    },
+    "official_generation": {
+      "vendor_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "batch_size": 1,
+      "message_role": "system",
+      "temperature": 0,
+      "max_completion_tokens": 32,
+      "random_seed": null
+    },
+    "metrics": {
+      "5": {
+        "official_recall_acc": 0.6231155778894473,
+        "official_overall_f1": 0.341,
+        "official_overall_f1_unrounded": 0.34078894472361815,
+        "categories_1_4_subset_f1": 0.4198486842105263
+      },
+      "10": {
+        "official_recall_acc": 0.7579547738693467,
+        "official_overall_f1": 0.385,
+        "official_overall_f1_unrounded": 0.3847286432160804,
+        "categories_1_4_subset_f1": 0.49053289473684214
+      },
+      "25": {
+        "official_recall_acc": 0.8609748743718593,
+        "official_overall_f1": 0.391,
+        "official_overall_f1_unrounded": 0.3912311557788945,
+        "categories_1_4_subset_f1": 0.49904605263157886
+      },
+      "50": {
+        "official_recall_acc": 0.9212763819095477,
+        "official_overall_f1": 0.4,
+        "official_overall_f1_unrounded": 0.39972361809045226,
+        "categories_1_4_subset_f1": 0.5233223684210527
+      }
+    },
+    "official_recall_aggregation_note": "Use vendored evaluation_stats output. It retains empty-evidence QA rows in the denominator but does not add their row-level default recall.",
+    "official_overall_scope_note": "Includes Category 5 and is an official-compatibility diagnostic. Category 5 exposes the two answer options, including the gold answer, in the official prompt; do not use overall F1 as the repository-compliant promotion score.",
+    "graph_constraint": {
+      "graph_construction": "pass",
+      "answer_recall": "graph retrieval",
+      "categories_1_4_promotion_scope": "pass",
+      "official_overall_category_5_scope": "compatibility diagnostic only"
+    },
+    "prompt_budget": {
+      "entity_scaffold_chars": 2410,
+      "limit_chars": 5000,
+      "pass": true
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "research-manuscript-audit-v1",
+  "status": "pass",
+  "manuscript_complete": true,
+  "submission_ready": false,
+  "sections": {
+    "title": "pass",
+    "abstract": "pass",
+    "introduction": "pass",
+    "related_work": "pass",
+    "method": "pass",
+    "experimental_design": "pass",
+    "results": "pass",
+    "system_cost": "pass",
+    "discussion": "pass",
+    "limitations": "pass",
+    "reproducibility_and_responsible_use": "pass",
+    "conclusion": "pass",
+    "references": "pass"
+  },
+  "claim_evidence": {
+    "strongest_claim_level": "robust",
+    "primary_numbers_backtraced": "pass",
+    "top_k_numbers_backtraced": "pass",
+    "component_numbers_backtraced": "pass",
+    "cost_numbers_backtraced": "pass",
+    "unsupported_f1_claim": false,
+    "cross_dataset_generalization_claim": false,
+    "official_dragon_claim": false,
+    "state_of_the_art_claim": false,
+    "monetary_cost_claim": false
+  },
+  "literature": {
+    "primary_sources": 6,
+    "verification_file": "paper/literature_verification.md",
+    "status": "pass"
+  },
+  "remaining_submission_tasks": [
+    "Replace anonymous author and affiliation placeholders.",
+    "Select the target venue and apply its template and word limits.",
+    "Convert Markdown references to the venue citation format.",
+    "Perform venue-specific language, disclosure, and checklist review."
+  ],
+  "decision": "paper_writing_goal_achieved"
+}

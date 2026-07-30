@@ -1,0 +1,18 @@
+{
+  "snapshot": "v17_cost_orchestration",
+  "result_type": "source_and_validation_milestone",
+  "metric_bearing": false,
+  "combined_tests": 57,
+  "cold_cache_must_be_fresh": true,
+  "warm_formal_identity_required": true,
+  "zero_request_cache_hits_supported": true,
+  "missing_provider_usage_rejected": true,
+  "stage_wall_times_overlap": true,
+  "answer_measurement_reuse_disclosed": true,
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false,
+  "frozen_evaluator_changed": false,
+  "vendor_hashes_passed": 16,
+  "external_model_calls": 0,
+  "metric_claim": false
+}

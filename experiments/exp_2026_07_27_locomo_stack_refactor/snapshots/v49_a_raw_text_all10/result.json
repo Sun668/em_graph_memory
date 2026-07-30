@@ -1,0 +1,113 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "complete",
+  "snapshot": "v49_a_raw_text_all10",
+  "source_commit": "8ff50fb974bca83292ab019556a42f62a4e5ea38",
+  "source_tree": "0786d4adbe793ff950a4ca8913235316ce897b04",
+  "run_id": "formal_all10_M3_A_raw_text_top25_57a5f28_qfrozen_run01",
+  "condition_fingerprint": "83fb2b41560c9c7dd3b8fada58eae75506692f87a04c3948337644ce87b1d0ff",
+  "parameter_snapshot_sha256": "35991406bcc043f0e97126be02a8ec8bb0b517362e08f244a64ef182456fded9",
+  "command_sha256": "2edd9c30d014be5512b4e85fd0868721fa217fe3ddf6596028b6e00976577e07",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "qa_count": 1986,
+  "category5_count": 446,
+  "graph_profile": {
+    "memory_only": true,
+    "use_caption": true,
+    "use_time_annotations": false,
+    "add_speaker_as_entity": true,
+    "memory_count": 5882,
+    "entity_count": 0,
+    "entity_memory_edge_count": 0,
+    "memory_sequence_edge_count": 11744
+  },
+  "retrieval": {
+    "variant": "A_raw_text",
+    "top_k": 25,
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "expand_sequence": false,
+    "sequence_secondary_scale": 0.5,
+    "force_full_pool": true,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "score_version": "signed_cosine_gated_dense_fill_topk_v2"
+  },
+  "metrics": {
+    "official_overall_f1": 0.42457905337361534,
+    "official_recall_at_25": 0.792848942598187,
+    "local_categories_1_to_4_f1": 0.5150740259740261,
+    "local_categories_1_to_4_recall_at_25": 0.8214922077922074,
+    "a_raw_text_minus_a": {
+      "official_overall_f1": 0.003897784491440292,
+      "official_recall_at_25": -0.0046193353474323,
+      "local_categories_1_to_4_f1": 0.0024292207792211,
+      "local_categories_1_to_4_recall_at_25": -0.0066064935064938
+    }
+  },
+  "category_metrics": {
+    "1": {"count": 282, "f1": 0.3821524822695036, "recall_at_25": 0.648028368794326},
+    "2": {"count": 321, "f1": 0.42936448598130894, "recall_at_25": 0.8722741433021807},
+    "3": {"count": 96, "f1": 0.16836458333333335, "recall_at_25": 0.47937500000000005},
+    "4": {"count": 841, "f1": 0.6319357907253265, "recall_at_25": 0.8993269916765756},
+    "5": {"count": 446, "f1": 0.11210762331838565, "recall_at_25": 0.6939461883408071}
+  },
+  "query_artifact_usage": {
+    "configured_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "required_queries": 1986,
+    "lookups": 1986,
+    "hits": 1986,
+    "misses": 0,
+    "live_embedding_requests": 0
+  },
+  "cache_build": {
+    "old_artifacts_deleted": false,
+    "graph_files_before": 50,
+    "graph_files_after": 50,
+    "index_files_before": 20,
+    "index_files_after": 30,
+    "new_memory_indexes": 10,
+    "memory_vectors": 5882,
+    "embedding_requests": 591,
+    "embedding_input_tokens": 210987
+  },
+  "warm_cost": {
+    "retrieval_wall_seconds": 4.8298447690007915,
+    "answer_wall_seconds": 3058.5330010279863,
+    "answer_request_count": 1986,
+    "answer_input_tokens": 2656804,
+    "answer_output_tokens": 16217
+  },
+  "artifact_hashes": {
+    "audit": "630bfee36520a0a75ce7d1f6a73d14eed5e99cc12d933bc536d65f9ad014dc49",
+    "cost_events_warm": "db123869acab653485630714011e0ecd747bd0b6e7df091b94f1f6b9d8e04d31",
+    "prediction": "8a76350cad4766f474bb06c1f0ec8dcdd696700364ad9dd9edbd204beb569d47",
+    "progress": "bee9a40d58df305d1d52551febecee7fbb919e8e3c5a6b6fedf2f463b74aabf1",
+    "query_cache_usage": "d94d1765f07ca06326b5949a3108bf456635210307cfec770b6ff3f717d10d74",
+    "run_config": "719a665b81958ecf50b3fb8b18976efc0cba02de77cbf7c2a7cf7cbec5e81303",
+    "stats": "3884ca98a872438bf2742cab2e176d422c9d4eba443d26d48396789d245ccaf8",
+    "validation": "05b4b9b510d9d0662fa79d18127fb7a2db5a1bbe554d2b6dbc61e368f05b60bb",
+    "independent_validation": "4185e2cf36a409babffacdd38c6870eaed95a4cea7edb370e6d0d54686d725ed"
+  },
+  "checks": {
+    "formal_validator_in_run": "pass",
+    "formal_validator_independent": "pass",
+    "official_stats_aggregation": "pass",
+    "mandatory_graph_constraint": "pass",
+    "prompt_scaffold_chars": 0,
+    "prompt_budget_limit": 5000,
+    "combined_tests_passed": 76,
+    "vendor_hashes_passed": 16,
+    "frozen_evaluator_changed": false,
+    "output_directory_absent_at_start": true,
+    "resume": false,
+    "overwrite": false,
+    "old_artifacts_deleted": false
+  },
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v49, then preregister and run B_raw_text"
+}

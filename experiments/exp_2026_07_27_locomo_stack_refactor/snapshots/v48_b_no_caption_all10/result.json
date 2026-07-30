@@ -1,0 +1,125 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v48_b_no_caption_all10",
+  "source_commit": "4b1ff4160842be70daf284933ad652aff6f6a86f",
+  "source_tree": "0903631c57cb9f3967ebf9024ca53f9514da3394",
+  "run_id": "formal_all10_M3_B_no_caption_top25_4b1ff41_qfrozen_run01",
+  "condition_fingerprint": "d89168c55f35d420edd032af0a1700677db1c99f19efa25cf216ad9e9e9a6075",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "qa_count": 1986,
+  "category5_count": 446,
+  "graph_profile": {
+    "memory_only": false,
+    "use_caption": false,
+    "use_time_annotations": true,
+    "add_speaker_as_entity": true,
+    "memory_count": 5882,
+    "entity_count": 12031,
+    "entity_memory_edge_count": 34416,
+    "memory_sequence_edge_count": 11744
+  },
+  "retrieval": {
+    "variant": "B_no_caption",
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "expand_sequence": true,
+    "sequence_secondary_scale": 0.5,
+    "force_full_pool": false,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "score_version": "signed_cosine_gated_dense_fill_topk_v2"
+  },
+  "metrics": {
+    "official_overall_f1": 0.4173942598187307,
+    "official_recall_at_25": 0.8430397784491435,
+    "local_categories_1_to_4_f1": 0.5064577922077917,
+    "local_categories_1_to_4_recall_at_25": 0.8501798701298698,
+    "b_no_caption_minus_b": {
+      "official_overall_f1": -0.00828549848942639,
+      "official_recall_at_25": -0.001802618328298644,
+      "local_categories_1_to_4_f1": -0.013282467532467979,
+      "local_categories_1_to_4_recall_at_25": -0.0000519480519484139
+    },
+    "b_no_caption_minus_a_no_caption": {
+      "official_overall_f1": 0.0013670694864045818,
+      "official_recall_at_25": 0.04749496475327297,
+      "local_categories_1_to_4_f1": 0.004360389610389315,
+      "local_categories_1_to_4_recall_at_25": 0.022288961038961053
+    }
+  },
+  "category_metrics": {
+    "1": {
+      "count": 282,
+      "f1": 0.4019361702127659,
+      "recall_at_25": 0.6683723404255318
+    },
+    "2": {
+      "count": 321,
+      "f1": 0.3840031152647978,
+      "recall_at_25": 0.9075794392523363
+    },
+    "3": {
+      "count": 96,
+      "f1": 0.2118854166666667,
+      "recall_at_25": 0.5291145833333334
+    },
+    "4": {
+      "count": 841,
+      "f1": 0.6218703923900115,
+      "recall_at_25": 0.9258834720570751
+    },
+    "5": {
+      "count": 446,
+      "f1": 0.10986547085201794,
+      "recall_at_25": 0.8183856502242153
+    }
+  },
+  "query_artifact_usage": {
+    "configured_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "required_queries": 1986,
+    "lookups": 1996,
+    "hits": 1996,
+    "misses": 0,
+    "live_embedding_requests": 0
+  },
+  "warm_cost": {
+    "retrieval_wall_seconds": 23.12015406299971,
+    "answer_wall_seconds": 2363.0640941180027,
+    "answer_request_count": 1986,
+    "answer_input_tokens": 2578136,
+    "answer_output_tokens": 16098
+  },
+  "artifact_hashes": {
+    "audit": "c1e2f9f70d105c1a0bbb437ce2dfc2e9299d3ee266547d1bc315a3229c05b85b",
+    "cost_events_warm": "77f7d774a75c518c3540f4597ef8d10b14d7cf6c7de3a0e71b3035b23b65bc27",
+    "prediction": "b4017af42118a6b2c51f4b7a02fe9c68b0a0ef8ad4d40178890e17e1bfb432b4",
+    "progress": "bee9a40d58df305d1d52551febecee7fbb919e8e3c5a6b6fedf2f463b74aabf1",
+    "query_cache_usage": "51314d749cc3f11a22bf75f68ef423687fd36551917c37fa6609d791d75d2df0",
+    "run_config": "8e74fd11a8a817008059172f8b508f740a56707038fa2b0ac2885a67d7cd5e55",
+    "stats": "e7bf4992390072c354e7d8d87653f0428243a4fb2c34fc08e5a85c7d8956314a",
+    "validation": "9282b900cad5215505694ff734f8cbf0e70a20002e9c7fea2cdaf2359b442cb7",
+    "independent_validation": "280cf51faae2f05ad89ee6a788a86635b89b94509b301654df1a5069aa49b6f6"
+  },
+  "checks": {
+    "formal_validator_in_run": "pass",
+    "formal_validator_independent": "pass",
+    "official_stats_aggregation": "pass",
+    "mandatory_graph_constraint": "pass",
+    "prompt_scaffold_chars": 2410,
+    "prompt_budget_limit": 5000,
+    "combined_tests_passed": 76,
+    "vendor_hashes_passed": 16,
+    "frozen_evaluator_changed": false,
+    "output_directory_absent_at_start": true,
+    "resume": false,
+    "overwrite": false
+  },
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "execution_state": "paused_by_user_after_v48_commit_and_push",
+  "next_action": "none until the user asks to resume"
+}

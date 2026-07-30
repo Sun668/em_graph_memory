@@ -1,0 +1,21 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "not-started",
+  "classification": "diagnostic-only",
+  "run_id": "v81_primary_b_cold_warm_cost",
+  "python_process_started": false,
+  "provider_requests": 0,
+  "launchd_label_removed": true,
+  "cache_created": false,
+  "event_manifest_created": false,
+  "report_created": false,
+  "exit_status_created": false,
+  "log": {
+    "path": "outputs/locomo_cost/primary_b_v81.log",
+    "bytes": 134,
+    "sha256": "94094cd4e593eab3091c8a53aace5fc789b754884b6022a8cad4e155bebc197e"
+  },
+  "cause": "macOS launchd service privacy context denied access to env_gpt.sh and the workspace virtualenv",
+  "paper_eligible": false,
+  "launchd_rejected": true
+}

@@ -1,0 +1,25 @@
+{
+  "snapshot": "v15_formal_graph_orchestration",
+  "result_type": "source_and_validation_milestone",
+  "metric_bearing": false,
+  "focused_tests": 3,
+  "combined_tests": 46,
+  "formal_gates": [
+    "clean committed source",
+    "pinned dataset",
+    "explicit scope",
+    "absent condition directory",
+    "cache identity",
+    "no resume or overwrite",
+    "graph and prompt audit",
+    "official stats",
+    "external validator"
+  ],
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false,
+  "frozen_evaluator_changed": false,
+  "vendor_hashes_passed": 16,
+  "external_model_calls": 0,
+  "mandatory_graph_constraint": "enforced by formal audit",
+  "metric_claim": false
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "invalid",
+  "classification": "diagnostic-only",
+  "run_id": "v77_primary_b_cold_warm_cost",
+  "reason": "Per-conversation QuestionEntityCache instances overwrote one shared whole-file path, so a complete warm cache could not be established.",
+  "exit_code": 130,
+  "cost_report_created": false,
+  "paper_eligible": false,
+  "reusable": [
+    "frozen parameter inventory",
+    "validated primary-B warm answer telemetry",
+    "cache-overwrite diagnostic evidence"
+  ],
+  "invalidated": [
+    "partial cold retrieval measurement",
+    "partial isolated v77 cache as a formal cold-start artifact",
+    "all v77 cold/warm cost claims"
+  ],
+  "rerun": {
+    "required": true,
+    "new_run_id_required": true,
+    "new_absent_cache_path_required": true,
+    "shared_question_cache_required": true
+  },
+  "evidence": "failed_probe_01/evidence.json"
+}

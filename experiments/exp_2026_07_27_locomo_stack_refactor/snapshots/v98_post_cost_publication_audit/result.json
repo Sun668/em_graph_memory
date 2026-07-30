@@ -1,0 +1,38 @@
+{
+  "schema": "locomo_publication_claim_audit_v2",
+  "status": "pass",
+  "snapshot": "v98_post_cost_publication_audit",
+  "input_sha256": "5/5 pass",
+  "metric_recalculation": false,
+  "provider_calls": 0,
+  "strongest_supported_claim_level": "robust",
+  "strongest_supported_claim": "Complete Entity-Memory retrieval improves official evidence recall over matched dense Memory retrieval across top-k 5, 10, 25, and 50 on the evaluated ten-conversation LoCoMo set; no overall final-answer F1 advantage is established.",
+  "cost": {
+    "complete_cold_warm_report": true,
+    "request_counts_reported": true,
+    "provider_tokens_reported": true,
+    "latency_reported": true,
+    "storage_reported": true,
+    "monetary_cost_reported": false,
+    "monetary_cost_reason": "Provider pricing was not frozen as an experiment input."
+  },
+  "unsupported_claims": [
+    "Entity-Memory retrieval significantly improves overall final-answer F1.",
+    "The method is state of the art on LoCoMo.",
+    "The result generalizes beyond the evaluated ten conversations or to another dataset.",
+    "The local DRAGON condition reproduces or controls the official reference.",
+    "The reported latency generalizes across hardware or providers.",
+    "A monetary cost is established."
+  ],
+  "graph_constraint": "pass",
+  "prompt_budget": "pass",
+  "reproducibility": "pass",
+  "journal_neutral_manuscript_ready": true,
+  "submission_ready": false,
+  "submission_blockers": [
+    "Target venue is not selected.",
+    "Literature positioning and citations have not received a final source-verification pass.",
+    "Venue-specific formatting and final Abstract remain."
+  ],
+  "decision": "proceed_to_journal_neutral_manuscript"
+}

@@ -1,0 +1,159 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "v87_final_publication_claim_audit",
+  "created_at": "2026-07-29T22:18:00+08:00",
+  "source": {
+    "commit": "5f3a2b8",
+    "analysis_type": "read-only synthesis of frozen validated artifacts",
+    "metric_recalculation": false,
+    "provider_calls": 0
+  },
+  "objective": {
+    "primary": "Determine the strongest publication claim supported by the completed formal LoCoMo matrix without overstating final-answer quality, generalization, official reference alignment, or cost completeness.",
+    "candidate_claim_level": "robust",
+    "primary_claim": "Complete Entity-Memory retrieval improves official evidence recall over the matched dense Memory control across preregistered top-k values 5, 10, 25, and 50, while no overall final-answer F1 advantage is established.",
+    "secondary_claims": [
+      "Speaker Entity links contribute to evidence recall within complete B.",
+      "Sequence scale is insensitive over 0.25 to 1.0 after family correction.",
+      "Strongly reducing Entity fusion weight to 0.10 lowers evidence recall; 0.50/0.50 is not distinguishable from the primary 0.30/0.70 setting.",
+      "Raw-text input retains a B-over-A recall advantage, while time annotation has no supported within-B overall effect.",
+      "Local DRAGON is diagnostic only and cannot support an official-reference comparison."
+    ],
+    "hard_claim_exclusions": [
+      "overall final-answer F1 improvement",
+      "state-of-the-art performance",
+      "cross-dataset or population generalization",
+      "official DRAGON reproduction or controlled official-baseline superiority",
+      "complete cold/warm cost evidence",
+      "paper_ready=true before the cost report and final audit gates pass"
+    ]
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "conversations": 10,
+    "qa": 1986,
+    "category_5": 446,
+    "order": "file order"
+  },
+  "evaluation": {
+    "primary_metrics": [
+      "official per-QA F1 aggregated over all 1,986 rows",
+      "official evidence-recall definition reported as recall_acc"
+    ],
+    "local_diagnostic": "Categories 1-4 subset F1 and recall; never called an official LoCoMo metric",
+    "answer_protocol": "frozen repository LoCoMo RAG evaluator, batch size 1, gpt-3.5-turbo requested answer model, temperature 0, 32 completion tokens",
+    "statistics": {
+      "estimators": [
+        "paired-QA bootstrap",
+        "whole-conversation cluster bootstrap"
+      ],
+      "resamples": 10000,
+      "seed": 20260727,
+      "alpha": 0.05,
+      "multiplicity": "Holm step-down within each preregistered component, input, fusion, and sequence family"
+    }
+  },
+  "evidence_inputs": [
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v34_corrected_m1_a_all10/result.json",
+      "sha256": "5e114d1eb5ca40600ec7bdea8be26e5c5d7b203446ba3da5005e12810b858a56"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v36_corrected_b_embed_all10_dense_control/result.json",
+      "sha256": "a54a0221bf6a4237969d688c1adb35ef7aa8ce80866d42a763aa243abc93caec"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v37_corrected_m1_b_all10/result.json",
+      "sha256": "da4640b8cb900c6b04ba9a688bc41515114d3d9cba672ad805de6916d89e4daa"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v39_relocation_validation_gate/result.json",
+      "sha256": "9e1e89b8b2c0ca2947e3d6839dcf56780061f139ba47ad08daf0ad2f4b459967"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v40_corrected_primary_ab_significance/result.json",
+      "sha256": "57252c806bf38cdfecf920410b9decc3ef9bf745e2c9eb68e3a09f3d262db8af"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v46_component_family_significance/result.json",
+      "sha256": "a0b16d8456071c22033dc5f770e2bc7f1202634d26e1b6a05f81b01447309138"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v52_input_family_significance/result.json",
+      "sha256": "2a38c7a5565239828dd91e79a641df6613fd29eed092cb08ccbd80a4fab16874"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v53_b_no_speaker_all10/result.json",
+      "sha256": "569e63821d6ea04b53fa6944a6e47b26d81e1b9fa547f0bc9c3713bd3a66daad"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v54_a_top5_all10/result.json",
+      "sha256": "0e56203b052cc351c07256dd57b2c227e35b00c6531970332c66bcc393fe90e8"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v55_b_top5_all10/result.json",
+      "sha256": "3bb8725a43ac26fc15456464ccb4ff1995ffa279f0589592fb3b3e4701bf329e"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v56_a_top10_all10/result.json",
+      "sha256": "7628905c33f09664c7b002fad09403cda8dbcc1ecb1aa92e9276a1a2f0e411e1"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v57_b_top10_all10/result.json",
+      "sha256": "a4a059c016d473f43ec0188f6d9c42410071416091ecadf71cf84f3a5e18fe5f"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v59_a_top50_retry_all10/result.json",
+      "sha256": "274e6856d7d82fa64c8738737c499bb86e7a77360ffee310a9824a793068bce0"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v60_b_top50_all10/result.json",
+      "sha256": "a6430ef677c3ed0cde827e0d8f1a91b26f8ee3faa8d8bf9ad2e00b8c22d346b8"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v66_fusion_family_significance/result.json",
+      "sha256": "4ba1749276c620138e450cae15a0f5a6b346c1d416276335f4f855d7ee4a6e91"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v70_sequence_family_significance/result.json",
+      "sha256": "6b163a49a05fb7430af117b6946fb68d8abb08ea4365d961c5ffa6a07e87a84b"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v75_o2_local_dragon_all10/result.json",
+      "sha256": "49a3f9e3421bda60017264dcaceb276a25e56ea6cb4e9cbd6c2a437cda67c6f3"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v86_primary_b_staged_cold_warm_cost/result.json",
+      "sha256": "02b794e4957f8e0723ca814b8c2e49f60c4b0b34b85e455b07bf5c3e863665b9"
+    }
+  ],
+  "audit_gates": {
+    "all_input_sha256_match": true,
+    "all_formal_inputs_validated": "must pass",
+    "graph_constraint": "must pass for every promoted metric condition",
+    "query_artifact_identity": "must be exact within each matched comparison",
+    "official_metric_terminology": "must distinguish official F1, recall_acc, and local Categories 1-4 subset summaries",
+    "negative_and_null_findings": "must be reported",
+    "failed_control_or_protocol": "must be reported",
+    "cost": "must be marked incomplete",
+    "paper_ready": "must remain false while complete cold/warm cost evidence is missing",
+    "journal_format": "unknown; journal-specific formatting and word limits are outside this audit"
+  },
+  "planned_outputs": [
+    "snapshots/v87_final_publication_claim_audit/result.json",
+    "snapshots/v87_final_publication_claim_audit/NOTES.md",
+    "snapshots/v87_final_publication_claim_audit/research_claim_evidence.json",
+    "paper/evidence_ledger.md",
+    "paper/results_tables.md",
+    "paper/manuscript_materials.md"
+  ],
+  "decision_options": [
+    "continue_to_cost",
+    "paper_ready",
+    "stop",
+    "diagnostic_only"
+  ]
+}

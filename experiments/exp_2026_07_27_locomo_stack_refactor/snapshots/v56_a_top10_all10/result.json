@@ -1,0 +1,80 @@
+{
+  "schema": "locomo_snapshot_result_v1",
+  "snapshot": "v56_a_top10_all10",
+  "result_type": "formal_all10_top_k_robustness_baseline",
+  "status": "pass",
+  "paper_metric_eligible": true,
+  "graph_claim_eligible": true,
+  "run_id": "formal_all10_M4_A_top10_0eee9b8_qfrozen_run01",
+  "source_commit": "45bde5ddd9219d398f74ab3fdf8546f06660aec0",
+  "parameter_sha256": "3f0714753be687b0914f29d5c9a2f22c4bb32658beca3c4995df748493f2bec0",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "counts": {
+    "conversations": 10,
+    "qa": 1986,
+    "category5": 446
+  },
+  "metrics": {
+    "official_f1": 0.41760674723061425,
+    "official_recall_acc": 0.6891450151057401,
+    "local_categories_1_4_f1": 0.49504350649350637,
+    "local_categories_1_4_recall_acc": 0.7234688311688311
+  },
+  "descriptive_comparison_vs_corrected_a_top25": {
+    "f1_difference": -0.003074521651560802,
+    "recall_difference": -0.10832326283987914,
+    "local_categories_1_4_f1_difference": -0.017601298701298673,
+    "local_categories_1_4_recall_difference": -0.10462987012987013,
+    "interpretation": "Cutoff sensitivity only; top-k 25 remains primary and matched B@10 is pending."
+  },
+  "graph": {
+    "memory_nodes": 5882,
+    "entity_nodes_used": 0,
+    "mandatory_graph_constraint": "pass",
+    "construction_inputs": "conversation session anchors, dialog ids, speakers, normalized/time-annotated dialog text, and official captions only",
+    "qa_derived_construction_inputs": 0
+  },
+  "cache_audit": {
+    "old_artifacts_deleted": 0,
+    "old_artifacts_overwritten": 0,
+    "graph_files_before": 70,
+    "graph_files_after": 70,
+    "memory_indexes_before": 30,
+    "memory_indexes_after": 30,
+    "new_graph_builds": 0,
+    "new_entity_extraction_requests": 0,
+    "new_memory_embedding_requests": 0,
+    "new_query_entity_requests": 0,
+    "query_hits": 1986,
+    "query_misses": 0,
+    "live_query_embedding_requests": 0
+  },
+  "cost": {
+    "retrieval_wall_seconds": 4.680800665998442,
+    "answer_wall_seconds": 2235.3188559549994,
+    "answer_requests": 1986,
+    "answer_input_tokens": 1165180,
+    "answer_output_tokens": 15083,
+    "monetary_cost": "unknown"
+  },
+  "validation": {
+    "in_run": "pass",
+    "independent": "pass",
+    "tests": "77/77",
+    "vendor_hashes": "16/16",
+    "frozen_evaluator_diff": "clean",
+    "prompt_budget": "0/5000"
+  },
+  "artifact_hashes": {
+    "prediction": "b37a92b412383f9224f4d9417ae028017d0bd24defbfa82d914395e81cbaffa9",
+    "stats": "eb1295f8cb6381000ef110c796fe7fdf5b4303ad51bb57b5c4b37382d4fd7a27",
+    "audit": "7a8b81693e5bdc75bbb084cf1557275b5d339e05529951b6f1a52b59430704a9",
+    "query_usage": "d94d1765f07ca06326b5949a3108bf456635210307cfec770b6ff3f717d10d74",
+    "in_run_validation": "7180cf40087457fe3113ae702c1dac651cb1e33b6497f24f86f3b4ba6dd74a30",
+    "independent_validation": "50630668f24cd796b4d52790291a7f0da5cef28183b7ff1f8f34a9510ba3e407"
+  },
+  "claim": "A at top-k 10 loses 10.8323 evidence-recall points relative to the primary top-k 25 baseline; no A/B robustness claim is made before B@10.",
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v56, then preregister and run matched B@10 with all shared caches preserved"
+}

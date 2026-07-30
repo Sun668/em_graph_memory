@@ -1,0 +1,25 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v45_component_family_tooling",
+  "result_type": "source_only_analysis_lock",
+  "metric_bearing": false,
+  "base_commit": "f92fa51",
+  "seed": 20260727,
+  "resamples_per_estimator": 10000,
+  "component_hypothesis_count": 4,
+  "holm_strata": "separate within metric and bootstrap estimator",
+  "source_sha256": {
+    "component_family_report.py": "beaf63821caf693e09f94e35974eff9e229913b0a7d6bbe9ef170ae9d0498a26",
+    "significance_report.py": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+    "test_analysis_tools.py": "a819d7ca20d3c8842dea287f78ca01a0808b4f35cbdc977c0540ab103a6baab1"
+  },
+  "checks": {
+    "focused_tests_passed": 16,
+    "python_compile": "pass",
+    "metric_recalculation": false,
+    "frozen_evaluator_touched": false
+  },
+  "publication_gate": "tooling_locked",
+  "paper_ready": false,
+  "next_action": "commit and push tooling, then generate the formal component-family report"
+}

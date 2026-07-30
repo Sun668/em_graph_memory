@@ -1,0 +1,18 @@
+{
+  "schema": "research-experiment-diagnostic-v1",
+  "status": "frozen_failure",
+  "snapshot_id": "v88_v86_query_hit_counter_failure",
+  "failed_run_id": "v86_primary_b_staged_cold_warm_cost",
+  "source_commit": "22ba54c0be82af40c8c4ce00fef1a25ae01066b9",
+  "source_runner_sha256": "40fc869795c840900123b0d2ff2773a6dd93f6818caf42a79f581f078dc78a70",
+  "parameter_snapshot": "../v86_primary_b_staged_cold_warm_cost/parameters.json",
+  "parameter_snapshot_sha256": "78ab5dd2b5c311668799ff7f13ce16111099218171ddc706ee162d39d508a104",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+  "failure_operation": "cold:retrieve:conv-26:50:100",
+  "failure_exception": "RuntimeError: query artifact lookup count does not match retrieval QA count",
+  "checkpoint_path": "outputs/locomo_cost/primary_b_v86_checkpoint.json",
+  "cache_root": "outputs/locomo_cost/primary_b_v86_cache",
+  "continuation_allowed": false,
+  "reason_continuation_forbidden": "The checkpoint persisted an in_progress operation before the failed transaction; the v86 frozen protocol requires a new run identity after any such interruption."
+}

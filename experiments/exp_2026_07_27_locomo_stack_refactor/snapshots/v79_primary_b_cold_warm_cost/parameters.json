@@ -1,0 +1,148 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+  "measurement_id": "primary_b_v79_cold_warm_cost",
+  "purpose": "Measure the paper-primary complete-B@25 condition under a fresh isolated cold cache and an immediately repeated warm cache after the v78 shared-cache repair, while reusing the already measured cache-independent formal answer event with explicit disclosure.",
+  "metric_bearing": false,
+  "performance_tuning": false,
+  "scientific_identity": {
+    "dataset": "data/locomo10.json",
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "scope": "all10",
+    "conversations": 10,
+    "qa": 1986,
+    "variant": "B",
+    "top_k": 25,
+    "extract_model": "gpt-3.5-turbo",
+    "embedding_model": "text-embedding-3-small",
+    "answer_model": "gpt-3.5-turbo",
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "semantic_score_normalization": "none",
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    }
+  },
+  "warm_formal_artifact": {
+    "condition_directory": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+    "cost_events": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json",
+    "cost_events_sha256": "7ea432e10901997a39c51b0711c17e436d6a718bcd53a51991d82885b2c628b4",
+    "condition_fingerprint": "9cb8c2991f51ab6085a68914fdaae42f4ad67d8cdf274bdd8dc359ba1a3c2782",
+    "formal_source_commit": "41a78125d640d5ebb127d1cb817843b4eef35a8b",
+    "formal_validation": "pass",
+    "answer_event_policy": "Reuse the same measured answer event for cold and warm because answer generation is downstream of and independent from graph cache state; label measurement_reuse in both events."
+  },
+  "measurement_paths": {
+    "cold_cache_root": "outputs/locomo_cost/primary_b_v79_cache",
+    "event_manifest": "outputs/locomo_cost/primary_b_v79_events.json",
+    "report": "outputs/locomo_cost/primary_b_v79_report.json",
+    "start_requirement": "All three paths must be absent.",
+    "failed_v77_policy": "outputs/locomo_cost/primary_b_v77_cache remains quarantined, read-only, and is neither resumed nor deleted.",
+    "old_cache_policy": "outputs/em_graph and every formal result directory are read-only comparison artifacts; never delete, overwrite, rebuild, or write into them."
+  },
+  "command": "source env_gpt.sh; unset http_proxy https_proxy; export EM_GRAPH_MAX_WORKERS=8; export EM_GRAPH_EMBED_WAIT=0.05; export PYTHONPYCACHEPREFIX=/private/tmp/graph_memory_pycache; .venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe.py --data-file data/locomo10.json --cache-dir outputs/locomo_cost/primary_b_v79_cache --warm-cost-file outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json --output-events outputs/locomo_cost/primary_b_v79_events.json --output-report outputs/locomo_cost/primary_b_v79_report.json --scope all10 --variant B --top-k 25 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --entity-weight 0.3 --semantic-weight 0.7 --sequence-scale 0.5 --entity-min-rel-score 0.5 --entity-top-k-per-key 20 --who-only-dampen 0.25",
+  "source": {
+    "probe_commit": "bc6604b69368c197117b4c70ab2deca69a47223e",
+    "probe_tree": "efeeedf65ef694231a1784e8bc1a1c589487ece5",
+    "cost_probe_sha256": "e3bc1f82167e46b9ab4d0c3246b2937be7a54d1c19d9575e24c4eab012a6bcba",
+    "cost_report_sha256": "d976804959769084b0c99aeafbb03bf024f4ec4b5b4ea834170702768dd3cb87",
+    "cost_telemetry_sha256": "bf83321611f71b3e81e5ec4ab79b94640a51671720d3dd9fe0b69a6bf785d9ec",
+    "worktree_clean_before_freeze": true
+  },
+  "measurement_logic": {
+    "cold": "Construct all ten B graphs, conversation Entities, Memory embedding indexes, question Entities, and retrieval results inside the new absent v79 cache root.",
+    "warm": "Repeat the same graph/index/query/retrieval path using the complete newly created v79 cache root.",
+    "shared_cache_repair": "Within each cold or warm state, all conversation Recalls receive exactly one shared TextEmbeddingCache, question EntityExtractor, and QuestionEntityCache. The warm state constructs new shared objects that load the complete cold files.",
+    "stages": [
+      "graph_construction",
+      "entity_extraction",
+      "embedding",
+      "query_entity",
+      "retrieval",
+      "answer_generation"
+    ],
+    "latency_clock": "time.perf_counter",
+    "token_source": "provider response usage",
+    "stage_wall_times_overlap": true,
+    "missing_values_estimated": false,
+    "disk_kinds": [
+      "graph",
+      "embedding_index",
+      "cache"
+    ]
+  },
+  "graph_constraint": {
+    "construction_inputs": [
+      "session date_time",
+      "dia_id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "excluded": [
+      "QA question",
+      "QA answer",
+      "QA evidence",
+      "QA category",
+      "judge output",
+      "previous prediction",
+      "question-driven ledger"
+    ],
+    "recall": "Graph retrieval over conversation-built Entity/Memory nodes and sequence edges."
+  },
+  "prompt_budget": {
+    "entity_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "pass": true,
+    "answer_prompt": "No new answer generation; reuse the immutable formal answer telemetry."
+  },
+  "resource_limits": {
+    "wall_seconds_max": 21600,
+    "cold_conversation_entity_requests_max": 5882,
+    "cold_query_entity_requests_max": 1974,
+    "cold_embedding_requests_max": 5882,
+    "warm_new_provider_requests_max": 0,
+    "cold_cache_bytes_max": 300000000,
+    "answer_requests_reused": 1986,
+    "answer_input_tokens_reused": 2744099,
+    "answer_output_tokens_reused": 16269,
+    "monetary_limit": {
+      "status": "unknown",
+      "reason": "Provider price is unavailable; exact request/token counts and wall time are measured and bounded."
+    }
+  },
+  "validity_gates": [
+    "Clean committed source and unchanged frozen evaluator with 16/16 vendored hashes.",
+    "Validated warm formal identity, exact fingerprint, models, B@25 parameters, and configured warm cost filename.",
+    "v79 cold cache, event manifest, and report paths absent at start; quarantined v77 path remains present and unused.",
+    "All conversation Recalls within a state share one text cache, question extractor, and question cache.",
+    "Cold question caches retain all 1,986 ordered QA keys / 1,974 unique question digests before warm retrieval.",
+    "Cold and warm contain all six required stages with provider token usage present.",
+    "Exactly 10 graph files and 10 embedding-index files in the isolated v79 cost cache.",
+    "Warm construction, extraction, embedding, and query-Entity provider request counts are zero.",
+    "Disk graph/index/cache records exist and no missing values are estimated.",
+    "Original 70 graphs, original 30 Memory indexes, ten O2 indexes, query artifacts, formal outputs, and failed v77 diagnostic remain byte-identical."
+  ],
+  "stop_conditions": [
+    "Any v79 target output exists before start.",
+    "Any old or quarantined artifact mutation, deletion, overwrite, or rebuild.",
+    "Any question-cache entry-count loss at a conversation boundary.",
+    "Any warm formal identity or validator mismatch.",
+    "Any provider usage field is missing.",
+    "Any request, wall-time, or storage ceiling is exceeded.",
+    "Ten consecutive provider connection failures."
+  ],
+  "publication_gate": "cost_protocol_frozen",
+  "paper_ready": false,
+  "next_action": "Commit and push this v79 parameter lock, run the exact cost command, validate and snapshot the result, then execute the final publication audit."
+}

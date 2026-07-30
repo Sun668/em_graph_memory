@@ -1,0 +1,43 @@
+# v01 — pre-refactor boundary
+
+Status: immutable source identity before the three-layer refactor. No metric.
+
+## Base
+
+- Git base: `1e193e52d0afa77740d6bfca5c423e5fd351e7ae`
+- Functional predecessor:
+  `experiments/exp_2026_07_26_locomo_official_compare/snapshots/v21_signed_cosine_blip_only`
+- Official LoCoMo HEAD selected for vendoring:
+  `3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376`
+
+## Existing source hashes
+
+```text
+eec23d4639f4eb89290b3fb36fc9425671c12f978877bea34d04bb283f4d58ee  em_graph/__init__.py
+513a72c736c51a3e15094ded5565482807acbe5a99b49dd5098bdc71768ffdbe  em_graph/builder.py
+02bc380f9615d95890fb680cf8054f9028bc36de286a2cb9247a19ed35403cbc  em_graph/config.py
+018a1da1a5117be576c46190623ef4ec035116c8a9c58de9d2b868f83a905064  em_graph/embedding_index.py
+649d4986fdef32c18264649150cb981580d947da47bf1792f992b00ade6b8fd5  em_graph/entity_bm25_index.py
+80f28d44cf135e827e25ea1f356de36ee733f1252144422c1e3d6febe809394d  em_graph/entity_extractor.py
+341e5f67b52919a19adeb6f18e7c628cd7895716a3c5c9d045589d0d3b9660ca  em_graph/llm.py
+3e2393f1c086acddd2d167aeac5a0cc10faa333bb2a61af8dfc200902a82288e  em_graph/models.py
+2b13ccbb78b560a5d2cce5c0fc69632d200062ae153a93fe85e07bae3171bf9f  em_graph/replace_pronouns.py
+7a0ba9b43f8b98d5b5fdf429f94968743cbd5a4404efd3bb7868c306f7e0f2b8  em_graph/retrieval.py
+637dacb58e7acb5ca472e5bdfb9a0d6c25f821554ed8b811df47a7d88c8b9c7b  em_graph/retrieval_audit.py
+9f339badf69696886cde94e4a380258f367fc343e321312dbe5b150ff4243b78  em_graph/tokenize.py
+0c10f6031921f9fea5927d245860cab1ebccab85785ad8266b9404361db34c89  experiments/shared/llm_client.py
+2224f24cfd99afbd8191fc0132dc547250db2f63d5be1c153ea849f5f751b056  experiments/shared/codex_llm_client.py
+1f98d0c412755824c3cebe6c0e2f9c46cb0e8c445124c1931f1772f96cca9744  run_publish_stack.py
+dff082dd7c3d18b5dcd8778f5a76789c27704283bd358b4fa57233aeeb9a294a  locomo_official_qa.py
+2417729e1cdc7b821522ee546f9d64e9bd43be6b2db072b07474914d32dde13e  locomo_official_metrics.py
+```
+
+The final three files are under
+`experiments/exp_2026_07_26_locomo_official_compare/`.
+
+## Mandatory graph constraint
+
+The predecessor passes the conversation-only graph constraint. The refactor
+must preserve that property and must not move any QA/gold/evidence/category
+input into graph construction.
+

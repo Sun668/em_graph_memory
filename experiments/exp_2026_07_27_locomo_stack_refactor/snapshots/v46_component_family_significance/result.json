@@ -1,0 +1,50 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v46_component_family_significance",
+  "result_type": "component_family_holm_significance",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "source_commit": "6557f839801301e3ffa6606db85c71e9228a0b57",
+  "source_tree": "ccca309422a300335007bbd580c1954b31d4ebd3",
+  "seed": 20260727,
+  "resamples_per_estimator": 10000,
+  "qa_count": 1986,
+  "conversation_clusters": 10,
+  "family_hypotheses": 4,
+  "alpha": 0.05,
+  "report": {
+    "path": "outputs/locomo_analysis/component_family_6557f83_seed20260727.json",
+    "sha256": "2aabbf88b1269b70a43ab8677ed9cb2742f51b674fab9444840be1eaa8085189",
+    "fingerprint": "679ca12fa311e6fc0c1c084bfa0618842c99746f2954113cf5bc2f1010d75223",
+    "independent_reproduction_byte_identical": true
+  },
+  "supported_after_holm": {
+    "f1": ["semantic_signal"],
+    "recall_at_25": [
+      "sequence_inside_b",
+      "entity_score_fusion",
+      "sequence_over_gate",
+      "semantic_signal"
+    ]
+  },
+  "not_supported_after_holm": {
+    "f1": [
+      "sequence_inside_b",
+      "entity_score_fusion",
+      "sequence_over_gate"
+    ]
+  },
+  "checks": {
+    "all_formal_inputs_validate": true,
+    "official_stats_parity": "pass",
+    "metric_recalculation": false,
+    "mandatory_graph_constraint": "pass for all inputs",
+    "prompt_budget": "pass for all inputs",
+    "combined_tests_passed": 76,
+    "vendor_hashes_passed": 16,
+    "frozen_evaluator_changed": false
+  },
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v46, then begin predeclared input ablations"
+}

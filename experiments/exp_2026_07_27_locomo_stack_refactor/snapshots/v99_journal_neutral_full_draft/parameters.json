@@ -1,0 +1,22 @@
+{
+  "schema": "research-manuscript-snapshot-v1",
+  "status": "frozen",
+  "snapshot_id": "v99_journal_neutral_full_draft",
+  "created_at": "2026-07-30T09:35:00+08:00",
+  "source_commit": "7fc3876b589e41a4c9d8524136c640e913ab5aae",
+  "claim_audit": {
+    "path": "../v98_post_cost_publication_audit/result.json",
+    "sha256": "8dee668bd371f3759b1e2915369936e835806e4c42d04c40479218a68d3ea14a"
+  },
+  "draft": {
+    "path": "../../paper/ARXIV_DRAFT.md",
+    "sha256": "8d1aae66653298b3ec9cd6b47e1cca2f0f1bd85cb7ac125a1c9ef35e341b7e75",
+    "word_count": 2958,
+    "abstract_word_count": 195,
+    "reference_count": 6
+  },
+  "target_format": "journal-neutral Markdown / arXiv working draft",
+  "author_metadata": "placeholder",
+  "provider_calls_for_manuscript": 0,
+  "metric_recalculation": false
+}

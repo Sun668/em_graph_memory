@@ -1,0 +1,41 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "valid_intermediate_progress",
+  "paper_eligible": false,
+  "completed_operations": 20,
+  "planned_operations": 128,
+  "last_completed_operation": "cold:index:conv-50",
+  "in_progress": null,
+  "next_operation": "cold:retrieve:conv-26:0:50",
+  "artifacts": {
+    "conversation_graphs": 10,
+    "memory_indexes": 10,
+    "memory_nodes": 5882,
+    "graph_files": 10,
+    "embedding_index_files": 10
+  },
+  "cold_provider_usage": {
+    "conversation_entity_requests": 5873,
+    "conversation_entity_input_tokens": 3731393,
+    "conversation_entity_output_tokens": 425637,
+    "memory_embedding_requests": 591,
+    "memory_embedding_input_tokens": 214229,
+    "memory_embedding_output_tokens": 0
+  },
+  "permission_gate": {
+    "attempted_operation": "cold:retrieve:conv-26:0:50",
+    "operation_started": false,
+    "question_text_sent": false,
+    "checkpoint_modified": false,
+    "reason": "External-action review requires explicit user authorization for retrieval-time QA question Entity extraction."
+  },
+  "remaining_evidence": [
+    "44 cold retrieval batches over 1986 QA",
+    "10 warm graph cache checks",
+    "10 warm index cache checks",
+    "44 warm retrieval batches over 1986 QA",
+    "exact 1997 read-only query-vector hits per state",
+    "zero warm provider requests",
+    "final cost report and independent reproduction"
+  ]
+}

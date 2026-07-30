@@ -1,0 +1,71 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v39_relocation_validation_gate",
+  "result_type": "source_and_validation_gate",
+  "metric_bearing": false,
+  "paper_metric_eligible": false,
+  "base_commit": "02f27348f0b6461466255019433fcfde3d18bf56",
+  "base_tree": "f7acca654edae1d687bd5ed5bfc10d54dfd0526d",
+  "source_hashes": {
+    "validate_formal_result.py": "c0cf9c0ed314227091e1139207310c69adeffd1f4a04388940bd9bd32dd3d5ff",
+    "significance_report.py": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+    "test_validate_formal_result.py": "60d2e43d20b5f47852bcb648af369798f2f2a6052f52a9a7d0f802c8091476e1",
+    "test_analysis_tools.py": "3bb36078c25896c4b0fc9765a28e9baf7d5f25c9519d0c76657060bba2135fa5"
+  },
+  "relocation_manifest": {
+    "path": "a_relocation_manifest.json",
+    "sha256": "9c65b3de51b9e80131570196ce499db8459099323acef181d5ccd3417c5b2672",
+    "run_id": "formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+    "source_snapshot_result_sha256": "5e114d1eb5ca40600ec7bdea8be26e5c5d7b203446ba3da5005e12810b858a56",
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f"
+  },
+  "fail_closed_validation": {
+    "without_manifest_status": "fail",
+    "report_sha256": "11b9234f150d4214cb0b2647e1e9b3c52036447bdaa436243b21ac705375ed4f",
+    "failed_checks": [
+      "output_directory_identity",
+      "query_embedding_artifact_identity_and_coverage"
+    ]
+  },
+  "verified_relocation_validation": {
+    "with_manifest_status": "pass",
+    "report_sha256": "bfc617f908b8d598d1c7711e033a209b55daccbcd7038c550564d86daeb01173",
+    "paper_metric_eligible": true,
+    "graph_claim_eligible": true,
+    "samples": 10,
+    "qa": 1986,
+    "category5": 446,
+    "output_directory_mode": "verified_relocation",
+    "source_snapshot_match": "pass",
+    "run_config_match": "pass",
+    "prediction_match": "pass",
+    "stats_match": "pass",
+    "audit_match": "pass",
+    "query_cache_usage_match": "pass",
+    "query_artifact_remap_match": "pass",
+    "complete_current_formal_validation": "pass"
+  },
+  "test_and_compliance": {
+    "tests_passed": 75,
+    "tests_failed": 0,
+    "vendor_hashes_passed": 16,
+    "frozen_evaluator_changed": false,
+    "diff_check": "pass"
+  },
+  "behavior": {
+    "default_path_mismatch": "reject",
+    "missing_manifest": "reject",
+    "wrong_snapshot_hash": "reject",
+    "wrong_current_path": "reject",
+    "metric_artifact_tampering": "reject",
+    "query_artifact_path_or_hash_mismatch": "reject",
+    "historical_run_json_modified": false,
+    "significance_report_records_manifest_identity": true
+  },
+  "graph_constraint": "existing A graph audit revalidated pass; source change does not alter graph construction or retrieval",
+  "prompt_budget": "existing A 0/5000 revalidated pass; source change adds no runtime prompt",
+  "external_model_calls": 0,
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push the relocation gate, then run the predeclared 10000-resample corrected A/B significance analysis with the committed A relocation manifest"
+}

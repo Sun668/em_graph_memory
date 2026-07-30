@@ -1,0 +1,50 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "pass",
+  "snapshot": "v70_sequence_family_significance",
+  "metric_bearing": false,
+  "source_commit": "020891c56fc6832600dca89bdbd5d06301cdd72a",
+  "source_tree": "c25131308e1261ecefa442e3790285187c2a754e",
+  "report": "outputs/locomo_analysis/sequence_family_020891c_seed20260727.json",
+  "report_sha256": "1f0d5710c9e74726c6961a7606ecb244173bdc0970aad4618dd515a702c44543",
+  "report_fingerprint": "cc6e5d192520ba418d810926b93188c18969d21b960515615e9943de5562ef69",
+  "family": {
+    "hypotheses": 2,
+    "control_scale": 0.5,
+    "treatment_scales": [0.25, 1.0],
+    "resamples": 10000,
+    "seed": 20260727,
+    "correction": "Holm step-down separately by metric and estimator"
+  },
+  "holm_decisions": {
+    "f1": {
+      "paired_qa": {"scale_0_25": false, "scale_1_00": false},
+      "conversation_cluster": {"scale_0_25": false, "scale_1_00": false}
+    },
+    "recall": {
+      "paired_qa": {"scale_0_25": false, "scale_1_00": false},
+      "conversation_cluster": {"scale_0_25": false, "scale_1_00": false}
+    }
+  },
+  "notable_adjustment": {
+    "contrast": "sequence scale 1.0 versus 0.5",
+    "metric": "official overall F1",
+    "estimator": "conversation cluster",
+    "raw_p": 0.0405959404059594,
+    "holm_adjusted_p": 0.0811918808119188,
+    "reject_at_0_05": false
+  },
+  "identity_audit": {
+    "graph_and_index_records": 10,
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "metric_recalculation": false,
+    "byte_identical_reproduction": true,
+    "cache_mutation": false,
+    "graph_files": 70,
+    "memory_indexes": 30
+  },
+  "claim": "Across preregistered complete-B sequence scales 0.25, 0.5, and 1.0, no overall F1 or recall_acc contrast survives family correction under either estimator.",
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v70, then execute the preregistered O2 diagnostic and cost/publication audits"
+}

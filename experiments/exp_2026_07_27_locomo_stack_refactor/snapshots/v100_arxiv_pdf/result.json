@@ -1,0 +1,38 @@
+{
+  "schema": "research-manuscript-build-result-v1",
+  "status": "pass",
+  "pdf": {
+    "path": "outputs/paper/entity_memory_graph_retrieval_arxiv.pdf",
+    "sha256": "e46e5f07e7415f988ab9328d54c0328f18b1cf23604f2c0ad85c956e417f6d79",
+    "bytes": 189907,
+    "pages": 7,
+    "paper_size_points": [612, 792],
+    "pdf_version": "1.7"
+  },
+  "validation": {
+    "latex_build": "pass",
+    "undefined_citations": 0,
+    "undefined_references": 0,
+    "overfull_boxes": 0,
+    "text_extraction": "pass",
+    "visual_pages_inspected": [1, 2, 3, 4, 5, 6, 7],
+    "clipping_or_overlap": false,
+    "tables_readable": true,
+    "figure_readable": true,
+    "bibliography_resolved": true,
+    "claim_evidence_audit": "pass"
+  },
+  "manuscript": {
+    "technical_paper_ready": true,
+    "arxiv_pdf_ready": true,
+    "submission_ready": false,
+    "remaining_user_metadata": [
+      "author names",
+      "affiliations",
+      "author contact information",
+      "acknowledgments",
+      "funding and contribution statements"
+    ]
+  },
+  "decision": "deliver_verified_pdf"
+}

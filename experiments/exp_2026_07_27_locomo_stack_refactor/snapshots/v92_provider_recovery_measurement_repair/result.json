@@ -1,0 +1,43 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "validated_source_repair",
+  "paper_eligible": false,
+  "tests": {
+    "focused_cost_and_analysis_tests": {
+      "passed": 44,
+      "failed": 0
+    },
+    "full_experiment_tests": {
+      "passed": 108,
+      "failed": 0
+    },
+    "frozen_vendor_hashes": {
+      "passed": 16,
+      "failed": 0
+    },
+    "locomo_eval_worktree_clean": true,
+    "python_compile": "pass",
+    "git_diff_check": "pass"
+  },
+  "verified_behaviors": {
+    "provider_exhaustion_retries_same_qa": true,
+    "ordinary_runtime_errors_fail_immediately": true,
+    "recovery_count_is_bounded": true,
+    "backoff_is_exponential_and_capped": true,
+    "successful_attempt_produces_one_qa_latency": true,
+    "failed_attempt_and_wait_time_are_disclosed_separately": true,
+    "cost_report_aggregates_recovery_diagnostics": true,
+    "invalid_recovery_evidence_is_rejected": true,
+    "recovery_parameters_are_part_of_checkpoint_identity": true
+  },
+  "scientific_condition_changes": {
+    "graph_construction": false,
+    "graph_schema": false,
+    "retrieval_scoring_or_order": false,
+    "query_embedding_artifact": false,
+    "question_entity_prompt_or_model_parameters": false,
+    "answer_generation": false,
+    "evaluation": false
+  },
+  "external_model_requests_made_for_this_repair": 0
+}

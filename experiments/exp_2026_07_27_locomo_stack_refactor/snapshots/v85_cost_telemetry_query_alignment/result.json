@@ -1,0 +1,41 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "valid",
+  "classification": "source-only-tooling",
+  "run_id": "v85_cost_telemetry_query_alignment",
+  "base_commit": "f7e75101083e7033cc5b60fe8fe639a16bac1309",
+  "scientific_behavior_changed": false,
+  "cost_observation_changed": true,
+  "checkpoint_schema": "locomo_staged_cost_checkpoint_v2",
+  "query_artifact": {
+    "path": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "qa_count": 1986,
+    "unique_question_count": 1974,
+    "strict": true,
+    "use_text_cache": false
+  },
+  "repairs": {
+    "threaded_graph_chat_usage_mapped_to_entity_extraction": true,
+    "direct_embedding_usage_published_to_observer": true,
+    "embedding_input_tokens_required": true,
+    "observer_native_embedding_parity_required": true,
+    "query_miss_or_live_request_fails": true,
+    "warm_new_provider_request_fails": true,
+    "complete_question_cache_coverage_required": true
+  },
+  "validation": {
+    "focused_cost_tests": "19/19",
+    "current_refactor_tests": "101/101",
+    "historical_official_compare_tests": "17/17",
+    "historical_conv26_tests": "3/3",
+    "frozen_evaluator_hashes": "16/16",
+    "python_compilation": "pass",
+    "git_diff_check": "pass",
+    "full_query_artifact_validation": "pass"
+  },
+  "external_provider_requests": 0,
+  "cost_result_created": false,
+  "paper_eligible": false,
+  "next_action": "Commit/push, live one-call telemetry preflights, then freeze a new isolated v86 cost run."
+}

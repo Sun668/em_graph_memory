@@ -1,0 +1,28 @@
+{
+  "schema": "research-experiment-source-repair-v1",
+  "status": "frozen",
+  "snapshot_id": "v89_query_lookup_measurement_repair",
+  "base_commit": "29e9529",
+  "trigger_snapshot": "../v88_v86_query_hit_counter_failure",
+  "changed_sources": {
+    "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py": "435f95b8feebad1a7a41bbf597c7792b8790fa36f7e6d015764b21b6e7f45e91",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/test_cost_probe_staged.py": "115fd5f205687eb5493b27c745f79bf10466a2fd384cde68ece06b1f8604488f"
+  },
+  "formal_query_usage": {
+    "path": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/query_cache_usage.json",
+    "sha256": "c3b2800bc11c157de809415f6d8f64c4727229f5e478f8f1e0b4e1a97ebcfc13",
+    "qa_count": 1986,
+    "required_lookup_count": 1986,
+    "lookup_count": 1997,
+    "cache_hits": 1997,
+    "cache_misses": 0,
+    "live_embedding_requests": 0
+  },
+  "behavioral_change": {
+    "batch_gate": "Require query-artifact hits >= retrieval QA rows, with zero misses and zero live query-embedding requests.",
+    "whole_run_gate": "Require each cold and warm state to reproduce the matched formal B@25 lookup count exactly: 1,997 hits over 1,986 QA, with zero misses and zero live requests.",
+    "retrieval_behavior_changed": false,
+    "model_or_prompt_changed": false,
+    "cache_schema_changed": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v23_user_authorized_o1_waiver",
+  "result_type": "user_authorized_protocol_decision",
+  "base_commit": "795a86c08a3d4a3993dab6d5eadd6edd6a2f8b1b",
+  "waived_gate": "v22 O1 Recall@25 exact-reproduction tolerance only",
+  "o1_accepted": false,
+  "official_table_usage": "external_reference_only",
+  "m1_unblocked": true,
+  "remaining_gates": {
+    "m1_b_min_f1_percent": 49.6,
+    "m1_b_min_recall_at_25_percent": 75.7,
+    "paired_qa_bootstrap": true,
+    "conversation_cluster_bootstrap": true,
+    "mandatory_graph_constraint": true,
+    "formal_validator": true,
+    "a_b_embed_ordered_context_exact_equality": true
+  },
+  "metric_bearing": false,
+  "external_model_calls": 0,
+  "frozen_locomo_eval_changed": false,
+  "publication_gate": "continue",
+  "paper_ready": false
+}

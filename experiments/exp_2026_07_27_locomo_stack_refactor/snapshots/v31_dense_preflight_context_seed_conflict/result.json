@@ -1,0 +1,27 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v31_dense_preflight_context_seed_conflict",
+  "result_type": "retrieval_only_control_failure",
+  "metric_bearing": false,
+  "source_commit": "ef092c6",
+  "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+  "qa_exact_pass_before_stop": 1347,
+  "conversations_exact_pass": [
+    "conv-26",
+    "conv-30",
+    "conv-41",
+    "conv-42",
+    "conv-43",
+    "conv-44",
+    "conv-47"
+  ],
+  "stop_before_conversation": "conv-48",
+  "failure": "conflicting historical index vectors for one shared Memory text cache key during unnecessary reverse seeding",
+  "answer_generation_calls": 0,
+  "live_query_embedding_requests": 0,
+  "graph_constraint": "pass",
+  "frozen_locomo_eval_changed": false,
+  "publication_gate": "stop_for_control_repair",
+  "paper_ready": false,
+  "next_action": "disable writable context-cache seeding for strict formal runs that load existing Memory indexes, then repeat all-10 retrieval-only gate"
+}

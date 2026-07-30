@@ -1,0 +1,56 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v38_pre_relocation_gate_recovery",
+  "result_type": "source_recovery_before_relocation_validation_gate",
+  "metric_bearing": false,
+  "paper_metric_eligible": false,
+  "source_commit": "de14040fbed5fdfcda104f26ccea937584864d8b",
+  "source_tree": "0dc94164a39f3d1422f6ff943c5067936af00ace",
+  "source_hashes": {
+    "validate_formal_result.py": "2554c5d519290e8d9574e38d42935cb7599c3751ec1e1bbb6be96be2e5353e77",
+    "significance_report.py": "83f50168a151ee5d6b51db3360ace6279936f13f881f03cca385555fdd1ef55f",
+    "test_validate_formal_result.py": "1810fead5a840347ae0adfc8e89d175dfa5b9690608692eb230e51df7aecaebb",
+    "test_analysis_tools.py": "a63c50791d367a0f8cecff0674f698b26697f608614e5822cfe0781e4a0df689"
+  },
+  "bound_snapshots": {
+    "v34_corrected_m1_a_all10": "5e114d1eb5ca40600ec7bdea8be26e5c5d7b203446ba3da5005e12810b858a56",
+    "v36_corrected_b_embed_all10_dense_control": "a54a0221bf6a4237969d688c1adb35ef7aa8ce80866d42a763aa243abc93caec",
+    "v36_cache_transfer_paths": "d7ad4874bbaf5265b17c160a7ca6038634a89f2ba783c451c6a02f09c8b15ce4",
+    "v37_corrected_m1_b_all10": "da4640b8cb900c6b04ba9a688bc41515114d3d9cba672ad805de6916d89e4daa"
+  },
+  "a_relocation_audit": {
+    "run_id": "formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+    "old_repository_root": "/Users/smsun/Documents/github/graph_memory",
+    "current_repository_root": "/Users/sun/Documents/git/graph_memory",
+    "qa_count": 1986,
+    "category5_count": 446,
+    "metric_critical_artifacts_match_v34": {
+      "audit": true,
+      "cost_events_warm": true,
+      "prediction": true,
+      "query_cache_usage": true,
+      "run_config": true,
+      "stats": true
+    },
+    "derived_validation_matches_v34": false,
+    "derived_validation_note": "validation.json was regenerated after v34 and before the v36 transfer archive; it is not a metric input and current validation will be recomputed",
+    "current_validation_in_transfer_archive": true,
+    "new_a_rerun_started": false,
+    "new_a_condition_directory_exists": false
+  },
+  "planned_gate": {
+    "default_relocated_result_behavior": "reject",
+    "explicit_relocation_manifest_required": true,
+    "original_run_config_must_remain_unchanged": true,
+    "source_snapshot_hash_binding_required": true,
+    "metric_critical_artifact_hash_equality_required": true,
+    "current_full_formal_validation_required": true,
+    "significance_loader_must_record_relocation_manifest_hash": true
+  },
+  "graph_constraint": "not_applicable_source_only",
+  "prompt_budget": "not_applicable_source_only",
+  "external_model_calls": 0,
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false,
+  "next_action": "commit this recovery snapshot, implement and test the explicit relocation validation gate, then validate existing A and run A/B significance without an A rerun"
+}

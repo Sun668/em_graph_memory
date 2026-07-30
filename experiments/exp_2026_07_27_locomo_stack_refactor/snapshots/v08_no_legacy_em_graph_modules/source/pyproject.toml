@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "standalone-graph-memory"
+version = "0.3.0"
+description = "Official LoCoMo evaluation with standalone EM-graph retrieval"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.23",
+  "nltk>=3.8",
+  "openai>=1.0",
+  "regex>=2023.0",
+  "tqdm>=4.0",
+]
+
+[project.optional-dependencies]
+quality = [
+  "spacy>=3.6",
+  "nltk>=3.8",
+  "sentence-transformers>=2.2",
+]
+experiments = [
+  "nltk>=3.8",
+  "rank-bm25>=0.2",
+  "regex>=2023.0",
+  "torch>=2.0",
+  "tqdm>=4.0",
+]
+
+[project.scripts]
+graph-memory = "graph_memory.cli:main"
+
+[tool.setuptools]
+packages = [
+  "common",
+  "em_graph",
+  "em_graph.build",
+  "em_graph.cache",
+  "em_graph.recall",
+  "graph_memory",
+  "graph_memory.builders",
+  "graph_memory.core",
+  "graph_memory.extraction",
+  "graph_memory.factormem",
+  "graph_memory.facts",
+  "locomo_eval",
+]
+package-dir = {"" = "code", "graph_memory" = "graph_memory"}
+
+[tool.setuptools.package-data]
+locomo_eval = [
+  "vendor/MANIFEST.sha256",
+  "vendor/UPSTREAM.md",
+  "vendor/locomo/*.MD",
+  "vendor/locomo/*.py",
+  "vendor/locomo/*.txt",
+  "vendor/locomo/scripts/*.sh",
+  "vendor/locomo/task_eval/*.py",
+]

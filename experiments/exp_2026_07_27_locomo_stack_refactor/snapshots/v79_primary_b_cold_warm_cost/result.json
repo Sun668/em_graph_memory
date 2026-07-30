@@ -1,0 +1,27 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "incomplete",
+  "classification": "diagnostic-only",
+  "run_id": "v79_primary_b_cold_warm_cost",
+  "source_commit": "d231b80b053ad69ebef066a06ccaf4e7ebbd1e74",
+  "reason": "The hosting execution session ended during cold Memory-index construction before telemetry or report creation.",
+  "exit_code": "unknown-not-captured",
+  "partial_cache": {
+    "path": "outputs/locomo_cost/primary_b_v79_cache",
+    "sha256_set": "13e8cf78d0f9e6ac3e5147005d6c363238a51a20fcdfe02d4889b05581c4da26",
+    "disk_kib": 58524,
+    "graphs": 10,
+    "embedding_indexes": 6,
+    "qa_retrieval_started": false
+  },
+  "event_manifest_created": false,
+  "cost_report_created": false,
+  "paper_eligible": false,
+  "rerun": {
+    "required": true,
+    "new_run_id_required": true,
+    "new_absent_paths_required": true,
+    "detached_execution_required": true,
+    "explicit_log_and_exit_status_required": true
+  }
+}

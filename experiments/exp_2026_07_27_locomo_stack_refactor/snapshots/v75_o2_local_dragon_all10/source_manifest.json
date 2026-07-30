@@ -1,0 +1,20 @@
+{
+  "schema": "locomo_snapshot_source_manifest_v1",
+  "source_commit": "fef66db0c8370dbbd8ea2d68499fa3c8c3474d2b",
+  "source_tree": "50d3661527e5d47c6871e3816d3ce5b480542c40",
+  "files": {
+    "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py": "3bee184d19bd0a193ab8650efd94440fc685984b04ef90292d9d468a097a64b6",
+    "experiments/exp_2026_07_27_locomo_stack_refactor/validate_formal_result.py": "a73db185734ffd16e87307e601a59541c87f0b1774a83e508abe10110bf9bf04",
+    "code/em_graph/recall/embedding_index.py": "80a309584d3370322fb4e2bc70a1d587a821fa62dcceb8c38b65292831912b7a",
+    "code/em_graph/recall/retrieval.py": "31544dc1aa21f5f200e91c3a2db14dc0aeede27419562dbb1c31b342ec4c1908",
+    "code/em_graph/cache/query_embeddings.py": "e2336426e0872949a248b00185624987b56fc16474d9d0cd8f85c84e03b5c20a",
+    "code/em_graph/build/builder.py": "a35cd8fa1d3522aecca863e4a295fe20e06ec019bee70d1f59dada9496ffbe80",
+    "plugins/graph-memory-experiment-governor/scripts/graph_memory_preflight.py": "ce79ef08e00993b5b4a2570f51732cf20871d098e8363fff7dbea664a03bfb42"
+  },
+  "frozen_evaluator": {
+    "upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+    "manifest_sha256": "e65f16906ca342a6a81f626742a0461846a2477d2c0191352cfd47dd3d46035f",
+    "files_verified": 16,
+    "status": "pass"
+  }
+}

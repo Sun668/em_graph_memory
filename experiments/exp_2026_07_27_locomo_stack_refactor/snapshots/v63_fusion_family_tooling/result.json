@@ -1,0 +1,28 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "tooling_locked",
+  "snapshot": "v63_fusion_family_tooling",
+  "metric_bearing": false,
+  "source_base_commit": "ee916f712574ac3adb34dd01f8a656ca945ae116",
+  "family_hypotheses": 2,
+  "resamples_per_estimator": 10000,
+  "seed": 20260727,
+  "correction": "Holm step-down separately by metric and estimator",
+  "identity_gate": "All scientific identity fields must match except the exact preregistered Entity/Semantic fusion weights.",
+  "source_hashes": {
+    "fusion_family_report.py": "d9537c0ca11f10a7a18ed0275dde2b8b37cea42df2c27f5e0c3bdc34a8c78de3",
+    "significance_report.py": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+    "test_analysis_tools.py": "87e358530e1c1035d1ebbce2dca667a103a0b752bc371844e0bbcce53c7282d0"
+  },
+  "checks": {
+    "focused_tests": "19/19",
+    "full_tests": "79/79",
+    "vendor_hashes": "16/16",
+    "metric_recalculation": false,
+    "frozen_evaluator_changed": false,
+    "cache_or_result_mutation": false
+  },
+  "publication_gate": "tooling_locked",
+  "paper_ready": false,
+  "next_action": "commit and push tooling lock, then generate and independently reproduce the formal fusion-family report"
+}

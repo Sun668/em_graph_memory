@@ -1,0 +1,38 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "failed_diagnostic",
+  "paper_eligible": false,
+  "failed_run_id": "v86_primary_b_staged_cold_warm_cost",
+  "completed_operations": 21,
+  "planned_operations": 128,
+  "in_progress": "cold:retrieve:conv-26:50:100",
+  "last_completed_operation": "cold:retrieve:conv-26:0:50",
+  "completed_artifacts": {
+    "graphs": 10,
+    "memory_indexes": 10,
+    "question_entity_rows_persisted": 100,
+    "raw_unique_questions_persisted": 100
+  },
+  "completed_cold_usage": {
+    "conversation_entity_requests": 5873,
+    "conversation_entity_input_tokens": 3731393,
+    "conversation_entity_output_tokens": 427239,
+    "memory_embedding_requests": 591,
+    "memory_embedding_input_tokens": 214229,
+    "completed_query_entity_requests": 50,
+    "completed_query_entity_input_tokens": 30635,
+    "completed_query_entity_output_tokens": 2181,
+    "completed_retrieval_qa": 50,
+    "completed_query_artifact_hits": 50,
+    "completed_query_artifact_misses": 0,
+    "completed_live_query_embedding_requests": 0
+  },
+  "failure_evidence": {
+    "checkpoint_sha256": "49d6ddc912f4847d399f5c4f94a007f2098f1afacaaec46fe92e8f35a02392ca",
+    "cache_tree_manifest_sha256": "5ca23eee66135c87120ed24ecba788a0bf971988c5146aa4d4c67a03677414b8",
+    "checkpoint_bytes": 32451,
+    "cache_bytes_human": "59M",
+    "exception": "RuntimeError: query artifact lookup count does not match retrieval QA count"
+  },
+  "decision": "Quarantine v86 read-only. Do not resume, delete, overwrite, or use its partial usage as final publication cost evidence. Diagnose the counter mismatch from the persisted 100-row question caches, repair only after this snapshot, and launch a new absent run identity."
+}

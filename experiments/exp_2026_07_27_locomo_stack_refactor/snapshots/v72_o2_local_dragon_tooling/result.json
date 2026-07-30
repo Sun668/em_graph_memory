@@ -1,0 +1,36 @@
+{
+  "schema": "locomo_o2_local_dragon_tooling_snapshot_v1",
+  "snapshot": "v72_o2_local_dragon_tooling",
+  "source_commit": "a32fbee7259fb138ecaa2b558e085ea3d364af62",
+  "verification": {
+    "tests_passed": 105,
+    "tests_failed": 0,
+    "vendor_hashes_passed": 16,
+    "vendor_hashes_failed": 0,
+    "frozen_evaluator_clean": true,
+    "historical_primary_validation": "pass"
+  },
+  "artifact_state": {
+    "graph_files": 70,
+    "memory_index_files": 30,
+    "raw_dragon_query_artifact_exists": false,
+    "o2_output_exists": false,
+    "old_cache_deleted": false,
+    "old_cache_overwritten": false,
+    "old_cache_rebuilt": false
+  },
+  "protocol": {
+    "comparison_scope": "local_dragon_stack_diagnostic",
+    "official_comparison_eligible": false,
+    "embedding_normalization": "none_float32_v1",
+    "semantic_score_normalization": "query_local_minmax_v1",
+    "query_role": "query",
+    "query_artifact_schema": "query_embedding_artifact_v2",
+    "memory_index_format": "v3",
+    "identity_mismatch_behavior": "fail_closed"
+  },
+  "external_calls": 0,
+  "metric_generated": false,
+  "publication_gate": "tooling_locked",
+  "paper_ready": false
+}

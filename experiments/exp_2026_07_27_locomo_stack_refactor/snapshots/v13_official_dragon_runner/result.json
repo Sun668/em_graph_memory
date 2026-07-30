@@ -1,0 +1,40 @@
+{
+  "snapshot": "v13_official_dragon_runner",
+  "result_type": "source_and_retrieval_parity_milestone",
+  "metric_bearing": false,
+  "sample_id": "conv-26",
+  "qa": 199,
+  "top_k": 25,
+  "contexts": 419,
+  "embedding_dimension": 768,
+  "rows_with_exact_unique_top_k": 199,
+  "failures": 0,
+  "models": {
+    "query": "facebook/dragon-plus-query-encoder",
+    "context": "facebook/dragon-plus-context-encoder"
+  },
+  "retrieval": {
+    "pooling": "last_hidden_state[:, 0, :]",
+    "normalization": "none",
+    "similarity": "raw_dot_product",
+    "ranking": "numpy_argsort_descending",
+    "batch_size": 24
+  },
+  "tests": {
+    "official_dragon": 6,
+    "validator": 9,
+    "refactor": 16,
+    "total": 31,
+    "status": "pass"
+  },
+  "frozen_evaluator_changed": false,
+  "vendor_manifest": {
+    "checked": 16,
+    "failed": 0
+  },
+  "cache_sha256": "2fd96d3bd0de445ccfcd4563e8e8ba5585c8bac200897df4c71db9f3eea87b6a",
+  "external_model_calls": 0,
+  "mandatory_graph_constraint": "fail: flat Dialog reference, no graph retrieval",
+  "reporting_status": "non-compliant diagnostic/reference baseline",
+  "metric_claim": false
+}

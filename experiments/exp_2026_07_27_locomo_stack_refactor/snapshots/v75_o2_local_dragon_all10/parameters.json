@@ -1,0 +1,254 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01",
+  "execution": {
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+    "run_class": "formal",
+    "scope": "all10",
+    "samples": [],
+    "variant": "B",
+    "top_k": 25,
+    "data_file": "data/locomo10.json",
+    "cache_dir": "outputs/em_graph",
+    "output_root": "outputs/locomo_formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz",
+    "models": {
+      "extraction": "gpt-3.5-turbo",
+      "embedding": "dragon",
+      "answer": "gpt-3.5-turbo"
+    },
+    "retrieval_overrides": {
+      "embedding_normalization": "none_float32_v1",
+      "semantic_score_normalization": "query_local_minmax_v1",
+      "o2_local_dragon_diagnostic": true
+    }
+  },
+  "hypothesis": {
+    "causal_question": "Under the same conversation-only EM graph and frozen Reader, what descriptive retrieval and answer quality results from replacing the primary OpenAI-compatible cosine semantic signal with pinned raw DRAGON dot products calibrated by the preregistered query-local min-max rule?",
+    "status": "local diagnostic only",
+    "official_comparison_eligible": false,
+    "reason": "O1 missed the fixed official Recall@25 reproduction tolerance; no official-table controlled comparison is allowed.",
+    "post_result_tuning": false
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "order": "All 10 conversations and all 1,986 QA rows in immutable dataset order; 446 Category-5 rows; no filtering."
+  },
+  "sampling": {
+    "population": "LoCoMo-10 bundled formal dataset",
+    "sample_unit": "QA row nested in conversation",
+    "sample_count": 10,
+    "qa_count": 1986,
+    "random_subsampling": false
+  },
+  "preprocessing": {
+    "graph_inputs": [
+      "session date_time",
+      "dia_id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    },
+    "forbidden_graph_inputs": [
+      "QA question",
+      "QA answer",
+      "QA evidence",
+      "QA category",
+      "judge output",
+      "previous prediction",
+      "question ledger"
+    ],
+    "memory_text": "Canonical Memory search text from the existing B graph."
+  },
+  "models": {
+    "extraction": {
+      "model": "gpt-3.5-turbo",
+      "protocol": "v4 existing conversation and question Entity extraction",
+      "expected_new_conversation_requests": 0,
+      "expected_new_question_requests": 0
+    },
+    "embedding": {
+      "model": "dragon",
+      "query_encoder": "facebook/dragon-plus-query-encoder",
+      "query_revision": "2d3808c087119b953f8494b7638c216c71712cee",
+      "context_encoder": "facebook/dragon-plus-context-encoder",
+      "context_revision": "68074e7406bb0061b0d049b58592acafae00e9d4",
+      "pooling": "last_hidden_state CLS",
+      "max_length": 512,
+      "normalization": "none_float32_v1",
+      "similarity": "raw dot product",
+      "dimension": 768
+    },
+    "answer": {
+      "requested": "gpt-3.5-turbo",
+      "actual_model": "must be recorded by provider telemetry"
+    },
+    "judge": {
+      "status": "not-applicable",
+      "reason": "Formal LoCoMo frozen F1 and recall_acc; no local LLM judge."
+    }
+  },
+  "prompts": {
+    "entity_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "answer_prompt": "Frozen vendored LoCoMo QA prompt through QARecall.",
+    "message_role": "system",
+    "prompt_change": false
+  },
+  "training": {
+    "status": "not-applicable",
+    "reason": "Inference-only diagnostic."
+  },
+  "retrieval": {
+    "variant": "B",
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "semantic_score_normalization": "query_local_minmax_v1",
+    "equal_score_policy": "all zero",
+    "expand_sequence": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "force_full_pool": false,
+    "fallback": "Gated results retain priority; unused full-pool DRAGON scores receive independent query-local min-max calibration for dense fill.",
+    "tie_breaking": "Descending fused score, then dialog id."
+  },
+  "generation": {
+    "model": "gpt-3.5-turbo",
+    "message_role": "system",
+    "temperature": 0,
+    "max_completion_tokens": 32,
+    "batch_size": 1,
+    "resume": false,
+    "overwrite": false,
+    "category5_option_order": "Unchanged unseeded upstream random.random()."
+  },
+  "evaluation": {
+    "package": "Frozen code/locomo_eval; upstream commit 3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376.",
+    "metrics": [
+      "Official LoCoMo overall/category F1",
+      "official evidence recall_acc"
+    ],
+    "diagnostics": [
+      "Local Categories 1-4 subset F1",
+      "local Categories 1-4 subset recall_acc"
+    ],
+    "aggregation": "Frozen official per-row serialization and category-aware aggregation.",
+    "claim_limit": "Descriptive local DRAGON-stack diagnostic; never an official-table controlled comparison."
+  },
+  "randomness": {
+    "sampling": "none",
+    "retrieval": "deterministic for fixed raw vectors, graph, Entity cache, and source",
+    "answer": "temperature 0 with provider nondeterminism possible",
+    "category5": "frozen upstream unseeded option ordering",
+    "significance": "not planned against the official table"
+  },
+  "caches": {
+    "artifact_root": "outputs/em_graph",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz",
+    "query_artifact_sha256": "5a8b96c729d802fbf6c1ef1bb9b568c6f15fc16c1d893b79488442b5183ebf81",
+    "query_coverage": "1,986 ordered QA / 1,974 unique; read-only; zero misses/live requests required",
+    "graph_policy": "Reuse ten matching B graphs read-only.",
+    "memory_index_policy": "Create at most ten new v3 raw DRAGON indexes at new runtime/protocol identity paths.",
+    "shared_text_cache": "disabled for raw vectors",
+    "starting_counts": {
+      "graphs": 70,
+      "memory_indexes": 30
+    },
+    "expected_final_counts": {
+      "graphs": 70,
+      "memory_indexes": 40
+    },
+    "deletion_policy": "Delete, overwrite, or rebuild no old graph, index, query artifact, result, or cache; fail closed on collision."
+  },
+  "environment": {
+    "python": "outputs/o2_dragon_runtime/bin/python",
+    "python_version": "3.9.6",
+    "torch": "2.0.1",
+    "transformers": "4.35.0",
+    "tokenizers": "0.14.1",
+    "numpy": "1.26.0",
+    "device": "cpu",
+    "cuda_runtime": "none",
+    "offline_model_loading": true,
+    "timezone": "Asia/Shanghai"
+  },
+  "resources": {
+    "embedding_batch_size": 16,
+    "answer_concurrency": 1,
+    "wall_time_limit_seconds": 7200,
+    "condition_output_limit_bytes": 100000000,
+    "maximum_new_memory_indexes": 10
+  },
+  "cost_limits": {
+    "local_embedding_provider_requests": 0,
+    "answer_requests_max": 1986,
+    "answer_input_tokens_max": 3500000,
+    "answer_output_tokens_max": 63552,
+    "live_query_embedding_requests_max": 0,
+    "conversation_entity_requests_max": 0,
+    "question_entity_requests_max": 0,
+    "monetary_limit": {
+      "status": "unknown",
+      "reason": "Provider price is unavailable; request and token ceilings bind."
+    }
+  },
+  "gates": {
+    "validity": [
+      "Clean committed source and unchanged frozen evaluator; 16/16 hashes.",
+      "Exact raw query artifact path/SHA/protocol/runtime and complete ordered coverage.",
+      "Absent isolated condition directory; no resume/overwrite.",
+      "Exact O2 flag and B@25 raw/min-max parameter gate.",
+      "70 old graphs unchanged; exactly ten new raw indexes and no old index mutation.",
+      "Zero query misses/live requests and zero Entity API requests.",
+      "Both formal validators, graph constraint, prompt budget, output counts, and stats parity pass."
+    ],
+    "stop_conditions": [
+      "Any validity/cache/protocol/query/output/evaluator failure.",
+      "Any old artifact deletion, overwrite, or rebuild.",
+      "More than ten new index files or any new graph file.",
+      "Any live query embedding or Entity extraction request.",
+      "Ten consecutive Reader connection failures.",
+      "Any token, request, wall-time, or storage ceiling breach."
+    ],
+    "performance": "No tuning or promotion gate; preserve favorable, null, or unfavorable diagnostic result.",
+    "close": "Snapshot, validate, document, commit, and push before cost/publication audit."
+  },
+  "unknowns": [
+    "Provider-resolved answer-model build identifier before runtime.",
+    "Exact monetary price.",
+    "CPU microarchitecture identifier."
+  ],
+  "created_at": "2026-07-29T09:53:00.345524+08:00",
+  "source": {
+    "base_commit": "1b4f694f331067acede9cb7ba283738467e62ed5",
+    "base_tree": "6d071f1edb76a6f7a0ef95e3191c1d4cd4cfe69e",
+    "worktree_clean_before_freeze": true
+  },
+  "binding": {
+    "command_sha256": "85993893d2ca475574b1319d007d73708f4b59fc9e07567aeb09e2ed7da6a4a1",
+    "canonical_argv": [
+      "RESEARCH_RUN_CLASS=formal",
+      "RESEARCH_PARAMETER_SNAPSHOT=experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v75_o2_local_dragon_all10/parameters.json",
+      "RESEARCH_CONDITION_DIR=outputs/locomo_formal/formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01",
+      "/bin/zsh",
+      "-lc",
+      "source ./env_gpt.sh; unset http_proxy https_proxy; export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 EM_GRAPH_EMBED_WAIT=0.05 EM_GRAPH_MAX_WORKERS=8 PYTHONPYCACHEPREFIX=/private/tmp/graph_memory_pycache; outputs/o2_dragon_runtime/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py --run-id formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01 --scope all10 --variant B --top-k 25 --extract-model gpt-3.5-turbo --embedding-model dragon --embedding-normalization none_float32_v1 --semantic-score-normalization query_local_minmax_v1 --answer-model gpt-3.5-turbo --query-artifact outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz --cache-dir outputs/em_graph --output-root outputs/locomo_formal --o2-local-dragon-diagnostic"
+    ],
+    "run_class": "formal",
+    "condition_dir": "outputs/locomo_formal/formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01"
+  }
+}

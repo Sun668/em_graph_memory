@@ -1,0 +1,249 @@
+{
+  "schema": "locomo_publication_claim_audit_v1",
+  "status": "pass_with_remaining_cost_gate",
+  "snapshot": "v87_final_publication_claim_audit",
+  "parameter_snapshot_sha256": "4e03e7e5dc4f3992824190f93ee794bce8b1c85a175293962668c7cc4d138be7",
+  "input_results": 18,
+  "input_sha256_mismatches": 0,
+  "metric_recalculation": false,
+  "provider_calls": 0,
+  "dataset": {
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "conversations": 10,
+    "qa": 1986,
+    "category_5": 446
+  },
+  "primary_top25": {
+    "a": {
+      "official_f1": 0.4206812688821752,
+      "recall_acc": 0.7974682779456193
+    },
+    "b_embed": {
+      "official_f1": 0.4206772406847938,
+      "recall_acc": 0.7974682779456193,
+      "ordered_context_mismatches_vs_a": 0
+    },
+    "b": {
+      "official_f1": 0.4256797583081571,
+      "recall_acc": 0.8448423967774421
+    },
+    "b_minus_a": {
+      "official_f1_difference": 0.004998489425981873,
+      "official_f1_paired_qa_ci95": [
+        -0.005744536757301109,
+        0.015514274924471296
+      ],
+      "official_f1_cluster_ci95": [
+        -0.0017733701003778482,
+        0.01271109581051973
+      ],
+      "official_f1_supported": false,
+      "recall_acc_difference": 0.04737411883182276,
+      "recall_acc_paired_qa_ci95": [
+        0.03650392749244714,
+        0.05842503776435046
+      ],
+      "recall_acc_cluster_ci95": [
+        0.03528610503282276,
+        0.06012371431583468
+      ],
+      "recall_acc_paired_qa_p": 0.00019998000199980003,
+      "recall_acc_cluster_p": 0.00019998000199980003,
+      "recall_acc_supported": true
+    }
+  },
+  "top_k_robustness": {
+    "5": {
+      "a_f1": 0.399053373615307,
+      "b_f1": 0.3982638469284995,
+      "f1_difference": -0.0007895266868076543,
+      "f1_supported": false,
+      "a_recall_acc": 0.5935840886203425,
+      "b_recall_acc": 0.6416671701913393,
+      "recall_difference": 0.04808308157099698,
+      "recall_paired_qa_ci95": [
+        0.03344962235649547,
+        0.06280804380664652
+      ],
+      "recall_cluster_ci95": [
+        0.02880917555047267,
+        0.06613380005862748
+      ],
+      "recall_supported": true
+    },
+    "10": {
+      "a_f1": 0.41760674723061425,
+      "b_f1": 0.42141188318227596,
+      "f1_difference": 0.0038051359516616335,
+      "f1_supported": false,
+      "a_recall_acc": 0.6891450151057401,
+      "b_recall_acc": 0.7448474320241693,
+      "recall_difference": 0.055702416918429004,
+      "recall_paired_qa_ci95": [
+        0.042928235146022155,
+        0.06862361530715005
+      ],
+      "recall_cluster_ci95": [
+        0.04236489275947492,
+        0.06752179224319177
+      ],
+      "recall_supported": true
+    },
+    "25": {
+      "a_f1": 0.4206812688821752,
+      "b_f1": 0.4256797583081571,
+      "f1_difference": 0.004998489425981873,
+      "f1_supported": false,
+      "a_recall_acc": 0.7974682779456193,
+      "b_recall_acc": 0.8448423967774421,
+      "recall_difference": 0.04737411883182276,
+      "recall_paired_qa_ci95": [
+        0.03650392749244714,
+        0.05842503776435046
+      ],
+      "recall_cluster_ci95": [
+        0.03528610503282276,
+        0.06012371431583468
+      ],
+      "recall_supported": true
+    },
+    "50": {
+      "a_f1": 0.4207819738167172,
+      "b_f1": 0.4178323262839881,
+      "f1_difference": -0.002949647532729105,
+      "f1_supported": false,
+      "a_recall_acc": 0.8671475327291038,
+      "b_recall_acc": 0.903306143001007,
+      "recall_difference": 0.03615861027190333,
+      "recall_paired_qa_ci95": [
+        0.027754443605236656,
+        0.04473548590130916
+      ],
+      "recall_cluster_ci95": [
+        0.024603357210687703,
+        0.04642582686776263
+      ],
+      "recall_supported": true
+    }
+  },
+  "component_family_after_holm": {
+    "sequence_inside_b": {
+      "f1_difference": 0.005137462235649547,
+      "f1_supported": false,
+      "recall_difference": 0.016728096676737157,
+      "recall_supported": true
+    },
+    "entity_score_fusion": {
+      "f1_difference": 0.008014098690835851,
+      "f1_supported": false,
+      "recall_difference": 0.047625881168177245,
+      "recall_supported": true
+    },
+    "sequence_over_gate": {
+      "f1_difference": -0.0006092648539778451,
+      "f1_supported": false,
+      "recall_difference": 0.0043635448136958715,
+      "recall_supported": true
+    },
+    "semantic_signal": {
+      "f1_difference": 0.05078046324269889,
+      "f1_supported": true,
+      "recall_difference": 0.1746344410876133,
+      "recall_supported": true
+    }
+  },
+  "input_and_structure": {
+    "time_annotation_inside_b": {
+      "f1_difference": 0.0024073514602215517,
+      "recall_difference": -0.002471802618328298,
+      "f1_supported_after_holm": false,
+      "recall_supported_after_holm": false
+    },
+    "b_over_a_under_raw_text": {
+      "f1_difference": 0.003508056394763343,
+      "recall_difference": 0.049521651560926486,
+      "f1_supported_after_holm": false,
+      "recall_supported_after_holm": true
+    },
+    "speaker_links_inside_b": {
+      "f1_difference_complete_minus_no_speaker": 0.002414904330312185,
+      "f1_supported": false,
+      "recall_difference_complete_minus_no_speaker": 0.014821752265861023,
+      "recall_paired_qa_ci95": [
+        0.006732993454179256,
+        0.023097885196374623
+      ],
+      "recall_cluster_ci95": [
+        0.0024097186049992546,
+        0.028157735258186076
+      ],
+      "recall_supported": true
+    }
+  },
+  "sensitivity": {
+    "fusion_weight_0_10_0_90_vs_primary": {
+      "f1_difference": -0.003639476334340383,
+      "f1_supported_after_holm": false,
+      "recall_difference": -0.023061933534743204,
+      "recall_supported_after_holm": true
+    },
+    "fusion_weight_0_50_0_50_vs_primary": {
+      "f1_difference": -0.003239677744209465,
+      "recall_difference": -0.001562437059415911,
+      "any_supported_after_holm": false
+    },
+    "sequence_scales": {
+      "tested": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "any_f1_supported_after_holm": false,
+      "any_recall_supported_after_holm": false
+    }
+  },
+  "diagnostic_only": {
+    "local_dragon": {
+      "official_f1": 0.4244194360523665,
+      "recall_acc": 0.8142608257804633,
+      "official_reference_eligible": false,
+      "inferential_comparison_to_primary": false
+    }
+  },
+  "cost": {
+    "complete_cold_warm_report": false,
+    "v86_status": "not_started_preflight_failed",
+    "monetary_cost": "unknown",
+    "paper_cost_claim_allowed": false
+  },
+  "verification": {
+    "input_sha256": "18/18 pass",
+    "primary_numeric_backtrace": "pass",
+    "top_k_numeric_backtrace": "4/4 pass",
+    "generic_claim_contract": "pass at robust",
+    "frozen_vendor_manifest": "16/16 pass",
+    "frozen_evaluator_worktree": "clean",
+    "json_parse": "pass",
+    "markdown_diff_check": "pass",
+    "banned_phrase_scan": "pass"
+  },
+  "artifact_hashes": {
+    "research_claim_evidence.json": "a86b2d3dab754aea5f39d5c8aec93deaa646f6668104e16b2e1a9577dcfdc780",
+    "claim_contract_audit.json": "b4f04489052d26742951523067362d77fa22d2f6888f23ace61ae4ac4c852802",
+    "paper/evidence_ledger.md": "5ba0286b40ac9633e07813d132aa16c597539f32751731bfb46940c7081da744",
+    "paper/results_tables.md": "973c1024aa3742cb6f4f620540dab1e2624cb76745b4070965e8cfb70911a4e0",
+    "paper/manuscript_materials.md": "3ff66a418dc368196323bb100e174f6de64c62a7b3c0237a3e95a73a1f981a3e"
+  },
+  "strongest_supported_claim_level": "robust",
+  "strongest_supported_claim": "Complete Entity-Memory retrieval improves official evidence recall over matched dense Memory retrieval across top-k 5, 10, 25, and 50 on the evaluated ten-conversation LoCoMo set; no overall final-answer F1 advantage is established.",
+  "unsupported_claims": [
+    "Entity-Memory retrieval significantly improves overall final-answer F1.",
+    "The method is state of the art on LoCoMo.",
+    "The result generalizes beyond the evaluated ten conversations or to another dataset.",
+    "The local DRAGON condition reproduces or controls the official reference.",
+    "The complete system cost is measured.",
+    "The evidence package is paper-ready."
+  ],
+  "publication_gate": "continue_to_cost",
+  "paper_ready": false
+}

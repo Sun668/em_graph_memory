@@ -1,0 +1,21 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v21_o1_environment_resolution",
+  "result_type": "environment_preflight",
+  "base_commit": "b10b2d4de572a85bfbfa65d7280dbdae1fcd0358",
+  "python": "3.9.18",
+  "first_dependency_solve": "failed_before_install",
+  "failure": "nltk 3.10.0 requires Python >=3.10",
+  "corrected_upstream_versions": {
+    "nltk": "3.8.1",
+    "regex": "2022.10.31",
+    "tqdm": "4.64.1"
+  },
+  "metric_bearing": false,
+  "external_model_calls": 0,
+  "frozen_locomo_eval_changed": false,
+  "o1_accepted": false,
+  "m1_blocked": true,
+  "publication_gate": "continue_tooling_only",
+  "paper_ready": false
+}

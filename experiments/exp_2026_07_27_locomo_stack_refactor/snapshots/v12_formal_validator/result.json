@@ -1,0 +1,28 @@
+{
+  "snapshot": "v12_formal_validator",
+  "result_type": "source_and_validation_milestone",
+  "metric_bearing": false,
+  "validator_schema": "locomo_formal_validation_v1",
+  "tests": {
+    "validator": 9,
+    "refactor": 16,
+    "total": 25,
+    "status": "pass"
+  },
+  "strict_fixture": {
+    "samples": 10,
+    "qa": 1986,
+    "category5": 446,
+    "status": "pass"
+  },
+  "invalid_fixture_classes": 6,
+  "frozen_evaluator_changed": false,
+  "vendor_manifest": {
+    "checked": 16,
+    "failed": 0
+  },
+  "official_metric_recalculation": false,
+  "external_model_calls": 0,
+  "mandatory_graph_constraint": "not applicable to source-only milestone",
+  "metric_claim": false
+}

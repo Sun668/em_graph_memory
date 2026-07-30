@@ -1,0 +1,65 @@
+{
+  "schema": "research-experiment-preflight-result-v1",
+  "run_id": "v86_primary_b_staged_cold_warm_cost",
+  "recorded_at": "2026-07-29T22:03:26+08:00",
+  "status": "not_started_preflight_failed",
+  "parameter_snapshot_sha256": "78ab5dd2b5c311668799ff7f13ce16111099218171ddc706ee162d39d508a104",
+  "repository_commit": "6cda26af192f3db56f380ad59c84d6e129d10204",
+  "preflight": {
+    "chat_with_configured_proxy": {
+      "passed": false,
+      "attempts": 2,
+      "error_class": "openai.APIConnectionError",
+      "terminal_error": "RuntimeError: Failed after 2 retries for model=chatgpt"
+    },
+    "chat_without_configured_proxy": {
+      "passed": false,
+      "attempts": 2,
+      "error_class": "openai.APIConnectionError",
+      "terminal_error": "RuntimeError: Failed after 2 retries for model=chatgpt"
+    },
+    "embedding_without_configured_proxy": {
+      "passed": false,
+      "error_class": "openai.APIConnectionError",
+      "provider_usage_returned": false
+    },
+    "proxy_endpoint": {
+      "configured": "http://127.0.0.1:7890",
+      "process": "FlClashCore",
+      "listening_after_app_activation": true,
+      "openai_connect_response": "HTTP/1.1 200 Connection established",
+      "openai_tls_result": "LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.openai.com:443"
+    }
+  },
+  "formal_outputs": {
+    "checkpoint": {
+      "path": "outputs/locomo_cost/primary_b_v86_checkpoint.json",
+      "exists": false
+    },
+    "cache": {
+      "path": "outputs/locomo_cost/primary_b_v86_cache",
+      "exists": false
+    },
+    "events": {
+      "path": "outputs/locomo_cost/primary_b_v86_events.json",
+      "exists": false
+    },
+    "report": {
+      "path": "outputs/locomo_cost/primary_b_v86_report.json",
+      "exists": false
+    }
+  },
+  "provider_calls_with_returned_usage": 0,
+  "graph_operations_completed": 0,
+  "index_operations_completed": 0,
+  "retrieval_operations_completed": 0,
+  "cache_action": "No v86 cache was created. No prior cache was deleted, overwritten, resumed, or modified.",
+  "validity": {
+    "metric_bearing": false,
+    "cost_evidence_eligible": false,
+    "paper_eligible": false,
+    "graph_constraint": "not_applicable_no_graph_was_built",
+    "prompt_budget": "pre-registered as passing; no runtime prompt was executed successfully"
+  },
+  "decision": "Do not initialize v86 until bounded chat and embedding calls both return provider usage and embedding observer/native counters agree."
+}

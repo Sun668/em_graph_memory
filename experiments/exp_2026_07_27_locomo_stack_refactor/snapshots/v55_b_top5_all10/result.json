@@ -1,0 +1,99 @@
+{
+  "schema": "locomo_snapshot_result_v1",
+  "snapshot": "v55_b_top5_all10",
+  "result_type": "formal_all10_top_k_robustness_pair",
+  "status": "pass",
+  "paper_metric_eligible": true,
+  "graph_claim_eligible": true,
+  "run_id": "formal_all10_M4_B_top5_dff9df4_qfrozen_run01",
+  "source_commit": "753113f6aac44158ab7606aa1ec4a1917e11da89",
+  "parameter_sha256": "12952b757e29a09923f8ca7532f02c88dd86c4d492d641ee2ce14c2f96c262bb",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "counts": {
+    "conversations": 10,
+    "qa": 1986,
+    "category5": 446
+  },
+  "metrics": {
+    "official_f1": 0.3982638469284995,
+    "official_recall_acc": 0.6416671701913393,
+    "local_categories_1_4_f1": 0.4642545454545455,
+    "local_categories_1_4_recall_acc": 0.652175974025974
+  },
+  "comparison_vs_a_top5": {
+    "direction": "B_minus_A",
+    "f1_difference": -0.0007895266868076543,
+    "recall_difference": 0.04808308157099698,
+    "f1_paired_qa_ci95": [
+      -0.014186820241691843,
+      0.012368265357502514
+    ],
+    "f1_conversation_cluster_ci95": [
+      -0.012738288711333461,
+      0.00987216968232044
+    ],
+    "recall_paired_qa_ci95": [
+      0.03344962235649547,
+      0.06280804380664652
+    ],
+    "recall_conversation_cluster_ci95": [
+      0.02880917555047267,
+      0.06613380005862748
+    ],
+    "seed": 20260727,
+    "resamples": 10000,
+    "interpretation": "Overall recall advantage is supported by paired-QA and conversation-cluster inference; overall F1 difference is not supported."
+  },
+  "graph": {
+    "mandatory_graph_constraint": "pass",
+    "construction_inputs": "conversation session anchors, dialog ids, speakers, normalized/time-annotated dialog text, and official captions only",
+    "qa_derived_construction_inputs": 0,
+    "answer_recall": "conversation-built Entity-Memory graph retrieval"
+  },
+  "cache_audit": {
+    "old_artifacts_deleted": 0,
+    "old_artifacts_overwritten": 0,
+    "graph_files_before": 70,
+    "graph_files_after": 70,
+    "memory_indexes_before": 30,
+    "memory_indexes_after": 30,
+    "new_graph_builds": 0,
+    "new_entity_extraction_requests": 0,
+    "new_memory_embedding_requests": 0,
+    "new_query_entity_requests": 0,
+    "query_hits": 1988,
+    "query_misses": 0,
+    "live_query_embedding_requests": 0
+  },
+  "cost": {
+    "retrieval_wall_seconds": 30.38270472399807,
+    "answer_wall_seconds": 2098.416903004002,
+    "answer_requests": 1986,
+    "answer_input_tokens": 667165,
+    "answer_output_tokens": 14210,
+    "monetary_cost": "unknown"
+  },
+  "validation": {
+    "in_run": "pass",
+    "independent": "pass",
+    "tests": "77/77",
+    "vendor_hashes": "16/16",
+    "frozen_evaluator_diff": "clean",
+    "prompt_budget": "2410/5000",
+    "statistical_reproduction": "byte-identical"
+  },
+  "artifact_hashes": {
+    "prediction": "c41d51b9f8f3ab7ab1391fec26a8e35c0b54e71fe03171daa67783cd325103f0",
+    "stats": "c52d99afc3f68d2dd0b1a3dd842f4ff1fbf99d030654f64a88408983d796cd01",
+    "audit": "c6ae75a9e58516adad8979db8d6925b172d16907bca7fcf3ea5b5597699980e0",
+    "query_usage": "71f2c594e37aaf6d42ac47815299022b12505b726963933ca72b6fd86b4a67cd",
+    "in_run_validation": "2f3ea00e82339d6213cd38cbbfe08abf8b129528473facab358123bc7ca2e36f",
+    "independent_validation": "32835a868697b9bcdaa5c151144147cfe25206b5b973e13b78bd9cb84d82de7f",
+    "significance_report": "22efbbd3ae8d895c5d737c0d05e25e3e66f31ee180fb8cee918367a87aa01440"
+  },
+  "claim": "At top-k 5, complete Entity-Memory B significantly improves overall evidence recall over matched dense Memory A, with no supported overall F1 difference.",
+  "claim_level": "statistical retrieval evidence at one robustness cutoff",
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v55, then preregister matched A@10 with all shared caches preserved"
+}

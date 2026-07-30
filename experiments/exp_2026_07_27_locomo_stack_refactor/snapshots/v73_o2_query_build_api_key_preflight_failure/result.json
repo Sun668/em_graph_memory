@@ -1,0 +1,18 @@
+{
+  "schema": "locomo_o2_query_build_failure_v1",
+  "snapshot": "v73_o2_query_build_api_key_preflight_failure",
+  "source_commit": "b1fda5e",
+  "stage": "before_model_load_and_before_output_creation",
+  "failure": "unrelated_openai_api_key_guard_on_local_dragon",
+  "external_calls": 0,
+  "metric_generated": false,
+  "artifact_created": false,
+  "report_created": false,
+  "graph_files": 70,
+  "memory_index_files": 30,
+  "old_cache_deleted": false,
+  "old_cache_overwritten": false,
+  "old_cache_rebuilt": false,
+  "publication_gate": "repair_query_builder_preflight",
+  "paper_ready": false
+}

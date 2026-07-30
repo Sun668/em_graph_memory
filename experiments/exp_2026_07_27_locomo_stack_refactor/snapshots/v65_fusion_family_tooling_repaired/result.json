@@ -1,0 +1,31 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "tooling_locked",
+  "snapshot": "v65_fusion_family_tooling_repaired",
+  "metric_bearing": false,
+  "source_base_commit": "94445cbf2f5c4ee83986cba69e9364a7ea9a50b1",
+  "supersedes": "v63_fusion_family_tooling",
+  "repairs": "v64_fusion_family_identity_audit_failure",
+  "family_hypotheses": 2,
+  "resamples_per_estimator": 10000,
+  "seed": 20260727,
+  "correction": "Holm step-down separately by metric and estimator",
+  "identity_gate": "Complete cache_identity plus all other scientific fields must match; only exact preregistered fusion weights may differ.",
+  "source_hashes": {
+    "fusion_family_report.py": "6f27dcccac1ffbb4c218081cc6938e4a887910f9864c097f0dbd9d11b4285181",
+    "significance_report.py": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+    "test_analysis_tools.py": "9bd0b5a10a5a632bcc3b913265c8ecc503222736e71c635ae354337137515efe"
+  },
+  "checks": {
+    "focused_tests": "20/20",
+    "full_tests": "80/80",
+    "vendor_hashes": "16/16",
+    "query_artifact_mismatch_rejected": true,
+    "metric_recalculation": false,
+    "frozen_evaluator_changed": false,
+    "cache_or_result_mutation": false
+  },
+  "publication_gate": "tooling_locked",
+  "paper_ready": false,
+  "next_action": "commit and push repaired tooling lock, then regenerate and independently reproduce the formal fusion-family report"
+}

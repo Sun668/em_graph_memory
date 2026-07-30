@@ -1,0 +1,39 @@
+{
+  "schema": "source-manifest-v1",
+  "base_commit": "f7e75101083e7033cc5b60fe8fe639a16bac1309",
+  "files": [
+    {
+      "path": "code/common/llm.py",
+      "sha256": "9437b44cfac362e72b11b98936b909386b713cc8f888d132529198d48ea0e959"
+    },
+    {
+      "path": "code/em_graph/recall/embedding_index.py",
+      "sha256": "2b88180e89f130b3f564537a4ca0aa11144ed04ea0bb5d43cad2ec0eb42bb2d6"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py",
+      "sha256": "40fc869795c840900123b0d2ff2773a6dd93f6818caf42a79f581f078dc78a70"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_report.py",
+      "sha256": "16e382e92e35a892340085f82a8652a636b478a17132211bbd862298e870ff60"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_telemetry.py",
+      "sha256": "efc96cdba362771556b82072a2632e01a8549203be1f593832381ce0b55b40a6"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/test_cost_probe_staged.py",
+      "sha256": "0cd43e3d301b8da2c643dd8cf18b4b7e4e6529e080a84fc8618da5d19152fbb6"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/test_cost_telemetry.py",
+      "sha256": "4830783e9bc39d1579f768255b15bfdb1fb12546d69ff919e976652dc35972bf"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/test_analysis_tools.py",
+      "sha256": "f0985bf1b5b0db739453cd2b98e89fbcb03b7b646b905b73b3703cf23bd48577"
+    }
+  ],
+  "recovery": "Apply the committed repair diff to base_commit and verify every listed SHA-256."
+}

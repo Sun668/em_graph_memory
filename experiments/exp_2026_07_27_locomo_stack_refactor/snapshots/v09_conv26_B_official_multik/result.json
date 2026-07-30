@@ -1,0 +1,38 @@
+{
+  "source_commit": "23e3a4b941d328d948ffa3981be786c1a60eb315",
+  "sample_id": "conv-26",
+  "qa_count": 199,
+  "variant": "B",
+  "answer_model": "gpt-3.5-turbo",
+  "extract_model": "gpt-3.5-turbo",
+  "embedding_model": "text-embedding-3-small",
+  "metrics": {
+    "5": {
+      "official_recall_acc": 0.6231155778894473,
+      "official_overall_f1": 0.341
+    },
+    "10": {
+      "official_recall_acc": 0.7579547738693467,
+      "official_overall_f1": 0.385
+    },
+    "25": {
+      "official_recall_acc": 0.8609748743718593,
+      "official_overall_f1": 0.391
+    },
+    "50": {
+      "official_recall_acc": 0.9212763819095477,
+      "official_overall_f1": 0.4
+    }
+  },
+  "mandatory_graph_constraint": {
+    "graph_construction": "pass",
+    "answer_recall": "pass",
+    "categories_1_4_promotion_scope": "pass",
+    "official_overall_category_5_scope": "compatibility diagnostic only"
+  },
+  "prompt_budget": {
+    "entity_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "pass": true
+  }
+}

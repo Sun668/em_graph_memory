@@ -1,0 +1,178 @@
+{
+  "schema": "locomo_cost_report_v1",
+  "run_id": "formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+  "condition_fingerprint": "9cb8c2991f51ab6085a68914fdaae42f4ad67d8cdf274bdd8dc359ba1a3c2782",
+  "measurement_policy": {
+    "missing_values_estimated": false,
+    "latency_clock": "time.perf_counter",
+    "token_source": "provider response usage",
+    "cache_states": [
+      "cold",
+      "warm"
+    ],
+    "stage_wall_times_overlap": true,
+    "provider_recovery_disclosed": true
+  },
+  "cache_measurements": {
+    "cold": {
+      "nonexclusive_stage_wall_sum_seconds": 20163.88826954801,
+      "wall_sum_warning": "stage timings overlap; do not interpret this sum as end-to-end latency",
+      "stages": {
+        "answer_generation": {
+          "event_count": 1,
+          "wall_seconds": 2305.353251801008,
+          "request_count": 1986,
+          "input_tokens": 2744099,
+          "output_tokens": 16269,
+          "mean_request_latency_seconds": 1.1608022415916455
+        },
+        "embedding": {
+          "event_count": 10,
+          "wall_seconds": 443.38454175,
+          "request_count": 591,
+          "input_tokens": 214229,
+          "output_tokens": 0,
+          "mean_request_latency_seconds": 0.7502276510152284
+        },
+        "entity_extraction": {
+          "event_count": 10,
+          "wall_seconds": 9792.759835087998,
+          "request_count": 5873,
+          "input_tokens": 3731393,
+          "output_tokens": 425637,
+          "mean_request_latency_seconds": 1.6674203703538222
+        },
+        "graph_construction": {
+          "event_count": 10,
+          "wall_seconds": 1648.2101069179998,
+          "request_count": 0
+        },
+        "query_entity": {
+          "event_count": 44,
+          "wall_seconds": 2970.8276410250005,
+          "request_count": 1974,
+          "input_tokens": 1214259,
+          "output_tokens": 104272,
+          "mean_request_latency_seconds": 1.504978541552685
+        },
+        "retrieval": {
+          "event_count": 44,
+          "wall_seconds": 3003.3528929659997,
+          "request_count": 0,
+          "qa_count": 1986,
+          "latency": {
+            "mean_seconds": 1.5122622824602214,
+            "p50_seconds": 1.4070402704999994,
+            "p90_seconds": 2.0504163959999993,
+            "p95_seconds": 2.613221750250001,
+            "p99_seconds": 3.6985149358000067,
+            "max_seconds": 7.567442709
+          },
+          "provider_recovery": {
+            "retry_count": 0,
+            "failure_wall_seconds_excluded": 0.0,
+            "wait_seconds_excluded": 0.0,
+            "latency_policy": "completed-attempt latency only; exhausted-attempt and inter-attempt wait time are disclosed separately"
+          }
+        }
+      }
+    },
+    "warm": {
+      "nonexclusive_stage_wall_sum_seconds": 2316.593116973008,
+      "wall_sum_warning": "stage timings overlap; do not interpret this sum as end-to-end latency",
+      "stages": {
+        "answer_generation": {
+          "event_count": 1,
+          "wall_seconds": 2305.353251801008,
+          "request_count": 1986,
+          "input_tokens": 2744099,
+          "output_tokens": 16269,
+          "mean_request_latency_seconds": 1.1608022415916455
+        },
+        "embedding": {
+          "event_count": 10,
+          "wall_seconds": 1.291126625,
+          "request_count": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "mean_request_latency_seconds": null
+        },
+        "entity_extraction": {
+          "event_count": 10,
+          "wall_seconds": 0.0,
+          "request_count": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "mean_request_latency_seconds": null
+        },
+        "graph_construction": {
+          "event_count": 10,
+          "wall_seconds": 0.24424937800000013,
+          "request_count": 0
+        },
+        "query_entity": {
+          "event_count": 44,
+          "wall_seconds": 0.0,
+          "request_count": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "mean_request_latency_seconds": null
+        },
+        "retrieval": {
+          "event_count": 44,
+          "wall_seconds": 9.704489169000002,
+          "request_count": 0,
+          "qa_count": 1986,
+          "latency": {
+            "mean_seconds": 0.004886449732628398,
+            "p50_seconds": 0.004970749999999968,
+            "p90_seconds": 0.005989958500000003,
+            "p95_seconds": 0.006269729249999967,
+            "p99_seconds": 0.00684663120000002,
+            "max_seconds": 0.015510041000000085
+          },
+          "provider_recovery": {
+            "retry_count": 0,
+            "failure_wall_seconds_excluded": 0.0,
+            "wait_seconds_excluded": 0.0,
+            "latency_policy": "completed-attempt latency only; exhausted-attempt and inter-attempt wait time are disclosed separately"
+          }
+        }
+      }
+    }
+  },
+  "disk_usage": {
+    "totals_bytes": {
+      "cache": 13623616,
+      "embedding_index": 29946660,
+      "graph": 21689931
+    },
+    "artifacts": [
+      {
+        "kind": "graph",
+        "path": "/Users/sun/Documents/git/graph_memory/outputs/locomo_cost/primary_b_v93_cache/graphs",
+        "bytes": 21689931
+      },
+      {
+        "kind": "embedding_index",
+        "path": "/Users/sun/Documents/git/graph_memory/outputs/locomo_cost/primary_b_v93_cache/embedding_indexes",
+        "bytes": 29946660
+      },
+      {
+        "kind": "cache",
+        "path": "/Users/sun/Documents/git/graph_memory/outputs/locomo_cost/primary_b_v93_cache/entities",
+        "bytes": 3411176
+      },
+      {
+        "kind": "cache",
+        "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+        "bytes": 10212440
+      }
+    ]
+  },
+  "source_event_manifest": {
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/locomo_cost/primary_b_v93_events.json",
+    "sha256": "52a8cfd1e47c1065f35adb422828a7ff1a083b7002a8ccdf769be3674e9cd113"
+  },
+  "report_fingerprint": "b1b90410a8f3687c3706d75f4ec82dc2b51ccdc3768ae5e10ddc6e225ff3b994"
+}

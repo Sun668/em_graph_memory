@@ -1,0 +1,16 @@
+{
+  "schema": "research-experiment-diagnostic-v1",
+  "status": "frozen_failure",
+  "snapshot_id": "v91_v90_network_interruption",
+  "failed_run_id": "v90_primary_b_staged_cold_warm_cost",
+  "created_at": "2026-07-30T01:50:55+08:00",
+  "source_commit": "08aaaa71e00412673c4c9a4938cc1a2b85e6b8d6",
+  "source_runner_sha256": "435f95b8feebad1a7a41bbf597c7792b8790fa36f7e6d015764b21b6e7f45e91",
+  "parameter_snapshot": "../v90_primary_b_staged_cold_warm_cost/parameters.json",
+  "parameter_snapshot_sha256": "953b9b7cc7ce4134899b63c96e3e7432a3985414d8c89ad45692f5ccc0bd2073",
+  "failure_operation": "cold:retrieve:conv-50:100:150",
+  "failure_exception": "RuntimeError: Failed after 10 retries for model=gpt-3.5-turbo",
+  "checkpoint_path": "outputs/locomo_cost/primary_b_v90_checkpoint.json",
+  "cache_root": "outputs/locomo_cost/primary_b_v90_cache",
+  "continuation_allowed": false
+}

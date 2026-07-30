@@ -1,0 +1,41 @@
+{
+  "schema": "locomo_cost_failed_probe_v1",
+  "classification": "invalid",
+  "run_id": "v77_primary_b_cold_warm_cost_failed_probe_01",
+  "source_commit": "c2108ecea9ff1abfe297687f380b8b849e19e7ea",
+  "exit_code": 130,
+  "interruption": "SIGINT after detecting whole-file question-cache loss",
+  "parameter_snapshot": {
+    "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v77_primary_b_cold_warm_cost/parameters.json",
+    "sha256": "207f7dbbdf40864c88f35605824ef1a8dc8a9597fbe29f8bfaecb421303ef34e"
+  },
+  "source_sha256": {
+    "cost_probe.py": "26b0a7c71c5916e75c00d11eabea7fb37bbbe8c3363297ec7135b4144ae5ebe2",
+    "run.py": "not-recorded-in-this-diagnostic",
+    "code/em_graph/recall/service.py": "04813f29956dac97dbfc227786ea702f2f27c0e027ea90ee9a64ff5352b6d3e3",
+    "code/em_graph/cache/question_entities.py": "a842548af060807f4fda1d9dcfacc34e2bffa9ea793c5bd5315225f4077911f3"
+  },
+  "isolated_cache": {
+    "path": "outputs/locomo_cost/primary_b_v77_cache",
+    "disk_kib_at_freeze": 91624,
+    "graph_files": 10,
+    "embedding_index_files": 10,
+    "question_entities_at_freeze": 199,
+    "question_extraction_raw_at_freeze": 199,
+    "question_entities_sha256": "7969dc28b0464b0b70b06fcbf5dc2852d058bceacb5f2df90fcf61b0f27b6f23",
+    "question_extraction_raw_sha256": "56200386a247f37b0dc22789265c30dd11c89d30befd6ef9d60082b8a3bcf5c1",
+    "text_embeddings_sha256": "a7f0ca37e3e2ffe0ac6da02a0545f0c9c89df948ac1e1c1d8077551a1be4bd2c"
+  },
+  "progress_observation": {
+    "first_conversation_entries_seen": 160,
+    "entries_seen_after_next_conversation_started": 20,
+    "interpretation": "a later instance replaced the whole cache with its stale instance-local mapping"
+  },
+  "outputs_created": {
+    "events": false,
+    "report": false
+  },
+  "old_cache_write_target": false,
+  "paper_eligible": false,
+  "rerun_required": true
+}

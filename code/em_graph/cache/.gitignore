@@ -1,0 +1,6 @@
+# Generated cache payloads only. Python cache implementations are source.
+*.json
+*.npz
+*.tmp
+!.gitignore
+!*.py

@@ -1,0 +1,24 @@
+{
+  "schema": "locomo_o2_index_preparation_progress_v1",
+  "status": "partial_dependency_failure",
+  "progress_id": "v76_index_dependency_failure",
+  "governing_run_id": "formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01",
+  "failure": "missing rank_bm25 in isolated runtime",
+  "new_indexes_completed": 1,
+  "new_indexes_remaining": 9,
+  "completed_index": {
+    "sample_id": "conv-26",
+    "sha256": "4ec9c30bfc73ef6c270ad41174529af3b73925ded043644188951451bf724c08"
+  },
+  "graph_count": 70,
+  "memory_index_count": 31,
+  "old_graph_set_sha256": "6cc96ee62182999d83f5004c49153abfa4dfef8986a304c0e2e81c498daa1ab3",
+  "old_index_set_sha256": "e8c0c14aa4bee79521cd1c81ebe98ffe31412911c52cc80d00448df227c648b0",
+  "formal_output_exists": false,
+  "answer_requests": 0,
+  "old_cache_deleted": false,
+  "old_cache_overwritten": false,
+  "old_cache_rebuilt": false,
+  "repair": "install rank-bm25==0.2.2 in isolated O2 runtime",
+  "paper_ready": false
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "valid",
+  "classification": "source-only-tooling",
+  "run_id": "v82_staged_cost_probe_source",
+  "base_commit": "59b60d95f33eea835ceeaa9fe7b537683507490c",
+  "source_sha256": {
+    "cost_probe_staged.py": "647697bfe53573f06018a18be38b36f6224e25ac1db77153ad0d5bbe0b92b2cf",
+    "test_cost_probe_staged.py": "a9bf38c9d6486b64eec403187c354cafb3821ed4cb1c1c9b1d46ba4a2a48e04e"
+  },
+  "operations_at_batch_50": 128,
+  "interruption_policy": "fail-closed on any persisted in_progress operation",
+  "argument_identity_bound": true,
+  "validation": {
+    "focused_cost_tests": "12/12",
+    "refactor_tests": "95/95",
+    "historical_tests": "17/17",
+    "frozen_evaluator_hashes": "16/16"
+  },
+  "provider_requests": 0,
+  "cost_result_created": false,
+  "paper_eligible": false
+}

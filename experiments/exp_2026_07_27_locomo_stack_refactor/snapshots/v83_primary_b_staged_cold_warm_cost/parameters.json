@@ -1,0 +1,124 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "v83_primary_b_staged_cold_warm_cost",
+  "created_at": "2026-07-29T20:20:52+08:00",
+  "source": {
+    "commit": "02f47a159b4512b581165b8853ebad746a271898",
+    "tree": "f45cabb680efd3d8a24c650f1755f3132d7d9f0f",
+    "dirty": false,
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py",
+    "runner_sha256": "647697bfe53573f06018a18be38b36f6224e25ac1db77153ad0d5bbe0b92b2cf",
+    "reporter_sha256": "d976804959769084b0c99aeafbb03bf024f4ec4b5b4ea834170702768dd3cb87"
+  },
+  "hypothesis": {
+    "primary": "For the complete primary B@25 pipeline, an absent cache incurs conversation extraction, Memory embedding, question extraction and retrieval cost; the immediately repeated warm state incurs zero new provider requests before reused answer generation.",
+    "measurement_change": "Only transaction boundaries/checkpointing differ from the abandoned single-process probe; scientific settings and measured CostTelemetry contexts are unchanged.",
+    "tuning": false
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "conversations": 10,
+    "qa": 1986,
+    "unique_questions": 1974
+  },
+  "sampling": {
+    "scope": "all10",
+    "order": ["conv-26", "conv-30", "conv-41", "conv-42", "conv-43", "conv-44", "conv-47", "conv-48", "conv-49", "conv-50"],
+    "category_filter": "none",
+    "retrieval_batch_size": 50,
+    "expected_operations": 128,
+    "seed": "not-applicable"
+  },
+  "preprocessing": {
+    "graph_profile": {"memory_only": false, "use_caption": true, "use_time_annotations": true, "add_speaker_as_entity": true},
+    "conversation_only_inputs": ["session date_time", "dia_id", "speaker", "dialog text", "blip_caption"],
+    "excluded_from_graph": ["QA question", "QA answer", "QA evidence", "QA category", "judge output", "previous prediction", "question-driven ledger"]
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo",
+    "embedding": "text-embedding-3-small",
+    "answer": "gpt-3.5-turbo; no new calls, validated formal event reused"
+  },
+  "prompts": {
+    "entity_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "pass": true,
+    "answer_prompt": "not invoked"
+  },
+  "training": {"status": "not-applicable", "reason": "inference-only cost measurement"},
+  "retrieval": {
+    "variant": "B", "top_k": 25,
+    "entity_weight": 0.3, "semantic_weight": 0.7,
+    "semantic_score_normalization": "none",
+    "expand_sequence": true, "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5, "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25, "degree_discount": true,
+    "surface": "conversation-built Entity/Memory graph and sequence edges"
+  },
+  "generation": {
+    "new_answer_requests": 0,
+    "reused_requests": 1986,
+    "reused_input_tokens": 2744099,
+    "reused_output_tokens": 16269,
+    "reuse_disclosure_required": true
+  },
+  "evaluation": {
+    "metric_bearing": false,
+    "stages": ["graph_construction", "entity_extraction", "embedding", "query_entity", "retrieval", "answer_generation"],
+    "latency_clock": "time.perf_counter",
+    "token_source": "provider response usage",
+    "component_timing": "sum of in-operation CostTelemetry contexts; interpreter/checkpoint/repeated Recall-load overhead excluded",
+    "missing_estimates": false,
+    "warm_formal_artifact": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json",
+    "warm_sha256": "7ea432e10901997a39c51b0711c17e436d6a718bcd53a51991d82885b2c628b4",
+    "condition_fingerprint": "9cb8c2991f51ab6085a68914fdaae42f4ad67d8cdf274bdd8dc359ba1a3c2782"
+  },
+  "randomness": {"status": "observed-provider-variation", "seedable_randomness": "none in newly measured path"},
+  "caches": {
+    "checkpoint": "outputs/locomo_cost/primary_b_v83_checkpoint.json",
+    "root": "outputs/locomo_cost/primary_b_v83_cache",
+    "events": "outputs/locomo_cost/primary_b_v83_events.json",
+    "report": "outputs/locomo_cost/primary_b_v83_report.json",
+    "all_absent_at_init": true,
+    "write_protocol": "atomic checkpoint replace; in_progress before work; completion and raw events after success",
+    "interruption": "persisted in_progress invalidates the run and requires a new id",
+    "argument_binding": "every step must exactly match the initialized resolved identity and parameter SHA",
+    "shared_per_transaction": ["TextEmbeddingCache", "question EntityExtractor", "QuestionEntityCache"],
+    "sequential_merge": "each new transaction loads complete question/raw/text cache files before additions",
+    "quarantined_read_only": ["primary_b_v77_cache", "primary_b_v79_cache", "primary_b_v80_launch_attempt01_empty.log", "primary_b_v81.log"],
+    "old_artifacts": "outputs/em_graph and formal outputs read-only"
+  },
+  "environment": {
+    "shell": "Codex foreground transaction per step",
+    "EM_GRAPH_MAX_WORKERS": 8,
+    "effective_graph_workers": 6,
+    "EM_GRAPH_EMBED_WAIT": 0.05,
+    "PYTHONPYCACHEPREFIX": "/private/tmp/graph_memory_pycache",
+    "proxies": "unset for paid steps"
+  },
+  "resources": {
+    "wall_seconds_max_total": 21600,
+    "single_transaction_target_seconds_max": 600,
+    "concurrency_max": 8,
+    "cache_bytes_max": 300000000
+  },
+  "cost_limits": {
+    "cold_conversation_entity_requests_max": 5882,
+    "cold_query_entity_requests_max": 1974,
+    "cold_embedding_requests_max": 5882,
+    "warm_new_provider_requests_max": 0,
+    "monetary": {"status": "unknown", "reason": "provider price unavailable; exact usage measured"}
+  },
+  "gates": {
+    "preflight": ["clean committed source", "parameter preflight", "16/16 evaluator hashes", "warm formal validator", "four v83 targets absent", "API connectivity"],
+    "runtime": ["128 unique operations", "no persisted in_progress", "10 graphs", "10 indexes", "1986 cold and warm retrieval timings", "1986 question-cache keys", "1974 raw question entries", "warm new provider requests zero"],
+    "postrun": ["strict cost report validation", "independent byte-identical report reproduction", "all old/quarantined SHA identities unchanged", "snapshot verifier pass"]
+  },
+  "command_template": ".venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py <init|step|status|finalize> --checkpoint outputs/locomo_cost/primary_b_v83_checkpoint.json --measurement-id primary_b_v83_staged_cold_warm_cost --parameter-snapshot-sha256 <resolved SHA-256 of this frozen file> --data-file data/locomo10.json --cache-dir outputs/locomo_cost/primary_b_v83_cache --warm-cost-file outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json --output-events outputs/locomo_cost/primary_b_v83_events.json --output-report outputs/locomo_cost/primary_b_v83_report.json --scope all10 --variant B --top-k 25 --batch-size 50 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --entity-weight 0.3 --semantic-weight 0.7 --sequence-scale 0.5 --entity-min-rel-score 0.5 --entity-top-k-per-key 20 --who-only-dampen 0.25",
+  "unknowns": [],
+  "paper_ready": false,
+  "next_action": "Commit/push, compute parameter SHA, preflight, initialize checkpoint, inspect status, then execute one atomic step at a time through finalize and audit."
+}

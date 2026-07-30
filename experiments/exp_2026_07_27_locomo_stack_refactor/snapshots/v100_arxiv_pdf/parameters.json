@@ -1,0 +1,31 @@
+{
+  "schema": "research-manuscript-build-v1",
+  "snapshot": "v100_arxiv_pdf",
+  "date": "2026-07-30",
+  "source": {
+    "latex": "paper/arxiv/main.tex",
+    "latex_sha256": "cf71cda4d8b08f9474448dfe7cab089fec0f94239e6da214cddfa86a2668a2fd",
+    "bibliography": "paper/arxiv/references.bib",
+    "bibliography_sha256": "f9af8b62d72b7262dd65db0dd62a9732a13cdb33d21e0687fda44f568913b74b",
+    "evidence_draft": "paper/ARXIV_DRAFT.md",
+    "evidence_snapshots": [
+      "snapshots/v87_final_publication_claim_audit",
+      "snapshots/v97_v93_complete_cold_warm_cost",
+      "snapshots/v99_journal_neutral_full_draft"
+    ]
+  },
+  "build": {
+    "engine": "pdfLaTeX",
+    "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=<temporary-directory> main.tex",
+    "working_directory": "experiments/exp_2026_07_27_locomo_stack_refactor/paper/arxiv",
+    "temporary_build_directory": "/private/tmp/graph_memory_arxiv_pdf.XAhdky",
+    "output": "outputs/paper/entity_memory_graph_retrieval_arxiv.pdf"
+  },
+  "format": {
+    "paper_size": "US Letter",
+    "columns": 2,
+    "appendix_columns": 1,
+    "author_state": "anonymous placeholder",
+    "affiliation_state": "placeholder"
+  }
+}

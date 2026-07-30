@@ -1,0 +1,73 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v43_b_entity_all10",
+  "source_commit": "31d8c78dcec13fbf94a5be0e7396a98530f72b7d",
+  "source_tree": "30278730659f319b5dba8e3f2135ee347bda3f67",
+  "run_id": "formal_all10_M2_B_entity_top25_31d8c78_qfrozen_run01",
+  "condition_fingerprint": "298aa044714799bc81b349207ef61084b506c958a5821640e8c13763051b48ee",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "qa_count": 1986,
+  "category5_count": 446,
+  "retrieval": {
+    "variant": "B_entity",
+    "top_k": 25,
+    "entity_weight": 1.0,
+    "semantic_weight": 0.0,
+    "expand_sequence": true,
+    "sequence_secondary_scale": 0.5,
+    "force_full_pool": false,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true
+  },
+  "metrics": {
+    "official_overall_f1": 0.3748992950654583,
+    "official_recall_at_25": 0.6702079556898286,
+    "local_categories_1_to_4_f1": 0.4484090909090912,
+    "local_categories_1_to_4_recall_at_25": 0.6513201298701299,
+    "b_entity_minus_b": {
+      "official_overall_f1": -0.0507804632426988,
+      "official_recall_at_25": -0.1746344410876135,
+      "local_categories_1_to_4_f1": -0.0713311688311685,
+      "local_categories_1_to_4_recall_at_25": -0.1989116883116883
+    }
+  },
+  "query_artifact_usage": {
+    "configured_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "required_lookups": 0,
+    "lookups": 0,
+    "hits": 0,
+    "misses": 0,
+    "live_embedding_requests": 0
+  },
+  "artifact_hashes": {
+    "audit": "3e807ff0f2c3c5f073d9497d2c07332921cd7fa9fab547ea4582a4e980d72dcf",
+    "cost_events_warm": "6c4bede88043b3778b56c1c1d14e239e669cbac1f593ed79498ec38734c700b8",
+    "prediction": "c184f46674380e904852f0d3bf3753fcb3a031744018e574dd7d8b4285bf92ec",
+    "progress": "bee9a40d58df305d1d52551febecee7fbb919e8e3c5a6b6fedf2f463b74aabf1",
+    "query_cache_usage": "60f003885ebb14104c69122ac7e5c1ffa818f9ad26db679c8bbef690a6a0b152",
+    "run_config": "ec52da40da8f97124d83baddd0354571c785b14a2f0f84bd01d3b6db95119c23",
+    "stats": "979eceef48d8168749bf57e09ad71dbc435a20ce2cb199ff132916c7ff4fcb4d",
+    "validation": "c76fb113c9f2ce566d0e88bfcccfef78d67e02c6e5fba27416c315bc37938558",
+    "independent_validation": "74b6a5699eea4f02c29582cd74385b7de4ba8572057e644b556bf9512337213f"
+  },
+  "checks": {
+    "formal_validator_in_run": "pass",
+    "formal_validator_independent": "pass",
+    "official_stats_aggregation": "pass",
+    "mandatory_graph_constraint": "pass",
+    "prompt_scaffold_chars": 2410,
+    "prompt_budget_limit": 5000,
+    "combined_tests_passed": 75,
+    "vendor_hashes_passed": 16,
+    "frozen_evaluator_changed": false,
+    "output_directory_absent_at_start": true,
+    "resume": false,
+    "overwrite": false
+  },
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v43, then run B_noseq"
+}

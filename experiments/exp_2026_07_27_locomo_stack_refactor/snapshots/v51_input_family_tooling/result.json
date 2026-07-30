@@ -1,0 +1,25 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "tooling_locked",
+  "snapshot": "v51_input_family_tooling",
+  "metric_bearing": false,
+  "source_base_commit": "ee8255dfffcf537e8272b90603f9403e541d590e",
+  "family_hypotheses": 2,
+  "resamples_per_estimator": 10000,
+  "seed": 20260727,
+  "correction": "Holm step-down separately by metric and estimator",
+  "source_hashes": {
+    "input_family_report.py": "d714682dc2f56b8c74711b0bb9f91ce6f5a6a8f0bcc60e5be11627d90fe8eef8",
+    "significance_report.py": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+    "test_analysis_tools.py": "c16d1dadb4d852dfe7a75f2cd99e62a1089d9fede8a365cd8e9d4141e12e3812"
+  },
+  "checks": {
+    "focused_tests_passed": 17,
+    "metric_recalculation": false,
+    "frozen_evaluator_changed": false,
+    "cache_or_result_mutation": false
+  },
+  "publication_gate": "tooling_locked",
+  "paper_ready": false,
+  "next_action": "commit and push tooling lock, then generate the formal raw-text input-family report"
+}

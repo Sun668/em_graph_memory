@@ -1,0 +1,62 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v26_cross_model_gate_correction",
+  "result_type": "user_authorized_protocol_correction",
+  "metric_bearing": false,
+  "decision_date": "2026-07-28",
+  "base_commit": "e608e86008352fc5a74706112a7dad0c61394117",
+  "base_tree": "f01cd7ad98f3a2e9d5021246208bd00cec9ac74e",
+  "supersedes_decision_only": "v25_m1_b_official_performance_stop",
+  "preserves_v25_metrics": true,
+  "official_paper_evidence": {
+    "url": "https://raw.githubusercontent.com/snap-research/locomo/main/static/paper/locomo.pdf",
+    "sha256": "a72c82117d01d8e304a24364a189afb91d25bf5e871b023f1e8172d6bdf64025",
+    "page": 7,
+    "table_2": {
+      "setting": "long-context, no RAG retrieval",
+      "model": "gpt-4-turbo",
+      "context_length": "128K",
+      "overall_f1_percent": 51.6
+    },
+    "table_3": {
+      "setting": "RAG Dialog top-k 25",
+      "retriever": "DRAGON",
+      "reader": "gpt-3.5-turbo",
+      "overall_f1_percent": 41.0,
+      "recall_at_25_percent": 76.7
+    }
+  },
+  "invalidated_gate": {
+    "name": "M1-B F1 >= 49.6",
+    "derivation": "51.6 GPT-4-turbo long-context minus 2 points",
+    "reason": "cross-model and cross-inference-setting comparison",
+    "active": false
+  },
+  "m1_metrics_unchanged": {
+    "a_f1_percent": 42.2642,
+    "a_recall_at_25_percent": 79.7468,
+    "b_f1_percent": 42.6772,
+    "b_recall_at_25_percent": 84.3415,
+    "b_minus_a_f1_points": 0.4130,
+    "b_minus_a_recall_points": 4.5947
+  },
+  "execution_policy": {
+    "complete_planned_matrix_before_final_performance_decision": true,
+    "intermediate_metric_early_stop": false,
+    "significance_is_intermediate_analysis_not_stop_gate": true,
+    "remaining_validity_gates": [
+      "frozen official prompt, metric, and dataset protocol",
+      "mandatory conversation-only graph constraint",
+      "formal result validation and exact condition identity",
+      "prompt budget and snapshot lifecycle",
+      "A/B_embed ordered context ids exact equality"
+    ]
+  },
+  "o1_accepted": false,
+  "official_table_usage": "external_reference_only",
+  "frozen_locomo_eval_changed": false,
+  "external_model_calls": 0,
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "primary B-versus-A significance report"
+}

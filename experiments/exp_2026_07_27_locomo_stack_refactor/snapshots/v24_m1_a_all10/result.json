@@ -1,0 +1,119 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v24_m1_a_all10",
+  "result_type": "formal_all10_matched_stack_primary_baseline",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "source_commit": "3e3a33b49c39468dd14b1cead161e1df413332d5",
+  "source_tree": "99cbd327a0cab169badf2fe530da72f68175e902",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "run_id": "formal_all10_M1_A_top25_3e3a33b_run01",
+  "condition_fingerprint": "8dbb51faaeb893e6aa7d411e39985a75e707fe2767d5ee04e461b1cff06813a0",
+  "sample_ids": ["conv-26", "conv-30", "conv-41", "conv-42", "conv-43", "conv-44", "conv-47", "conv-48", "conv-49", "conv-50"],
+  "qa_count": 1986,
+  "category5_count": 446,
+  "top_k": 25,
+  "models": {
+    "entity_extraction": null,
+    "query_entity": null,
+    "embedding": "text-embedding-3-small",
+    "answer_requested": "gpt-3.5-turbo",
+    "answer_identity_preflight_actual": "gpt-3.5-turbo-0125",
+    "judge": null
+  },
+  "retrieval": {
+    "variant": "A",
+    "rag_mode": "dialog",
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "expand_sequence": false,
+    "force_full_pool": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true
+  },
+  "graph": {
+    "memory_only": true,
+    "memory_nodes": 5882,
+    "entity_nodes": 0,
+    "entity_memory_edges": 0,
+    "memory_sequence_edges": 11744,
+    "mandatory_graph_constraint": "pass",
+    "construction_inputs": ["session date_time", "dia_id", "speaker", "dialog text", "blip_caption"],
+    "qa_or_judge_construction_inputs": []
+  },
+  "metrics": {
+    "official_overall_f1": 0.42264199395770374,
+    "official_recall_at_25": 0.7974682779456193,
+    "local_categories_1_to_4_f1": 0.5099785714285717,
+    "local_categories_1_to_4_recall_at_25": 0.8280987012987012,
+    "category": {
+      "1": {"qa": 282, "f1": 0.38083333333333336, "recall_at_25": 0.6516028368794323},
+      "2": {"qa": 321, "f1": 0.4125887850467294, "recall_at_25": 0.8966760124610591},
+      "3": {"qa": 96, "f1": 0.1730729166666667, "recall_at_25": 0.48284375},
+      "4": {"qa": 841, "f1": 0.6289131985731267, "recall_at_25": 0.9005160523186683},
+      "5": {"qa": 446, "f1": 0.1210762331838565, "recall_at_25": 0.6917040358744395}
+    },
+    "per_conversation": {
+      "conv-26": {"qa": 199, "f1": 0.365929648241206, "recall_at_25": 0.7964874371859296},
+      "conv-30": {"qa": 105, "f1": 0.4052190476190477, "recall_at_25": 0.7988857142857142},
+      "conv-41": {"qa": 193, "f1": 0.47448186528497416, "recall_at_25": 0.8829896373056995},
+      "conv-42": {"qa": 260, "f1": 0.3892807692307692, "recall_at_25": 0.7196038461538462},
+      "conv-43": {"qa": 242, "f1": 0.40375619834710746, "recall_at_25": 0.8076239669421488},
+      "conv-44": {"qa": 158, "f1": 0.4671329113924051, "recall_at_25": 0.7725189873417722},
+      "conv-47": {"qa": 190, "f1": 0.449321052631579, "recall_at_25": 0.7964894736842105},
+      "conv-48": {"qa": 239, "f1": 0.42793723849372406, "recall_at_25": 0.7849372384937239},
+      "conv-49": {"qa": 196, "f1": 0.4394081632653062, "recall_at_25": 0.810908163265306},
+      "conv-50": {"qa": 204, "f1": 0.42119117647058824, "recall_at_25": 0.8259803921568627}
+    }
+  },
+  "recall_analysis_audit": {
+    "empty_evidence_rows": 4,
+    "empty_evidence_raw_serialized_recall_sum": 4.0,
+    "empty_evidence_official_analysis_contribution_sum": 0.0,
+    "all_qa_retained_in_denominator": true,
+    "official_stats_parity": "pass"
+  },
+  "warm_telemetry": {
+    "partial_only": true,
+    "answer_requests": 1986,
+    "answer_input_tokens": 2694179,
+    "answer_output_tokens": 16350,
+    "retrieval_latency_observations": 1986,
+    "complete_cost_report": false,
+    "reason": "cold/warm six-stage manifest and disk artifacts remain pending"
+  },
+  "artifact_hashes": {
+    "prediction": "c777b8aca86783f6af1fcbea3bd35e2b438e02a9fdda44daef718f212762b431",
+    "stats": "8ceb5f6667e2c0498a7f40a79a46a88af5382a4735f5758039abd1d8f9b3ccb1",
+    "audit": "0244c7eaae103fc207b12f81a983be1553925df6ef8e351b292b839fc097dc4d",
+    "validation": "f2c1ff7a11fe7946f39a5d6b882a04e3acf72736f224d546f7a2c23e68b1c7a7",
+    "run_config": "bf672d9d89b5d5e8a5c3f4b8508556fa048c33952c551076c7b02a4cf49f7899",
+    "cost_events_warm": "42232582914083b4fecf67081ebef6a8390af5d4ce37086cac830f695786053d"
+  },
+  "checks": {
+    "formal_validator_in_run": "pass",
+    "formal_validator_independent": "pass",
+    "exact_top_k_unique_contexts": "pass",
+    "official_stats_aggregation": "pass",
+    "mandatory_graph_constraint": "pass",
+    "prompt_budget": "pass",
+    "prompt_scaffold_chars": 0,
+    "frozen_evaluator_changed": false,
+    "vendor_hashes_passed": 16,
+    "combined_tests_passed": 62
+  },
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "formal all-10 M1-B at top-k 25",
+  "remaining_hard_gates": [
+    "M1-B official overall F1 >= 0.496",
+    "M1-B Recall@25 >= 0.757",
+    "paired-QA and conversation-cluster B-minus-A significance",
+    "A/B_embed ordered-context exact equality",
+    "all secondary formal validation and graph constraints",
+    "final cold/warm cost and cross-result validation"
+  ]
+}

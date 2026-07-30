@@ -1,0 +1,17 @@
+{
+  "schema": "external-model-authorization-v1",
+  "recorded_at": "2026-07-30T08:07:35+08:00",
+  "user_statement": "批准发送问题文本用于检索实体抽取。",
+  "authorized_operation": "Send LoCoMo QA question text to the configured external model for retrieval-time question Entity extraction.",
+  "scope": {
+    "question_text": true,
+    "qa_answer": false,
+    "qa_evidence_annotation": false,
+    "qa_category": false,
+    "judge_output": false,
+    "previous_prediction": false,
+    "graph_construction_from_questions": false
+  },
+  "runtime_boundary": "Question-derived Entities may be used only to query the existing conversation-built Entity-Memory graph.",
+  "warm_cache_policy": "Warm replay must reuse the completed question Entity cache and make zero new provider requests."
+}

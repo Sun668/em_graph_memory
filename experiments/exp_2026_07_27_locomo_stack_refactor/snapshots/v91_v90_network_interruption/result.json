@@ -1,0 +1,32 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "failed_diagnostic",
+  "paper_eligible": false,
+  "completed_operations": 61,
+  "planned_operations": 128,
+  "in_progress": "cold:retrieve:conv-50:100:150",
+  "last_completed_operation": "cold:retrieve:conv-50:50:100",
+  "completed_artifacts": {
+    "graphs": 10,
+    "memory_indexes": 10,
+    "ordered_question_entity_rows": 1882,
+    "raw_unique_questions": 1870,
+    "cold_retrieval_batches": 41,
+    "cold_retrieval_qa": 1882
+  },
+  "query_vector_integrity": {
+    "completed_hits": 1894,
+    "completed_misses": 0,
+    "completed_live_query_embedding_requests": 0,
+    "v89_repaired_double_lookup_batch_passed": true,
+    "conv26_qa_50_100_hits": 52
+  },
+  "failure_evidence": {
+    "checkpoint_sha256": "9a59e7f3bdd93483e6ffe4ed073dcd16d6a7bdebc813a97c6bcd71ab02d0f2e5",
+    "checkpoint_bytes": 104752,
+    "cache_tree_manifest_sha256": "d0e2572d5d27d2918538df9600e7536bf984ce53f63b91871cb3c3417b756b3c",
+    "cache_bytes_human": "59M",
+    "consecutive_connection_failures": 10
+  },
+  "decision": "Quarantine v90 read-only. The v89 query-hit repair is validated, but v90 cannot establish complete cold or warm cost because a question-Entity API call exhausted all frozen retries after the operation was marked in_progress."
+}

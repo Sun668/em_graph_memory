@@ -1,0 +1,273 @@
+{
+  "experiment": "exp_2026_07_27_locomo_stack_refactor",
+  "result_type": "source_refactor_validation_and_conv26_metric",
+  "metric_bearing": true,
+  "official_upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "em_graph_version": "0.5.0",
+  "validation": {
+    "source_root": "code",
+    "source_packages": [
+      "common",
+      "em_graph",
+      "locomo_eval"
+    ],
+    "code_is_python_package": false,
+    "refactor_tests_passed": 15,
+    "normalization_datetime_tests_passed": 17,
+    "syntax_check": "pass",
+    "wheel_build": "pass",
+    "wheel_version": "0.3.0",
+    "wheel_sha256": "9b42b1e33346515aa81ed35993fbaad289170f8dfc1bd3c4b014de9980aa1fc9",
+    "wheel_contains_official_vendor": true,
+    "legacy_em_graph_root_modules": 0,
+    "active_duplicate_locomo_metric_functions": 0,
+    "dependency_boundary": "pass",
+    "prompt_scaffold_chars": 2410,
+    "prompt_budget_limit_chars": 5000,
+    "formal_validator": {
+      "schema": "locomo_formal_validation_v1",
+      "implementation": "validate_formal_result.py",
+      "official_metric_recalculation": false,
+      "focused_tests_passed": 9,
+      "combined_refactor_and_validator_tests_passed": 25,
+      "strict_all10_counts": {
+        "samples": 10,
+        "qa": 1986,
+        "category5": 446
+      },
+      "frozen_evaluator_clean": true,
+      "vendor_hashes_passed": 16,
+      "external_model_calls": 0,
+      "metric_claim": false
+    },
+    "official_dragon_runner": {
+      "implementation": "official_dragon.py",
+      "upstream_parity_tests_passed": 6,
+      "combined_tests_passed": 31,
+      "frozen_evaluator_clean": true,
+      "vendor_hashes_passed": 16,
+      "conv26_retrieval_check": {
+        "metric_bearing": false,
+        "sample": "conv-26",
+        "qa": 199,
+        "top_k": 25,
+        "context_shape": [
+          419,
+          768
+        ],
+        "query_shape": [
+          199,
+          768
+        ],
+        "rows_with_exact_unique_top_k": 199,
+        "cache_sha256": "2fd96d3bd0de445ccfcd4563e8e8ba5585c8bac200897df4c71db9f3eea87b6a"
+      },
+      "retrieval_protocol": {
+        "query_encoder": "facebook/dragon-plus-query-encoder",
+        "context_encoder": "facebook/dragon-plus-context-encoder",
+        "pooling": "last_hidden_state[:, 0, :]",
+        "normalization": "none",
+        "similarity": "raw_dot_product",
+        "ranking": "numpy_argsort_descending",
+        "embedding_batch_size": 24
+      },
+      "mandatory_graph_constraint": "fail: non-compliant flat-dialog reference",
+      "external_model_calls": 0,
+      "metric_claim": false
+    },
+    "analysis_and_cost_tools": {
+      "significance_implementation": "significance_report.py",
+      "cost_implementation": "cost_report.py",
+      "focused_tests_passed": 12,
+      "combined_tests_passed": 43,
+      "bootstrap": {
+        "paired_qa_resamples": 10000,
+        "conversation_cluster_resamples": 10000,
+        "seed": 20260727,
+        "difference": "B_minus_A"
+      },
+      "recall_contribution": {
+        "evidence_non_empty": "serialized per-QA recall",
+        "evidence_empty": 0,
+        "denominator": "all selected QA",
+        "raw_serialized_recall_retained": true,
+        "official_stats_match_required": true
+      },
+      "dense_control": {
+        "conditions": [
+          "A",
+          "B_embed"
+        ],
+        "gate": "exact per-QA ordered context-id equality",
+        "id_difference_fails": true,
+        "order_difference_fails": true
+      },
+      "cost_manifest": {
+        "cache_states": [
+          "cold",
+          "warm"
+        ],
+        "all_required_stages_enforced": true,
+        "missing_values_estimated": false,
+        "actual_measurement_complete": false
+      },
+      "frozen_evaluator_clean": true,
+      "vendor_hashes_passed": 16,
+      "external_model_calls": 0,
+      "metric_claim": false
+    },
+    "formal_graph_orchestration": {
+      "implementation": "formal_graph.py",
+      "focused_tests_passed": 3,
+      "combined_tests_passed": 46,
+      "clean_source_required": true,
+      "absent_condition_required": true,
+      "resume": false,
+      "overwrite": false,
+      "cache_identity_recorded": true,
+      "official_stats_and_validator_required": true,
+      "publication_gate": "continue_tooling_only",
+      "paper_ready": false,
+      "external_model_calls": 0,
+      "metric_claim": false
+    },
+    "provider_usage_telemetry": {
+      "default_enabled": false,
+      "operations": [
+        "chat",
+        "embedding"
+      ],
+      "provider_tokens_recorded": true,
+      "requested_and_actual_model_recorded": true,
+      "changes_request_or_response": false,
+      "focused_tests_passed": 3,
+      "combined_tests_passed": 49,
+      "publication_gate": "continue_tooling_only",
+      "paper_ready": false,
+      "external_model_calls": 0,
+      "metric_claim": false
+    },
+    "cost_orchestration": {
+      "implementation": [
+        "cost_telemetry.py",
+        "cost_probe.py",
+        "cost_report.py"
+      ],
+      "cold_cache_must_be_fresh": true,
+      "warm_formal_identity_required": true,
+      "zero_request_cache_hits_supported": true,
+      "missing_provider_usage_rejected": true,
+      "stage_wall_times_overlap": true,
+      "answer_measurement_reuse_disclosed": true,
+      "combined_tests_passed": 57,
+      "actual_measurement_complete": false,
+      "publication_gate": "continue_tooling_only",
+      "paper_ready": false,
+      "external_model_calls": 0,
+      "metric_claim": false
+    }
+  },
+  "full_dataset_construction_audit": {
+    "samples": 10,
+    "dialogs": 5882,
+    "dialog_sessions": 272,
+    "datetime_keys": 288,
+    "directed_memory_sequence_edges": 11744,
+    "a_memory_only_nodes": 5882,
+    "a_memory_only_entity_nodes": 0,
+    "a_and_b_share_embedding_identity": true,
+    "extraction_input_matches_normalized_text_plus_optional_blip_caption": true,
+    "query_serialized_to_memory_node": false,
+    "img_url_serialized_to_memory_node": false
+  },
+  "mandatory_graph_constraint": {
+    "status": "pass",
+    "graph_inputs": [
+      "session date_time",
+      "dialog id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "excluded": [
+      "query",
+      "img_url",
+      "QA questions",
+      "QA answers",
+      "QA evidence",
+      "QA categories",
+      "judge outputs",
+      "previous predictions",
+      "question-driven ledgers"
+    ],
+    "answer_recall": "graph retrieval through EMGraphRecall"
+  },
+  "qa_metric_result": {
+    "scope": "conv-26",
+    "qa_count": 199,
+    "variant": "B",
+    "source_commit": "23e3a4b941d328d948ffa3981be786c1a60eb315",
+    "models": {
+      "conversation_entity_extraction": "gpt-3.5-turbo",
+      "question_entity_extraction": "gpt-3.5-turbo",
+      "answer_generation": "gpt-3.5-turbo",
+      "embedding": "text-embedding-3-small"
+    },
+    "retrieval": {
+      "entity_weight": 0.3,
+      "semantic_weight": 0.7,
+      "entity_degree_discount": "1/log1p(degree)",
+      "who_only_dampen": 0.25,
+      "sequence_neighbors": "parsed-date_time +/-1 at 0.5 entity score",
+      "semantic_similarity": "signed cosine",
+      "candidate_pool": "Entity-gated; full Memory pool when the gate is empty"
+    },
+    "official_generation": {
+      "vendor_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "batch_size": 1,
+      "message_role": "system",
+      "temperature": 0,
+      "max_completion_tokens": 32,
+      "random_seed": null
+    },
+    "metrics": {
+      "5": {
+        "official_recall_acc": 0.6231155778894473,
+        "official_overall_f1": 0.341,
+        "official_overall_f1_unrounded": 0.34078894472361815,
+        "categories_1_4_subset_f1": 0.4198486842105263
+      },
+      "10": {
+        "official_recall_acc": 0.7579547738693467,
+        "official_overall_f1": 0.385,
+        "official_overall_f1_unrounded": 0.3847286432160804,
+        "categories_1_4_subset_f1": 0.49053289473684214
+      },
+      "25": {
+        "official_recall_acc": 0.8609748743718593,
+        "official_overall_f1": 0.391,
+        "official_overall_f1_unrounded": 0.3912311557788945,
+        "categories_1_4_subset_f1": 0.49904605263157886
+      },
+      "50": {
+        "official_recall_acc": 0.9212763819095477,
+        "official_overall_f1": 0.4,
+        "official_overall_f1_unrounded": 0.39972361809045226,
+        "categories_1_4_subset_f1": 0.5233223684210527
+      }
+    },
+    "official_recall_aggregation_note": "Use vendored evaluation_stats output. It retains empty-evidence QA rows in the denominator but does not add their row-level default recall.",
+    "official_overall_scope_note": "Includes Category 5 and is an official-compatibility diagnostic. Category 5 exposes the two answer options, including the gold answer, in the official prompt; do not use overall F1 as the repository-compliant promotion score.",
+    "graph_constraint": {
+      "graph_construction": "pass",
+      "answer_recall": "graph retrieval",
+      "categories_1_4_promotion_scope": "pass",
+      "official_overall_category_5_scope": "compatibility diagnostic only"
+    },
+    "prompt_budget": {
+      "entity_scaffold_chars": 2410,
+      "limit_chars": 5000,
+      "pass": true
+    }
+  }
+}

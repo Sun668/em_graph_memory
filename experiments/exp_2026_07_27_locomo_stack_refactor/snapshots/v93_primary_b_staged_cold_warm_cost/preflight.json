@@ -1,0 +1,54 @@
+{
+  "schema": "research-experiment-preflight-v1",
+  "run_id": "v93_primary_b_staged_cold_warm_cost",
+  "completed_at": "2026-07-30T07:22:33+08:00",
+  "status": "pass",
+  "source": {
+    "commit": "ccb9c6ab30c8a6b720d5c7ec1546f8bc25ee870e",
+    "tree": "df7d0d259659e0edbc9ee50c10307296704c80e9",
+    "worktree_clean": true,
+    "runner_sha256": "610d308a6de281f229885d33151fe2f8bf28eb299321ea5085fee9e79df1bd66"
+  },
+  "frozen_inputs": {
+    "parameter_sha256": "530eefcea86d5374f3898a1bc744186d46a60d959abdd53fa6517c6b914a8581",
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "formal_query_usage_sha256": "c3b2800bc11c157de809415f6d8f64c4727229f5e478f8f1e0b4e1a97ebcfc13",
+    "warm_answer_events_sha256": "7ea432e10901997a39c51b0711c17e436d6a718bcd53a51991d82885b2c628b4"
+  },
+  "frozen_evaluator": {
+    "worktree_clean": true,
+    "vendor_hashes_passed": 16,
+    "vendor_hashes_failed": 0
+  },
+  "connectivity": {
+    "authenticated": false,
+    "prompt_sent": false,
+    "http_status": 401,
+    "tls_handshake": "pass"
+  },
+  "chat_telemetry": {
+    "request_count": 1,
+    "input_tokens": 11,
+    "output_tokens": 2,
+    "requested_model": "gpt-3.5-turbo",
+    "actual_model": "gpt-3.5-turbo-0125",
+    "status": "pass"
+  },
+  "embedding_telemetry": {
+    "request_count": 1,
+    "input_tokens": 4,
+    "output_tokens": 0,
+    "model": "text-embedding-3-small",
+    "dimension": 1536,
+    "observer_native_parity": true,
+    "status": "pass"
+  },
+  "output_targets_absent": {
+    "outputs/locomo_cost/primary_b_v93_checkpoint.json": true,
+    "outputs/locomo_cost/primary_b_v93_cache": true,
+    "outputs/locomo_cost/primary_b_v93_events.json": true,
+    "outputs/locomo_cost/primary_b_v93_report.json": true
+  },
+  "decision": "All launch gates pass. Initialization is authorized from the four absent v93-specific paths."
+}

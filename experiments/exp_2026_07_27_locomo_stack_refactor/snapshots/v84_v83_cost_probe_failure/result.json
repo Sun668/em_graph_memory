@@ -1,0 +1,66 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "failed",
+  "classification": "diagnostic-only",
+  "snapshot_id": "v84_v83_cost_probe_failure",
+  "run_id": "v83_primary_b_staged_cold_warm_cost",
+  "measurement_id": "primary_b_v83_staged_cold_warm_cost",
+  "frozen_at": "2026-07-29T21:36:34+08:00",
+  "source": {
+    "commit": "a4d603634a9dc69a2d49a29c8c98848f8acc7001",
+    "tree": "9da45113cf51161e6cca733138b3d2001cbf3313",
+    "cost_probe_staged_sha256": "647697bfe53573f06018a18be38b36f6224e25ac1db77153ad0d5bbe0b92b2cf",
+    "cost_telemetry_sha256": "bf83321611f71b3e81e5ec4ab79b94640a51671720d3dd9fe0b69a6bf785d9ec",
+    "common_llm_sha256": "80fc09b8b06f288733797c9347eaef6605f47af6a900e0ebb4247e191744e6a7",
+    "embedding_index_sha256": "80a309584d3370322fb4e2bc70a1d587a821fa62dcceb8c38b65292831912b7a"
+  },
+  "parameters": {
+    "path": "experiments/exp_2026_07_27_locomo_stack_refactor/snapshots/v83_primary_b_staged_cold_warm_cost/parameters.json",
+    "sha256": "28777bd9ffbb36abd296739291f5e8c68c6c9b636eb4997036efd1daf58d1e4f"
+  },
+  "failure": {
+    "operation": "cold:index:conv-50",
+    "retry_count": 10,
+    "exception": "RuntimeError: Embedding failed after 10 retries",
+    "cause": "openai.APIConnectionError caused by TLS EOF",
+    "checkpoint_in_progress_persisted": true,
+    "new_run_id_required": true
+  },
+  "checkpoint": {
+    "path": "outputs/locomo_cost/primary_b_v83_checkpoint.json",
+    "sha256": "dc59769e2fdd662edad20308216eb5595e39e991a1d3813ce0a7b3478cbfff06",
+    "completed_operations": 19,
+    "total_operations": 128,
+    "event_count": 29,
+    "last_completed": "cold:index:conv-49",
+    "in_progress": "cold:index:conv-50"
+  },
+  "partial_cache": {
+    "path": "outputs/locomo_cost/primary_b_v83_cache",
+    "file_count_excluding_lock": 21,
+    "sha256_set": "331e29c41a2cfba32c3bc41897b24eb10b949ac77a9499651df76fca9d4f6e6f",
+    "disk_kib": 82896,
+    "graphs": 10,
+    "embedding_indexes": 9,
+    "conversation_entity_unique_keys": 5873,
+    "qa_retrieval_started": false,
+    "quarantined_read_only": true
+  },
+  "telemetry_audit": {
+    "graph_wall_event_count": 10,
+    "graph_wall_seconds": 1996.293180459,
+    "entity_event_count": 10,
+    "entity_request_count_persisted": 0,
+    "entity_tokens_persisted": 0,
+    "embedding_event_count": 9,
+    "embedding_wall_seconds": 1101.3935462509999,
+    "embedding_request_count_persisted": 0,
+    "entity_telemetry_valid": false,
+    "embedding_telemetry_valid": false,
+    "missing_values_may_be_estimated": false
+  },
+  "event_manifest_created": false,
+  "cost_report_created": false,
+  "paper_eligible": false,
+  "next_action": "Repair and integration-test telemetry, then freeze and launch a new isolated cost run."
+}

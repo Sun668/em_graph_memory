@@ -1,0 +1,39 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "snapshot_id": "v98_post_cost_publication_audit",
+  "created_at": "2026-07-30T09:24:00+08:00",
+  "source_commit": "e0512a6ffe24002b5ac379049dc99da32fd757a7",
+  "provider_calls_allowed": 0,
+  "metric_recalculation": false,
+  "inputs": [
+    {
+      "path": "snapshots/v87_final_publication_claim_audit/result.json",
+      "sha256": "a9dd2ccb5e08b26d859f77e85af62c2805819b820c228d74a8b229e5fe127751"
+    },
+    {
+      "path": "snapshots/v97_v93_complete_cold_warm_cost/result.json",
+      "sha256": "d5952b104bc8c01ee75036338bd321d91efcf05ccad7a9aeb556cf36c04a21fc"
+    },
+    {
+      "path": "paper/evidence_ledger.md",
+      "sha256": "fc7c08ef5c4916899783ad94026951f4b4cddc4eab37e65fa5d8586b98e933b5"
+    },
+    {
+      "path": "paper/results_tables.md",
+      "sha256": "4eb3077ac82e34fdc81f1f7cd349efd1e95d405813bf46d98446172ef8a8af0d"
+    },
+    {
+      "path": "paper/manuscript_materials.md",
+      "sha256": "b446bdcf31f11752f1db78c6febb570c0b31b862e4653018b2310acf608e722d"
+    }
+  ],
+  "claim_ceiling": "robust",
+  "excluded_claims": [
+    "overall final-answer F1 improvement",
+    "cross-dataset generalization",
+    "official DRAGON parity",
+    "state of the art",
+    "monetary cost"
+  ]
+}

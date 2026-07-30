@@ -1,0 +1,60 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "complete",
+  "snapshot_id": "v97_v93_complete_cold_warm_cost",
+  "run_id": "v93_primary_b_staged_cold_warm_cost",
+  "measurement_source_commit": "ccb9c6ab30c8a6b720d5c7ec1546f8bc25ee870e",
+  "finalizer_source_commit": "f606f21",
+  "parameter_snapshot": "../v93_primary_b_staged_cold_warm_cost/parameters.json",
+  "parameter_snapshot_sha256": "530eefcea86d5374f3898a1bc744186d46a60d959abdd53fa6517c6b914a8581",
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "conversations": 10,
+    "qa_count": 1986
+  },
+  "condition": {
+    "variant": "B",
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "sequence_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "batch_size": 50
+  },
+  "models": {
+    "conversation_entity": "gpt-3.5-turbo",
+    "question_entity": "gpt-3.5-turbo",
+    "memory_embedding": "text-embedding-3-small",
+    "query_embedding": "read-only text-embedding-3-small artifact",
+    "answer": "gpt-3.5-turbo",
+    "judge": "not applicable"
+  },
+  "artifacts": {
+    "checkpoint": {
+      "path": "outputs/locomo_cost/primary_b_v93_checkpoint.json",
+      "sha256": "d98e8069006c69bc3e26e9a7e6661195942facea2064ebfaf9573abfc4da9b0a",
+      "bytes": 227821
+    },
+    "events": {
+      "path": "outputs/locomo_cost/primary_b_v93_events.json",
+      "sha256": "52a8cfd1e47c1065f35adb422828a7ff1a083b7002a8ccdf769be3674e9cd113",
+      "bytes": 202752
+    },
+    "report": {
+      "path": "outputs/locomo_cost/primary_b_v93_report.json",
+      "sha256": "a94f20709f311e7c35a19f36d368f1d033d8e6302c3e3d952b6a7c619d819b75",
+      "bytes": 6100,
+      "report_fingerprint": "b1b90410a8f3687c3706d75f4ec82dc2b51ccdc3768ae5e10ddc6e225ff3b994"
+    },
+    "cache": {
+      "path": "outputs/locomo_cost/primary_b_v93_cache",
+      "file_count": 23,
+      "bytes": 55047767,
+      "tree_manifest_sha256": "30dafea3f8c5306425b6883c5a590ef080f7999330180535ebcbf1dd748bf65b"
+    }
+  }
+}

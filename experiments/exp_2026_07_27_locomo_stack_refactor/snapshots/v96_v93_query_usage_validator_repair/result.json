@@ -1,0 +1,31 @@
+{
+  "schema": "research-experiment-result-v1",
+  "status": "passed",
+  "paper_eligible": false,
+  "validator": "matched_cold_warm_batch_usage_v1",
+  "acceptance_rules": {
+    "same_ordered_batch_signatures": true,
+    "exact_qa_count_per_state": 1986,
+    "minimum_hits_per_state": 1986,
+    "query_artifact_misses_per_state": 0,
+    "live_query_embedding_requests_per_state": 0,
+    "formal_lookup_count_role": "SHA-bound disclosed reference"
+  },
+  "tests": {
+    "focused": {
+      "count": 19,
+      "status": "passed"
+    },
+    "experiment_suite": {
+      "count": 112,
+      "status": "passed"
+    },
+    "locomo_vendor_manifest": {
+      "file_count": 16,
+      "status": "passed",
+      "manifest_sha256": "e65f16906ca342a6a81f626742a0461846a2477d2c0191352cfd47dd3d46035f"
+    },
+    "locomo_eval_worktree_changes": 0
+  },
+  "continuation_decision": "Warm replay may proceed with the original frozen ccb9c6a measurement runner. Finalization must use f606f21 or a source-identical descendant."
+}

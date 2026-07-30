@@ -1,0 +1,38 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "complete",
+  "snapshot": "v52_input_family_significance",
+  "result_type": "input_family_holm_significance",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "source_commit": "fff582e11b8ff80b8589840c079d5cc85b7ced7b",
+  "source_tree": "aec8bf137ac0322a934e9e0cde8e0176dd3a3706",
+  "family_hypotheses": 2,
+  "resamples": 10000,
+  "seed": 20260727,
+  "report": {
+    "path": "outputs/locomo_analysis/input_family_fff582e_seed20260727.json",
+    "sha256": "7e7fa9a5a9deb07e238a8e7df020f33da6f9152368d130b14d2c069a9438f630",
+    "fingerprint": "73d87f690e845cec8534978d8eddb2165477640adf61115e7590e9c86682257c"
+  },
+  "conclusions": {
+    "time_annotation_inside_b_f1_significant": false,
+    "time_annotation_inside_b_recall_significant": false,
+    "b_over_a_under_raw_text_f1_significant": false,
+    "b_over_a_under_raw_text_recall_significant_paired_qa": true,
+    "b_over_a_under_raw_text_recall_significant_conversation_cluster": true,
+    "b_over_a_under_raw_text_recall_difference": 0.049521651560926486,
+    "b_over_a_under_raw_text_recall_holm_adjusted_p": 0.00039996000399960006
+  },
+  "checks": {
+    "formal_inputs_validated": 3,
+    "qa_count_per_condition": 1986,
+    "independent_reproduction_byte_identical": true,
+    "metric_recalculation": false,
+    "cache_or_result_mutation": false,
+    "frozen_evaluator_changed": false
+  },
+  "publication_gate": "continue",
+  "paper_ready": false,
+  "next_action": "commit and push v52, then preregister B_no_speaker"
+}

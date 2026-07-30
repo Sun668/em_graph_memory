@@ -1,0 +1,29 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "tooling_locked",
+  "snapshot": "v69_sequence_family_tooling",
+  "metric_bearing": false,
+  "source_base_commit": "28b32c11337de442d091e891bf381b57c0ef2c69",
+  "family_hypotheses": 2,
+  "resamples_per_estimator": 10000,
+  "seed": 20260727,
+  "correction": "Holm step-down separately by metric and estimator",
+  "identity_gate": "Complete cache_identity plus all other scientific fields must match; only exact preregistered sequence_secondary_scale may differ.",
+  "source_hashes": {
+    "sequence_family_report.py": "92edf3254282b525709ab66d4da48dd7d14b5a80a38424fb4a2764dbfd183d97",
+    "significance_report.py": "98c8b8dbb5d0f05b1061aa3d1eca5a99efdbb3f7f285a7eb2cc06a77755da2fa",
+    "test_analysis_tools.py": "b27a9e966674fe8a3d5ec09d7b74c9624f49848f6afdc2908140b1228d23c90f"
+  },
+  "checks": {
+    "focused_tests": "23/23",
+    "full_tests": "83/83",
+    "vendor_hashes": "16/16",
+    "query_artifact_mismatch_rejected": true,
+    "metric_recalculation": false,
+    "frozen_evaluator_changed": false,
+    "cache_or_result_mutation": false
+  },
+  "publication_gate": "tooling_locked",
+  "paper_ready": false,
+  "next_action": "commit and push v69, then generate and independently reproduce the formal sequence-family report"
+}

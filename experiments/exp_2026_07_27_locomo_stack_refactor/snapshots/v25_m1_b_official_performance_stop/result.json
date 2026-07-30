@@ -1,0 +1,142 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "snapshot": "v25_m1_b_official_performance_stop",
+  "result_type": "formal_all10_matched_stack_primary_method_terminal_stop",
+  "metric_bearing": true,
+  "paper_metric_eligible": true,
+  "source_commit": "484ccf0395346cbc7eab0c09f82e91e039a005a8",
+  "source_tree": "5474be88c45c31f4c05b0d78c594fb27ab047a83",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "run_id": "formal_all10_M1_B_top25_484ccf0_run01",
+  "condition_fingerprint": "32fc90680292460a1bc8f88e38cebfc96e2e2fda68ef162f1f11572515791ac2",
+  "sample_ids": ["conv-26", "conv-30", "conv-41", "conv-42", "conv-43", "conv-44", "conv-47", "conv-48", "conv-49", "conv-50"],
+  "qa_count": 1986,
+  "category5_count": 446,
+  "top_k": 25,
+  "models": {
+    "entity_extraction_requested": "gpt-3.5-turbo",
+    "query_entity_requested": "gpt-3.5-turbo",
+    "embedding": "text-embedding-3-small",
+    "answer_requested": "gpt-3.5-turbo",
+    "answer_actual_per_response_recorded": false,
+    "judge": null
+  },
+  "retrieval": {
+    "variant": "B",
+    "rag_mode": "dialog",
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "expand_sequence": true,
+    "force_full_pool": false,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true
+  },
+  "graph": {
+    "memory_only": false,
+    "memory_nodes": 5882,
+    "entity_nodes": 12808,
+    "entity_memory_edges": 36227,
+    "memory_sequence_edges": 11744,
+    "mandatory_graph_constraint": "pass",
+    "construction_inputs": ["session date_time", "dia_id", "speaker", "dialog text", "blip_caption"],
+    "qa_or_judge_construction_inputs": [],
+    "query_entities_retrieval_time_only": true
+  },
+  "metrics": {
+    "official_overall_f1": 0.42677240684793544,
+    "official_recall_at_25": 0.8434154078549845,
+    "local_categories_1_to_4_f1": 0.5224480519480519,
+    "local_categories_1_to_4_recall_at_25": 0.8487162337662335,
+    "m1_a_comparison": {
+      "official_overall_f1": 0.42264199395770374,
+      "official_recall_at_25": 0.7974682779456193,
+      "b_minus_a_f1": 0.004130412890231702,
+      "b_minus_a_recall_at_25": 0.04594712990936521,
+      "significance_run": false
+    },
+    "category": {
+      "1": {"qa": 282, "f1": 0.3931524822695035, "recall_at_25": 0.6697517730496452},
+      "2": {"qa": 321, "f1": 0.4195420560747668, "recall_at_25": 0.8930404984423675},
+      "3": {"qa": 96, "f1": 0.1542604166666667, "recall_at_25": 0.5519375000000001},
+      "4": {"qa": 841, "f1": 0.6471093935790722, "recall_at_25": 0.9256848989298455},
+      "5": {"qa": 446, "f1": 0.09641255605381166, "recall_at_25": 0.8251121076233184}
+    },
+    "per_conversation": {
+      "conv-26": {"qa": 199, "f1": 0.393638190954774, "recall_at_25": 0.8609748743718593},
+      "conv-30": {"qa": 105, "f1": 0.4169238095238097, "recall_at_25": 0.8957142857142857},
+      "conv-41": {"qa": 193, "f1": 0.46815544041450785, "recall_at_25": 0.8981036269430052},
+      "conv-42": {"qa": 260, "f1": 0.39288461538461533, "recall_at_25": 0.7899038461538461},
+      "conv-43": {"qa": 242, "f1": 0.41070661157024796, "recall_at_25": 0.821396694214876},
+      "conv-44": {"qa": 158, "f1": 0.46434177215189876, "recall_at_25": 0.8331708860759494},
+      "conv-47": {"qa": 190, "f1": 0.43971052631578955, "recall_at_25": 0.8377210526315789},
+      "conv-48": {"qa": 239, "f1": 0.4468661087866108, "recall_at_25": 0.8269205020920503},
+      "conv-49": {"qa": 196, "f1": 0.4432755102040818, "recall_at_25": 0.8475816326530613},
+      "conv-50": {"qa": 204, "f1": 0.4067156862745097, "recall_at_25": 0.8705098039215686}
+    }
+  },
+  "recall_analysis_audit": {
+    "empty_evidence_rows": 4,
+    "empty_evidence_raw_serialized_recall_sum": 4.0,
+    "empty_evidence_official_analysis_contribution_sum": 0.0,
+    "all_qa_retained_in_denominator": true,
+    "official_stats_parity": "pass"
+  },
+  "warm_telemetry": {
+    "partial_only": true,
+    "query_entity_requests": 1775,
+    "query_entity_input_tokens": 1092274,
+    "query_entity_output_tokens": 95258,
+    "answer_requests": 1986,
+    "answer_input_tokens": 2743677,
+    "answer_output_tokens": 16207,
+    "retrieval_latency_observations": 1986,
+    "retrieval_latency_mean_seconds": 2.689890170113717,
+    "retrieval_latency_p95_seconds": 3.8884013537317514,
+    "complete_cost_report": false,
+    "reason": "terminal metric gate stopped matched cold/warm cost aggregation"
+  },
+  "artifact_hashes": {
+    "prediction": "f0fbfa2aff13647eafe34b0604f97e9547ea1dcb90bf06b831d7dc18bb93a04c",
+    "stats": "312a6d09bd1f5bf2ceef1cfa4e2c77b87a67f030b6067bdc54678fe37c193854",
+    "audit": "f66d7748a5b684619f6f14cc53d2ddc84ce2d11f6aae4e7932af84425fba3e84",
+    "validation": "4dcb89440257b4444cdd06ab682c9e4aef62afba075be3597afe65c15f321f79",
+    "run_config": "8a3d55264419adc0ac7c062c5b0bd8f551341ed62df99659724f02795b967e16",
+    "cost_events_warm": "0a0f5e6e28de49773cab71abc75d0c9384aafadf51f0c411a2b1b8ce24262104"
+  },
+  "checks": {
+    "formal_validator_in_run": "pass",
+    "formal_validator_independent": "pass",
+    "exact_top_k_unique_contexts": "pass",
+    "official_stats_aggregation": "pass",
+    "mandatory_graph_constraint": "pass",
+    "prompt_budget": "pass",
+    "prompt_scaffold_chars": 2410,
+    "frozen_evaluator_changed": false,
+    "vendor_hashes_passed": 16,
+    "combined_tests_passed": 62
+  },
+  "fixed_terminal_gate": {
+    "required_official_overall_f1": 0.496,
+    "actual_official_overall_f1": 0.42677240684793544,
+    "f1_pass": false,
+    "f1_shortfall": 0.06922759315206456,
+    "required_recall_at_25": 0.757,
+    "actual_recall_at_25": 0.8434154078549845,
+    "recall_pass": true,
+    "recall_margin": 0.08641540785498447
+  },
+  "publication_gate": "stop",
+  "paper_ready": false,
+  "next_action": "do not run significance, ablations, robustness, O2, or final cost experiments unless the user explicitly changes the M1-B F1 gate",
+  "blocked_followups": [
+    "paired-QA and conversation-cluster B-minus-A significance",
+    "structural and input ablations",
+    "top-k, fusion, and sequence robustness",
+    "O2-B local DRAGON-stack diagnostic",
+    "matched cold/warm final cost aggregation",
+    "paper-ready claim"
+  ]
+}

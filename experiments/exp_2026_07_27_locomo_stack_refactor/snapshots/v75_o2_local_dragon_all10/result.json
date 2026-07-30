@@ -1,0 +1,102 @@
+{
+  "schema": "locomo_experiment_snapshot_v1",
+  "status": "pass",
+  "snapshot": "v75_o2_local_dragon_all10",
+  "metric_bearing": true,
+  "formal_all10": true,
+  "paper_metric_eligible": true,
+  "official_reference_eligible": false,
+  "comparison_scope": "local_dragon_stack_diagnostic",
+  "run_id": "formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01",
+  "source_commit": "fef66db0c8370dbbd8ea2d68499fa3c8c3474d2b",
+  "source_tree": "50d3661527e5d47c6871e3816d3ce5b480542c40",
+  "condition_fingerprint": "b9866c1b0904818d917f70c65a4e12c3bb7fac73fa3abef1545782cd75fff27c",
+  "output_directory": "outputs/locomo_formal/formal_all10_O2_B_dragon_raw_minmax_top25_v75_qfrozen_run01",
+  "counts": {
+    "conversations": 10,
+    "qa": 1986,
+    "category_5": 446
+  },
+  "metrics": {
+    "overall_f1": 0.4244194360523665,
+    "recall_acc": 0.8142608257804633,
+    "categories_1_4_subset_f1": 0.5174655844155843,
+    "categories_1_4_subset_recall_acc": 0.8335207792207793,
+    "category_f1": {
+      "1": 0.412177304964539,
+      "2": 0.41988785046729016,
+      "3": 0.22199999999999998,
+      "4": 0.6237419738406654,
+      "5": 0.1031390134529148
+    },
+    "category_recall_acc": {
+      "1": 0.6650780141843972,
+      "2": 0.8977165109034267,
+      "3": 0.5718958333333334,
+      "4": 0.8953638525564804,
+      "5": 0.7477578475336323
+    }
+  },
+  "descriptive_primary_b_difference": {
+    "overall_f1_points": -0.1260322255790498,
+    "recall_acc_points": -3.058157099697877,
+    "categories_1_4_subset_f1_points": -0.22746753246752993,
+    "inferential_claim": false,
+    "reason": "The semantic embedding protocol and immutable query artifact differ, and O1 did not meet the preregistered official DRAGON reproduction tolerance."
+  },
+  "query_artifact": {
+    "path": "outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz",
+    "sha256": "5a8b96c729d802fbf6c1ef1bb9b568c6f15fc16c1d893b79488442b5183ebf81",
+    "role": "query",
+    "normalization": "none_float32_v1",
+    "ordered_qa": 1986,
+    "unique_questions": 1974,
+    "dimension": 768,
+    "cache_hits": 1997,
+    "cache_misses": 0,
+    "live_embedding_requests": 0
+  },
+  "cost": {
+    "cache_state": "warm",
+    "retrieval_wall_seconds": 34.95975262799166,
+    "answer_wall_seconds": 2081.7037977970035,
+    "answer_requests": 1986,
+    "answer_input_tokens": 2824310,
+    "answer_output_tokens": 16464,
+    "entity_requests": 0,
+    "memory_embedding_provider_requests": 0
+  },
+  "cache_audit": {
+    "graph_files": 70,
+    "graph_set_sha256": "6cc96ee62182999d83f5004c49153abfa4dfef8986a304c0e2e81c498daa1ab3",
+    "old_memory_index_files": 30,
+    "old_memory_index_set_sha256": "e8c0c14aa4bee79521cd1c81ebe98ffe31412911c52cc80d00448df227c648b0",
+    "new_o2_memory_index_files": 10,
+    "new_o2_memory_index_set_sha256": "414ba2fa3c2976ef64cbf1b39acc4770bfc787fe55acab01b00272fb0db76e70",
+    "total_memory_index_files": 40,
+    "total_memory_index_set_sha256": "e5af612f325eac86030aa5ff425f6c2a6f3eed429e9aaa474377bbee865d02ed",
+    "old_artifact_deleted": false,
+    "old_artifact_overwritten": false,
+    "old_artifact_rebuilt": false
+  },
+  "validation": {
+    "embedded_validator": "pass",
+    "independent_validator": "pass",
+    "unittest": "109/109",
+    "vendor_manifest": "16/16",
+    "mandatory_graph_constraint": "pass",
+    "prompt_budget_chars": 2410,
+    "prompt_budget_limit_chars": 5000,
+    "output_directory_absent_at_start": true,
+    "resume": false,
+    "overwrite": false
+  },
+  "artifact_hashes": {
+    "predictions.json": "10b1f63e0df88284c78c880ef7358f06dad16b939a785bb841b96270a7180937",
+    "stats.json": "670704bfbedf34d7f12fc8b3a178ce6cb451043752095ccbedb64b0f16db74d2",
+    "audit.json": "49cc27b718ad084b1c5603f9c057911c33a4e5f59673fa0389b8f9e97d47ca3b"
+  },
+  "claim": "Pinned raw DRAGON dot products with query-local min-max calibration produce nearly unchanged answer F1 but lower evidence recall than the primary local B stack; this is descriptive local-stack evidence only and not a controlled comparison with the official LoCoMo DRAGON reference.",
+  "publication_gate": "continue_to_cost_and_final_audit",
+  "paper_ready": false
+}

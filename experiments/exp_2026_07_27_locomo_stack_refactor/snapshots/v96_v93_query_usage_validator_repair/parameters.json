@@ -1,0 +1,28 @@
+{
+  "schema": "research-experiment-validation-v1",
+  "status": "passed",
+  "snapshot_id": "v96_v93_query_usage_validator_repair",
+  "created_at": "2026-07-30T09:08:00+08:00",
+  "source_commit": "f606f21",
+  "base_diagnostic_snapshot": "../v95_v93_cold_query_usage_nondeterminism",
+  "files": [
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe_staged.py",
+      "sha256": "5520194cfe99169a0cc05c0c7a2ca9f6899825da06a2ebe1617bf3aa098467d6"
+    },
+    {
+      "path": "experiments/exp_2026_07_27_locomo_stack_refactor/test_cost_probe_staged.py",
+      "sha256": "8227c43e9cfd5d8ae542acd9578df0419db7a4140e91814578e853fb8650e384"
+    }
+  ],
+  "change_scope": [
+    "terminal query-usage validation",
+    "terminal manifest reporting",
+    "unit tests"
+  ],
+  "measurement_runner_unchanged": {
+    "commit": "ccb9c6ab30c8a6b720d5c7ec1546f8bc25ee870e",
+    "worktree": "/private/tmp/graph_memory_v93_source_ccb9c6a",
+    "use_for_remaining_warm_steps": true
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_07_27_locomo_stack_refactor",
+  "run_id": "v80_primary_b_cold_warm_cost",
+  "created_at": "2026-07-29T20:04:45+08:00",
+  "source": {
+    "commit": "9d5d8c2b17ce90dcd39f3166cca10ce8974bcf7f",
+    "tree": "844c568392a072f6b092afc8843b68635c0e4505",
+    "dirty": false,
+    "cost_probe_sha256": "e3bc1f82167e46b9ab4d0c3246b2937be7a54d1c19d9575e24c4eab012a6bcba",
+    "cost_report_sha256": "d976804959769084b0c99aeafbb03bf024f4ec4b5b4ea834170702768dd3cb87",
+    "cost_telemetry_sha256": "bf83321611f71b3e81e5ec4ab79b94640a51671720d3dd9fe0b69a6bf785d9ec"
+  },
+  "hypothesis": {
+    "primary": "A complete fresh B@25 cache has measurable graph, extraction, embedding, question-extraction, retrieval, answer, and disk costs; an immediate repeat has zero new construction/extraction/embedding/question provider requests.",
+    "comparison": "cold versus immediately repeated warm execution over the same complete isolated v80 cache",
+    "performance_tuning": false
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "conversations": 10,
+    "qa": 1986,
+    "ordered_unique_questions": 1974
+  },
+  "sampling": {
+    "scope": "all10",
+    "sample_order": ["conv-26", "conv-30", "conv-41", "conv-42", "conv-43", "conv-44", "conv-47", "conv-48", "conv-49", "conv-50"],
+    "category_filter": "none",
+    "seed": "not-applicable; deterministic dataset order, while no answers are newly generated"
+  },
+  "preprocessing": {
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    },
+    "construction_inputs": ["session date_time", "dia_id", "speaker", "dialog text", "blip_caption"],
+    "forbidden_construction_inputs": ["QA question", "QA answer", "QA evidence", "QA category", "judge output", "previous prediction", "question-driven ledger"]
+  },
+  "models": {
+    "conversation_and_question_extraction": "gpt-3.5-turbo",
+    "memory_embedding": "text-embedding-3-small",
+    "answer": "gpt-3.5-turbo (existing formal event reused; no new answer requests)"
+  },
+  "prompts": {
+    "entity_scaffold_chars": 2410,
+    "limit_chars": 5000,
+    "pass": true,
+    "answer_prompt": "not invoked; reuse immutable formal answer telemetry"
+  },
+  "training": {
+    "status": "not-applicable",
+    "reason": "inference-only graph construction and retrieval cost measurement"
+  },
+  "retrieval": {
+    "variant": "B",
+    "top_k": 25,
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "semantic_score_normalization": "none",
+    "expand_sequence": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "recall_surface": "conversation-built Entity/Memory graph and sequence edges"
+  },
+  "generation": {
+    "new_answer_generation": false,
+    "reused_formal_answer_requests": 1986,
+    "reused_formal_answer_input_tokens": 2744099,
+    "reused_formal_answer_output_tokens": 16269,
+    "reuse_reason": "answer generation is downstream of and independent from cache state"
+  },
+  "evaluation": {
+    "metric_bearing": false,
+    "measured_stages": ["graph_construction", "entity_extraction", "embedding", "query_entity", "retrieval", "answer_generation"],
+    "latency_clock": "time.perf_counter",
+    "token_source": "provider response usage",
+    "missing_values_estimated": false,
+    "warm_formal_cost_file": "outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json",
+    "warm_formal_cost_sha256": "7ea432e10901997a39c51b0711c17e436d6a718bcd53a51991d82885b2c628b4",
+    "condition_fingerprint": "9cb8c2991f51ab6085a68914fdaae42f4ad67d8cdf274bdd8dc359ba1a3c2782"
+  },
+  "randomness": {
+    "status": "not-applicable-to-cost-identity",
+    "reason": "no new Reader generation; provider latency and extraction response variation are observed rather than seeded"
+  },
+  "caches": {
+    "cold_root": "outputs/locomo_cost/primary_b_v80_cache",
+    "events": "outputs/locomo_cost/primary_b_v80_events.json",
+    "report": "outputs/locomo_cost/primary_b_v80_report.json",
+    "log": "outputs/locomo_cost/primary_b_v80.log",
+    "exit_status": "outputs/locomo_cost/primary_b_v80.exit",
+    "start_requirement": "all five v80 paths absent",
+    "shared_objects_per_state": ["TextEmbeddingCache", "question EntityExtractor", "QuestionEntityCache"],
+    "warm_policy": "new shared objects load the complete cold files; zero live provider requests",
+    "quarantined": ["outputs/locomo_cost/primary_b_v77_cache", "outputs/locomo_cost/primary_b_v79_cache"],
+    "old_artifact_policy": "outputs/em_graph, formal outputs, and quarantined paths are read-only and must remain byte-identical"
+  },
+  "environment": {
+    "shell": "/bin/zsh -lc",
+    "EM_GRAPH_MAX_WORKERS": 8,
+    "effective_graph_workers": 6,
+    "EM_GRAPH_EMBED_WAIT": 0.05,
+    "PYTHONPYCACHEPREFIX": "/private/tmp/graph_memory_pycache",
+    "proxy_policy": "unset http_proxy and https_proxy",
+    "execution": "nohup detached process with durable combined log and explicit exit-status file"
+  },
+  "resources": {
+    "wall_seconds_max": 21600,
+    "concurrency_max": 8,
+    "cold_cache_bytes_max": 300000000,
+    "disk_kinds": ["graph", "embedding_index", "entity cache", "text embedding cache"]
+  },
+  "cost_limits": {
+    "cold_conversation_entity_requests_max": 5882,
+    "cold_query_entity_requests_max": 1974,
+    "cold_embedding_requests_max": 5882,
+    "warm_new_provider_requests_max": 0,
+    "monetary_limit": {
+      "status": "unknown",
+      "reason": "provider price unavailable; exact request/token counts, wall time, and storage are bounded"
+    }
+  },
+  "gates": {
+    "preflight": ["clean committed source", "16/16 frozen evaluator hashes", "validated warm formal identity", "all five v80 paths absent", "chat and embedding connectivity"],
+    "runtime": ["10 graphs", "10 indexes", "1986 QA retrieval latencies", "1986 question-cache keys retained", "1974 unique question digests", "no cache count loss", "warm new provider requests zero"],
+    "postrun": ["exit status zero", "all six stages cold and warm", "independent byte-identical report reproduction", "old and quarantined artifact hashes unchanged", "snapshot verifier pass"]
+  },
+  "command": "nohup /bin/zsh -lc 'cd /Users/sun/Documents/git/graph_memory; source ./env_gpt.sh; unset http_proxy https_proxy; export EM_GRAPH_MAX_WORKERS=8 EM_GRAPH_EMBED_WAIT=0.05 PYTHONPYCACHEPREFIX=/private/tmp/graph_memory_pycache; .venv/bin/python experiments/exp_2026_07_27_locomo_stack_refactor/cost_probe.py --data-file data/locomo10.json --cache-dir outputs/locomo_cost/primary_b_v80_cache --warm-cost-file outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01/cost_events_warm.json --output-events outputs/locomo_cost/primary_b_v80_events.json --output-report outputs/locomo_cost/primary_b_v80_report.json --scope all10 --variant B --top-k 25 --extract-model gpt-3.5-turbo --embedding-model text-embedding-3-small --answer-model gpt-3.5-turbo --entity-weight 0.3 --semantic-weight 0.7 --sequence-scale 0.5 --entity-min-rel-score 0.5 --entity-top-k-per-key 20 --who-only-dampen 0.25; status=$?; echo $status > outputs/locomo_cost/primary_b_v80.exit; exit $status' > outputs/locomo_cost/primary_b_v80.log 2>&1 < /dev/null & echo $!",
+  "unknowns": [],
+  "paper_ready": false,
+  "next_action": "Commit and push this lock, pass preflight, launch detached v80, monitor its durable log, validate, snapshot, commit/push, then run the final publication audit."
+}
