@@ -4,7 +4,7 @@ Entity--Memory graph retrieval experiments for long-term conversational
 memory on LoCoMo.
 
 This repository contains the complete publication experiment package synced
-from `graph_memory` commit `314c95a` on 2026-07-30. The current authoritative
+from `graph_memory` commit `bc4f030` on 2026-07-30. The current authoritative
 experiment is:
 
 [`experiments/exp_2026_07_27_locomo_stack_refactor/`](experiments/exp_2026_07_27_locomo_stack_refactor/)
@@ -46,8 +46,9 @@ See:
 
 The PDF is an eight-page arXiv-style technical manuscript. Its 20
 bibliography entries are all cited and were checked against primary paper
-pages or official proceedings records. Author and affiliation fields remain
-anonymous placeholders.
+pages or official proceedings records. The author is `Shumao Sun`;
+affiliation, contact, acknowledgment, funding, and contribution metadata
+remain pending.
 
 ## Repository layout
 
@@ -59,7 +60,7 @@ code/
 data/locomo10.json        # fixed 10-conversation dataset
 experiments/
   exp_2026_07_27_locomo_stack_refactor/
-    snapshots/            # v01-v101 immutable progress/result snapshots
+    snapshots/            # v01-v102 immutable progress/result snapshots
     paper/                # evidence ledger, tables, manuscript, LaTeX
 outputs/
   locomo_formal/          # 24 isolated formal condition outputs

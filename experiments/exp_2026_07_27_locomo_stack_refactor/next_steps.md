@@ -607,5 +607,7 @@ archived result files.
       Related Work section, and ensure all 20 bibliography entries are cited.
 - [x] Rebuild and inspect the expanded eight-page PDF; freeze v101 without
       changing experiments, caches, metrics, or claim eligibility.
-- [ ] Replace the anonymous author, affiliation, acknowledgment, funding, and
-      contribution placeholders before uploading an identified arXiv version.
+- [x] Replace the anonymous author placeholder with `Shumao Sun`, rebuild the
+      PDF, and freeze the metadata-only revision as v102.
+- [ ] Supply affiliation, contact information, acknowledgment, funding, and
+      contribution metadata before uploading an identified arXiv version.

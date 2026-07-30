@@ -3,7 +3,7 @@
 ## Provenance
 
 - Source repository: `Sun668/graph_memory`
-- Source commit: `314c95a`
+- Source commit: `bc4f030`
 - Synchronization date: 2026-07-30
 - Destination repository: `Sun668/em_graph_memory`
 - Dataset: `data/locomo10.json`
@@ -18,7 +18,7 @@
    - `code/locomo_eval/`, including the frozen vendor manifest and source.
 2. The complete tracked experiment bundle:
    - `experiments/exp_2026_07_27_locomo_stack_refactor/`
-   - all scripts, tests, plans, conclusions, paper materials, and v01-v101
+   - all scripts, tests, plans, conclusions, paper materials, and v01-v102
      immutable snapshots.
 3. Formal and analytical evidence:
    - all 24 condition directories under `outputs/locomo_formal/`;
@@ -32,7 +32,8 @@
 5. Publication artifacts:
    - manuscript, evidence ledger, results tables, literature audit;
    - LaTeX and BibTeX sources;
-   - final eight-page PDF and rendered preview.
+   - final eight-page PDF and rendered preview;
+   - identified author metadata for `Shumao Sun`.
 6. Project-state copies of the source `PLAN.md` and `TODO.md`.
 
 ## Intentionally excluded

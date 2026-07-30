@@ -6965,3 +6965,13 @@ without relying on QA-derived ledger artifacts.
 - Snapshot `v101_verified_literature_pdf` binds the source, bibliography,
   literature audit, Zotero collection, and PDF identities. Experiment metrics,
   caches, predictions, and the calibrated claim boundary are unchanged.
+
+### 2026-07-30 author identification
+
+- Replaced the anonymous manuscript author with `Shumao Sun` in the LaTeX,
+  Markdown draft, PDF metadata, and final rendered PDF.
+- Affiliation, contact information, acknowledgments, funding, and contribution
+  statements remain explicitly unresolved rather than inferred.
+- Snapshot `v102_shumao_sun_author_pdf` binds the identified manuscript source
+  and rebuilt PDF. Experimental evidence, citations, metrics, and claims are
+  unchanged.

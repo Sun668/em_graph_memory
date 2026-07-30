@@ -1,7 +1,8 @@
 # Entity–Memory Graph Retrieval Improves Evidence Coverage in Long-Conversation Question Answering
 
-**Anonymous authors**
-*Affiliations withheld for review*
+**Shumao Sun**
+
+*Affiliation to be supplied*
 
 ## Abstract
 

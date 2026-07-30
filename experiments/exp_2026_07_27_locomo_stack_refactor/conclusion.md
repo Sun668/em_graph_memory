@@ -1046,3 +1046,10 @@ literature is used only for positioning: it does not introduce cross-system
 score rankings, alter any frozen result, or broaden the v87/v98 claim
 contract. Snapshot `snapshots/v101_verified_literature_pdf/` binds the Zotero,
 source, bibliography, audit, and PDF identities.
+
+The manuscript now identifies `Shumao Sun` as the author. Snapshot
+`snapshots/v102_shumao_sun_author_pdf/` records the corresponding LaTeX,
+Markdown, PDF-metadata, and rendered-PDF update. This metadata-only revision
+does not change the experiment, literature positioning, numerical results, or
+claim boundary. Affiliation, contact, acknowledgment, funding, and
+contribution information remain pending.

@@ -1154,3 +1154,9 @@ cross-system numerical comparison. Snapshot
 `snapshots/v101_verified_literature_pdf/` records the resulting verified
 eight-page PDF. No experiment, cache, prediction, metric, or claim boundary
 changed.
+
+Snapshot `snapshots/v102_shumao_sun_author_pdf/` replaces the anonymous author
+placeholder with `Shumao Sun` in the LaTeX, Markdown draft, PDF metadata, and
+final rendered PDF. Affiliation, contact, acknowledgment, funding, and
+contribution fields remain pending. No experimental or literature evidence
+changed.

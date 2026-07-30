@@ -4820,5 +4820,7 @@ python3 experiments/exp_2026_06_10_generic_graph_verifier/run_01_generic_graph_a
       every bibliography item to be cited, and record the source-to-claim map.
 - [x] Rebuild and visually inspect the eight-page PDF; freeze the exact
       literature/source/PDF identities in v101.
-- [ ] Replace anonymous author, affiliation, acknowledgment, funding, and
-      contribution placeholders before an identified arXiv submission.
+- [x] Replace the anonymous author placeholder with `Shumao Sun` in the
+      manuscript, PDF metadata, and rebuilt PDF; freeze v102.
+- [ ] Supply affiliation, contact information, acknowledgment, funding, and
+      contribution metadata before an identified arXiv submission.

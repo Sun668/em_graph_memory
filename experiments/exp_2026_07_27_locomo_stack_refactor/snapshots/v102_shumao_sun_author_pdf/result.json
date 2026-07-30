@@ -1,0 +1,38 @@
+{
+  "schema": "research-manuscript-author-build-result-v1",
+  "status": "pass",
+  "author": "Shumao Sun",
+  "pdf": {
+    "path": "outputs/paper/entity_memory_graph_retrieval_arxiv.pdf",
+    "sha256": "38167490b5c4b4bf6add0dd99e8d782ef0b0eb626c3f7cb0dea1d6063d847e54",
+    "bytes": 204906,
+    "pages": 8,
+    "paper_size_points": [612, 792],
+    "pdf_version": "1.7",
+    "metadata_author": "Shumao Sun"
+  },
+  "validation": {
+    "latex_build": "pass",
+    "final_log_warnings": 0,
+    "undefined_citations": 0,
+    "undefined_references": 0,
+    "overfull_boxes": 0,
+    "rendered_pages": [1, 2, 3, 4, 5, 6, 7, 8],
+    "visually_inspected_changed_pages": [1, 6],
+    "clipping_or_overlap": false,
+    "author_line_readable": true,
+    "bibliography_resolved": true
+  },
+  "submission": {
+    "author_identified": true,
+    "identified_submission_ready": false,
+    "remaining_metadata": [
+      "affiliation",
+      "author contact information",
+      "acknowledgments",
+      "funding statement",
+      "contribution statement"
+    ]
+  },
+  "decision": "deliver_identified_author_pdf"
+}

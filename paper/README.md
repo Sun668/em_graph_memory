@@ -11,6 +11,6 @@
 
 The PDF was built from the synced LaTeX source with zero unresolved citations
 or references, zero overfull boxes, and page-by-page visual inspection. The
-technical manuscript is ready for distribution; identified submission still
-requires author, affiliation, acknowledgment, funding, and contribution
-metadata.
+technical manuscript identifies `Shumao Sun` as the author and is ready for
+distribution. Submission still requires affiliation, contact, acknowledgment,
+funding, and contribution metadata.

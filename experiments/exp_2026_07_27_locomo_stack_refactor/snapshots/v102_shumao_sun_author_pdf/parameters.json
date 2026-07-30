@@ -1,0 +1,37 @@
+{
+  "schema": "research-manuscript-author-build-v1",
+  "snapshot": "v102_shumao_sun_author_pdf",
+  "date": "2026-07-30",
+  "base_commit": "314c95a",
+  "author": {
+    "name": "Shumao Sun",
+    "affiliation": "pending",
+    "contact": "pending",
+    "acknowledgments": "pending",
+    "funding": "pending",
+    "contributions": "pending"
+  },
+  "source": {
+    "latex": "paper/arxiv/main.tex",
+    "latex_sha256": "d7789e5862ddab77bea24890755784ee7f0b05a994eeb7343ee167747ada5715",
+    "markdown": "paper/ARXIV_DRAFT.md",
+    "markdown_sha256": "218097e9d478dfb3aae3448f6ce3ab7e83190e0a261a469917020abc80788f50",
+    "bibliography": "paper/arxiv/references.bib",
+    "bibliography_sha256": "88fdf53772744492552d48b86846cbb38ec86d1c0ea494639e65b4ae11cedc9a",
+    "parent_snapshot": "snapshots/v101_verified_literature_pdf"
+  },
+  "build": {
+    "engine": "pdfLaTeX",
+    "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=<temporary-directory> main.tex",
+    "working_directory": "experiments/exp_2026_07_27_locomo_stack_refactor/paper/arxiv",
+    "output": "outputs/paper/entity_memory_graph_retrieval_arxiv.pdf"
+  },
+  "scope": {
+    "author_metadata_change": true,
+    "experiment_rerun": false,
+    "cache_change": false,
+    "metric_change": false,
+    "citation_change": false,
+    "claim_boundary_change": false
+  }
+}
