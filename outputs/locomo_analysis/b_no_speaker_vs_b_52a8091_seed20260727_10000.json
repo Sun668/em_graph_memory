@@ -1,0 +1,597 @@
+{
+  "schema": "locomo_significance_v1",
+  "hypothesis": "predeclared primary B versus A",
+  "condition_a": {
+    "directory": "/Users/sun/Documents/git/graph_memory/outputs/locomo_formal/formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+    "run_id": "formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+    "condition_fingerprint": "9cb8c2991f51ab6085a68914fdaae42f4ad67d8cdf274bdd8dc359ba1a3c2782",
+    "prediction_sha256": "9dcde0e2f993b1a0199a7e17ccb66a4b307e7355ba7b60aff139ade792c75069",
+    "stats_sha256": "6a7ae63b72db737353b1c5a2f9ae5171090324ec3efa05ffb3022c2571d8b3de",
+    "validation_status": "pass",
+    "relocation": {
+      "used": false
+    },
+    "recall_aggregation_audit": {
+      "policy": "serialized recall when evidence is non-empty; otherwise 0; all QA rows remain in the denominator",
+      "raw_serialized_recall_means": {
+        "2": 0.8961557632398753,
+        "3": 0.5936041666666667,
+        "1": 0.6709361702127657,
+        "4": 0.9268739595719383,
+        "5": 0.8262331838565022
+      },
+      "official_contribution_means": {
+        "2": 0.8961557632398753,
+        "3": 0.5519375000000001,
+        "1": 0.6709361702127657,
+        "4": 0.9268739595719383,
+        "5": 0.8262331838565022
+      },
+      "official_stats_recall_means": {
+        "2": 0.8961557632398753,
+        "3": 0.5519375000000001,
+        "1": 0.6709361702127657,
+        "4": 0.9268739595719383,
+        "5": 0.8262331838565022
+      },
+      "empty_evidence_counts": {
+        "3": 4
+      },
+      "matches_official_stats": true
+    }
+  },
+  "condition_b": {
+    "directory": "/Users/sun/Documents/git/graph_memory/outputs/locomo_formal/formal_all10_M3_B_no_speaker_top25_6bdcaf0_qfrozen_run01",
+    "run_id": "formal_all10_M3_B_no_speaker_top25_6bdcaf0_qfrozen_run01",
+    "condition_fingerprint": "741fe2d67430af3a19e2e5f15b332e6ca3b7a8f520859cea90a3e7e166250cbf",
+    "prediction_sha256": "a56d87b7241ed897adff11f7f823d8f49b5fa785e48b38628ad959c8c0f3f5bb",
+    "stats_sha256": "9d2d9ac30f61dbf2cdc6afc2ab959fef546f2669b4ea91f399671d1524aec8cb",
+    "validation_status": "pass",
+    "relocation": {
+      "used": false
+    },
+    "recall_aggregation_audit": {
+      "policy": "serialized recall when evidence is non-empty; otherwise 0; all QA rows remain in the denominator",
+      "raw_serialized_recall_means": {
+        "2": 0.8787601246105918,
+        "3": 0.5068020833333334,
+        "1": 0.6300886524822694,
+        "4": 0.9203341260404282,
+        "5": 0.8295964125560538
+      },
+      "official_contribution_means": {
+        "2": 0.8787601246105918,
+        "3": 0.46513541666666675,
+        "1": 0.6300886524822694,
+        "4": 0.9203341260404282,
+        "5": 0.8295964125560538
+      },
+      "official_stats_recall_means": {
+        "2": 0.8787601246105918,
+        "3": 0.46513541666666675,
+        "1": 0.6300886524822694,
+        "4": 0.9203341260404282,
+        "5": 0.8295964125560538
+      },
+      "empty_evidence_counts": {
+        "3": 4
+      },
+      "matches_official_stats": true
+    }
+  },
+  "analysis": {
+    "seed": 20260727,
+    "resamples": 10000,
+    "metric_source": "immutable official per-row serialized F1 and recall values; recall contribution is forced to zero for empty evidence",
+    "metric_recalculation": false,
+    "recall_contribution_policy": "serialized per-row recall when evidence is non-empty; otherwise 0; denominator includes every selected QA",
+    "difference_direction": "B_minus_A",
+    "overall": {
+      "qa_count": 1986,
+      "metrics": {
+        "f1": {
+          "mean_difference": -0.002414904330312185,
+          "paired_qa_bootstrap": {
+            "resamples": 10000,
+            "confidence_interval_95": [
+              -0.011004733131923463,
+              0.006012651057401811
+            ],
+            "two_sided_zero_p": 0.5849415058494151
+          },
+          "conversation_cluster_bootstrap": {
+            "resamples": 10000,
+            "clusters": 10,
+            "estimator": "mean over all QA rows after resampling whole conversations",
+            "confidence_interval_95": [
+              -0.011525161558248318,
+              0.008921665745919028
+            ],
+            "two_sided_zero_p": 0.6519348065193481
+          },
+          "a_mean": 0.4256797583081571,
+          "b_mean": 0.4232648539778449
+        },
+        "recall": {
+          "mean_difference": -0.014821752265861023,
+          "paired_qa_bootstrap": {
+            "resamples": 10000,
+            "confidence_interval_95": [
+              -0.023097885196374623,
+              -0.006732993454179256
+            ],
+            "two_sided_zero_p": 0.0005999400059994001
+          },
+          "conversation_cluster_bootstrap": {
+            "resamples": 10000,
+            "clusters": 10,
+            "estimator": "mean over all QA rows after resampling whole conversations",
+            "confidence_interval_95": [
+              -0.028157735258186076,
+              -0.0024097186049992546
+            ],
+            "two_sided_zero_p": 0.0193980601939806
+          },
+          "a_mean": 0.8448423967774421,
+          "b_mean": 0.8300206445115811
+        }
+      }
+    },
+    "categories": {
+      "1": {
+        "qa_count": 282,
+        "metrics": {
+          "f1": {
+            "mean_difference": -0.013953900709219856,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.03327677304964539,
+                0.004050265957446802
+              ],
+              "two_sided_zero_p": 0.13838616138386162
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.027552411385606875,
+                -0.001114915254237294
+              ],
+              "two_sided_zero_p": 0.031596840315968405
+            },
+            "a_mean": 0.399468085106383,
+            "b_mean": 0.3855141843971631
+          },
+          "recall": {
+            "mean_difference": -0.040847517730496455,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.06303918439716313,
+                -0.02046781914893617
+              ],
+              "two_sided_zero_p": 0.00019998000199980003
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.05770379310344828,
+                -0.023648531447784813
+              ],
+              "two_sided_zero_p": 0.00019998000199980003
+            },
+            "a_mean": 0.670936170212766,
+            "b_mean": 0.6300886524822695
+          }
+        }
+      },
+      "2": {
+        "qa_count": 321,
+        "metrics": {
+          "f1": {
+            "mean_difference": -0.004043613707165111,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.022293146417445484,
+                0.014583878504672881
+              ],
+              "two_sided_zero_p": 0.6621337866213378
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.02906821608760463,
+                0.027677908689248888
+              ],
+              "two_sided_zero_p": 0.7517248275172482
+            },
+            "a_mean": 0.41049221183800616,
+            "b_mean": 0.4064485981308411
+          },
+          "recall": {
+            "mean_difference": -0.017395638629283488,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.03894088785046729,
+                0.0028504672897196257
+              ],
+              "two_sided_zero_p": 0.09299070092990701
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.038422579656185785,
+                0.005535303030303025
+              ],
+              "two_sided_zero_p": 0.126987301269873
+            },
+            "a_mean": 0.8961557632398753,
+            "b_mean": 0.8787601246105918
+          }
+        }
+      },
+      "3": {
+        "qa_count": 96,
+        "metrics": {
+          "f1": {
+            "mean_difference": -0.012802083333333334,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.049000520833333325,
+                0.017229166666666667
+              ],
+              "two_sided_zero_p": 0.4537546245375462
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 9,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.03776937231880786,
+                0.009048810975609754
+              ],
+              "two_sided_zero_p": 0.28177182281771823
+            },
+            "a_mean": 0.17377083333333335,
+            "b_mean": 0.16096875
+          },
+          "recall": {
+            "mean_difference": -0.08680208333333334,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.15103125,
+                -0.028645833333333332
+              ],
+              "two_sided_zero_p": 0.0029997000299970002
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 9,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.14492391304347826,
+                -0.029510416666666667
+              ],
+              "two_sided_zero_p": 0.0029997000299970002
+            },
+            "a_mean": 0.5519375000000001,
+            "b_mean": 0.46513541666666663
+          }
+        }
+      },
+      "4": {
+        "qa_count": 841,
+        "metrics": {
+          "f1": {
+            "mean_difference": 0.005548156956004757,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.007593608799048752,
+                0.018801159334126027
+              ],
+              "two_sided_zero_p": 0.40655934406559346
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.008217135070569497,
+                0.0182552491186839
+              ],
+              "two_sided_zero_p": 0.44595540445955406
+            },
+            "a_mean": 0.6412604042806184,
+            "b_mean": 0.6468085612366231
+          },
+          "recall": {
+            "mean_difference": -0.006539833531510107,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.017241379310344827,
+                0.004161712247324614
+              ],
+              "two_sided_zero_p": 0.25317468253174685
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.02225144439747217,
+                0.007158662008994125
+              ],
+              "two_sided_zero_p": 0.41555844415558446
+            },
+            "a_mean": 0.9268739595719382,
+            "b_mean": 0.9203341260404281
+          }
+        }
+      },
+      "5": {
+        "qa_count": 446,
+        "metrics": {
+          "f1": {
+            "mean_difference": -0.006726457399103139,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.026905829596412557,
+                0.013452914798206279
+              ],
+              "two_sided_zero_p": 0.6033396660333966
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.02666666666666667,
+                0.013015325605567604
+              ],
+              "two_sided_zero_p": 0.5823417658234177
+            },
+            "a_mean": 0.10089686098654709,
+            "b_mean": 0.09417040358744394
+          },
+          "recall": {
+            "mean_difference": 0.0033632286995515697,
+            "paired_qa_bootstrap": {
+              "resamples": 10000,
+              "confidence_interval_95": [
+                -0.014573991031390135,
+                0.02242152466367713
+              ],
+              "two_sided_zero_p": 0.7513248675132487
+            },
+            "conversation_cluster_bootstrap": {
+              "resamples": 10000,
+              "clusters": 10,
+              "estimator": "mean over all QA rows after resampling whole conversations",
+              "confidence_interval_95": [
+                -0.013189448441247002,
+                0.020997883422757987
+              ],
+              "two_sided_zero_p": 0.7735226477352265
+            },
+            "a_mean": 0.8262331838565022,
+            "b_mean": 0.8295964125560538
+          }
+        }
+      }
+    },
+    "categories_1_4": {
+      "qa_count": 1540,
+      "metrics": {
+        "f1": {
+          "mean_difference": -0.001166233766233766,
+          "paired_qa_bootstrap": {
+            "resamples": 10000,
+            "confidence_interval_95": [
+              -0.010330584415584414,
+              0.008014301948051947
+            ],
+            "two_sided_zero_p": 0.8157184281571843
+          },
+          "conversation_cluster_bootstrap": {
+            "resamples": 10000,
+            "clusters": 10,
+            "estimator": "mean over all QA rows after resampling whole conversations",
+            "confidence_interval_95": [
+              -0.01176858229303158,
+              0.010327983251919052
+            ],
+            "two_sided_zero_p": 0.8313168683131686
+          },
+          "a_mean": 0.5197402597402597,
+          "b_mean": 0.518574025974026
+        },
+        "recall": {
+          "mean_difference": -0.020088311688311686,
+          "paired_qa_bootstrap": {
+            "resamples": 10000,
+            "confidence_interval_95": [
+              -0.02905738636363636,
+              -0.01113923701298702
+            ],
+            "two_sided_zero_p": 0.00019998000199980003
+          },
+          "conversation_cluster_bootstrap": {
+            "resamples": 10000,
+            "clusters": 10,
+            "estimator": "mean over all QA rows after resampling whole conversations",
+            "confidence_interval_95": [
+              -0.03329507439733998,
+              -0.008123884928891534
+            ],
+            "two_sided_zero_p": 0.0005999400059994001
+          },
+          "a_mean": 0.8502318181818181,
+          "b_mean": 0.8301435064935065
+        }
+      },
+      "status": "local non-official diagnostic"
+    },
+    "per_conversation": [
+      {
+        "sample_id": "conv-26",
+        "qa_count": 199,
+        "f1": {
+          "a_mean": 0.3966683417085427,
+          "b_mean": 0.37366331658291463,
+          "difference": -0.023005025125628138
+        },
+        "recall": {
+          "a_mean": 0.8609748743718593,
+          "b_mean": 0.8433869346733669,
+          "difference": -0.017587939698492462
+        }
+      },
+      {
+        "sample_id": "conv-30",
+        "qa_count": 105,
+        "f1": {
+          "a_mean": 0.3878857142857143,
+          "b_mean": 0.4244,
+          "difference": 0.036514285714285714
+        },
+        "recall": {
+          "a_mean": 0.8957142857142857,
+          "b_mean": 0.8957142857142857,
+          "difference": 0.0
+        }
+      },
+      {
+        "sample_id": "conv-41",
+        "qa_count": 193,
+        "f1": {
+          "a_mean": 0.47431088082901557,
+          "b_mean": 0.5062642487046631,
+          "difference": 0.03195336787564767
+        },
+        "recall": {
+          "a_mean": 0.9032849740932642,
+          "b_mean": 0.8946476683937824,
+          "difference": -0.008637305699481866
+        }
+      },
+      {
+        "sample_id": "conv-42",
+        "qa_count": 260,
+        "f1": {
+          "a_mean": 0.3925,
+          "b_mean": 0.39976538461538463,
+          "difference": 0.0072653846153846145
+        },
+        "recall": {
+          "a_mean": 0.7899038461538461,
+          "b_mean": 0.7692807692307693,
+          "difference": -0.020623076923076925
+        }
+      },
+      {
+        "sample_id": "conv-43",
+        "qa_count": 242,
+        "f1": {
+          "a_mean": 0.40168181818181814,
+          "b_mean": 0.3907107438016529,
+          "difference": -0.01097107438016529
+        },
+        "recall": {
+          "a_mean": 0.8269090909090909,
+          "b_mean": 0.7970909090909092,
+          "difference": -0.029818181818181817
+        }
+      },
+      {
+        "sample_id": "conv-44",
+        "qa_count": 158,
+        "f1": {
+          "a_mean": 0.4631139240506329,
+          "b_mean": 0.4544746835443037,
+          "difference": -0.008639240506329115
+        },
+        "recall": {
+          "a_mean": 0.8331708860759495,
+          "b_mean": 0.7653987341772152,
+          "difference": -0.06777215189873417
+        }
+      },
+      {
+        "sample_id": "conv-47",
+        "qa_count": 190,
+        "f1": {
+          "a_mean": 0.45206842105263156,
+          "b_mean": 0.4322684210526316,
+          "difference": -0.0198
+        },
+        "recall": {
+          "a_mean": 0.8377210526315789,
+          "b_mean": 0.8250052631578948,
+          "difference": -0.012715789473684208
+        }
+      },
+      {
+        "sample_id": "conv-48",
+        "qa_count": 239,
+        "f1": {
+          "a_mean": 0.4367907949790795,
+          "b_mean": 0.4373305439330544,
+          "difference": 0.0005397489539748954
+        },
+        "recall": {
+          "a_mean": 0.8227364016736401,
+          "b_mean": 0.8382845188284519,
+          "difference": 0.015548117154811716
+        }
+      },
+      {
+        "sample_id": "conv-49",
+        "qa_count": 196,
+        "f1": {
+          "a_mean": 0.450704081632653,
+          "b_mean": 0.44055102040816324,
+          "difference": -0.010153061224489794
+        },
+        "recall": {
+          "a_mean": 0.8526836734693878,
+          "b_mean": 0.8325306122448979,
+          "difference": -0.020153061224489798
+        }
+      },
+      {
+        "sample_id": "conv-50",
+        "qa_count": 204,
+        "f1": {
+          "a_mean": 0.40754901960784307,
+          "b_mean": 0.39546568627450984,
+          "difference": -0.012083333333333333
+        },
+        "recall": {
+          "a_mean": 0.8729607843137255,
+          "b_mean": 0.8811323529411765,
+          "difference": 0.00817156862745098
+        }
+      }
+    ]
+  },
+  "multiple_comparison": {
+    "primary_test": "no correction; single predeclared comparison",
+    "component_claims": "use holm_adjust across component-test p-values"
+  },
+  "report_fingerprint": "c0734a6b8139caca93f7ce4efcb59ce15d229e6a7e500eb3752165006937c282"
+}

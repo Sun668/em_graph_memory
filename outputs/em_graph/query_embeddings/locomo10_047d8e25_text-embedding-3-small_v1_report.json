@@ -1,0 +1,22 @@
+{
+  "schema": "query_embedding_build_report_v1",
+  "created_at": "2026-07-28T08:28:14.657172+08:00",
+  "command": "experiments/exp_2026_07_27_locomo_stack_refactor/prepare_query_embeddings.py --data-file data/locomo10.json --embedding-model text-embedding-3-small --role context --output outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz --report outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1_report.json",
+  "dataset_path": "/Users/smsun/Documents/github/graph_memory/data/locomo10.json",
+  "artifact": {
+    "schema": "query_embedding_artifact_v1",
+    "path": "/Users/smsun/Documents/github/graph_memory/outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "embedding_model": "text-embedding-3-small",
+    "role": "context",
+    "normalization": "l2_float32_v1",
+    "qa_count": 1986,
+    "unique_question_count": 1974,
+    "vector_dimension": 1536,
+    "ordered_qa_sha256": "21b786753c8e890953c06a6f4738d059504730637b0885a3d47dc4c8ccd5be92"
+  },
+  "embedding_requests": 198,
+  "embedding_input_tokens": 23936,
+  "status": "pass"
+}

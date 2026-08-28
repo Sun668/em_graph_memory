@@ -1,0 +1,47 @@
+{
+  "schema": "query_embedding_build_report_v1",
+  "created_at": "2026-07-29T09:46:06.679631+08:00",
+  "command": "experiments/exp_2026_07_27_locomo_stack_refactor/prepare_query_embeddings.py --data-file data/locomo10.json --embedding-model dragon --role query --normalization none_float32_v1 --output outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz --report outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2_report.json",
+  "dataset_path": "/Users/sun/Documents/git/graph_memory/data/locomo10.json",
+  "artifact": {
+    "schema": "query_embedding_artifact_v2",
+    "path": "/Users/sun/Documents/git/graph_memory/outputs/em_graph/query_embeddings/locomo10_047d8e25_dragon_raw_v2.npz",
+    "sha256": "5a8b96c729d802fbf6c1ef1bb9b568c6f15fc16c1d893b79488442b5183ebf81",
+    "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "embedding_model": "dragon",
+    "role": "query",
+    "normalization": "none_float32_v1",
+    "qa_count": 1986,
+    "unique_question_count": 1974,
+    "vector_dimension": 768,
+    "ordered_qa_sha256": "21b786753c8e890953c06a6f4738d059504730637b0885a3d47dc4c8ccd5be92",
+    "protocol_identity": {
+      "model": "dragon",
+      "normalization": "none_float32_v1",
+      "query_role": "query",
+      "query_encoder": "facebook/dragon-plus-query-encoder",
+      "context_encoder": "facebook/dragon-plus-context-encoder",
+      "query_encoder_revision": "2d3808c087119b953f8494b7638c216c71712cee",
+      "context_encoder_revision": "68074e7406bb0061b0d049b58592acafae00e9d4",
+      "pooling": "last_hidden_state_cls",
+      "tokenizer": "facebook/dragon-plus-query-encoder",
+      "tokenizer_revision": "2d3808c087119b953f8494b7638c216c71712cee",
+      "max_length": 512,
+      "similarity": "raw_dot_product",
+      "runtime": {
+        "python": "3.9.6",
+        "packages": {
+          "torch": "2.0.1",
+          "transformers": "4.35.0",
+          "tokenizers": "0.14.1",
+          "numpy": "1.26.0"
+        },
+        "device": "cpu",
+        "cuda_runtime": "none"
+      }
+    }
+  },
+  "embedding_requests": 0,
+  "embedding_input_tokens": 0,
+  "status": "pass"
+}
