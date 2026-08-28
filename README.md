@@ -38,17 +38,17 @@ See:
 
 ## Paper
 
-- [Final verified PDF](paper/entity_memory_graph_retrieval_arxiv.pdf)
+- [v108 PDF](paper/entity_memory_graph_retrieval_arxiv_en_v108.pdf)
 - [LaTeX source](paper/arxiv/main.tex)
 - [Bibliography](paper/arxiv/references.bib)
 - [Literature verification](paper/literature_verification.md)
 - [Full manuscript draft](paper/ARXIV_DRAFT.md)
 
-The PDF is an eight-page arXiv-style technical manuscript. Its 20
-bibliography entries are all cited and were checked against primary paper
-pages or official proceedings records. The author is `Shumao Sun`;
-affiliation, contact, acknowledgment, funding, and contribution metadata
-remain pending.
+The v108 PDF is an 11-page arXiv-style technical manuscript. Its exact
+code-and-paper snapshot is pinned by tag v1.0.8:
+https://github.com/Sun668/em_graph_memory/tree/v1.0.8
+
+The author is Shumao Sun at Tsinghua University.
 
 ## Repository layout
 

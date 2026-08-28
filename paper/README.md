@@ -1,16 +1,12 @@
 # Paper artifacts
 
-- `entity_memory_graph_retrieval_arxiv.pdf`: final verified eight-page PDF.
-- `arxiv/main.tex`: authoritative LaTeX manuscript.
-- `arxiv/references.bib`: 20-entry verified bibliography.
-- `ARXIV_DRAFT.md`: full Markdown manuscript.
-- `evidence_ledger.md`: claim-to-artifact provenance.
-- `results_tables.md`: publication tables and calibrated interpretations.
-- `literature_verification.md`: primary/official source checks.
-- `manuscript_materials.md`: journal-neutral drafting materials.
+This directory contains the arXiv v108 publication snapshot.
 
-The PDF was built from the synced LaTeX source with zero unresolved citations
-or references, zero overfull boxes, and page-by-page visual inspection. The
-technical manuscript identifies `Shumao Sun` as the author and is ready for
-distribution. Submission still requires affiliation, contact, acknowledgment,
-funding, and contribution metadata.
+- entity_memory_graph_retrieval_arxiv_en_v108.pdf: compiled v108 PDF.
+- arxiv/main.tex: authoritative LaTeX manuscript.
+- arxiv/references.bib: bibliography.
+- entity_memory_graph_retrieval_arxiv_en_v108_arxiv_source.zip: uploadable arXiv source bundle.
+- ../experiments/exp_2026_07_27_locomo_stack_refactor/paper/: evidence ledger and manuscript materials.
+
+The exact paper-and-code snapshot is pinned by tag v1.0.8:
+https://github.com/Sun668/em_graph_memory/tree/v1.0.8

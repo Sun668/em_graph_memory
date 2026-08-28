@@ -3,8 +3,9 @@
 ## Provenance
 
 - Source repository: `Sun668/graph_memory`
-- Source commit: `bc4f030`
-- Synchronization date: 2026-07-30
+- Source baseline: graph_memory publication branch commit 29220439180615e61e0269b515b10d23dcdec73d
+- Publication snapshot: v1.0.8
+- Synchronization date: 2026-08-28
 - Destination repository: `Sun668/em_graph_memory`
 - Dataset: `data/locomo10.json`
 - Dataset SHA-256:

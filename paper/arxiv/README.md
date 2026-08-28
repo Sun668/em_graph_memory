@@ -1,44 +1,18 @@
-# arXiv / Overleaf submission bundle
+# arXiv v108 submission bundle
 
-## Contents
+## Upload files
 
-| File | Role |
-|---|---|
-| `main.tex` | Paper body |
-| `references.bib` | Bibliography |
-| `main.pdf` | Compiled PDF (regenerate after edits) |
-| `Makefile` | Local `latexmk` / `pdflatex` build |
-| `../ARXIV_DRAFT.md` | Longer lab notebook draft (not for upload) |
+Upload main.tex and references.bib from this directory, or use the generated
+paper/entity_memory_graph_retrieval_arxiv_en_v108_arxiv_source.zip bundle.
+The PDF is provided separately as
+paper/entity_memory_graph_retrieval_arxiv_en_v108.pdf.
 
-## Build (local)
+The exact code and manuscript snapshot is pinned at:
+https://github.com/Sun668/em_graph_memory/tree/v1.0.8
 
-```bash
-export PATH="/Library/TeX/texbin:$PATH"   # macOS MacTeX
-cd experiments/exp_2026_07_26_locomo_official_compare/paper/arxiv
-latexmk -pdf main.tex
-```
+## Build
 
-## Build (Overleaf)
+    export PATH="/Library/TeX/texbin:$PATH"
+    latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 
-1. Upload `main.tex` + `references.bib`.
-2. Compiler: **pdfLaTeX**; main document `main.tex`.
-3. Replace anonymous author block for a named arXiv upload if desired.
-
-## Claim checklist before submit
-
-- [ ] Main claim is **A vs B under gpt-3.5 + text-embedding-3-small** (reimplementation scores)
-- [ ] Paper Table 3 rows labeled **DRAGON / cite only**
-- [ ] No Mem0 / LLM-judge numbers in main tables
-- [ ] Author names filled as you prefer for arXiv
-- [ ] Numbers match `../TABLE_GPT35_TES_COMPARE.md` / snapshot `v04`
-- [ ] README / arXiv Comments field use the **actual** `main.pdf` page count (do not force a page target by deleting content)
-
-## Suggested arXiv metadata
-
-- **Category:** cs.CL (primary); optionally cs.IR
-- **Title:** Entity–Memory Bipartite Graphs for Long-Conversation Dialog Retrieval on LoCoMo
-- **Comments:** set from compiled PDF page count; code at https://github.com/Sun668/em_graph_memory
-
-## Current build
-
-- **Compiled PDF:** 10 pages (content-complete; page count is informational only)
+The manuscript uses inline TikZ for its figure and has no external image files.

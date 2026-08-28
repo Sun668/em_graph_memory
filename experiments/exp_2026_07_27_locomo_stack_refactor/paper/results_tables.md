@@ -69,10 +69,17 @@ survived correction over the tested range.
 | Retrieval, 1,986 QA | 0 | 0 / 0 | mean 1.5123 s; p95 2.6132 s | 0 | mean 0.004886 s; p95 0.006270 s |
 
 The warm replay used the complete cold cache and made no new provider request
-before answer generation. Mean retrieval latency was 309.48 times lower. The
-validated cache-independent answer trace contains 1,986 requests, 2,744,099
-input tokens, and 16,269 output tokens and is attached identically to both
-states rather than rerun. Stage wall times overlap and must not be summed as
-end-to-end latency. Graphs occupy 21,689,931 bytes, Memory indexes 29,946,660
-bytes, and Entity/question caches 3,411,176 bytes. Monetary cost is not
-reported because provider price was not frozen.
+before answer generation. The cold-to-warm retrieval speedup was 309.48×. This
+zero-request result applies to the same question set with complete graph,
+index, query-vector, and question-Entity caches; unseen questions may require
+new provider calls. The validated cache-independent answer trace contains
+1,986 requests, 2,744,099 input tokens, and 16,269 output tokens and is attached
+identically to both states rather than rerun. Including that trace, the cold
+path uses 8,450,158 total tokens, or 4,254.9 tokens per question. The answer
+stage accounts for 1,389.9 tokens per question. Stage wall times overlap and
+must not be summed as end-to-end latency. Graphs occupy 21,689,931 bytes,
+Memory indexes 29,946,660 bytes, and Entity/question caches 3,411,176 bytes.
+At public prices accessed on 1 August 2026, the measured model and embedding
+usage corresponds to an illustrative $4.67, or $0.00235 per question. This is
+not a frozen experimental metric and excludes the separately built query-vector
+artifact, storage, platform fees, and unrecorded external charges.

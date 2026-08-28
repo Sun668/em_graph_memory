@@ -104,17 +104,24 @@ setting. No overall F1 or recall contrast among sequence scales 0.25, 0.5, and
 The complete primary graph condition was measured under an isolated cold cache
 and an immediate warm replay over all 1,986 questions. Cold construction made
 5,873 conversation-Entity requests and 591 Memory-embedding requests. Cold
-question processing made 1,974 question-Entity requests. The warm replay made
-zero new requests in all three stages. Mean retrieval latency decreased from
-1.5123 seconds per question when question Entities were uncached to 0.004886
-seconds when all graph, index, and question-Entity artifacts were warm; the
-corresponding p95 values were 2.6132 and 0.006270 seconds.
+question processing made 1,974 question-Entity requests. Replaying the same
+question set with complete graph, index, query-vector, and question-Entity
+caches made zero new requests in all three stages. Mean retrieval latency
+decreased from 1.5123 seconds per question when question Entities were uncached
+to 0.004886 seconds in the warm replay; this is a 309.48× cold-to-warm speedup.
+The corresponding p95 values were 2.6132 and 0.006270 seconds. Unseen questions
+may still require query embedding and question-Entity calls.
 
 The stored graph, Memory-index, and Entity/question-cache artifacts occupied
-21.69 MB, 29.95 MB, and 3.41 MB, respectively. These stage timings overlap and
-are not an end-to-end latency sum. Provider request and token counts are
-reported instead of monetary cost because a price schedule was not frozen as
-part of the experiment.
+21.69 MB, 29.95 MB, and 3.41 MB, respectively. Including the validated answer
+trace, the cold path used 7,903,980 input and 546,178 output tokens, or
+8,450,158 total tokens. This corresponds to 4,254.9 tokens per question; the
+answer stage accounts for 1,389.9 tokens per question. These stage timings
+overlap and are not an end-to-end latency sum. At OpenAI public list prices
+accessed on 1 August 2026, the measured usage gives an illustrative $4.67 total
+or $0.00235 per question. The conversion is not a frozen metric and excludes
+the separately built query-vector artifact, storage, platform fees, and
+unrecorded external charges.
 
 ## Discussion
 
@@ -164,11 +171,12 @@ differences even when retrieved contexts are identical.
 
 Finally, the cold/warm experiment measures the primary B condition on one
 machine and one provider endpoint. The warm result assumes that the complete
-conversation graph, Memory index, and question-Entity cache already exist.
-Stage timers overlap, and monetary cost is intentionally omitted because
-provider pricing was not frozen. These measurements characterize the evaluated
-deployment path rather than guaranteeing latency or price on other hardware or
-providers.
+conversation graph, Memory index, query-vector artifact, and question-Entity
+cache already exist for the same question set. Stage timers overlap. Token
+usage is directly measured, while the illustrative dollar conversion uses a
+price schedule accessed after the experiment. These measurements characterize
+the evaluated deployment path rather than guaranteeing latency or price on
+other hardware or providers.
 
 ## Conclusion
 
