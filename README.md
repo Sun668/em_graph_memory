@@ -10,5 +10,8 @@ Code and paper repository for Entity--Memory graph retrieval on LoCoMo.
 - outputs/: retained formal results, reports, and audit artifacts.
 - paper/entity_memory_graph_retrieval_arxiv_en_v108.pdf: latest v108 paper PDF.
 
+The exact paper snapshot is pinned by tag v1.0.8:
+https://github.com/Sun668/em_graph_memory/tree/v1.0.8
+
 The legacy top-level em_graph package and the historical official-compare
 experiment are not used by the paper and have been removed.
