@@ -1,0 +1,63 @@
+{
+  "schema": "es_memeval_full_retrieval_validation_v1",
+  "status": "pass",
+  "variant": "B",
+  "qa_count": 1427,
+  "top_k": 25,
+  "query_usage": {
+    "schema": "query_embedding_usage_v1",
+    "qa_count": 1427,
+    "required_lookup_count": 1427,
+    "lookup_count": 1498,
+    "cache_hits": 1498,
+    "cache_misses": 0,
+    "live_embedding_requests": 0,
+    "status": "pass"
+  },
+  "entity_extraction_coverage": {
+    "status": "pass",
+    "cache_missing_count": 0,
+    "cached_empty_count": 122,
+    "unlinked_memory_count": 0,
+    "unexpected_unlinked_count": 0
+  },
+  "prompt_budget": {
+    "entity_scaffold_chars": 2410,
+    "compatibility_fallback_scaffold_chars": 3193,
+    "limit_chars": 5000,
+    "status": "pass"
+  },
+  "graph_constraint": {
+    "status": "pass",
+    "construction_input": "sample.conversation only",
+    "qa_question_used": false,
+    "qa_answer_used": false,
+    "qa_evidence_used": false,
+    "qa_category_used": false,
+    "judge_output_used": false,
+    "answer_recall_used_graph": true
+  },
+  "same_memory_indexes": true,
+  "graph_sha256_matched": true,
+  "result_sha256": "c09d9f556ae3d949b01772c5c438822e5bd17f9b33b29595e45891f86679dd2d",
+  "audit_sha256": "07929106b75c39e0e0643812c3beb86eecf53da99377d3b544c70a6663245772",
+  "parameter_snapshot_sha256": "6025859cc3045d6ea2ac7a3b36ab3561ba7ef6090e8bfbc64627c584caabf5b3",
+  "live_model_usage": {
+    "status": "pass",
+    "schema": "candidate-provider-usage-budget-v1",
+    "cap_usd": 8.0,
+    "prior_estimated_spend_usd": 3.841478499999993,
+    "current_run_actual_or_reserved_charge_usd": 0.46164549999999954,
+    "cumulative_estimated_usd": 4.303123999999992,
+    "outstanding_reserved_usd": 0.0,
+    "remaining_unreserved_usd": 3.6968760000000076,
+    "request_count": 1180,
+    "input_tokens": 727712,
+    "output_tokens": 65193,
+    "unmetered_reservation_charges": 0,
+    "input_usd_per_million": 0.5,
+    "output_usd_per_million": 1.5,
+    "max_output_tokens_per_request": 2500,
+    "reservation_input_bound": "UTF-8 byte length plus 64 tokens"
+  }
+}

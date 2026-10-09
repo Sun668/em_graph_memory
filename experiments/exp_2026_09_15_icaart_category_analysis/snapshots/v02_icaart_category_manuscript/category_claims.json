@@ -1,0 +1,29 @@
+{
+  "scope": "ICAART revision of 2026-09-15; global .paper memory remains scoped to historical manuscripts",
+  "evidence": "experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/result.json",
+  "claims": [
+    {
+      "id": "ICAART-CAT1",
+      "status": "descriptive",
+      "claim": "Matched mean F1 rises for multi-hop/single-hop and falls for temporal/open-domain/adversarial; recall rises except temporal."
+    },
+    {
+      "id": "ICAART-CAT2",
+      "status": "descriptive",
+      "claim": "Joint row transitions document recall/F1 divergence; F1 changes are not correctness labels."
+    },
+    {
+      "id": "ICAART-CAT3",
+      "status": "illustrative",
+      "claim": "Six selected cases show incomplete evidence, temporal interpretation, rationale mismatch, fact recovery and premise mismatch; no prevalence or causal attribution."
+    }
+  ],
+  "rejected_claims": [
+    "Every question type improves",
+    "Chronological expansion proves temporal-category gains",
+    "Perfect F1 proves complete multi-hop support",
+    "More annotated evidence proves better adversarial abstention"
+  ],
+  "runtime_change": false,
+  "category_significance_tests": false
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "es_memeval_full_paired_result_validation_v1",
+  "status": "pass",
+  "result_sha256": "1f02180683f536d18b74fc3a86b583340552d3798f591b390b4f5cb998b78fea",
+  "qa_coverage": 1427,
+  "eligible": 1130,
+  "excluded": 297,
+  "a_any_count": 860,
+  "b_any_count": 883,
+  "a_all_count": 443,
+  "b_all_count": 468,
+  "ordered_a_b_embed_parity": 1427,
+  "shared_query_artifact_sha256": "40492ac8a19e3e1849f26214f01477551e6471feb70d1a93ebf99c58965f67b9",
+  "shared_memory_index_count": 18,
+  "user_cluster_count": 18,
+  "graph_constraint": "pass",
+  "prompt_budget": "pass",
+  "answer_judge": "not run",
+  "score_type": "local adapted direct-dialog evidence recall, not official ES-MemEval R@25"
+}

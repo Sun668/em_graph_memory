@@ -1,0 +1,92 @@
+[
+  {
+    "sample_id": "conv-49",
+    "qa_index_zero_based": 41,
+    "annotated_turns": [
+      {
+        "speaker": "Evan",
+        "dia_id": "D8:12",
+        "text": "Thanks Sam! I'll give it a shot and let you know how it went. Trying out new recipes is a great way to stay busy and creative. By the way, I also started taking a painting classes few days ago and I'm really enjoying it. It's all about trying new things, right?",
+        "session": "session_8",
+        "session_time": "6:17 pm on 19 August, 2023"
+      }
+    ]
+  },
+  {
+    "sample_id": "conv-49",
+    "qa_index_zero_based": 115,
+    "annotated_turns": [
+      {
+        "speaker": "Evan",
+        "dia_id": "D11:6",
+        "text": "I do my favorite watercolor painting to keep me busy. It's a chill way to relax and get into the colors. By the way, something happened two weeks ago! You're not gonna believe this, I had a bit of an adventure recently. Helped a lost tourist find their way, and we ended up taking an unexpected tour around the city. It was a blast!",
+        "session": "session_11",
+        "session_time": "8:57 pm on 6 October, 2023"
+      }
+    ]
+  },
+  {
+    "sample_id": "conv-26",
+    "qa_index_zero_based": 22,
+    "annotated_turns": [
+      {
+        "speaker": "Caroline",
+        "dia_id": "D6:9",
+        "text": "I've got lots of kids' books- classics, stories from different cultures, educational books, all of that. What's a favorite book you remember from your childhood?",
+        "session": "session_6",
+        "session_time": "8:18 pm on 6 July, 2023"
+      }
+    ]
+  },
+  {
+    "sample_id": "conv-26",
+    "qa_index_zero_based": 172,
+    "annotated_turns": [
+      {
+        "speaker": "Caroline",
+        "dia_id": "D9:16",
+        "text": "Thanks, Melanie! I painted this after I visited a LGBTQ center. I wanted to capture everyone's unity and strength.",
+        "session": "session_9",
+        "session_time": "2:31 pm on 17 July, 2023"
+      }
+    ]
+  },
+  {
+    "sample_id": "conv-26",
+    "qa_index_zero_based": 0,
+    "annotated_turns": [
+      {
+        "speaker": "Caroline",
+        "dia_id": "D1:3",
+        "text": "I went to a LGBTQ support group yesterday and it was so powerful.",
+        "session": "session_1",
+        "session_time": "1:56 pm on 8 May, 2023"
+      }
+    ]
+  },
+  {
+    "sample_id": "conv-44",
+    "qa_index_zero_based": 24,
+    "annotated_turns": [
+      {
+        "speaker": "Andrew",
+        "img_url": [
+          "https://i.redd.it/gnwdz3ysqra71.jpg"
+        ],
+        "blip_caption": "a photo of a dog sitting on a couch in a living room",
+        "query": "dog couch",
+        "dia_id": "D2:16",
+        "text": "It'd be so great to have a furry buddy to cuddle and hang with. Here's a photo of my family's dog on a couch. ",
+        "session": "session_2",
+        "session_time": "2:42 pm on 2 April, 2023"
+      },
+      {
+        "speaker": "Audrey",
+        "dia_id": "D13:10",
+        "text": "Max and I would take long walks in the neighborhood when I was a kid. We explored new paths, him sniffing and marking his territory. We grew really close, and I shared my worries and hopes with him. He was a great listener, always there for me. Those days are some of my favorite memories. ",
+        "session": "session_13",
+        "session_time": "3:52 pm on 27 July, 2023"
+      }
+    ]
+  }
+]

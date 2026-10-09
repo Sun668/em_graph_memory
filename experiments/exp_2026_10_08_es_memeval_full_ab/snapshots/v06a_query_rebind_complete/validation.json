@@ -1,0 +1,13 @@
+{
+  "schema": "es_memeval_full_query_rebind_validation_v1",
+  "status": "pass",
+  "report_sha256": "47045993ffa6dce8d9843b5d628f0b4ae5f7609387545c708f4879daa07ba1f4",
+  "source_artifact_sha256": "0e860aef813cb47dbc04f0770a4e8840f4977f46b7d69edf76c2c2abd3593f28",
+  "target_artifact_sha256": "40492ac8a19e3e1849f26214f01477551e6471feb70d1a93ebf99c58965f67b9",
+  "target_dataset_sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+  "ordered_question_records_equal": true,
+  "vector_values_equal": true,
+  "live_embedding_requests": 0,
+  "source_sha256": "e9559e1e51d9b18a8885c0164b291ae3208c5b60c4f0160c49cc140175f7cd62",
+  "parameters_sha256": "59b1bc6c03fd2272cda577fd220594a89473205561b3b88baa60f00a36fd005a"
+}

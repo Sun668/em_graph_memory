@@ -1,0 +1,53 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "es1427_a_graphs_v01",
+  "classification": "diagnostic",
+  "source_commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+  "runner_sha256": "e05cfaa332022633c38f46ff8b96b55e7431030d65780868baaa6f091e25121f",
+  "dataset": {
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/graph_inputs.json",
+    "sha256": "53d26b9ea61378c4434c2023a7e4e0835c7254511028e38fbad40e1bf39e69f0",
+    "sample_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18"
+    ],
+    "memory_count": 9368
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "graph_profile": {
+    "memory_only": true,
+    "use_caption": true,
+    "use_time_annotations": true,
+    "add_speaker_as_entity": true
+  },
+  "graph_constraint": {
+    "conversation_only": true,
+    "qa_answers_evidence_categories_excluded": true
+  },
+  "cache_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_qa_compare/cache",
+  "output_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/preparation/a_graphs.json",
+  "command": "python3 experiments/exp_2026_10_08_es_memeval_full_ab/prepare_a.py --data-file outputs/es_memeval_full_ab/data/graph_inputs.json --cache-dir outputs/es_memeval_qa_compare/cache --extract-model gpt-3.5-turbo-0125 --output outputs/es_memeval_full_ab/preparation/a_graphs.json",
+  "cost": "zero external API requests"
+}

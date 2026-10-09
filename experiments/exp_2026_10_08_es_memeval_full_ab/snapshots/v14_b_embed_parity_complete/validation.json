@@ -1,0 +1,12 @@
+{
+  "schema": "es_memeval_full_dense_parity_validation_v1",
+  "status": "pass",
+  "rows": 1427,
+  "ordered_context_id_mismatches": 0,
+  "shared_query_artifact_sha256": "40492ac8a19e3e1849f26214f01477551e6471feb70d1a93ebf99c58965f67b9",
+  "same_memory_indexes": true,
+  "a_result_sha256": "176d295a52d507d7e9622ae8fb43911a79fb29fd92c1857f54edf2615c4aaba1",
+  "b_embed_result_sha256": "48d180fa5b0208f248bf6100bd97cf1a1885e84b909cfcc3c9ffcbdcdd6373fc",
+  "b_embed_audit_sha256": "bbf24b2daf3fe2d2c646be1d167711ebb482c498768b6d1d453c591b2d2bcd52",
+  "b_embed_parameter_snapshot_sha256": "8305e95584989622f2a4a2074b0bd0b53b4ddd6d50eb1ded4a6b4e5d3e85e8d2"
+}

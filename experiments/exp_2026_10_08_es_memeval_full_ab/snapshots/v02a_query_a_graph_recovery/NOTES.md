@@ -1,0 +1,3 @@
+# Preparation recovery snapshot
+
+The complete original question-only query artifact and all 18 A Memory graphs were prepared and verified before the identity-rebind helper was added, but they did not get a separate progress snapshot at that moment. This is a recovery snapshot rather than a contemporaneous one. Their exact source files are byte-identical to v01, and frozen stage parameters are in v01/v02. The first artifact was valid for the question-only file but rejected by the index runner because retrieval input has a different dataset SHA; it was never used in A/B retrieval. All 18 A graphs contain 9,368 Memories and zero Entities, built from conversation-only inputs. No retrieval metric is claimed from this intermediate state.

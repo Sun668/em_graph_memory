@@ -1,0 +1,61 @@
+{
+  "cap_usd": 8.0,
+  "cumulative_estimated_usd": 0.0012315,
+  "current_run_actual_or_reserved_charge_usd": 0.0012315,
+  "events": [
+    {
+      "actual_model": "gpt-3.5-turbo-0125",
+      "cost_usd": 0.000376,
+      "input_tokens": 617,
+      "operation": "chat",
+      "output_tokens": 45,
+      "request_count": 1,
+      "requested_model": "gpt-3.5-turbo-0125",
+      "reservation_id": 1,
+      "stage": "es_memeval_B_retrieval",
+      "token_source": "provider response usage",
+      "total_tokens": 662,
+      "wall_seconds": 2.221421792
+    },
+    {
+      "actual_model": "gpt-3.5-turbo-0125",
+      "cost_usd": 0.000412,
+      "input_tokens": 617,
+      "operation": "chat",
+      "output_tokens": 69,
+      "request_count": 1,
+      "requested_model": "gpt-3.5-turbo-0125",
+      "reservation_id": 2,
+      "stage": "es_memeval_B_retrieval",
+      "token_source": "provider response usage",
+      "total_tokens": 686,
+      "wall_seconds": 1.2288706670000002
+    },
+    {
+      "actual_model": "gpt-3.5-turbo-0125",
+      "cost_usd": 0.0004435,
+      "input_tokens": 623,
+      "operation": "chat",
+      "output_tokens": 88,
+      "request_count": 1,
+      "requested_model": "gpt-3.5-turbo-0125",
+      "reservation_id": 3,
+      "stage": "es_memeval_B_retrieval",
+      "token_source": "provider response usage",
+      "total_tokens": 711,
+      "wall_seconds": 1.5619259169999995
+    }
+  ],
+  "input_tokens": 1857,
+  "input_usd_per_million": 0.5,
+  "max_output_tokens_per_request": 2500,
+  "output_tokens": 202,
+  "output_usd_per_million": 1.5,
+  "outstanding_reserved_usd": 0.0,
+  "prior_estimated_spend_usd": 0.0,
+  "remaining_unreserved_usd": 7.9987685,
+  "request_count": 3,
+  "reservation_input_bound": "UTF-8 byte length plus 64 tokens",
+  "schema": "candidate-provider-usage-budget-v1",
+  "unmetered_reservation_charges": 0
+}

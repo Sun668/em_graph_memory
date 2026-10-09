@@ -1,0 +1,7 @@
+# Frozen offline category analysis, v01
+
+Baseline manuscript/source: git commit `11a3b96`. The exact analysis source, results, input settings and two fresh read-only validation reports are frozen here before manuscript editing. All 1,986 paired identities and input hashes match v40; category means/differences match the stored summaries. No scoring function was executed by the analysis script. API calls: zero. Local LLM-as-Judge: not applicable. No claim of judge improvement or new formal condition is made.
+
+The original A/B graph-constraint audits pass: graph inputs are conversation-only; QA/gold/evidence/category/judge/prediction/ledger data never enter graph construction. This offline analysis reads QA annotations only to inspect stored outcomes, never as runtime inputs. Original runtime prompt budgets were validated; no prompt component is added, removed, or enabled by this analysis. No new graph, cache, prediction, or evaluator artifact is written.
+
+Results support descriptive within-category patterns only, not new category-level significance or component-specific causal effects. Cases were explicitly selected, including a maximally favorable multi-hop metric change that nonetheless lacks complete annotated evidence. Case source excerpts are preserved separately; raw paired rows remain in the dedicated output directory. Actual model deployment revision and Category-5 random ordering remain unresolved historical limitations.

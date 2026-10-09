@@ -1,0 +1,3 @@
+# Full A/B top-25 result frozen
+
+18 users, 1,427 questions, 1,130 non-abstention questions with direct original-dialog evidence. A any 860/1130 (76.11%); B any 883/1130 (78.14%); paired +23 questions (+2.04 points). Paired 18-user cluster bootstrap 95% interval +0.81 to +3.42 points. A all 443/1130 (39.20%); B all 468/1130 (41.42%); +2.21 points. A/B_embed ordered context parity 1427/1427; same query vectors and Memory indexes. Graph constraint and prompt budgets passed. No answer/Judge metric exists. This is an adapted local direct-dialog metric, not the paper's original ES-MemEval score. Source and commands are frozen in v01, v10-v12 and v16.

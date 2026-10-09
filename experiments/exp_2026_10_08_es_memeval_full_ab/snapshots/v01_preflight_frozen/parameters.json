@@ -1,0 +1,73 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "es1427_query_vectors_v01",
+  "classification": "diagnostic",
+  "source_commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+  "source_sha256": {
+    "prepare_full.py": "cf375a7eff4e6580f383a493e46720957d499b9f66c708be62dfda53e7ebda22",
+    "prepare_a.py": "e05cfaa332022633c38f46ff8b96b55e7431030d65780868baaa6f091e25121f",
+    "prepare_indexes.py": "92c07fc7e02a8f427b962345907368fde0b04eb63170106ec72588115a1521b7",
+    "prepare_query_embeddings.py": "9b1b36c27c72e71816c7d705116fa986b8fcf4190163ee52e17f53817061526b",
+    "build_b_graphs.py": "7064e7ff4858fd13cebcdc83acc9800c8b811d2ad47836f790dd5bb8815cb660",
+    "entity_compat.py": "fc2963cf69c4443950ab01e31122771fd39ca8c1402ae9025178dd84e44705c7",
+    "run_retrieval.py": "9fe39fe69a9690adc8319919ba56413ba86bfe85d4f21422611edf0e691d520c",
+    "compare_retrieval.py": "7fc7346cda2df05844774d89a1e672c4f8cfda2a0073d1537a6d5cca35197877"
+  },
+  "dataset": {
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/questions.json",
+    "sha256": "acf21ece4b1ec3a8de436ccb6c620087514565431caa61cf289611667064ac9d",
+    "sample_count": 18,
+    "qa_count": 1427,
+    "ordered": true
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "retrieval": {
+    "variants": [
+      "A",
+      "B_embed",
+      "B"
+    ],
+    "top_k": 25,
+    "context_unit": "original_dialog_turn",
+    "b_entity_weight": 0.3,
+    "b_semantic_weight": 0.7,
+    "b_sequence_scale": 0.5,
+    "b_entity_threshold": 0.5,
+    "b_entity_top_k_per_key": 20,
+    "b_who_only_dampen": 0.25,
+    "b_degree_discount": true
+  },
+  "embedding": {
+    "role": "context",
+    "normalization": "l2_float32_v1",
+    "query_artifact_output": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/query_vectors.npz",
+    "ordered_dataset_coverage": 1427,
+    "query_artifact_read_only_during_retrieval": true
+  },
+  "graph_constraint": {
+    "conversation_only": true,
+    "qa_fields_excluded": true
+  },
+  "evaluation": {
+    "primary": "any direct original dialog evidence @25",
+    "secondary": "all direct original dialog evidence @25",
+    "eligible_nonabstention": 1130,
+    "answer_judge": "not-applicable",
+    "cluster_unit": "user"
+  },
+  "resources": {
+    "entity_workers": 8
+  },
+  "cost_limits": {
+    "cumulative_estimated_usd_stop": 8.0,
+    "prior_estimated_usd": 0.80953
+  },
+  "command": "python3 experiments/exp_2026_10_08_es_memeval_full_ab/prepare_query_embeddings.py --data-file outputs/es_memeval_full_ab/data/questions.json --embedding-model text-embedding-3-small --role context --normalization l2_float32_v1 --output outputs/es_memeval_full_ab/query_vectors.npz --report outputs/es_memeval_full_ab/preparation/query_report.json",
+  "output_dir_absent": true
+}

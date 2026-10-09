@@ -1,0 +1,48 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "es1427_memory_indexes_v01",
+  "classification": "diagnostic",
+  "source_commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+  "runner_sha256": "92c07fc7e02a8f427b962345907368fde0b04eb63170106ec72588115a1521b7",
+  "dataset": {
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/retrieval_inputs.json",
+    "sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+    "sample_count": 18,
+    "qa_count": 1427,
+    "memory_count": 9368
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "query_artifact": {
+    "schema": "query_embedding_artifact_v1",
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/query_vectors.npz",
+    "sha256": "0e860aef813cb47dbc04f0770a4e8840f4977f46b7d69edf76c2c2abd3593f28",
+    "dataset_sha256": "acf21ece4b1ec3a8de436ccb6c620087514565431caa61cf289611667064ac9d",
+    "embedding_model": "text-embedding-3-small",
+    "role": "context",
+    "normalization": "l2_float32_v1",
+    "qa_count": 1427,
+    "unique_question_count": 1420,
+    "vector_dimension": 1536,
+    "ordered_qa_sha256": "caa08c3af37f8a02cb4257ebba394689c0f68b3d5f4b73ec554ada888db83224"
+  },
+  "a_graphs_sha256": "6a0698b1ae46b5ecc6cf9d5e5aaf1fca37087a24ebfc744ac776ad6f2f7334e8",
+  "embedding": {
+    "normalization": "l2_float32_v1",
+    "role": "context",
+    "memory_text": "canonical speaker said text",
+    "shared_cache": "validated path-safe text embedding cache"
+  },
+  "cache_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_qa_compare/cache",
+  "output_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/preparation/memory_indexes.json",
+  "command": "python3 experiments/exp_2026_10_08_es_memeval_full_ab/prepare_indexes.py --data-file outputs/es_memeval_full_ab/data/retrieval_inputs.json --query-artifact outputs/es_memeval_full_ab/query_vectors.npz --cache-dir outputs/es_memeval_qa_compare/cache --extract-model gpt-3.5-turbo-0125 --embedding-model text-embedding-3-small --output outputs/es_memeval_full_ab/preparation/memory_indexes.json",
+  "graph_constraint": {
+    "conversation_only": true,
+    "qa_not_in_memory_text": true
+  }
+}

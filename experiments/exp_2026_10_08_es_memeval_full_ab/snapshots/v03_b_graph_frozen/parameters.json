@@ -1,0 +1,75 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "es1427_b_graph_v01",
+  "classification": "diagnostic",
+  "source_commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+  "source": {
+    "runner_sha256": "7064e7ff4858fd13cebcdc83acc9800c8b811d2ad47836f790dd5bb8815cb660",
+    "entity_compat_sha256": "fc2963cf69c4443950ab01e31122771fd39ca8c1402ae9025178dd84e44705c7",
+    "base_runner_sha256": "6c9cab2629697a082f50949a4e011fcd089fb6eaa82b46cffbad64be6416a5e7"
+  },
+  "dataset": {
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/graph_inputs.json",
+    "sha256": "53d26b9ea61378c4434c2023a7e4e0835c7254511028e38fbad40e1bf39e69f0",
+    "sample_count": 18,
+    "memory_count": 9368,
+    "ordered_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18"
+    ]
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "resources": {
+    "entity_workers": 8
+  },
+  "graph_profile": {
+    "memory_only": false,
+    "use_caption": true,
+    "use_time_annotations": true,
+    "add_speaker_as_entity": true
+  },
+  "entity_extraction": {
+    "protocol": "entity_instruction_guard_v2",
+    "temperature": 0.3,
+    "max_output_tokens": 2500,
+    "primary_retries": 3,
+    "fallback_retries": 3,
+    "prompt_scaffold_limit_chars": 5000
+  },
+  "cost_limits": {
+    "candidate_stage_cumulative_budget_stop_usd": 8.0,
+    "prior_estimated_spend_usd": 0.80953,
+    "input_usd_per_million": 0.5,
+    "output_usd_per_million": 1.5,
+    "max_output_tokens_per_request": 2500
+  },
+  "cache_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_qa_compare/cache",
+  "output_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/conditions/b_graph_v01",
+  "graph_constraint": {
+    "conversation_only": true,
+    "qa_fields_excluded": true
+  },
+  "command": "source /Users/sun/Documents/git/graph_memory/env_gpt.sh; unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY; RESEARCH_RUN_CLASS=diagnostic RESEARCH_PARAMETER_SNAPSHOT=<snapshot> RESEARCH_CONDITION_DIR=<condition> python3 experiments/exp_2026_10_08_es_memeval_full_ab/build_b_graphs.py --run-id es1427_b_graph_v01 --parameter-snapshot <snapshot> --data-file outputs/es_memeval_full_ab/data/graph_inputs.json --cache-dir outputs/es_memeval_qa_compare/cache --extract-model gpt-3.5-turbo-0125 --workers 8 --output-dir <condition>"
+}

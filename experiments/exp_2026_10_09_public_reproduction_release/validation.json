@@ -1,0 +1,999 @@
+{
+  "status": "pass",
+  "classification": "software migration validation, not new publication scores",
+  "release": "v1.0.9",
+  "destination_baseline": "f020e855be06ac9f33ec888945ff6b305d81cb07",
+  "source_commit": "041c5cf91b9c8a9358dd143ab46c625523b1db4d",
+  "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "packages": {
+    "numpy": "2.0.2",
+    "openai": "2.48.0",
+    "networkx": "3.2.1",
+    "rank-bm25": "0.2.2",
+    "pydantic": "2.13.4",
+    "tiktoken": "0.14.0"
+  },
+  "checks": [
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/result.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot01/failure.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot02/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot02/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot02/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot02/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot02/result.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv26_pilot02/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv30_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv30_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv30_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv30_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv30_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv30_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv41_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv41_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv41_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv41_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv41_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv41_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv42_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv42_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv42_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv42_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv42_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv42_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv43_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv43_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv43_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv43_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv43_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv43_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv44_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv44_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv44_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv44_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv44_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv44_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv47_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv47_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv47_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv47_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv47_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv47_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv48_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv48_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv48_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv48_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv48_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv48_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv49_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv49_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv49_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv49_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv49_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv49_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv50_all_v01/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv50_all_v01/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv50_all_v01/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv50_all_v01/rerank_2demo.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv50_all_v01/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/locomo_hippo_conv50_all_v01/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/v01_full10_paired/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/v01_full10_paired/command.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/v01_full10_paired/compare_results.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_locomo_hipporag2/snapshots/v01_full10_paired/result.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/result.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/build_b_graphs.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/compare_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/entity_compat.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/manifest.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/prepare_a.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/prepare_full.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/prepare_indexes.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/prepare_query_embeddings.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v01_preflight_frozen/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v02_a_graphs_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v02a_query_a_graph_recovery/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v02a_query_a_graph_recovery/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v03_b_graph_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v04_memory_indexes_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v05_index_identity_failure/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v06_query_rebind_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v06a_query_rebind_complete/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v06a_query_rebind_complete/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v07_memory_indexes_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v08_b_graph_complete/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v08_b_graph_complete/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v09_memory_indexes_complete/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v09_memory_indexes_complete/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v10_a_top25_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v11_b_embed_top25_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v12_b_top25_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v13_a_top25_complete/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v13_a_top25_complete/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v14_b_embed_parity_complete/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v14_b_embed_parity_complete/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v15_b_top25_complete/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v15_b_top25_complete/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v16_paired_compare_frozen/parameters.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v17_paired_result/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v17_paired_result/result_summary.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v17_paired_result/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/result.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/README.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/a_run_config.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/a_validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/analyze_categories.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/b_run_config.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/b_validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/case_conversation_evidence.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v01_primary_ab_descriptive/result.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/NOTES.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/category_claims.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/check_manuscript.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/conclusion.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/main.tex",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/manifest.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/next_steps.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/protocol.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/release_validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "frozen bytes experiments/exp_2026_09_15_icaart_category_analysis/snapshots/v02_icaart_category_manuscript/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "Hippo fresh pilot completed",
+      "status": "pass"
+    },
+    {
+      "name": "Hippo graph-only and prompt budget",
+      "status": "pass"
+    },
+    {
+      "name": "es_live_smoke/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "es_replay/validation.json",
+      "status": "pass"
+    },
+    {
+      "name": "1986 category rows reproduce frozen categories",
+      "status": "pass"
+    },
+    {
+      "name": "Hippo offline overall",
+      "status": "pass"
+    },
+    {
+      "name": "Hippo offline by_category",
+      "status": "pass"
+    },
+    {
+      "name": "Hippo offline paired_differences",
+      "status": "pass"
+    },
+    {
+      "name": "ES offline overall",
+      "status": "pass"
+    },
+    {
+      "name": "ES offline by_capability",
+      "status": "pass"
+    },
+    {
+      "name": "ES offline by_user",
+      "status": "pass"
+    },
+    {
+      "name": "ES offline paired_user_cluster_bootstrap_95pct_ci_b_minus_a",
+      "status": "pass"
+    },
+    {
+      "name": "18 fresh A graphs 9368 memories",
+      "status": "pass"
+    },
+    {
+      "name": "Downloaded pinned ES matches local source",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/README.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/__init__.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/evaluator.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/recall.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/MANIFEST.sha256",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/UPSTREAM.md",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/LICENSE.txt",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/README.MD",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/global_methods.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/requirements.txt",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/scripts/evaluate_rag_gpts.sh",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/__init__.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/claude_utils.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/evaluate_qa.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/evaluation.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/evaluation_stats.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/gemini_utils.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/get_facts.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/get_session_summaries.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/gpt_utils.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/hf_llm_utils.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor/locomo/task_eval/rag_utils.py",
+      "status": "pass"
+    },
+    {
+      "name": "frozen evaluator code/locomo_eval/vendor_runtime.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/compare_results.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/freeze_condition.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/make_rerank_prompt.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/prepare_data.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/setup_upstream.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_locomo_hipporag2/snapshot_result.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/build_b_graphs.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/compare_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/freeze_stage.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/prepare_a.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/prepare_full.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/prepare_indexes.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/prepare_query_embeddings.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/prepare_release_data.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/rebind_query_artifact.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_08_es_memeval_full_ab/run_retrieval.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_09_15_icaart_category_analysis/analyze_categories.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_09_public_reproduction_release/run_small_smoke.py",
+      "status": "pass"
+    },
+    {
+      "name": "CLI experiments/exp_2026_10_09_public_reproduction_release/verify_cache_replay.py",
+      "status": "pass"
+    }
+  ],
+  "cli_commands": [
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/compare_results.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/freeze_condition.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/make_rerank_prompt.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/prepare_data.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/run_retrieval.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/setup_upstream.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/hipporag_venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_locomo_hipporag2/snapshot_result.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/build_b_graphs.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/compare_retrieval.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/freeze_stage.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/prepare_a.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/prepare_full.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/prepare_indexes.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/prepare_query_embeddings.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/prepare_release_data.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/rebind_query_artifact.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/run_retrieval.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_09_15_icaart_category_analysis/analyze_categories.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_09_public_reproduction_release/run_small_smoke.py",
+      "--help"
+    ],
+    [
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "/Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_09_public_reproduction_release/verify_cache_replay.py",
+      "--help"
+    ]
+  ],
+  "fresh_hipporag": {
+    "classification": "non_metric_wiring_diagnostic",
+    "turn_count": 20,
+    "qa_count": 3,
+    "graph_nodes": 53,
+    "graph_edges": 117,
+    "prompt_scaffold_chars": {
+      "ner": 554,
+      "triple_extraction": 1836,
+      "fact_filter": 3808
+    },
+    "graph_constraint": "pass: conversation-only chunks; QA read after index; source-ID graph retrieval",
+    "usage": {
+      "chat_attempts": 43,
+      "chat_live": 43,
+      "chat_cache_hits": 0,
+      "chat_errors": 0,
+      "chat_input_tokens": 17183,
+      "chat_output_tokens": 1471,
+      "embedding_requests": 9,
+      "embedding_input_tokens": 1770,
+      "budget_exceeded": false
+    }
+  },
+  "es_fresh_smoke": {
+    "status": "pass",
+    "classification": "non-metric diagnostic",
+    "sample_id": "p1",
+    "conversation_turns": 20,
+    "qa_count": 3,
+    "conditions": [
+      {
+        "variant": "A",
+        "qa_count": 3,
+        "context_ids_per_question": 20,
+        "graph_audit": "pass",
+        "prompt_audit": "pass"
+      },
+      {
+        "variant": "B_embed",
+        "qa_count": 3,
+        "context_ids_per_question": 20,
+        "graph_audit": "pass",
+        "prompt_audit": "pass"
+      },
+      {
+        "variant": "B",
+        "qa_count": 3,
+        "context_ids_per_question": 20,
+        "graph_audit": "pass",
+        "prompt_audit": "pass"
+      }
+    ],
+    "a_b_embed_parity": "pass",
+    "answer_generation": "not run",
+    "judge": "not run",
+    "metrics": "not scored",
+    "commands": "commands.json",
+    "source": "source_snapshot/manifest.json"
+  },
+  "es_full_cached_replay": {
+    "status": "pass",
+    "classification": "software migration validation; no new paper metric",
+    "conditions": [
+      {
+        "variant": "A",
+        "qa_count": 1427,
+        "ordered_context_parity": "pass",
+        "query_cache_misses": 0,
+        "live_embedding_requests": 0,
+        "graph_audit": "pass",
+        "prompt_audit": "pass"
+      },
+      {
+        "variant": "B_embed",
+        "qa_count": 1427,
+        "ordered_context_parity": "pass",
+        "query_cache_misses": 0,
+        "live_embedding_requests": 0,
+        "graph_audit": "pass",
+        "prompt_audit": "pass"
+      },
+      {
+        "variant": "B",
+        "qa_count": 1427,
+        "ordered_context_parity": "pass",
+        "query_cache_misses": 0,
+        "live_embedding_requests": 0,
+        "graph_audit": "pass",
+        "prompt_audit": "pass"
+      }
+    ],
+    "a_b_embed_parity": "pass",
+    "models": {
+      "extraction": "gpt-3.5-turbo-0125 cached",
+      "embedding": "text-embedding-3-small frozen",
+      "answer": "not run",
+      "judge": "not run"
+    },
+    "top_k": 25,
+    "network": "unreachable localhost endpoint; zero live calls required"
+  },
+  "category_rows": 1986,
+  "offline_comparison": "Hippo and ES frozen summary/category/cluster intervals exactly reproduced",
+  "new_answer_or_judge_runs": false,
+  "scope": "tracked changes only experiments/; generated data/cache/results only outputs/",
+  "installation_limit": "existing environments tested; no clean-machine installation test"
+}

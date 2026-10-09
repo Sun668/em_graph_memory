@@ -1,0 +1,54 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "es1427_paired_compare_v01",
+  "classification": "diagnostic",
+  "source_commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+  "comparator_sha256": "7fc7346cda2df05844774d89a1e672c4f8cfda2a0073d1537a6d5cca35197877",
+  "inputs": {
+    "a": {
+      "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/conditions/es1427_A_top25_v01/result.json",
+      "sha256": "176d295a52d507d7e9622ae8fb43911a79fb29fd92c1857f54edf2615c4aaba1"
+    },
+    "b_embed": {
+      "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/conditions/es1427_B_embed_top25_v01/result.json",
+      "sha256": "48d180fa5b0208f248bf6100bd97cf1a1885e84b909cfcc3c9ffcbdcdd6373fc"
+    },
+    "b": {
+      "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/conditions/es1427_B_top25_v01/result.json",
+      "sha256": "c09d9f556ae3d949b01772c5c438822e5bd17f9b33b29595e45891f86679dd2d"
+    },
+    "graph_input": {
+      "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/graph_inputs.json",
+      "sha256": "53d26b9ea61378c4434c2023a7e4e0835c7254511028e38fbad40e1bf39e69f0"
+    },
+    "gold": {
+      "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/gold.json",
+      "sha256": "8a391d4779f3313adb086ec1c19bd1fc1f725b4da1822b6542a28249fb55a38e"
+    }
+  },
+  "dataset": {
+    "sample_count": 18,
+    "qa_count": 1427,
+    "eligible_nonabstention_direct_dialog": 1130
+  },
+  "metric": {
+    "primary": "any direct original dialog evidence @25",
+    "secondary": "all direct original dialog evidence @25",
+    "exclude_abstention": true,
+    "exclude_event_only_or_no_direct_dialog": true,
+    "not_official_paper_metric": true
+  },
+  "uncertainty": {
+    "paired_qa_bootstrap_replicates": 10000,
+    "paired_user_cluster_bootstrap_replicates": 10000,
+    "seed": 20261008
+  },
+  "output": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/comparison/paired_top25.json",
+  "command": "python3 experiments/exp_2026_10_08_es_memeval_full_ab/compare_retrieval.py --a outputs/es_memeval_full_ab/conditions/es1427_A_top25_v01/result.json --b-embed outputs/es_memeval_full_ab/conditions/es1427_B_embed_top25_v01/result.json --b outputs/es_memeval_full_ab/conditions/es1427_B_top25_v01/result.json --graph-input outputs/es_memeval_full_ab/data/graph_inputs.json --gold outputs/es_memeval_full_ab/data/gold.json --output outputs/es_memeval_full_ab/comparison/paired_top25.json",
+  "graph_constraint": {
+    "conversation_only": true,
+    "gold_used_offline_only": true
+  },
+  "answer_judge": "not-applicable"
+}

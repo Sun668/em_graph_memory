@@ -1,0 +1,26 @@
+{
+  "schema": "es_memeval_full_graph_validation_v1",
+  "status": "pass",
+  "run_id": "es1427_b_graph_v01",
+  "result_sha256": "42b7c144e193096ad574cd81da66e445357d918b7d3cb37baff3ceff38239312",
+  "parameter_snapshot_sha256": "c0f69c50292765ff181501bc1ab87ba7796905a6cf7934dd7f5ad4c3150fae15",
+  "sample_count": 18,
+  "memory_count": 9368,
+  "entity_count": 15559,
+  "coverage_pass": true,
+  "graph_constraint": {
+    "construction_input": "sample.conversation only",
+    "judge_output_used": false,
+    "previous_prediction_used": false,
+    "qa_answer_used": false,
+    "qa_category_used": false,
+    "qa_evidence_used": false,
+    "qa_question_used": false,
+    "status": "pass"
+  },
+  "terminal_failures": 0,
+  "reused_complete_graphs": 3,
+  "cumulative_estimated_cost_usd": 3.841478499999993,
+  "current_run_estimated_cost_usd": 3.031948499999993,
+  "no_qa_used": true
+}

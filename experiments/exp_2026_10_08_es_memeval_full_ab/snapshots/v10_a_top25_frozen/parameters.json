@@ -1,0 +1,184 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_10_08_es_memeval_full_ab",
+  "run_id": "es1427_A_top25_v01",
+  "classification": "diagnostic",
+  "source": {
+    "commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+    "runner_sha256": "9fe39fe69a9690adc8319919ba56413ba86bfe85d4f21422611edf0e691d520c",
+    "entity_compat_sha256": "fc2963cf69c4443950ab01e31122771fd39ca8c1402ae9025178dd84e44705c7",
+    "base_runner_sha256": "6c9cab2629697a082f50949a4e011fcd089fb6eaa82b46cffbad64be6416a5e7"
+  },
+  "dataset": {
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/data/retrieval_inputs.json",
+    "sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+    "sample_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18"
+    ],
+    "qa_count": 1427,
+    "memory_count": 9368
+  },
+  "sampling": {
+    "scope": "all released 18 users and 1427 questions",
+    "seed": "not-applicable"
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "prompts": {
+    "question_entity_protocol": "entity_instruction_guard_v2",
+    "temperature": 0.3,
+    "max_output_tokens": 2500,
+    "primary_scaffold_chars": 2410,
+    "fallback_scaffold_chars": 3193
+  },
+  "training": {
+    "status": "not-applicable"
+  },
+  "variant": "A",
+  "top_k": 25,
+  "retrieval": {
+    "variant": "A",
+    "top_k": 25,
+    "context_unit": "original_dialog_turn",
+    "graph_profile": {
+      "memory_only": true,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    },
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "semantic_score_normalization": "none",
+    "expand_sequence": false,
+    "force_full_pool": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true
+  },
+  "generation": {
+    "status": "not-applicable"
+  },
+  "evaluation": {
+    "primary": "any direct original dialog evidence @25",
+    "secondary": "all direct original dialog evidence @25",
+    "eligible_nonabstention": 1130,
+    "gold_offline_only": true,
+    "answer_judge": "not-applicable"
+  },
+  "randomness": {
+    "retrieval_seed": "not-applicable deterministic",
+    "bootstrap_seed": 20261008
+  },
+  "query_artifact": {
+    "schema": "query_embedding_artifact_v1",
+    "path": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/query_vectors_retrieval.npz",
+    "sha256": "40492ac8a19e3e1849f26214f01477551e6471feb70d1a93ebf99c58965f67b9",
+    "dataset_sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+    "embedding_model": "text-embedding-3-small",
+    "role": "context",
+    "normalization": "l2_float32_v1",
+    "qa_count": 1427,
+    "unique_question_count": 1420,
+    "vector_dimension": 1536,
+    "ordered_qa_sha256": "caa08c3af37f8a02cb4257ebba394689c0f68b3d5f4b73ec554ada888db83224"
+  },
+  "caches": {
+    "query_artifact_sha256": "40492ac8a19e3e1849f26214f01477551e6471feb70d1a93ebf99c58965f67b9",
+    "ordered_qa_sha256": "caa08c3af37f8a02cb4257ebba394689c0f68b3d5f4b73ec554ada888db83224",
+    "memory_indexes_sha256": {
+      "p1": "10f686318cec9f8da1c8bc68ae856d407700adf1ac5a6f348b153a930ae65df9",
+      "p2": "3416d6de80bb8009123713ceb6fbafde1cd786fcf6a37d18551a32e87baa1c72",
+      "p3": "f17f609b0761be98e11fd3c1b9e1742fd71a68e2c19839b9bccaab3bf739ad24",
+      "p4": "4e10e79f153848913cca75611b49f1be3d8ec1959addf1cf90e5d28f5d49db0d",
+      "p5": "29199dab924ad75bee4ea251228b8d1b96b44990e5f9edefbaefec70db79f0c2",
+      "p6": "e1c6364ad8a699230e9c202705dd43680675a1416f59f80307851e4ad97e8446",
+      "p7": "f78c3f0a8fbffde1c3aef7aa4c1e4fba89e2a55a082bd5fce504eb91bb984637",
+      "p8": "29f2f400a2a1efd66f0fe0b12e457c0c1099efa9b246d970b8652a09fc5fd319",
+      "p9": "416aded449a0f166337bb4fdbc6198a34d81c74b9b5061216a75617d38f2b083",
+      "p10": "0ad87b16cedd03ce3e8db0e3c1a53343e087e7518cac672e4ef9e1542b678854",
+      "p11": "e3f8578cc14b75c4fddbde6c309032e39ae3bb15f74b0876a3cef1356e95d454",
+      "p12": "7cbe4894252363a0cc6ef413779930ab7ec8b3cec50ec64743ceb55d31561a4b",
+      "p13": "8d37ec8dc5bda1e9183effe1ecd3732587d9c7c7ce9b250f36a076ef20b2856d",
+      "p14": "03350d4de24ba528ddc6c7761de071354a5af2f846efb647dd219f9593ee752e",
+      "p15": "557e78072bdd0720c81b62fab51847b60cd3dd065bee38b781517436d3d1a676",
+      "p16": "acedd43e36da248d022e4b56ed59e28f3b080a5230f6dfdd23ff94aab421b6be",
+      "p17": "1c17d6ab19a6843508d7771e903a8bdf7fed14a0fe2b816b2ebe1a82f6cd001f",
+      "p18": "c5f537fd48283395ac2e459005e517c540eb94ee92843c6ea8a6d22802403f7e"
+    },
+    "graph_sha256_by_user": {
+      "p1": "45eb72d9908345e0b677e632e2eae26e849848213c1c3ded417b9bd81535f9fd",
+      "p2": "b0e07adcd89addf96114333f8a66eba0790675fd5c06e091104f837395e0cf4b",
+      "p3": "c4a31c8a7c8017bec185f96fc37c5d429a485b390955057f245648ea57f15902",
+      "p4": "28b5d8e26e68d0973fde31076f478124e777cf6f21dd64e1498d44c5375b105f",
+      "p5": "7b98e6260e4125d3dabad5535695e248901afc6a285134ee9ff7e80e4cb00efa",
+      "p6": "9cd75effb5253248677b486ab916a3aac5862d5c0dc4463502dc588fc49aa783",
+      "p7": "573640cd99344c760876afc91d8a1c293f9b9e7d1c97e84b1bc530615cf8edfe",
+      "p8": "70722e3472b3391139fe3a433f3395db8e847246a1759ff959eb736c7d7c2339",
+      "p9": "47455d37d208e121e2e95db35aca798b11948ca1454e835178ff2b1a1cbeb4b5",
+      "p10": "501eb3fdf9f101e2928b3b9585a0818334e7648f06f2e5fe6fd786e51850a3a2",
+      "p11": "ec3b9ec5b26a6ed5a75cb55b471b83dccda45c709e465312e5790ca5dbacff36",
+      "p12": "5d35b66d53503216e56b583cb5cacc29d6162c677c179053092e69c219dfe9fe",
+      "p13": "468af1e06b6f33654978da601e3a4a5c36c333c8e88ec793c904d95d18819c73",
+      "p14": "2c50592ef8130c263454da911870955e44d43bb02a967acdc70e888c0ba6a41d",
+      "p15": "986463f366f1022796f148773f5dc4e46f4d5982e9daf1d5536beb7d2d02c137",
+      "p16": "2455b8b6328225e5416f86dcc75b6e7eb785418f226ee161b9cd8d9ab1cd6d00",
+      "p17": "1c0c6aa930994b5adb3fceedbe69e73a848dbf7f9ed9b874d57be1e869280dd8",
+      "p18": "0a0fb21b39aa82e62cd33995a9972e7b097e9b56332b881ba507bad252b0e3e1"
+    },
+    "strict_query_cache": true,
+    "query_misses_allowed": 0,
+    "live_query_embedding_requests_allowed": 0
+  },
+  "environment": {
+    "endpoint": "https://api.openai.com/v1",
+    "network": "question-only chat for B; no embedding during retrieval",
+    "python": "3.9"
+  },
+  "resources": {
+    "workers": 1,
+    "output_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/conditions/es1427_A_top25_v01"
+  },
+  "cost_limits": {
+    "candidate_stage_cumulative_budget_stop_usd": 8.0,
+    "prior_estimated_spend_usd": 3.841478499999993,
+    "input_usd_per_million": 0.5,
+    "output_usd_per_million": 1.5,
+    "max_output_tokens_per_request": 2500
+  },
+  "gates": {
+    "output_dir_absent": true,
+    "qa_coverage": 1427,
+    "query_misses": 0,
+    "live_embedding_requests": 0,
+    "memory_indexes_exact": true,
+    "graph_conversation_only": true,
+    "prompt_scaffold_max_chars": 5000,
+    "a_b_embed_ordered_context_parity_required": true
+  },
+  "unknowns": [],
+  "command": "python3 experiments/exp_2026_10_08_es_memeval_full_ab/run_retrieval.py --run-id es1427_A_top25_v01 --data-file outputs/es_memeval_full_ab/data/retrieval_inputs.json --variant A --top-k 25 --extract-model gpt-3.5-turbo-0125 --embedding-model text-embedding-3-small --query-artifact outputs/es_memeval_full_ab/query_vectors_retrieval.npz --parameter-snapshot /Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/experiments/exp_2026_10_08_es_memeval_full_ab/snapshots/v10_a_top25_frozen/parameters.json --cache-dir outputs/es_memeval_qa_compare/cache --output-dir /Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/conditions/es1427_A_top25_v01"
+}

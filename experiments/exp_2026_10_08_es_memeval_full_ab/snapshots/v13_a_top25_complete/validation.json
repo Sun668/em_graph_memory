@@ -1,0 +1,22 @@
+{
+  "schema": "es_memeval_full_retrieval_validation_v1",
+  "status": "pass",
+  "variant": "A",
+  "qa_count": 1427,
+  "top_k": 25,
+  "query_usage": {
+    "schema": "query_embedding_usage_v1",
+    "qa_count": 1427,
+    "required_lookup_count": 1427,
+    "lookup_count": 1427,
+    "cache_hits": 1427,
+    "cache_misses": 0,
+    "live_embedding_requests": 0,
+    "status": "pass"
+  },
+  "audit": "pass",
+  "same_memory_indexes": true,
+  "result_sha256": "176d295a52d507d7e9622ae8fb43911a79fb29fd92c1857f54edf2615c4aaba1",
+  "audit_sha256": "ac2e7595701b2a7866eb6c21322239efa74eff6924cada41277400c0f307d118",
+  "parameter_snapshot_sha256": "6c01b249c60854affd0e52aae95d751398e95ef8d70e5bbdc6006432ae11a6c0"
+}

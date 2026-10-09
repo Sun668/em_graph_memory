@@ -1,0 +1,19 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "es1427_query_rebind_v01",
+  "classification": "diagnostic",
+  "source_commit": "86663536b03c8b7fb4cb3b205a81f82af4803746",
+  "runner_sha256": "e9559e1e51d9b18a8885c0164b291ae3208c5b60c4f0160c49cc140175f7cd62",
+  "source_artifact_sha256": "0e860aef813cb47dbc04f0770a4e8840f4977f46b7d69edf76c2c2abd3593f28",
+  "source_dataset_sha256": "acf21ece4b1ec3a8de436ccb6c620087514565431caa61cf289611667064ac9d",
+  "target_dataset_sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+  "ordered_question_coverage": 1427,
+  "unique_question_count": 1420,
+  "embedding_model": "text-embedding-3-small",
+  "normalization": "l2_float32_v1",
+  "role": "context",
+  "zero_live_embedding_requests": true,
+  "output_dir": "/Users/sun/Documents/git/graph_memory/.worktree/es-memeval-qa/outputs/es_memeval_full_ab/query_vectors_retrieval.npz",
+  "command": "python3 experiments/exp_2026_10_08_es_memeval_full_ab/rebind_query_artifact.py --source-artifact outputs/es_memeval_full_ab/query_vectors.npz --source-data outputs/es_memeval_full_ab/data/questions.json --target-data outputs/es_memeval_full_ab/data/retrieval_inputs.json --output outputs/es_memeval_full_ab/query_vectors_retrieval.npz --report outputs/es_memeval_full_ab/preparation/rebind_report.json"
+}

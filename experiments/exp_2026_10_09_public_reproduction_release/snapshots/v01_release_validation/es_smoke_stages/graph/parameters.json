@@ -1,0 +1,83 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "run_id": "release_v109_smoke_graph",
+  "classification": "diagnostic",
+  "source": {
+    "commit": "f020e855be06ac9f33ec888945ff6b305d81cb07",
+    "public_release": "v1.0.9",
+    "historical_template": "v03_b_graph_frozen",
+    "files": {
+      "experiments/exp_2026_10_08_es_memeval_full_ab/entity_compat.py": "fc2963cf69c4443950ab01e31122771fd39ca8c1402ae9025178dd84e44705c7",
+      "experiments/exp_2026_10_08_es_memeval_full_ab/build_b_graphs.py": "7064e7ff4858fd13cebcdc83acc9800c8b811d2ad47836f790dd5bb8815cb660",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/run.py": "6c9cab2629697a082f50949a4e011fcd089fb6eaa82b46cffbad64be6416a5e7",
+      "code/em_graph/recall/retrieval.py": "31544dc1aa21f5f200e91c3a2db14dc0aeede27419562dbb1c31b342ec4c1908"
+    }
+  },
+  "dataset": {
+    "path": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/graph.json",
+    "sha256": "c4ff4235fb0e9b25d9a7e562b4add4dba63880ce81bedbc0952fb79cf00f2523",
+    "sample_ids": [
+      "p1"
+    ],
+    "sample_count": 1,
+    "memory_count": 20,
+    "qa_count": 0
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "resources": {
+    "entity_workers": 2,
+    "workers": 1,
+    "output_dir": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/conditions/graph"
+  },
+  "graph_profile": {
+    "memory_only": false,
+    "use_caption": true,
+    "use_time_annotations": true,
+    "add_speaker_as_entity": true
+  },
+  "entity_extraction": {
+    "protocol": "entity_instruction_guard_v2",
+    "temperature": 0.3,
+    "max_output_tokens": 2500,
+    "primary_retries": 3,
+    "fallback_retries": 3,
+    "prompt_scaffold_limit_chars": 5000
+  },
+  "cost_limits": {
+    "candidate_stage_cumulative_budget_stop_usd": 8.0,
+    "prior_estimated_spend_usd": 0.0,
+    "input_usd_per_million": 0.5,
+    "output_usd_per_million": 1.5,
+    "max_output_tokens_per_request": 2500
+  },
+  "cache_dir": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/cache",
+  "output_dir": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/conditions/graph",
+  "graph_constraint": {
+    "conversation_only": true,
+    "qa_fields_excluded": true
+  },
+  "publication_use": "non-metric diagnostic",
+  "gates": {
+    "output_dir_absent": true,
+    "qa_coverage": 0,
+    "query_misses": 0,
+    "live_embedding_requests": 0,
+    "graph_conversation_only": true,
+    "prompt_scaffold_max_chars": 5000
+  },
+  "sampling": {
+    "scope": "exact supplied data; no sampling",
+    "seed": "not-applicable"
+  },
+  "evaluation": {
+    "status": "not-run",
+    "gold_offline_only": true
+  },
+  "command": "/Users/sun/Documents/git/graph_memory/.venv/bin/python /Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/build_b_graphs.py --run-id release_v109_smoke_graph --parameter-snapshot /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/snapshots/graph/parameters.json --data-file /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/graph.json --cache-dir /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/cache --extract-model gpt-3.5-turbo-0125 --output-dir /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_live_smoke/conditions/graph --workers 2"
+}

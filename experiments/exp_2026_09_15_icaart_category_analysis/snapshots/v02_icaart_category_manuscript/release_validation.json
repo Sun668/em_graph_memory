@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "date": "2026-09-15",
+  "pdf_sha256": "dcbc3823c269ad327147fd41b2bd81e71ef136df0fadb97c36fdbff8243d13fe",
+  "source_zip_sha256": "e06d62173c3725fdd84cc93dc23222ee62b696bb0a90a91d20cacbed1c8c0b97",
+  "source_bundle_files": [
+    "main.tex",
+    "references.bib",
+    "main.bbl",
+    "article.cls",
+    "SCITEPRESS.sty",
+    "apalike.sty",
+    "apalike.bst"
+  ],
+  "standalone_source_build": "pass; extracted into a separate temporary directory; identical page-by-page text and page count",
+  "visual_review": "All 12 final pages rendered and inspected; category analysis and paired table additionally inspected at full page resolution. No clipping, overlaps, missing glyphs, or isolated appendix heading.",
+  "embedded_fonts": {
+    "/NOKDPG+NimbusRomNo9L-Medi": true,
+    "/RRLHRX+NimbusRomNo9L-Regu": true,
+    "/SETGMO+NimbusMonL-Regu-Extend_850": true,
+    "/IJHQEK+URWChanceryL-MediItal": true,
+    "/SOSTRQ+CMR10": true,
+    "/BOBSZA+CMSY10": true,
+    "/CUGHJM+NimbusRomNo9L-ReguItal": true,
+    "/CYTQBV+CMMI10": true,
+    "/MKKOPX+StandardSymL": true,
+    "/WUJAVN+CMEX10": true
+  },
+  "baseline_and_template": "SHA-256 checks passed in validation.json",
+  "runtime_or_experiment_changes": false,
+  "submitted": false,
+  "author_confirmation_pending": [
+    "final authorship and affiliation",
+    "preprint and concurrent-review status",
+    "historical AI assistance beyond this pass",
+    "human author review and submission approval"
+  ],
+  "offline_analysis_added": true,
+  "category_analysis": "1,986 pairs; frozen input hashes and existing category means match v40; two fresh formal validators pass; no new model calls or scoring.",
+  "baseline_manuscript_commit": "11a3b96"
+}

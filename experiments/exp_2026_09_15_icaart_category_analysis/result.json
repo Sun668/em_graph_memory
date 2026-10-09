@@ -1,0 +1,682 @@
+{
+  "schema": "icaart_category_description_v1",
+  "status": "pass",
+  "scope": "Post-hoc descriptive reanalysis of stored scores; not a new formal model run, category significance test, or causal error attribution.",
+  "analysis_source_sha256": "a39f4557d776bd0e2bb41e1ba56b8a176716c9b2b4c74a998e27baec2701965c",
+  "primary_snapshot_sha256": "57252c806bf38cdfecf920410b9decc3ef9bf745e2c9eb68e3a09f3d262db8af",
+  "inputs": {
+    "a": {
+      "run_id": "formal_all10_M1_A_top25_76fcf5b_qfrozen_run01",
+      "source_commit": "76fcf5b68998622012371a704c703c3004414224",
+      "predictions_sha256": "0c843b7f921ceea50c07bc6bb14751446f2066909c807df528ee66ff1aa9579c",
+      "stats_sha256": "203f30b12406a9c033308757987003c4ef98ad3588cf1f3aadce1127d361663c"
+    },
+    "b": {
+      "run_id": "formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+      "source_commit": "41a78125d640d5ebb127d1cb817843b4eef35a8b",
+      "predictions_sha256": "9dcde0e2f993b1a0199a7e17ccb66a4b307e7355ba7b60aff139ade792c75069",
+      "stats_sha256": "6a7ae63b72db737353b1c5a2f9ae5171090324ec3efa05ffb3022c2571d8b3de"
+    }
+  },
+  "qa_count": 1986,
+  "categories": {
+    "1": {
+      "name": "Multi-hop",
+      "n": 282,
+      "empty_evidence_rows": 0,
+      "a": {
+        "f1": 0.38179432624113474,
+        "recall_acc": 0.6516028368794323
+      },
+      "b": {
+        "f1": 0.39946808510638293,
+        "recall_acc": 0.6709361702127657
+      },
+      "difference_pp": {
+        "f1": 1.767375886524819,
+        "recall_acc": 1.9333333333333425
+      },
+      "f1_transitions": {
+        "up": 61,
+        "down": 53,
+        "equal": 168
+      },
+      "recall_transitions": {
+        "up": 33,
+        "down": 21,
+        "equal": 228
+      },
+      "joint_recall_then_f1": {
+        "up_up": 16,
+        "up_down": 3,
+        "up_equal": 14,
+        "down_up": 3,
+        "down_down": 3,
+        "down_equal": 15,
+        "equal_up": 42,
+        "equal_down": 47,
+        "equal_equal": 139
+      },
+      "recall_up_f1_not_up": 17
+    },
+    "2": {
+      "name": "Temporal",
+      "n": 321,
+      "empty_evidence_rows": 0,
+      "a": {
+        "f1": 0.41489096573208767,
+        "recall_acc": 0.8966760124610591
+      },
+      "b": {
+        "f1": 0.4104922118380066,
+        "recall_acc": 0.8961557632398753
+      },
+      "difference_pp": {
+        "f1": -0.43987538940810644,
+        "recall_acc": -0.052024922118376615
+      },
+      "f1_transitions": {
+        "up": 47,
+        "down": 56,
+        "equal": 218
+      },
+      "recall_transitions": {
+        "up": 8,
+        "down": 7,
+        "equal": 306
+      },
+      "joint_recall_then_f1": {
+        "up_up": 1,
+        "up_down": 1,
+        "up_equal": 6,
+        "down_up": 0,
+        "down_down": 3,
+        "down_equal": 4,
+        "equal_up": 46,
+        "equal_down": 52,
+        "equal_equal": 208
+      },
+      "recall_up_f1_not_up": 7
+    },
+    "3": {
+      "name": "Open-domain",
+      "n": 96,
+      "empty_evidence_rows": 4,
+      "a": {
+        "f1": 0.1830729166666667,
+        "recall_acc": 0.48284375
+      },
+      "b": {
+        "f1": 0.17377083333333332,
+        "recall_acc": 0.5519375000000001
+      },
+      "difference_pp": {
+        "f1": -0.9302083333333377,
+        "recall_acc": 6.909375000000006
+      },
+      "f1_transitions": {
+        "up": 7,
+        "down": 13,
+        "equal": 76
+      },
+      "recall_transitions": {
+        "up": 12,
+        "down": 1,
+        "equal": 83
+      },
+      "joint_recall_then_f1": {
+        "up_up": 1,
+        "up_down": 3,
+        "up_equal": 8,
+        "down_up": 0,
+        "down_down": 1,
+        "down_equal": 0,
+        "equal_up": 6,
+        "equal_down": 9,
+        "equal_equal": 68
+      },
+      "recall_up_f1_not_up": 11
+    },
+    "4": {
+      "name": "Single-hop",
+      "n": 841,
+      "empty_evidence_rows": 0,
+      "a": {
+        "f1": 0.6314530321046367,
+        "recall_acc": 0.9005160523186683
+      },
+      "b": {
+        "f1": 0.641260404280618,
+        "recall_acc": 0.9268739595719383
+      },
+      "difference_pp": {
+        "f1": 0.9807372175981377,
+        "recall_acc": 2.635790725327003
+      },
+      "f1_transitions": {
+        "up": 136,
+        "down": 125,
+        "equal": 580
+      },
+      "recall_transitions": {
+        "up": 33,
+        "down": 10,
+        "equal": 798
+      },
+      "joint_recall_then_f1": {
+        "up_up": 17,
+        "up_down": 4,
+        "up_equal": 12,
+        "down_up": 0,
+        "down_down": 5,
+        "down_equal": 5,
+        "equal_up": 119,
+        "equal_down": 116,
+        "equal_equal": 563
+      },
+      "recall_up_f1_not_up": 16
+    },
+    "5": {
+      "name": "Adversarial",
+      "n": 446,
+      "empty_evidence_rows": 0,
+      "a": {
+        "f1": 0.1031390134529148,
+        "recall_acc": 0.6917040358744395
+      },
+      "b": {
+        "f1": 0.10089686098654709,
+        "recall_acc": 0.8262331838565022
+      },
+      "difference_pp": {
+        "f1": -0.22421524663677195,
+        "recall_acc": 13.452914798206272
+      },
+      "f1_transitions": {
+        "up": 16,
+        "down": 17,
+        "equal": 413
+      },
+      "recall_transitions": {
+        "up": 68,
+        "down": 4,
+        "equal": 374
+      },
+      "joint_recall_then_f1": {
+        "up_up": 2,
+        "up_down": 9,
+        "up_equal": 57,
+        "down_up": 0,
+        "down_down": 0,
+        "down_equal": 4,
+        "equal_up": 14,
+        "equal_down": 8,
+        "equal_equal": 352
+      },
+      "recall_up_f1_not_up": 66
+    }
+  },
+  "case_selection": "Four existing manuscript cases; first temporal QA; maximal F1-gain multi-hop row among positive-recall/positive-F1 pairs, lexical sample/index tie-break. Illustrative and selected, not representative.",
+  "cases": [
+    {
+      "question": "Which classes did Evan join in mid-August 2023?",
+      "answer": "painting classes",
+      "evidence": [
+        "D8:12"
+      ],
+      "category": 2,
+      "sample_id": "conv-49",
+      "qa_index_zero_based": 41,
+      "a": {
+        "prediction": "Evan joined winter activities classes in mid-August 2023.",
+        "prediction_context": [
+          "D8:17",
+          "D8:32",
+          "D16:24",
+          "D19:11",
+          "D9:1",
+          "D1:20",
+          "D12:3",
+          "D1:6",
+          "D13:13",
+          "D1:1",
+          "D1:19",
+          "D1:10",
+          "D12:2",
+          "D8:26",
+          "D14:8",
+          "D7:3",
+          "D16:20",
+          "D17:2",
+          "D11:2",
+          "D1:16",
+          "D16:12",
+          "D17:10",
+          "D3:15",
+          "D13:16",
+          "D9:6"
+        ],
+        "f1": 0.2,
+        "recall": 0.0
+      },
+      "b": {
+        "prediction": "Painting classes",
+        "prediction_context": [
+          "D8:17",
+          "D9:1",
+          "D8:32",
+          "D7:3",
+          "D16:24",
+          "D8:13",
+          "D8:12",
+          "D19:11",
+          "D8:26",
+          "D8:14",
+          "D1:20",
+          "D8:16",
+          "D12:3",
+          "D1:6",
+          "D13:13",
+          "D8:30",
+          "D9:2",
+          "D1:1",
+          "D1:19",
+          "D1:10",
+          "D12:2",
+          "D16:10",
+          "D14:8",
+          "D7:2",
+          "D16:20"
+        ],
+        "f1": 1.0,
+        "recall": 1.0
+      },
+      "f1_direction": "up",
+      "recall_direction": "up"
+    },
+    {
+      "question": "What activity does Evan do to keep himself busy while healing his knee?",
+      "answer": "Watercolor painting",
+      "evidence": [
+        "D11:6"
+      ],
+      "category": 4,
+      "sample_id": "conv-49",
+      "qa_index_zero_based": 115,
+      "a": {
+        "prediction": "Swimming",
+        "prediction_context": [
+          "D11:3",
+          "D9:6",
+          "D11:2",
+          "D11:5",
+          "D9:2",
+          "D11:4",
+          "D20:5",
+          "D17:4",
+          "D1:10",
+          "D7:9",
+          "D25:4",
+          "D20:3",
+          "D4:3",
+          "D7:1",
+          "D9:7",
+          "D17:14",
+          "D6:3",
+          "D11:18",
+          "D24:17",
+          "D8:30",
+          "D5:7",
+          "D17:6",
+          "D24:13",
+          "D12:2",
+          "D14:2"
+        ],
+        "f1": 0,
+        "recall": 0.0
+      },
+      "b": {
+        "prediction": "Watercolor painting",
+        "prediction_context": [
+          "D11:3",
+          "D9:6",
+          "D11:5",
+          "D11:2",
+          "D20:5",
+          "D9:2",
+          "D11:4",
+          "D9:7",
+          "D4:16",
+          "D18:5",
+          "D17:4",
+          "D3:11",
+          "D1:10",
+          "D7:9",
+          "D25:4",
+          "D8:30",
+          "D20:3",
+          "D4:3",
+          "D11:6",
+          "D7:1",
+          "D17:14",
+          "D6:3",
+          "D5:17",
+          "D11:18",
+          "D24:17"
+        ],
+        "f1": 1.0,
+        "recall": 1.0
+      },
+      "f1_direction": "up",
+      "recall_direction": "up"
+    },
+    {
+      "question": "Would Caroline likely have Dr. Seuss books on her bookshelf?",
+      "answer": "Yes, since she collects classic children's books",
+      "evidence": [
+        "D6:9"
+      ],
+      "category": 3,
+      "sample_id": "conv-26",
+      "qa_index_zero_based": 22,
+      "a": {
+        "prediction": "Yes, Caroline would likely have Dr. Seuss books on her bookshelf.",
+        "prediction_context": [
+          "D6:9",
+          "D6:7",
+          "D4:18",
+          "D17:11",
+          "D15:27",
+          "D7:10",
+          "D4:11",
+          "D8:5",
+          "D6:8",
+          "D7:15",
+          "D18:24",
+          "D7:9",
+          "D12:5",
+          "D1:10",
+          "D10:9",
+          "D17:17",
+          "D4:4",
+          "D6:10",
+          "D10:15",
+          "D7:17",
+          "D8:10",
+          "D14:31",
+          "D10:11",
+          "D13:5",
+          "D5:7"
+        ],
+        "f1": 0.222,
+        "recall": 1.0
+      },
+      "b": {
+        "prediction": "Caroline would likely have Dr. Seuss books on her bookshelf.",
+        "prediction_context": [
+          "D6:9",
+          "D6:10",
+          "D6:7",
+          "D4:18",
+          "D7:10",
+          "D17:10",
+          "D17:11",
+          "D6:8",
+          "D7:8",
+          "D7:9",
+          "D15:27",
+          "D4:11",
+          "D8:5",
+          "D7:15",
+          "D18:24",
+          "D12:5",
+          "D1:10",
+          "D10:9",
+          "D17:17",
+          "D4:4",
+          "D7:11",
+          "D10:15",
+          "D7:17",
+          "D17:9",
+          "D8:10"
+        ],
+        "f1": 0.118,
+        "recall": 1.0
+      },
+      "f1_direction": "down",
+      "recall_direction": "equal"
+    },
+    {
+      "question": "What inspired Melanie's painting for the art show?",
+      "answer": "visiting an LGBTQ center and wanting to capture unity and strength",
+      "evidence": [
+        "D9:16"
+      ],
+      "category": 5,
+      "sample_id": "conv-26",
+      "qa_index_zero_based": 172,
+      "a": {
+        "prediction": "(a) visiting an lgbtq center and wanting to capture unity and strength",
+        "prediction_context": [
+          "D11:9",
+          "D9:15",
+          "D14:18",
+          "D16:12",
+          "D14:6",
+          "D9:13",
+          "D16:6",
+          "D17:12",
+          "D12:6",
+          "D1:15",
+          "D14:32",
+          "D14:8",
+          "D1:13",
+          "D1:6",
+          "D14:30",
+          "D11:12",
+          "D16:13",
+          "D13:14",
+          "D17:22",
+          "D17:14",
+          "D11:13",
+          "D17:16",
+          "D1:14",
+          "D14:20",
+          "D14:7"
+        ],
+        "f1": 0,
+        "recall": 0.0
+      },
+      "b": {
+        "prediction": "(a) visiting an lgbtq center and wanting to capture unity and strength",
+        "prediction_context": [
+          "D9:15",
+          "D11:9",
+          "D17:14",
+          "D9:13",
+          "D8:6",
+          "D14:6",
+          "D13:9",
+          "D9:16",
+          "D9:14",
+          "D13:8",
+          "D16:12",
+          "D17:12",
+          "D14:32",
+          "D16:6",
+          "D14:20",
+          "D12:6",
+          "D1:14",
+          "D14:18",
+          "D14:7",
+          "D1:15",
+          "D17:13",
+          "D16:10",
+          "D14:30",
+          "D11:11",
+          "D1:13"
+        ],
+        "f1": 0,
+        "recall": 1.0
+      },
+      "f1_direction": "equal",
+      "recall_direction": "up"
+    },
+    {
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "answer": "7 May 2023",
+      "evidence": [
+        "D1:3"
+      ],
+      "category": 2,
+      "sample_id": "conv-26",
+      "qa_index_zero_based": 0,
+      "a": {
+        "prediction": "8 May, 2023",
+        "prediction_context": [
+          "D1:3",
+          "D4:13",
+          "D5:1",
+          "D10:3",
+          "D7:1",
+          "D9:6",
+          "D12:1",
+          "D1:7",
+          "D9:2",
+          "D3:1",
+          "D5:2",
+          "D10:5",
+          "D9:11",
+          "D2:12",
+          "D11:4",
+          "D14:33",
+          "D7:3",
+          "D5:13",
+          "D15:3",
+          "D3:2",
+          "D9:12",
+          "D11:6",
+          "D10:7",
+          "D14:12",
+          "D14:14"
+        ],
+        "f1": 0.667,
+        "recall": 1.0
+      },
+      "b": {
+        "prediction": "1:56 pm on 8 May, 2023",
+        "prediction_context": [
+          "D1:3",
+          "D10:3",
+          "D4:13",
+          "D5:1",
+          "D1:7",
+          "D14:12",
+          "D14:13",
+          "D14:14",
+          "D7:1",
+          "D12:1",
+          "D9:6",
+          "D9:2",
+          "D3:1",
+          "D10:5",
+          "D5:2",
+          "D9:11",
+          "D2:12",
+          "D11:4",
+          "D14:33",
+          "D7:3",
+          "D5:13",
+          "D15:3",
+          "D4:8",
+          "D3:2",
+          "D9:12"
+        ],
+        "f1": 0.444,
+        "recall": 1.0
+      },
+      "f1_direction": "down",
+      "recall_direction": "equal"
+    },
+    {
+      "question": "Did Audrey and Andrew grow up with a pet dog?",
+      "answer": "Yes",
+      "evidence": [
+        "D2:16",
+        "D13:10"
+      ],
+      "category": 1,
+      "sample_id": "conv-44",
+      "qa_index_zero_based": 24,
+      "a": {
+        "prediction": "Audrey did, Andrew did not.",
+        "prediction_context": [
+          "D28:1",
+          "D21:2",
+          "D28:2",
+          "D27:9",
+          "D24:2",
+          "D26:1",
+          "D17:17",
+          "D2:1",
+          "D1:11",
+          "D16:2",
+          "D20:8",
+          "D19:29",
+          "D24:1",
+          "D23:1",
+          "D15:1",
+          "D20:2",
+          "D13:1",
+          "D13:2",
+          "D14:26",
+          "D18:18",
+          "D6:2",
+          "D22:1",
+          "D1:8",
+          "D1:9",
+          "D12:1"
+        ],
+        "f1": 0.0,
+        "recall": 0.0
+      },
+      "b": {
+        "prediction": "Yes, Audrey grew up with a pet dog named Max.",
+        "prediction_context": [
+          "D28:1",
+          "D28:2",
+          "D21:2",
+          "D24:2",
+          "D27:9",
+          "D26:1",
+          "D17:17",
+          "D2:1",
+          "D24:1",
+          "D14:6",
+          "D1:11",
+          "D16:2",
+          "D20:8",
+          "D19:29",
+          "D13:1",
+          "D6:2",
+          "D23:1",
+          "D15:1",
+          "D20:2",
+          "D13:2",
+          "D14:26",
+          "D13:10",
+          "D1:9",
+          "D18:18",
+          "D22:1"
+        ],
+        "f1": 1.0,
+        "recall": 0.5
+      },
+      "f1_direction": "up",
+      "recall_direction": "up"
+    }
+  ],
+  "api_calls": 0,
+  "scoring_calls": 0,
+  "score_precision": "Compare stored three-decimal scores exactly. Empty-evidence recall contributes zero, matching frozen aggregate; raw values preserved in rows."
+}

@@ -1,0 +1,3 @@
+# Complete B graph snapshot
+
+18 conversation-only graphs, 9,368 Memories, 15,559 Entities; three validated graphs reused. All extraction cache coverage and graph-constraint checks passed. No QA, answer, evidence, capability, judge, or prior prediction entered graph construction. Current-run estimated API cost USD 3.0319; cumulative estimate including previous diagnostic USD 3.8415, below USD 8. This is construction progress only, not a recall result or answer/Judge metric. Source and exact command are frozen in v01 and v03. Result: `outputs/es_memeval_full_ab/conditions/b_graph_v01/result.json`.

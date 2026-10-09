@@ -1,0 +1,142 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_10_08_es_memeval_full_ab",
+  "run_id": "release_v109_B_embed_cache_replay",
+  "classification": "diagnostic",
+  "source": {
+    "commit": "f020e855be06ac9f33ec888945ff6b305d81cb07",
+    "public_release": "v1.0.9",
+    "historical_template": "v11_b_embed_top25_frozen",
+    "files": {
+      "experiments/exp_2026_10_08_es_memeval_full_ab/entity_compat.py": "fc2963cf69c4443950ab01e31122771fd39ca8c1402ae9025178dd84e44705c7",
+      "experiments/exp_2026_10_08_es_memeval_full_ab/run_retrieval.py": "9fe39fe69a9690adc8319919ba56413ba86bfe85d4f21422611edf0e691d520c",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/run.py": "6c9cab2629697a082f50949a4e011fcd089fb6eaa82b46cffbad64be6416a5e7",
+      "code/em_graph/recall/retrieval.py": "31544dc1aa21f5f200e91c3a2db14dc0aeede27419562dbb1c31b342ec4c1908"
+    }
+  },
+  "dataset": {
+    "path": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_original_artifacts/data/retrieval_inputs.json",
+    "sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+    "sample_ids": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18"
+    ],
+    "sample_count": 18,
+    "memory_count": 9368,
+    "qa_count": 1427
+  },
+  "sampling": {
+    "scope": "exact supplied data; no sampling",
+    "seed": "not-applicable"
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo-0125",
+    "embedding": "text-embedding-3-small",
+    "answer": "not-applicable",
+    "judge": "not-applicable"
+  },
+  "prompts": {
+    "question_entity_protocol": "entity_instruction_guard_v2",
+    "temperature": 0.3,
+    "max_output_tokens": 2500,
+    "primary_scaffold_chars": 2410,
+    "fallback_scaffold_chars": 3193
+  },
+  "training": {
+    "status": "not-applicable"
+  },
+  "variant": "B_embed",
+  "top_k": 25,
+  "retrieval": {
+    "variant": "B_embed",
+    "top_k": 25,
+    "context_unit": "original_dialog_turn",
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    },
+    "entity_weight": 0.0,
+    "semantic_weight": 1.0,
+    "semantic_score_normalization": "none",
+    "expand_sequence": false,
+    "force_full_pool": true,
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true
+  },
+  "generation": {
+    "status": "not-applicable"
+  },
+  "evaluation": {
+    "status": "not-run",
+    "gold_offline_only": true
+  },
+  "randomness": {
+    "retrieval_seed": "not-applicable deterministic",
+    "bootstrap_seed": 20261008
+  },
+  "query_artifact": {
+    "schema": "query_embedding_artifact_v1",
+    "path": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_original_artifacts/query_vectors_retrieval.npz",
+    "sha256": "40492ac8a19e3e1849f26214f01477551e6471feb70d1a93ebf99c58965f67b9",
+    "dataset_sha256": "0e145b58a2b88548fb9cd79b3ec26aa671739e229474d27e4df20f98f0d7b79d",
+    "embedding_model": "text-embedding-3-small",
+    "role": "context",
+    "normalization": "l2_float32_v1",
+    "qa_count": 1427,
+    "unique_question_count": 1420,
+    "vector_dimension": 1536,
+    "ordered_qa_sha256": "caa08c3af37f8a02cb4257ebba394689c0f68b3d5f4b73ec554ada888db83224"
+  },
+  "environment": {
+    "endpoint": "https://api.openai.com/v1",
+    "network": "question-only chat for B; no embedding during retrieval",
+    "python": "3.9"
+  },
+  "resources": {
+    "entity_workers": 8,
+    "workers": 1,
+    "output_dir": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/conditions/B_embed"
+  },
+  "cost_limits": {
+    "candidate_stage_cumulative_budget_stop_usd": 8.0,
+    "prior_estimated_spend_usd": 0.0,
+    "input_usd_per_million": 0.5,
+    "output_usd_per_million": 1.5,
+    "max_output_tokens_per_request": 2500
+  },
+  "gates": {
+    "output_dir_absent": true,
+    "qa_coverage": 1427,
+    "query_misses": 0,
+    "live_embedding_requests": 0,
+    "graph_conversation_only": true,
+    "prompt_scaffold_max_chars": 5000
+  },
+  "unknowns": [],
+  "cache_dir": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay_cache",
+  "output_dir": "/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/conditions/B_embed",
+  "publication_use": "retrieval-only; validate and snapshot before publication",
+  "command": "/Users/sun/Documents/git/graph_memory/.venv/bin/python /Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/run_retrieval.py --run-id release_v109_B_embed_cache_replay --parameter-snapshot /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/snapshots/B_embed/parameters.json --data-file /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_original_artifacts/data/retrieval_inputs.json --cache-dir /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay_cache --extract-model gpt-3.5-turbo-0125 --output-dir /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/conditions/B_embed --variant B_embed --top-k 25 --embedding-model text-embedding-3-small --query-artifact /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_original_artifacts/query_vectors_retrieval.npz"
+}

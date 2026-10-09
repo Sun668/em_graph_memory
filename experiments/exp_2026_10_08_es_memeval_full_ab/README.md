@@ -1,0 +1,15 @@
+# ES-MemEval release-wide top-25 A/B retrieval
+
+Hypothesis: the frozen current EM-Graph B improves original-dialog evidence recall over dense Memory A when both see the same 18 conversation histories and 1,427 questions. This is a retrieval-only adapted local comparison, not the paper's 1,209-question evaluation or answer-quality protocol.
+
+Source: [ES-MemEval paper](https://arxiv.org/html/2602.01885v1) and [official release](https://github.com/slptongji/ES-MemEval). The local official raw file `data/evo_emo.json` has SHA-256 `f30698e87fddaeff51270a666c654da604f487a3456ec60d2b6ae08a6fecd420`; the local conversation/QA adapter `data/evo_emo_graph_qa.json` has SHA-256 `a81824fdbfc9e94ee9c2e510b8d9f45a6430d0cfe84d324cfaf2ea5a74686ed9`. `prepare_full.py` writes conversation-only graph inputs, question-only retrieval inputs, and gold labels used only offline. The release scope contains 9,368 dialog turns. The primary denominator is the 1,130 non-abstention QA with at least one gold ID directly matching an original dialog ID; 261 abstention and 36 other rows without direct dialog IDs are excluded. Event IDs are not guessed into dialogs.
+
+Conditions: A dense Memory retrieval and current B Entity–Memory retrieval, each top-25 original dialogs. B_embed is a parity control proving that the B graph with dense-only full-pool retrieval returns exactly A's ordered IDs; it is not a claimed ablation. All conditions use one immutable complete `text-embedding-3-small` query artifact and the same Memory indexes. B uses GPT-3.5 Turbo 0125 Entity extraction, 0.3/0.7 Entity/semantic fusion, sequence scale 0.5, Entity relative threshold 0.5, 20 Entity nodes per key, Who dampening 0.25, and degree discount. No new tuning on ES-MemEval.
+
+Graph construction uses conversation data only. QA answers, evidence, categories, summaries, observations, timelines, user profiles, judgments, and prior predictions are excluded. No answer or Judge run is in scope. Prompt scaffolds must remain below 5,000 characters. `snapshots/` records frozen source, parameters, commands, audits, and progress. Bulky artifacts live under `outputs/es_memeval_full_ab/`; existing validated graph/index caches may be reused from `outputs/es_memeval_qa_compare/cache` only when their identities match.
+
+Run order: prepare data; build full query vectors; build A Memory graphs and shared indexes; run A; build B graphs; run B_embed and verify ordered parity; run B; compare paired QA and user-cluster intervals. Exact commands and hashes are frozen in stage snapshots before each paid stage. The B stage retains an $8 cumulative estimated API cost stop. A full result requires 1,427 rows per condition, zero query misses/live embedding requests, matching index and artifact SHA-256, and graph/prompt audits passing.
+
+## Public v1.0.9 entry
+
+Portable commands, environment requirements, archive boundaries and migration validation are documented in [the release guide](../exp_2026_10_09_public_reproduction_release/README.md). Historical snapshots retain their original absolute paths; create new snapshots for a new workspace.

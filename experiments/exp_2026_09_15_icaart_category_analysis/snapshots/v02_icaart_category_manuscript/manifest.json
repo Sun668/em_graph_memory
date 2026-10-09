@@ -1,0 +1,14 @@
+{
+  "baseline_commit": "11a3b96",
+  "manuscript": "paper/icaart2027/review/main.tex",
+  "manuscript_sha256": "02e34f73cb2a8adab482cb4fff30c9a0f444ce33b54b6f6dfe635cede7be6dcf",
+  "pdf": "paper/icaart2027/icaart2027_anonymous.pdf",
+  "pdf_sha256": "dcbc3823c269ad327147fd41b2bd81e71ef136df0fadb97c36fdbff8243d13fe",
+  "source_zip_sha256": "e06d62173c3725fdd84cc93dc23222ee62b696bb0a90a91d20cacbed1c8c0b97",
+  "analysis_snapshot": "../v01_primary_ab_descriptive",
+  "analysis_result_sha256": "521904eb2f7378f4a60710a9ce1f1fc7361c028bffca2db3b73a7f72cf3d82f7",
+  "status": "pass",
+  "pages": 12,
+  "nonwhitespace_characters": 44820,
+  "submitted": false
+}

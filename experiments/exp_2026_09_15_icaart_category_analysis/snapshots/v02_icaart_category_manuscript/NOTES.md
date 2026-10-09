@@ -1,0 +1,3 @@
+# Final manuscript revision
+
+Section 5.6 and Table 6 add five-category descriptive analysis. The exact manuscript, checker, category claim map and final validation records are frozen here. Full experimental settings, extraction/build/retrieval/judge boundaries and offline command are in v01 and protocol.md. Original graph constraint and prompt budget pass; no runtime logic or prompt changes, no new model or judge score. The analysis qualifies only as a descriptive reanalysis of eligible frozen evidence. No categorical significance or component causality is claimed. Author review remains pending. Final PDF/source bundle paths and hashes are in manifest.json; no generated raw outputs are duplicated into version control.

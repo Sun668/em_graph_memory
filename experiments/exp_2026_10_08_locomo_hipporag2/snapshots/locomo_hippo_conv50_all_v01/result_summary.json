@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "classification": "adapted_local_retrieval_only",
+  "run_id": "locomo_hippo_conv50_all_v01",
+  "source_commit": "d5c8329422e0a0b834a15874545cb6a74b4f9b26",
+  "parameter_snapshot_sha256": "6b3a5b77e388f1a5cc9da27e20c4714202d840d6419722d677929e1559b95ded",
+  "graph_input_sha256": "e33ee849de3806c8a20e57aa1ae922dda340890968ea966fbf606f7f2b77155d",
+  "retrieval_input_sha256": "f154887030390d410be8106227d8e05320130ada19723a3695894e2a6db7fb7d",
+  "rerank_prompt_sha256": "c4a1d3d01ba5723cc217a1d765ed284a9c1ce66218f2bb9c0ffa88743afc55b6",
+  "turn_count": 568,
+  "qa_count": 204,
+  "top_k": 25,
+  "prompt_scaffold_chars": {
+    "ner": 554,
+    "triple_extraction": 1836,
+    "fact_filter": 3808
+  },
+  "graph_nodes": 1420,
+  "graph_edges": 3556,
+  "entity_count": 852,
+  "fact_count": 1147,
+  "usage": {
+    "chat_attempts": 1340,
+    "chat_live": 1340,
+    "chat_cache_hits": 0,
+    "chat_errors": 0,
+    "chat_input_tokens": 627932,
+    "chat_output_tokens": 52691,
+    "embedding_requests": 175,
+    "embedding_input_tokens": 65089,
+    "budget_exceeded": false
+  },
+  "elapsed_seconds": 938.8827978339978,
+  "graph_constraint": "pass: conversation-only chunks; QA read after index; source-ID graph retrieval",
+  "answer_judge": "not run",
+  "result_sha256": "6e0d8b66cc8a63292f5f819f83d7f1a9afc9f461965fa9de6f13be57d2ab24d4",
+  "openie_sha256": "97120d68d8d982fa2bf1d53f2d142f34ed5462234d3f95f44bb86fdeb7b316a4",
+  "openie_doc_count": 568,
+  "openie_empty_entity_docs": 1,
+  "openie_empty_triple_docs": 0,
+  "top25_all_unique": true
+}

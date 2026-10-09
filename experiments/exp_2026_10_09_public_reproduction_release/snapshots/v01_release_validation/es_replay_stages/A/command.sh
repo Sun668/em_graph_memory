@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+export RESEARCH_RUN_CLASS=diagnostic
+export RESEARCH_PARAMETER_SNAPSHOT=/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/snapshots/A/parameters.json
+export RESEARCH_CONDITION_DIR=/Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/conditions/A
+/Users/sun/Documents/git/graph_memory/.venv/bin/python /Users/sun/Documents/git/em_graph_memory/experiments/exp_2026_10_08_es_memeval_full_ab/run_retrieval.py --run-id release_v109_A_cache_replay --parameter-snapshot /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/snapshots/A/parameters.json --data-file /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_original_artifacts/data/retrieval_inputs.json --cache-dir /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay_cache --extract-model gpt-3.5-turbo-0125 --output-dir /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_replay/conditions/A --variant A --top-k 25 --embedding-model text-embedding-3-small --query-artifact /Users/sun/Documents/git/em_graph_memory/outputs/reproduction_release_v109/es_original_artifacts/query_vectors_retrieval.npz

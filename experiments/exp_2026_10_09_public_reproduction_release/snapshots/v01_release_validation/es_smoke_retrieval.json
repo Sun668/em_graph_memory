@@ -1,0 +1,174 @@
+[
+  {
+    "sample_id": "p1",
+    "conversation": {
+      "speaker_a": "Sarah",
+      "speaker_b": "supporter",
+      "session_1_date_time": "2024-06-30",
+      "session_1": [
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:1",
+          "text": "please am not able to get sleep like 6 months now please help me"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:2",
+          "text": "Are u overthinker?"
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:3",
+          "text": "i think sometimes i am thinking  too much will that be the problem since i also avoid to think when am on my bed"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:4",
+          "text": "I can feel your feelings .. Get yourself tired for something like workouts, House cleaning and traveling . These things made you tired to sleep."
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:5",
+          "text": "in fact i do get tired like yesterday i did a lot of work going to bed i just slept like 1 hour only"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:6",
+          "text": "Do you have any past ?"
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:7",
+          "text": "like?"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:8",
+          "text": "Like lover or favorite person?"
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:9",
+          "text": "yes i do"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:10",
+          "text": "OK let try to stop thinking about the person by making interest and spent times with dog or other pets"
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:11",
+          "text": "thanks but the problem is that the person  stays next t me and we work together i do see the person like everyday"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:12",
+          "text": "Ohh.. Did you ever tried to talk with them?"
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:13",
+          "text": "yes  i did but am unable to forget one"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:14",
+          "text": "Let try to ask them to be friends . say them just forget our old life be friends or feel your self meet me for the first time"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:15",
+          "text": "or try sleeping piles to sleep ."
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:16",
+          "text": "okay thank you so much."
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:17",
+          "text": "also is there anything i can do to sleep more"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:18",
+          "text": "You are always welcome"
+        },
+        {
+          "speaker": "Sarah",
+          "role": "seeker",
+          "dia_id": "esc1024:19",
+          "text": "what else can i do"
+        },
+        {
+          "speaker": "supporter",
+          "role": "supporter",
+          "dia_id": "esc1024:20",
+          "text": "Wait"
+        }
+      ],
+      "session_2_date_time": "2024-07-15",
+      "session_3_date_time": "2024-08-02",
+      "session_4_date_time": "2024-09-20",
+      "session_5_date_time": "2024-10-15",
+      "session_6_date_time": "2024-10-25",
+      "session_7_date_time": "2024-11-05",
+      "session_8_date_time": "2025-01-05",
+      "session_9_date_time": "2025-01-15",
+      "session_10_date_time": "2025-01-20",
+      "session_11_date_time": "2025-01-25",
+      "session_12_date_time": "2025-01-28",
+      "session_13_date_time": "2025-02-15",
+      "session_14_date_time": "2025-04-10",
+      "session_15_date_time": "2025-05-02",
+      "session_16_date_time": "2025-05-20",
+      "session_17_date_time": "2025-06-05",
+      "session_18_date_time": "2025-06-15",
+      "session_19_date_time": "2025-07-01",
+      "session_20_date_time": "2025-07-10",
+      "session_21_date_time": "2025-08-15",
+      "session_22_date_time": "2025-09-05",
+      "session_23_date_time": "2025-10-05",
+      "session_24_date_time": "2025-10-12",
+      "session_25_date_time": "2025-10-20",
+      "session_26_date_time": "2025-10-28",
+      "session_27_date_time": "2025-11-12",
+      "session_28_date_time": "2025-11-20",
+      "session_29_date_time": "2025-12-01",
+      "session_30_date_time": "2025-12-22",
+      "session_31_date_time": "2025-12-28",
+      "session_32_date_time": "2025-12-31"
+    },
+    "qa": [
+      {
+        "question": "What was the sequence of events that led Sarah to start attending therapy?"
+      },
+      {
+        "question": "Did Sarah's relationship with her colleague remain stable throughout 2025?"
+      },
+      {
+        "question": "How has Sarah's method of coping with stress evolved from the beginning of the timeline to the end?"
+      }
+    ]
+  }
+]

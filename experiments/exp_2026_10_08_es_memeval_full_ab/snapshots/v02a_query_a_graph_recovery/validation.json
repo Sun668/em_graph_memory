@@ -1,0 +1,14 @@
+{
+  "schema": "es_memeval_full_preparation_recovery_v1",
+  "status": "pass",
+  "query_report_sha256": "75e82a1aa6243218961bceca9f61be3608b822afb4d1019585b3642c71a26de4",
+  "query_artifact_sha256": "0e860aef813cb47dbc04f0770a4e8840f4977f46b7d69edf76c2c2abd3593f28",
+  "question_count": 1427,
+  "a_graph_result_sha256": "6a0698b1ae46b5ecc6cf9d5e5aaf1fca37087a24ebfc744ac776ad6f2f7334e8",
+  "a_graph_count": 18,
+  "memory_count": 9368,
+  "source_snapshot": "v01_preflight_frozen",
+  "query_parameters": "v01_preflight_frozen/parameters.json",
+  "a_graph_parameters": "v02_a_graphs_frozen/parameters.json",
+  "timing": "recovery snapshot created after later addition of rebind helper; existing preparation source files stayed byte-identical to v01"
+}

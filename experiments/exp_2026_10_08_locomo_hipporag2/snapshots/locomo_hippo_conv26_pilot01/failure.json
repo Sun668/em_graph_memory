@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "run_id": "locomo_hippo_conv26_pilot01",
+  "error_type": "APIConnectionError",
+  "error": "Connection error.",
+  "usage": {
+    "chat_attempts": 0,
+    "chat_live": 0,
+    "chat_cache_hits": 0,
+    "chat_errors": 0,
+    "chat_input_tokens": 0,
+    "chat_output_tokens": 0,
+    "embedding_requests": 0,
+    "embedding_input_tokens": 0,
+    "budget_exceeded": false
+  },
+  "elapsed_seconds": 1.594022624893114
+}
