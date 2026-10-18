@@ -1,0 +1,74 @@
+{
+  "schema": "point_time_all10_independent_audit_v1",
+  "status": "pass",
+  "qa_count": 1986,
+  "paired_id_equal_rows": 1986,
+  "paired_official_recall_equal_rows": 1986,
+  "active_all_categories": 99,
+  "active_category_1_4": 98,
+  "B_category_1_4_subset_f1": 0.5184584415584416,
+  "T_category_1_4_subset_f1": 0.5382857142857141,
+  "paired_delta": 0.019827272727272582,
+  "independent_numpy_cluster_95": [
+    0.012404478723268268,
+    0.02757954230092161
+  ],
+  "inactive_cluster_95": [
+    -0.003718927876197842,
+    0.006612018060222373
+  ],
+  "positive_conversations": 10,
+  "conversation_count": 10,
+  "categories": {
+    "1": {
+      "qa_count": 282,
+      "active_count": 0,
+      "B_f1": 0.3926595744680851,
+      "T_f1": 0.39812056737588647,
+      "delta": 0.00546099290780139
+    },
+    "2": {
+      "qa_count": 321,
+      "active_count": 97,
+      "B_f1": 0.41375389408099733,
+      "T_f1": 0.5083489096573214,
+      "delta": 0.09459501557632402
+    },
+    "3": {
+      "qa_count": 96,
+      "active_count": 0,
+      "B_f1": 0.17046875000000003,
+      "T_f1": 0.15932291666666668,
+      "delta": -0.011145833333333336
+    },
+    "4": {
+      "qa_count": 841,
+      "active_count": 1,
+      "B_f1": 0.6403281807372173,
+      "T_f1": 0.6399702734839473,
+      "delta": -0.00035790725326996975
+    },
+    "5": {
+      "qa_count": 446,
+      "active_count": 1,
+      "B_f1": 0.10089686098654709,
+      "T_f1": 0.08968609865470852,
+      "delta": -0.011210762331838564
+    }
+  },
+  "active_delta": 0.2876020408163264,
+  "inactive_delta": 0.0016289875173370314,
+  "prediction_text_changed": {
+    "active": 80,
+    "inactive": 431
+  },
+  "executable_source_identical": true,
+  "preflight_first_memory_only_parity_rows": 1986,
+  "preflight_changed_question_count": 99,
+  "vendor_manifest_checked_files": 16,
+  "vendor_manifest_mismatch_count": 0,
+  "frozen_evaluator_git_clean": true,
+  "primary_result_sha256": "13d457a0bf1b75697c13cb9dee51cfc5121bbc79a002cf463f8cc64113d44601",
+  "B_predictions_sha256": "d12e8c2815512c5ae94e9bb012477a55101f86070e3faabf8208ee5f7ee1d579",
+  "T_predictions_sha256": "e70fb80641adb7d0ccab4d75a758ef74120456a6ccc9ca4ba44e1994fce3832e"
+}

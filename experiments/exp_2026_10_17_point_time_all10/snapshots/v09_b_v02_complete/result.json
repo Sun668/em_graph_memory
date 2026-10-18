@@ -1,0 +1,73 @@
+{
+  "schema": "point_time_all10_condition_snapshot_v1",
+  "status": "complete_validated",
+  "run_id": "pt_all10_B_v02",
+  "source_commit": "f455bbac23d665ec35c9ecc146e5ae25c7a8a9e8",
+  "source_tree": "36c6bb869465a96472652b861c32da70cae5d16e",
+  "validation_status": "pass",
+  "formal_all10": true,
+  "qa_count": 1986,
+  "category_1_4_count": 1540,
+  "category_1_4_subset_f1": 0.5184584415584416,
+  "official_stats": {
+    "gpt-3.5-turbo_dialog_top_25": {
+      "category_counts": {
+        "2": 321,
+        "3": 96,
+        "1": 282,
+        "4": 841,
+        "5": 446
+      },
+      "cum_accuracy_by_category": {
+        "2": 132.81500000000014,
+        "3": 16.365000000000002,
+        "1": 110.72999999999999,
+        "4": 538.5159999999997,
+        "5": 45
+      },
+      "recall_by_category": {
+        "2": 0.8961557632398753,
+        "3": 0.5519375000000001,
+        "1": 0.6709361702127657,
+        "4": 0.9268739595719383,
+        "5": 0.8262331838565022
+      }
+    }
+  },
+  "query_usage": {
+    "schema": "query_embedding_usage_v1",
+    "qa_count": 1986,
+    "required_lookup_count": 1986,
+    "lookup_count": 1997,
+    "cache_hits": 1997,
+    "cache_misses": 0,
+    "live_embedding_requests": 0,
+    "status": "pass"
+  },
+  "resource_usage": {
+    "status": "complete",
+    "completed_samples": 10,
+    "total_samples": 10,
+    "completed_qa": 1986,
+    "answer_input_tokens": 2744098,
+    "answer_output_tokens": 16243,
+    "answer_wall_seconds": 2639.8615731669997
+  },
+  "file_sha256": {
+    "predictions.json": "d12e8c2815512c5ae94e9bb012477a55101f86070e3faabf8208ee5f7ee1d579",
+    "run_config.json": "0d4b3a9c826777951f82aa05107b92134d324ac3a824278042569ceec5593b58",
+    "validation.json": "4c037f9a1abda6d0af8e77ed53e7f944f6386a2212a0fcafdc022c5c9aeeed2a",
+    "stats.json": "5b96da774e8f86c4277c1a75a255ba5ec85db660e9cd818c324da31d42bc541a",
+    "query_cache_usage.json": "c3b2800bc11c157de809415f6d8f64c4727229f5e478f8f1e0b4e1a97ebcfc13",
+    "progress.json": "32ee243afd04f1c272a63ba0767ddab0658f24e398dad0783796254d441d6606"
+  },
+  "parameter_snapshot_sha256": "e1478be87bc2c440d1fd913e7f77af35caeef76772c04d38321ab8a310559927",
+  "command_sha256": "e0807bfa3315d43e0afac27718e0517cfccf8d200183fc85a3ec457918d84664",
+  "source_sha256": {
+    "formal_graph.py": "02db55b4a479a43403951e22d6cad529afdc5a78e7e934a8a98ec3bec1ec8bdb",
+    "point_time_context.py": "c66c442cee29aaea2401203e651f6cb947681bf8cebc91752062db64d9e3ee67"
+  },
+  "graph_constraint": "pass",
+  "prompt_budget": "pass",
+  "comparison_status": "pending_treatment"
+}

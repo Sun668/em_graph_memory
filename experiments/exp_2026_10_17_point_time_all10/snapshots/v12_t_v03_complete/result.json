@@ -1,0 +1,73 @@
+{
+  "schema": "point_time_all10_condition_snapshot_v1",
+  "status": "complete_validated",
+  "run_id": "pt_all10_T_v03",
+  "source_commit": "d2e678cc27329c79cf254ece953035a28167a760",
+  "source_tree": "6282e19ab8375fb15a48cf4a0116202b7976eeff",
+  "validation_status": "pass",
+  "formal_all10": true,
+  "qa_count": 1986,
+  "category_1_4_count": 1540,
+  "category_1_4_subset_f1": 0.5382857142857143,
+  "official_stats": {
+    "gpt-3.5-turbo_dialog_top_25": {
+      "category_counts": {
+        "2": 321,
+        "3": 96,
+        "1": 282,
+        "4": 841,
+        "5": 446
+      },
+      "cum_accuracy_by_category": {
+        "2": 163.18000000000015,
+        "3": 15.295000000000002,
+        "1": 112.26999999999998,
+        "4": 538.2149999999997,
+        "5": 40
+      },
+      "recall_by_category": {
+        "2": 0.8961557632398753,
+        "3": 0.5519375000000001,
+        "1": 0.6709361702127657,
+        "4": 0.9268739595719383,
+        "5": 0.8262331838565022
+      }
+    }
+  },
+  "query_usage": {
+    "schema": "query_embedding_usage_v1",
+    "qa_count": 1986,
+    "required_lookup_count": 1986,
+    "lookup_count": 1997,
+    "cache_hits": 1997,
+    "cache_misses": 0,
+    "live_embedding_requests": 0,
+    "status": "pass"
+  },
+  "resource_usage": {
+    "status": "complete",
+    "completed_samples": 10,
+    "total_samples": 10,
+    "completed_qa": 1986,
+    "answer_input_tokens": 2744442,
+    "answer_output_tokens": 16250,
+    "answer_wall_seconds": 2383.080778459
+  },
+  "file_sha256": {
+    "predictions.json": "e70fb80641adb7d0ccab4d75a758ef74120456a6ccc9ca4ba44e1994fce3832e",
+    "run_config.json": "50eb7b91fc3ca7b4db8686230f8c395589c70d1c2fe413ede1ca698ad870fb29",
+    "validation.json": "4073274e1938323239a4f3fdb5eb5fdb45390246d0e80e6fe89a42e4641f4eab",
+    "stats.json": "e2cce1f938197a9d2caf3fbac9628e7dcf902bb85617e5ffe58c34f1ae21bc11",
+    "query_cache_usage.json": "c3b2800bc11c157de809415f6d8f64c4727229f5e478f8f1e0b4e1a97ebcfc13",
+    "progress.json": "7bbd5de27ec58240dced58fa4ccfe50659a49d3ba1ae4a7243dc0c99970d5eda"
+  },
+  "parameter_snapshot_sha256": "b761fe5899959d07e70c6f2bfd106f920f27779929ed21daddbed70f0620c528",
+  "command_sha256": "c9f33a97de207fb0f7932e24dad7e1e24ad2cf61646ad59ec2866a888c1df54e",
+  "source_sha256": {
+    "formal_graph.py": "02db55b4a479a43403951e22d6cad529afdc5a78e7e934a8a98ec3bec1ec8bdb",
+    "point_time_context.py": "c66c442cee29aaea2401203e651f6cb947681bf8cebc91752062db64d9e3ee67"
+  },
+  "graph_constraint": "pass",
+  "prompt_budget": "pass",
+  "comparison_status": "pending_paired_audit"
+}

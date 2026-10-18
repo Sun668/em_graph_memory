@@ -1,0 +1,8 @@
+{
+  "schema": "point_time_analysis_snapshot_v1",
+  "status": "frozen_before_treatment_no_metric",
+  "source_sha256": "fed53cd9c08ca19304349268b0e2589432f0ce46c59fd49a51b2e4a0cdac7241",
+  "changed_scope": "treatment run ID only",
+  "numeric_estimator_changed": false,
+  "claim_gate_changed": false
+}

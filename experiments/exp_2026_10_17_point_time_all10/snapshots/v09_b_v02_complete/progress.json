@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "completed_samples": 10,
+  "total_samples": 10,
+  "completed_qa": 1986,
+  "answer_input_tokens": 2744098,
+  "answer_output_tokens": 16243,
+  "answer_wall_seconds": 2639.8615731669997
+}

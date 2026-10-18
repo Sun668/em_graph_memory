@@ -1,0 +1,25 @@
+{
+  "schema": "isolated_point_time_port_v1",
+  "status": "ported_and_locally_tested_not_formally_rerun",
+  "base_commit": "11e784c435aa6cfba0d7c02d4ba43ddcf31d2e0a",
+  "historical_reference": {
+    "source_branch": "codex/graph-evidence-localization",
+    "baseline_source_commit": "f455bbac23d665ec35c9ecc146e5ae25c7a8a9e8",
+    "treatment_source_commit": "d2e678cc27329c79cf254ece953035a28167a760",
+    "baseline_run_id": "pt_all10_B_v02",
+    "treatment_run_id": "pt_all10_T_v03",
+    "dataset_qa_count": 1986,
+    "category_1_4_qa_count": 1540,
+    "category_1_4_subset_f1_baseline": 0.5184584415584416,
+    "category_1_4_subset_f1_treatment": 0.5382857142857143,
+    "paired_delta": 0.019827272727272718,
+    "conversation_cluster_bootstrap_95": [0.01237489954428431, 0.02765248414808014],
+    "paired_top25_ids_equal_rows": 1986,
+    "paired_official_recall_acc_equal_rows": 1986
+  },
+  "isolated_branch_f1": null,
+  "isolated_branch_formal_run": false,
+  "graph_constraint_audit": "pass_by_source_inspection; no QA-derived graph construction, graph retrieval preserved",
+  "prompt_budget_audit": "existing formal runner audit retained; no prompt change",
+  "local_tests": "six no-provider unit tests passed"
+}

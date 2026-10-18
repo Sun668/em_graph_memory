@@ -15,8 +15,10 @@ from typing import Any, Dict, List, Mapping, Optional, Sequence
 ROOT = Path(__file__).resolve().parents[2]
 EXP_DIR = Path(__file__).resolve().parent
 CODE_DIR = ROOT / "code"
+POINT_TIME_DIR = ROOT / "experiments/exp_2026_10_17_point_time_first_memory"
 sys.path.insert(0, str(CODE_DIR))
 sys.path.insert(0, str(EXP_DIR))
+sys.path.insert(0, str(POINT_TIME_DIR))
 
 import run as graph_runner
 from common.llm import set_api_key_from_env
@@ -38,6 +40,7 @@ from em_graph.recall.retrieval import SEMANTIC_SCORE_NORMALIZATIONS
 from locomo_eval import LoCoMoEvaluationConfig, OfficialLoCoMoEvaluator
 from locomo_eval.vendor_runtime import load_official_modules
 from official_dragon import assert_formal_source_clean
+from point_time_context import PointTimeFirstEvidenceRecall
 from validate_formal_result import condition_fingerprint, validate_formal_result
 
 DATASET_SHA256 = (
@@ -185,6 +188,7 @@ def _formal_config(
             "variant": args.variant,
             "rag_mode": "dialog",
             "top_k": int(args.top_k),
+            "reader_context_mode": getattr(args, "reader_context_mode", "raw"),
             **dict(recall_parameters),
         },
         "graph_profile": profile,
@@ -267,6 +271,7 @@ def _audit(
         "graph_profile": profile,
         "recall_parameters": dict(recall_parameters),
         "retrieval_score_version": graph_runner.RETRIEVAL_SCORE_VERSION,
+        "reader_context_mode": getattr(args, "reader_context_mode", "raw"),
         "prompt_budget": {
             "entity_scaffold_chars": scaffold,
             "limit_chars": 5000,
@@ -277,6 +282,8 @@ def _audit(
 
 def command_evaluate(args: argparse.Namespace) -> None:
     _validate_o2_protocol(args)
+    if args.reader_context_mode == "point_time_first" and (args.variant != "B" or args.top_k != 25):
+        raise ValueError("point-time Reader context requires B at top25")
     source_audit = assert_formal_source_clean()
     args.embedding_runtime_identity = (
         None
@@ -372,10 +379,10 @@ def command_evaluate(args: argparse.Namespace) -> None:
         _audit(args, samples, recall_parameters),
     )
     telemetry = CostTelemetry("warm")
-    recall_router = _TimedRecallRouter(
-        graph_runner.EMGraphRecallRouter(recalls),
-        telemetry,
-    )
+    graph_recall = graph_runner.EMGraphRecallRouter(recalls)
+    if args.reader_context_mode == "point_time_first":
+        graph_recall = PointTimeFirstEvidenceRecall(graph_recall, recalls)
+    recall_router = _TimedRecallRouter(graph_recall, telemetry)
     evaluator = OfficialLoCoMoEvaluator(
         recall_router,
         LoCoMoEvaluationConfig(
@@ -518,6 +525,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--samples", nargs="*")
     parser.add_argument("--variant", choices=sorted(graph_runner.VARIANTS), required=True)
     parser.add_argument("--top-k", type=int, required=True)
+    parser.add_argument(
+        "--reader-context-mode",
+        choices=("raw", "point_time_first"),
+        default="raw",
+    )
     parser.add_argument("--extract-model", default="gpt-3.5-turbo")
     parser.add_argument("--embedding-model", default="text-embedding-3-small")
     parser.add_argument(

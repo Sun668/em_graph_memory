@@ -1,0 +1,9 @@
+{
+  "schema": "point_time_analysis_snapshot_v1",
+  "status": "frozen_before_treatment_no_metric",
+  "source_sha256": "7f7e7992ae85e8e006918ebad9e543416c8c24f89ad4e21db4b6bf6d498f9e8f",
+  "previous_analysis_sha256": "a3fff66c90218759e923533646feeb564a9db2724890520b253b955009e0570c",
+  "numeric_estimator_changed": false,
+  "claim_gate_changed": false,
+  "changed_scope": "source provenance check only"
+}

@@ -1,0 +1,278 @@
+{
+  "schema": "research-experiment-parameters-v1",
+  "status": "frozen",
+  "experiment_id": "exp_2026_10_17_point_time_all10",
+  "run_id": "pt_all10_T_v01",
+  "execution": {
+    "runner": "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+    "run_class": "formal",
+    "scope": "all10",
+    "samples": [],
+    "variant": "B",
+    "top_k": 25,
+    "data_file": "data/locomo10.json",
+    "cache_dir": "/Users/sun/Documents/git/graph_memory/outputs/em_graph",
+    "output_root": "outputs/locomo_formal",
+    "condition_dir": "outputs/locomo_formal/pt_all10_T_v01",
+    "query_artifact": "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+    "models": {
+      "extraction": "gpt-3.5-turbo",
+      "embedding": "text-embedding-3-small",
+      "answer": "gpt-3.5-turbo"
+    },
+    "retrieval_overrides": {},
+    "reader_context_mode": "point_time_first",
+    "max_answer_input_tokens": 3500000,
+    "max_answer_output_tokens": 50000,
+    "max_answer_wall_seconds": 14400
+  },
+  "hypothesis": {
+    "primary": "Fixed point-time conversion of only the first B graph Memory improves paired Categories 1-4 subset F1 on all ten LoCoMo conversations.",
+    "control": "Fresh B top25 with raw Reader context.",
+    "treatment": "Same B top25 with only supported first-Memory relative point times converted for when/how long questions; last week/weekend verbatim.",
+    "condition": "T",
+    "development_disclosure": "Conv26, Conv30 and Conv49 were used in small-slice development/confirmation; all-ten is expanded paired estimation, not independent holdout."
+  },
+  "dataset": {
+    "path": "data/locomo10.json",
+    "sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+    "qa_count": 1986,
+    "category_1_4_qa_count": 1540,
+    "sample_ids": [
+      "conv-26",
+      "conv-30",
+      "conv-41",
+      "conv-42",
+      "conv-43",
+      "conv-44",
+      "conv-47",
+      "conv-48",
+      "conv-49",
+      "conv-50"
+    ],
+    "order": "dataset file order"
+  },
+  "sampling": {
+    "scope": "all10",
+    "samples": [
+      "conv-26",
+      "conv-30",
+      "conv-41",
+      "conv-42",
+      "conv-43",
+      "conv-44",
+      "conv-47",
+      "conv-48",
+      "conv-49",
+      "conv-50"
+    ],
+    "qa_filter": "none",
+    "category_filter": "none",
+    "order": "original dataset order",
+    "seed": "not-applicable: no random sampling"
+  },
+  "preprocessing": {
+    "graph_profile": {
+      "memory_only": false,
+      "use_caption": true,
+      "use_time_annotations": true,
+      "add_speaker_as_entity": true
+    },
+    "conversation_inputs": [
+      "session date_time",
+      "dia_id",
+      "speaker",
+      "dialog text",
+      "blip_caption"
+    ],
+    "graph_forbidden_inputs": [
+      "QA answers",
+      "QA evidence annotations",
+      "QA categories",
+      "judge results",
+      "previous predictions",
+      "question-driven ledgers"
+    ],
+    "entity_extraction": "GPT-3.5 typed Who/What/When/Where/Why/How/How much Entities from normalized conversation text; canonical B cache reused",
+    "reader_context_mode": "point_time_first",
+    "route": "question begins when or how long AND first Memory has resolvable point-time phrase",
+    "relative_period_exceptions": [
+      "last week",
+      "last weekend"
+    ],
+    "affected_memories_per_row": "first retrieved Memory only"
+  },
+  "models": {
+    "extraction": "gpt-3.5-turbo",
+    "embedding": "text-embedding-3-small",
+    "answer": "gpt-3.5-turbo",
+    "judge": "not-applicable: no LLM-as-Judge",
+    "python": "3.9.6",
+    "numpy": "2.0.2"
+  },
+  "prompts": {
+    "entity_extraction": "current committed B graph extractor prompt",
+    "question_entity_extraction": "cached complete question Entity keys; live miss forbidden by prior parity audit",
+    "answer": "immutable LoCoMo evaluator dialog prompt in system role",
+    "added_treatment_scaffold_chars": 0,
+    "fixed_scaffold_limit_chars": 5000
+  },
+  "training": {
+    "status": "not-applicable",
+    "reason": "inference-only evaluation"
+  },
+  "retrieval": {
+    "graph": "conversation-only Entity-Memory bipartite graph with MENTIONS and chronological NEXT/PREV",
+    "query": "question text, cached GPT-3.5 Entity keys, read-only ordered text-embedding-3-small vector",
+    "entity_weight": 0.3,
+    "semantic_weight": 0.7,
+    "semantic_score_normalization": "none",
+    "sequence_secondary_scale": 0.5,
+    "entity_min_rel_score": 0.5,
+    "entity_top_k_per_key": 20,
+    "who_only_dampen": 0.25,
+    "degree_discount": true,
+    "expand_sequence": true,
+    "force_full_pool": false,
+    "context_order": "relevance",
+    "reader_time_annotations": false,
+    "reader_context_mode": "point_time_first",
+    "top_k": 25,
+    "signed_semantic_scores": true,
+    "same_ordered_ids_required": true
+  },
+  "generation": {
+    "answer_model": "gpt-3.5-turbo",
+    "message_role": "system",
+    "temperature": 0,
+    "max_completion_tokens": 32,
+    "batch_size": 1,
+    "answer_requests_expected": 1986,
+    "category5_option_order": "upstream unseeded"
+  },
+  "evaluation": {
+    "owner": "immutable code/locomo_eval/",
+    "per_row": "official LoCoMo category-specific F1 and recall_acc",
+    "primary": "paired Categories 1-4 subset F1 mean over1540 rows; local aggregate, not official LoCoMo metric",
+    "secondary": "routed-row F1, inactive-row noise, official category/all5 descriptive stats",
+    "uncertainty": "10,000-draw 10-conversation cluster bootstrap percentile95, seed20261017",
+    "claim_gate": "full subset mean>0 and cluster bootstrap lower>0; paired Top25 and recall_acc rows identical"
+  },
+  "randomness": {
+    "sampling": "none",
+    "answer_temperature": 0,
+    "category5_option_order": "upstream unseeded",
+    "bootstrap_seed": 20261017,
+    "python_hash_seed": "unset; locked Python/NumPy and exact retrieval parity required"
+  },
+  "caches": {
+    "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+    "query_artifact_qa_count": 1986,
+    "query_artifact_dimension": 1536,
+    "query_artifact_role": "context",
+    "query_artifact_normalization": "l2_float32_v1",
+    "graph_and_index_root": "/Users/sun/Documents/git/graph_memory/outputs/em_graph",
+    "reuse_graph_and_index_only_after_identity_check": true,
+    "question_entity_cache": "complete read-only expected; any miss/call invalidates strict paired control",
+    "query_cache_policy": "read-only, zero misses, zero live query embedding requests"
+  },
+  "environment": {
+    "worktree": "/Users/sun/.codex/worktrees/graph-evidence-localization/graph_memory",
+    "source_commit_expected": "bd8a7956",
+    "python_executable": "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+    "python_version": "3.9.6",
+    "numpy_version": "2.0.2",
+    "api_config_script": "/Users/sun/Documents/git/graph_memory/env_gpt.sh",
+    "api_secrets_recorded": false
+  },
+  "resources": {
+    "answer_wall_seconds_ceiling": 14400,
+    "new_condition_storage_bytes_ceiling": 2000000000,
+    "answer_concurrency": 1,
+    "input_output_token_check": "after every completed conversation; progress file records usage"
+  },
+  "cost_limits": {
+    "answer_input_tokens_ceiling": 3500000,
+    "answer_output_tokens_ceiling": 50000,
+    "estimated_from_validated_prior_B": "approximately 2.744M input and 16.3k output tokens per 1986-QA B condition; treatment may differ",
+    "currency_charge": "unknown until provider billing data; report token use"
+  },
+  "gates": {
+    "before_run": [
+      "committed clean source",
+      "vendor manifest 16/16 and clean evaluator",
+      "dataset/query SHA match",
+      "complete read-only query coverage",
+      "B top25 parity 1986/1986",
+      "first-Memory-only treatment 1986/1986",
+      "absent condition directory",
+      "same project Python/NumPy as saved B",
+      "prompt scaffold<=5000",
+      "two distinct frozen parameter snapshots"
+    ],
+    "during_run": [
+      "stop after conversation if answer input/output/wall ceiling exceeded",
+      "never resume a condition output"
+    ],
+    "after_run": [
+      "independent formal validator pass",
+      "1986 QA rows",
+      "same ordered Top25 and official recall_acc rows",
+      "same graph/index/query identity",
+      "paired F1 and 10-conversation uncertainty analysis",
+      "graph constraint audit"
+    ]
+  },
+  "unknowns": [],
+  "created_at": "2026-10-17T18:21:58.859379+08:00",
+  "source": {
+    "base_commit": "08b5a782df265355a82557212e18d025b21e5a4c",
+    "base_tree": "5d9481bd8e9c4db019e76ba178573c53ca42178f",
+    "worktree_clean_before_freeze": true
+  },
+  "binding": {
+    "command_sha256": "952cde804fdc83b03b9c45577102e4c791756ec242a16ae1c049c31e38446333",
+    "canonical_argv": [
+      "source",
+      "/Users/sun/Documents/git/graph_memory/env_gpt.sh",
+      "&&",
+      "RESEARCH_RUN_CLASS=formal",
+      "RESEARCH_PARAMETER_SNAPSHOT=experiments/exp_2026_10_17_point_time_all10/snapshots/pt_all10_T_v01/parameters.json",
+      "RESEARCH_CONDITION_DIR=outputs/locomo_formal/pt_all10_T_v01",
+      "/Users/sun/Documents/git/graph_memory/.venv/bin/python",
+      "experiments/exp_2026_07_27_locomo_stack_refactor/formal_graph.py",
+      "--run-id",
+      "pt_all10_T_v01",
+      "--scope",
+      "all10",
+      "--variant",
+      "B",
+      "--top-k",
+      "25",
+      "--data-file",
+      "data/locomo10.json",
+      "--extract-model",
+      "gpt-3.5-turbo",
+      "--embedding-model",
+      "text-embedding-3-small",
+      "--answer-model",
+      "gpt-3.5-turbo",
+      "--query-artifact",
+      "outputs/em_graph/query_embeddings/locomo10_047d8e25_text-embedding-3-small_v1.npz",
+      "--cache-dir",
+      "/Users/sun/Documents/git/graph_memory/outputs/em_graph",
+      "--output-root",
+      "outputs/locomo_formal",
+      "--reader-context-mode",
+      "point_time_first",
+      "--max-answer-input-tokens",
+      "3500000",
+      "--max-answer-output-tokens",
+      "50000",
+      "--max-answer-wall-seconds",
+      "14400"
+    ],
+    "run_class": "formal",
+    "condition_dir": "outputs/locomo_formal/pt_all10_T_v01"
+  }
+}

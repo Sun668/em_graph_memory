@@ -1,0 +1,439 @@
+{
+  "schema": "point_time_all10_preflight_v1",
+  "status": "pass",
+  "dataset_sha256": "047d8e2528126afd02ab4b6fbade825ad390447e7a91861d35960c85752b4d74",
+  "query_artifact_sha256": "bef99a912383f201e18f2ccecfda0e28ae745b006016a6b38e6ce661eb986f9f",
+  "saved_B_run_id": "formal_all10_M1_B_top25_41a7812_qfrozen_run01",
+  "saved_B_predictions_sha256": "9dcde0e2f993b1a0199a7e17ccb66a4b307e7355ba7b60aff139ade792c75069",
+  "sample_count": 10,
+  "qa_count": 1986,
+  "ordered_B_top25_parity_rows": 1986,
+  "treatment_top25_parity_rows": 1986,
+  "first_memory_only_parity_rows": 1986,
+  "changed_question_count": 99,
+  "changed_by_sample": {
+    "conv-26": 17,
+    "conv-30": 8,
+    "conv-41": 9,
+    "conv-42": 11,
+    "conv-43": 7,
+    "conv-44": 3,
+    "conv-47": 7,
+    "conv-48": 16,
+    "conv-49": 9,
+    "conv-50": 12
+  },
+  "changed_rows": [
+    {
+      "sample_id": "conv-26",
+      "qa_index": 0
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 1
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 5
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 6
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 16
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 20
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 25
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 26
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 28
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 31
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 49
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 58
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 62
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 63
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 73
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 79
+    },
+    {
+      "sample_id": "conv-26",
+      "qa_index": 80
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 0
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 14
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 15
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 16
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 19
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 20
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 35
+    },
+    {
+      "sample_id": "conv-30",
+      "qa_index": 38
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 1
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 5
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 22
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 24
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 48
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 51
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 53
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 54
+    },
+    {
+      "sample_id": "conv-41",
+      "qa_index": 59
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 7
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 13
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 28
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 37
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 38
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 43
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 45
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 48
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 64
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 72
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index": 86
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 10
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 23
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 33
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 54
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 60
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 63
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index": 69
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 11
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 30
+    },
+    {
+      "sample_id": "conv-44",
+      "qa_index": 37
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 13
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 29
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 42
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 47
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 50
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 57
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index": 63
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 3
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 9
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 12
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 17
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 27
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 29
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 31
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 32
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 35
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 37
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 43
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 47
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 51
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 66
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 71
+    },
+    {
+      "sample_id": "conv-48",
+      "qa_index": 76
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 17
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 23
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 30
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 35
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 58
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 67
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 74
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 75
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index": 79
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 14
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 16
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 25
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 26
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 34
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 44
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 51
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 52
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 55
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 65
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 136
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index": 190
+    }
+  ],
+  "query_usage": {
+    "schema": "query_embedding_usage_v1",
+    "qa_count": 1986,
+    "required_lookup_count": 1986,
+    "lookup_count": 3994,
+    "cache_hits": 3994,
+    "cache_misses": 0,
+    "live_embedding_requests": 0,
+    "status": "pass"
+  },
+  "live_memory_embedding_requests": 0,
+  "python_version": "3.9.6",
+  "numpy_version": "2.0.2",
+  "preflight_source_sha256": "c245a7cd0bb020ac18dd32437cda73d6df37fc5c1e3ec593777720f5fa1bf254",
+  "treatment_source_sha256": "c66c442cee29aaea2401203e651f6cb947681bf8cebc91752062db64d9e3ee67"
+}
